@@ -15,10 +15,10 @@
     <PackageReference Include="TinyTwitter" Version="1.1.2" />
     <PackageReference Include="Kveer.XmlRPC" Version="1.1.1" />
     <PackageReference Include="System.Data.SQLite.Core.Lidarr" Version="1.0.111.0-5" />
+    <PackageReference Include="MonoTorrent" Version="1.0.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marr.Data\Marr.Data.csproj" />
-    <ProjectReference Include="..\MonoTorrent\MonoTorrent.csproj" />
     <ProjectReference Include="..\NzbDrone.Common\Radarr.Common.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
