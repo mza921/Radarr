@@ -55,6 +55,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             var startDate = startTime.ToString("o");
 
             var request = _movieBuilder.Create()
+                .SetSegment("api", "3")
                 .SetSegment("route", "movie")
                 .SetSegment("id", "")
                 .SetSegment("secondaryRoute", "changes")
@@ -74,6 +75,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             var langCode = profile != null ? IsoLanguages.Get(profile.Language)?.TwoLetterCode ?? "en" : "en";
 
             var request = _movieBuilder.Create()
+               .SetSegment("api", "3")
                .SetSegment("route", "movie")
                .SetSegment("id", TmdbId.ToString())
                .SetSegment("secondaryRoute", "")
@@ -304,6 +306,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
         public Movie GetMovieInfo(string imdbId)
         {
             var request = _movieBuilder.Create()
+                .SetSegment("api", "3")
                 .SetSegment("route", "find")
                 .SetSegment("id", imdbId)
                 .SetSegment("secondaryRoute", "")
@@ -478,6 +481,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 var firstChar = searchTerm.First();
 
                 var request = _movieBuilder.Create()
+                    .SetSegment("api", "3")
                     .SetSegment("route", "search")
                     .SetSegment("id", "movie")
                     .SetSegment("secondaryRoute", "")
