@@ -98,8 +98,9 @@ namespace NzbDrone.Core.MediaCover
             return Path.Combine(_coverRootFolder, movieId.ToString());
         }
 
-        private void EnsureCovers(Movie movie, int retried = 0)
+        private bool EnsureCovers(Movie movie, int retried = 0)
         {
+            bool updated = false;
             var toResize = new List<Tuple<MediaCover, bool>>();
 
             foreach (var cover in movie.Images)
@@ -112,6 +113,7 @@ namespace NzbDrone.Core.MediaCover
                     if (!alreadyExists)
                     {
                         DownloadCover(movie, cover);
+                        updated = true;
                     }
                 }
                 catch (WebException e)
@@ -128,7 +130,7 @@ namespace NzbDrone.Core.MediaCover
                             retried += 1; 
                             _logger.Warn("Retrying for the {0}. time in ten seconds.", retried);
                             System.Threading.Thread.Sleep(10 * 1000);
-                            EnsureCovers(movie, retried);
+                            updated |= EnsureCovers(movie, retried);
                         }
                         else
                         {
@@ -157,6 +159,8 @@ namespace NzbDrone.Core.MediaCover
             {
                 _semaphore.Release();
             }
+
+            return updated;
         }
 
         private void DownloadCover(Movie movie, MediaCover cover)
@@ -215,8 +219,11 @@ namespace NzbDrone.Core.MediaCover
         public void Execute(EnsureMediaCoversCommand command)
         {
             var movie = _movieService.GetMovie(command.MovieId);
-            EnsureCovers(movie);
-            _eventAggregator.PublishEvent(new MediaCoversUpdatedEvent(movie));
+            var updated = EnsureCovers(movie);
+            if (updated)
+            {
+                _eventAggregator.PublishEvent(new MediaCoversUpdatedEvent(movie));
+            }
         }
 
         public void HandleAsync(MovieUpdatedEvent message)

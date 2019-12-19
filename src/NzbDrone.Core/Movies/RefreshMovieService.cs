@@ -135,7 +135,7 @@ namespace NzbDrone.Core.Movies
             }
 
 
-            _movieService.UpdateMovie(movie);
+            _movieService.UpdateMovie(new List<Movie> { movie });
 
             try
             {
