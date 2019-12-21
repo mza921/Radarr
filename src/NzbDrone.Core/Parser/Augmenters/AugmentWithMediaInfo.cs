@@ -29,7 +29,8 @@ namespace NzbDrone.Core.Parser.Augmenters
                      quality.Quality.Source == Source.WEBDL) &&
                     !(quality.Quality.Resolution == (int)Resolution.R480p || quality.Quality.Resolution == (int)Resolution.R576p))
                 {
-                    var width = mediaInfo.Width;
+                    var firstVideoStream = mediaInfo.VideoStreams.First();
+                    var width = firstVideoStream.Width;
                     var existing = quality.Quality.Resolution;
 
                     if (width > 854)

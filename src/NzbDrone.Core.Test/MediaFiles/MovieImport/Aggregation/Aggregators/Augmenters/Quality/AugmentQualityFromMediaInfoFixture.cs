@@ -7,6 +7,7 @@ using NzbDrone.Core.Parser.Model;
 using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.CustomFormats;
 using NzbDrone.Core.Parser;
+using System.Collections.Generic;
 
 namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Aggregation.Aggregators.Augmenters.Quality
 {
@@ -27,7 +28,13 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Aggregation.Aggregators.Augm
         public void should_return_null_if_media_info_width_is_zero()
         {
             var mediaInfo = Builder<MediaInfoModel>.CreateNew()
-                                                   .With(m => m.Width = 0)
+                                                   .With(m => m.VideoStreams = new List<VideoInfoModel>
+                                                   {
+                                                       new VideoInfoModel
+                                                       {
+                                                           Width = 0
+                                                       }
+                                                   })
                                                    .Build();
 
             var localMovie = Builder<LocalMovie>.CreateNew()
@@ -54,7 +61,13 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Aggregation.Aggregators.Augm
         public void should_return_closest_resolution(int mediaInfoWidth, Resolution expectedResolution)
         {
             var mediaInfo = Builder<MediaInfoModel>.CreateNew()
-                                                   .With(m => m.Width = mediaInfoWidth)
+                                                   .With(m => m.VideoStreams = new List<VideoInfoModel>
+                                                   {
+                                                       new VideoInfoModel
+                                                       {
+                                                           Width = mediaInfoWidth
+                                                       }
+                                                   })
                                                    .Build();
 
             var localMovie = Builder<LocalMovie>.CreateNew()
