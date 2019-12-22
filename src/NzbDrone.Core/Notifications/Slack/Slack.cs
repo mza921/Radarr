@@ -65,7 +65,7 @@ namespace NzbDrone.Core.Notifications.Slack
                                     }
                                 };
 
-             var payload = CreatePayload("Renamed", attachments);
+            var payload = CreatePayload("Renamed", attachments);
 
             _proxy.SendPayload(payload, Settings);
         }

@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using NLog;
 using NzbDrone.Common.Instrumentation.Extensions;
-using NzbDrone.Core.DecisionEngine;
-using NzbDrone.Core.IndexerSearch.Definitions;
-using NzbDrone.Core.Indexers;
-using NzbDrone.Core.Parser.Model;
-using NzbDrone.Core.Movies;
-using System.Linq;
 using NzbDrone.Common.TPL;
+using NzbDrone.Core.DecisionEngine;
+using NzbDrone.Core.Indexers;
+using NzbDrone.Core.IndexerSearch.Definitions;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser.Model;
 
 namespace NzbDrone.Core.IndexerSearch
 {
@@ -58,7 +58,7 @@ namespace NzbDrone.Core.IndexerSearch
                 Movie = movie,
                 UserInvokedSearch = userInvokedSearch,
                 InteractiveSearch = interactiveSearch
-        };
+            };
             return spec;
         }
 

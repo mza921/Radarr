@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
-using Radarr.Http.REST;
 using NzbDrone.Core.Update;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Update
 {

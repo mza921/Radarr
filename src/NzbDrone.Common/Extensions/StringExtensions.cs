@@ -134,7 +134,7 @@ namespace NzbDrone.Common.Extensions
         public static byte[] HexToByteArray(this string input)
         {
             return Enumerable.Range(0, input.Length)
-                             .Where(x => x%2 == 0)
+                             .Where(x => x % 2 == 0)
                              .Select(x => Convert.ToByte(input.Substring(x, 2), 16))
                              .ToArray();
         }
@@ -153,7 +153,7 @@ namespace NzbDrone.Common.Extensions
             var third = int.Parse(octalValue.Substring(2, 1));
             var byteResult = (byte)((first << 6) | (second << 3) | (third));
 
-            return Encoding.ASCII.GetString(new [] { byteResult });
+            return Encoding.ASCII.GetString(new[] { byteResult });
         }
 
         public static string SplitCamelCase(this string input)

@@ -113,8 +113,8 @@ namespace NzbDrone.Mono.Disk
                     path = UnixPath.GetDirectoryName(path) + UnixPath.DirectorySeparatorChar + link;
                     path = UnixPath.GetCanonicalPath(path);
                 }
-            } while (true);
+            }
+            while (true);
         }
-
     }
 }

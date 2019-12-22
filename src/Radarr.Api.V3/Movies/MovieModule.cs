@@ -25,21 +25,19 @@ namespace Radarr.Api.V3.Movies
                                 IHandle<MovieDeletedEvent>,
                                 IHandle<MovieRenamedEvent>,
                                 IHandle<MediaCoversUpdatedEvent>
-
     {
         protected readonly IMovieService _moviesService;
         private readonly IMapCoversToLocal _coverMapper;
 
         public MovieModule(IBroadcastSignalRMessage signalRBroadcaster,
-                            IMovieService moviesService,
-                            IMapCoversToLocal coverMapper,
-                            RootFolderValidator rootFolderValidator,
-                            MoviePathValidator moviesPathValidator,
-                            MovieExistsValidator moviesExistsValidator,
-                            MovieAncestorValidator moviesAncestorValidator,
-                            ProfileExistsValidator profileExistsValidator,
-                            MovieFolderAsRootFolderValidator movieFolderAsRootFolderValidator
-            )
+                           IMovieService moviesService,
+                           IMapCoversToLocal coverMapper,
+                           RootFolderValidator rootFolderValidator,
+                           MoviePathValidator moviesPathValidator,
+                           MovieExistsValidator moviesExistsValidator,
+                           MovieAncestorValidator moviesAncestorValidator,
+                           ProfileExistsValidator profileExistsValidator,
+                           MovieFolderAsRootFolderValidator movieFolderAsRootFolderValidator)
             : base(signalRBroadcaster)
         {
             _moviesService = moviesService;

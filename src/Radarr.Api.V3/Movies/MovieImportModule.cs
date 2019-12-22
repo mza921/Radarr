@@ -14,7 +14,7 @@ namespace Radarr.Api.V3.Movies
             : base("/movie/import")
         {
             _movieService = movieService;
-            Post("/",  x => Import());
+            Post("/", x => Import());
         }
 
 

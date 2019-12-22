@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
 using FluentMigrator;
 using Newtonsoft.Json;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Serializer;
 using NzbDrone.Core.Datastore.Migration.Framework;
-using System.IO;
 
 namespace NzbDrone.Core.Datastore.Migration
 {
@@ -148,15 +148,15 @@ namespace NzbDrone.Core.Datastore.Migration
                     while (historyRead.Read())
                     {
                         historyItems.Add(new MigrationHistoryItem
-                            {
-                                Id = historyRead.GetInt32(0),
-                                EpisodeId = historyRead.GetInt32(1),
-                                SeriesId = historyRead.GetInt32(2),
-                                SourceTitle = historyRead.GetString(3),
-                                Date = historyRead.GetDateTime(4),
-                                Data = Json.Deserialize<Dictionary<string, string>>(historyRead.GetString(5)),
-                                EventType = (MigrationHistoryEventType)historyRead.GetInt32(6)
-                            });
+                        {
+                            Id = historyRead.GetInt32(0),
+                            EpisodeId = historyRead.GetInt32(1),
+                            SeriesId = historyRead.GetInt32(2),
+                            SourceTitle = historyRead.GetString(3),
+                            Date = historyRead.GetDateTime(4),
+                            Data = Json.Deserialize<Dictionary<string, string>>(historyRead.GetString(5)),
+                            EventType = (MigrationHistoryEventType)historyRead.GetInt32(6)
+                        });
                     }
                 }
             }
@@ -185,7 +185,7 @@ namespace NzbDrone.Core.Datastore.Migration
 
                     // Check if it is already associated with a failed/imported event.
                     int j;
-                    for (j = i + 1; j < list.Count;j++)
+                    for (j = i + 1; j < list.Count; j++)
                     {
                         if (list[j].EventType != MigrationHistoryEventType.DownloadFolderImported &&
                             list[j].EventType != MigrationHistoryEventType.DownloadFailed)

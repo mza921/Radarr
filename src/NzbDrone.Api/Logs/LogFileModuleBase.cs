@@ -26,7 +26,7 @@ namespace NzbDrone.Api.Logs
             _configFileProvider = configFileProvider;
             GetResourceAll = GetLogFilesResponse;
 
-            Get(LOGFILE_ROUTE,  options => GetLogFileResponse(options.filename));
+            Get(LOGFILE_ROUTE, options => GetLogFileResponse(options.filename));
         }
 
         private List<LogFileResource> GetLogFilesResponse()

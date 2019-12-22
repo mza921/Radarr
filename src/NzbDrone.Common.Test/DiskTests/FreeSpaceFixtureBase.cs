@@ -58,7 +58,7 @@ namespace NzbDrone.Common.Test.DiskTests
             WindowsOnly();
 
             // Find a drive that doesn't exist.
-            for (char driveletter = 'Z'; driveletter > 'D' ; driveletter--)
+            for (char driveletter = 'Z'; driveletter > 'D'; driveletter--)
             {
                 if (new DriveInfo(driveletter.ToString()).IsReady)
                     continue;

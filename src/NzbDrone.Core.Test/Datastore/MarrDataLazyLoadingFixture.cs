@@ -16,11 +16,11 @@ namespace NzbDrone.Core.Test.Datastore
         public void Setup()
         {
             var profile = new Profile
-                {
-                    Name = "Test",
-                    Cutoff = Quality.WEBDL720p.Id,
-                    Items = Qualities.QualityFixture.GetDefaultQualities()
-                };
+            {
+                Name = "Test",
+                Cutoff = Quality.WEBDL720p.Id,
+                Items = Qualities.QualityFixture.GetDefaultQualities()
+            };
 
 
             profile = Db.Insert(profile);

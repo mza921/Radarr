@@ -82,22 +82,25 @@ namespace NzbDrone.Core.Download.Clients.NzbVortex
                 {
                     queueItem.Status = DownloadItemStatus.Paused;
                 }
-                else switch (vortexQueueItem.State)
+                else
                 {
-                    case NzbVortexStateType.Waiting:
-                        queueItem.Status = DownloadItemStatus.Queued;
-                        break;
-                    case NzbVortexStateType.Done:
-                        queueItem.Status = DownloadItemStatus.Completed;
-                        break;
-                    case NzbVortexStateType.UncompressFailed:
-                    case NzbVortexStateType.CheckFailedDataCorrupt:
-                    case NzbVortexStateType.BadlyEncoded:
-                        queueItem.Status = DownloadItemStatus.Failed;
-                        break;
-                    default:
-                        queueItem.Status = DownloadItemStatus.Downloading;
-                        break;
+                    switch (vortexQueueItem.State)
+                    {
+                        case NzbVortexStateType.Waiting:
+                            queueItem.Status = DownloadItemStatus.Queued;
+                            break;
+                        case NzbVortexStateType.Done:
+                            queueItem.Status = DownloadItemStatus.Completed;
+                            break;
+                        case NzbVortexStateType.UncompressFailed:
+                        case NzbVortexStateType.CheckFailedDataCorrupt:
+                        case NzbVortexStateType.BadlyEncoded:
+                            queueItem.Status = DownloadItemStatus.Failed;
+                            break;
+                        default:
+                            queueItem.Status = DownloadItemStatus.Downloading;
+                            break;
+                    }
                 }
 
                 queueItem.OutputPath = GetOutputPath(vortexQueueItem, queueItem);
@@ -127,7 +130,6 @@ namespace NzbDrone.Core.Download.Clients.NzbVortex
             {
                 _proxy.Remove(id, deleteData, Settings);
             }
-
             else
             {
                 var queue = _proxy.GetQueue(30, Settings);

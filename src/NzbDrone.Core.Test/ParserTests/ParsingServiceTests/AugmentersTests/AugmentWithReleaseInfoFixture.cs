@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
         {
             _indexerDefinition = new IndexerDefinition
             {
-                Settings = new RarbgSettings { MultiLanguages = languages.ToList().Select(l => (int) l) }
+                Settings = new RarbgSettings { MultiLanguages = languages.ToList().Select(l => (int)l) }
             };
 
             Mocker.GetMock<IIndexerFactory>()

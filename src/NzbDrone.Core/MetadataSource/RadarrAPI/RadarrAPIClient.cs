@@ -1,9 +1,9 @@
-using NzbDrone.Common.Http;
-using NzbDrone.Core.Configuration;
 using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using NzbDrone.Common.Http;
+using NzbDrone.Core.Configuration;
 using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 using NzbDrone.Core.Movies.AlternativeTitles;
 using NzbDrone.Core.Parser;
@@ -40,7 +40,7 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
                 APIURL = "https://api.radarr.video/v2";
             }
 
-            RadarrAPI = new HttpRequestBuilder(APIURL+"/{route}/{action}")
+            RadarrAPI = new HttpRequestBuilder(APIURL + "/{route}/{action}")
                                                         .CreateFactory();
         }
 
@@ -91,7 +91,7 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
             return JsonConvert.DeserializeObject<T>(response.Content);
         }
 
-        public List<MovieResult> DiscoverMovies(string action, Func<HttpRequest, HttpRequest> enhanceRequest = null )
+        public List<MovieResult> DiscoverMovies(string action, Func<HttpRequest, HttpRequest> enhanceRequest = null)
         {
             var request = RadarrAPI.Create().SetSegment("route", "discovery").SetSegment("action", action).Build();
 

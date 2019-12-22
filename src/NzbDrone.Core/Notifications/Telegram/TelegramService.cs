@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net;
+using System.Web;
 using FluentValidation.Results;
 using NLog;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Serializer;
-using RestSharp;
 using NzbDrone.Core.Rest;
-using System.Web;
+using RestSharp;
 
 namespace NzbDrone.Core.Notifications.Telegram
 {

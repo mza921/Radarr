@@ -1,10 +1,10 @@
-﻿﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using NzbDrone.Common.Extensions;
-using NzbDrone.Core.MetadataSource.SkyHook.Resource;
+using NzbDrone.Common.Http;
 using NzbDrone.Core.MetadataSource;
 using NzbDrone.Core.MetadataSource.RadarrAPI;
-using NzbDrone.Common.Http;
+using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 
 namespace NzbDrone.Core.NetImport.Radarr
 {
@@ -16,7 +16,7 @@ namespace NzbDrone.Core.NetImport.Radarr
 
         public RadarrParser(RadarrSettings settings, ISearchForNewMovie skyhookProxy)
         {
-            _skyhookProxy = skyhookProxy;//TinyIoC.TinyIoCContainer.Current.Resolve<ISearchForNewMovie>();
+            _skyhookProxy = skyhookProxy;
             _settings = settings;
         }
 

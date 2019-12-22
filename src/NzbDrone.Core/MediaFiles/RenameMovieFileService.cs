@@ -20,7 +20,7 @@ namespace NzbDrone.Core.MediaFiles
     public interface IRenameMovieFileService
     {
         List<RenameMovieFilePreview> GetRenamePreviews(int movieId);
-    void RenameMoviePath(Movie movie, bool shouldRenameFiles);
+        void RenameMoviePath(Movie movie, bool shouldRenameFiles);
     }
 
     public class RenameMovieFileService : IRenameMovieFileService,
@@ -70,14 +70,14 @@ namespace NzbDrone.Core.MediaFiles
 
         private IEnumerable<RenameMovieFilePreview> GetPreviews(Movie movie, List<MovieFile> files)
         {
-            foreach(var file in files)
+            foreach (var file in files)
             {
                 var movieFilePath = Path.Combine(movie.Path, file.RelativePath);
 
                 var newName = _filenameBuilder.BuildFileName(movie, file);
                 var newPath = _filenameBuilder.BuildFilePath(movie, newName, Path.GetExtension(movieFilePath));
 
-                if(!movieFilePath.PathEquals(newPath, StringComparison.Ordinal))
+                if (!movieFilePath.PathEquals(newPath, StringComparison.Ordinal))
                 {
                     yield return new RenameMovieFilePreview
                     {
@@ -149,7 +149,7 @@ namespace NzbDrone.Core.MediaFiles
                     return;
                 }
 
-                 _logger.Info("{0}'s movie folder changed to: {1}", movie, newFolder);
+                _logger.Info("{0}'s movie folder changed to: {1}", movie, newFolder);
                 var oldFolder = movie.Path;
                 movie.Path = newFolder;
 
@@ -195,7 +195,7 @@ namespace NzbDrone.Core.MediaFiles
             _logger.Debug("Renaming movie files for selected movie");
             var moviesToRename = _movieService.GetMovies(message.MovieIds);
 
-            foreach(var movie in moviesToRename)
+            foreach (var movie in moviesToRename)
             {
                 var movieFiles = _mediaFileService.GetFilesByMovie(movie.Id);
                 _logger.ProgressInfo("Renaming movie files for {0}", movie.Title);
@@ -205,24 +205,24 @@ namespace NzbDrone.Core.MediaFiles
 
         }
 
-    public void Execute(RenameMovieFolderCommand message)
-    {
-        try
+        public void Execute(RenameMovieFolderCommand message)
         {
-            _logger.Debug("Renaming movie folder for selected movie if necessary");
-            var moviesToRename = _movieService.GetMovies(message.MovieIds);
-            foreach(var movie in moviesToRename)
+            try
             {
-                var movieFiles = _mediaFileService.GetFilesByMovie(movie.Id);
-                //_logger.ProgressInfo("Renaming movie folder for {0}", movie.Title);
-                RenameMoviePath(movie);
+                _logger.Debug("Renaming movie folder for selected movie if necessary");
+                var moviesToRename = _movieService.GetMovies(message.MovieIds);
+                foreach (var movie in moviesToRename)
+                {
+                    var movieFiles = _mediaFileService.GetFilesByMovie(movie.Id);
+                    //_logger.ProgressInfo("Renaming movie folder for {0}", movie.Title);
+                    RenameMoviePath(movie);
+                }
             }
-        }
-        catch (SQLiteException ex)
-        {
-            _logger.Warn(ex, "wtf: {0}, {1}", ex.ResultCode, ex.Data);
-        }
+            catch (SQLiteException ex)
+            {
+                _logger.Warn(ex, "wtf: {0}, {1}", ex.ResultCode, ex.Data);
+            }
 
-    }
+        }
     }
 }

@@ -326,7 +326,6 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                 minor = Convert.ToInt32(parsed.Groups["minor"].Value);
                 patch = Convert.ToInt32(parsed.Groups["patch"].Value.Replace("x", "0"));
             }
-
             else
             {
                 if (!version.Equals("develop", StringComparison.InvariantCultureIgnoreCase))

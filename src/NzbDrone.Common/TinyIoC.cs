@@ -13,6 +13,8 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 //===============================================================================
 
+#pragma warning disable SX1101, SA1200, SA1208, SA1403, SA1503, SA1519
+
 #region Preprocessor Directives
 // Uncomment this line if you want the container to automatically
 // register the TinyMessenger messenger/event aggregator
@@ -278,7 +280,7 @@ namespace TinyIoC
             GC.SuppressFinalize(this);
         }
 
-        #endregion
+    #endregion
     }
 #endif
     #endregion
@@ -1398,8 +1400,8 @@ namespace TinyIoC
                 var queryForDuplicatedTypes = from i in implementationTypes
                                               group i by i
                                                   into j
-                                                  where j.Count() > 1
-                                                  select j.Key.FullName;
+                                              where j.Count() > 1
+                                              select j.Key.FullName;
 
                 var fullNamesOfDuplicatedTypes = string.Join(",\n", queryForDuplicatedTypes.ToArray());
                 var multipleRegMessage = string.Format("types: The same implementation type cannot be specified multiple times for {0}\n\n{1}", registrationType.FullName, fullNamesOfDuplicatedTypes);

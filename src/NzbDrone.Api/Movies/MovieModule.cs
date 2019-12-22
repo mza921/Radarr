@@ -25,7 +25,6 @@ namespace NzbDrone.Api.Movies
                                 IHandle<MovieDeletedEvent>,
                                 IHandle<MovieRenamedEvent>,
                                 IHandle<MediaCoversUpdatedEvent>
-
     {
         protected readonly IMovieService _moviesService;
         private readonly IMapCoversToLocal _coverMapper;
@@ -33,16 +32,15 @@ namespace NzbDrone.Api.Movies
         private const string TITLE_SLUG_ROUTE = "/titleslug/(?<slug>[^/]+)";
 
         public MovieModule(IBroadcastSignalRMessage signalRBroadcaster,
-                            IMovieService moviesService,
-                            IMapCoversToLocal coverMapper,
-                            RootFolderValidator rootFolderValidator,
-                            MoviePathValidator moviesPathValidator,
-                            MovieExistsValidator moviesExistsValidator,
-                            MovieAncestorValidator moviesAncestorValidator,
-                            SystemFolderValidator systemFolderValidator,
-                            ProfileExistsValidator profileExistsValidator
-            )
-            : base(signalRBroadcaster)
+                           IMovieService moviesService,
+                           IMapCoversToLocal coverMapper,
+                           RootFolderValidator rootFolderValidator,
+                           MoviePathValidator moviesPathValidator,
+                           MovieExistsValidator moviesExistsValidator,
+                           MovieAncestorValidator moviesAncestorValidator,
+                           SystemFolderValidator systemFolderValidator,
+                           ProfileExistsValidator profileExistsValidator)
+        : base(signalRBroadcaster)
         {
             _moviesService = moviesService;
 

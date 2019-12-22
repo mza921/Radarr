@@ -28,42 +28,42 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.NzbVortexTests
         {
             Subject.Definition = new DownloadClientDefinition();
             Subject.Definition.Settings = new NzbVortexSettings
-                                          {
-                                              Host = "127.0.0.1",
-                                              Port = 2222,
-                                              ApiKey = "1234-ABCD",
-                                              TvCategory = "tv",
-                                              RecentMoviePriority = (int)NzbgetPriority.High
-                                          };
+            {
+                Host = "127.0.0.1",
+                Port = 2222,
+                ApiKey = "1234-ABCD",
+                TvCategory = "tv",
+                RecentMoviePriority = (int)NzbgetPriority.High
+            };
 
             _queued = new NzbVortexQueueItem
-                {
-                    Id = RandomNumber,
-                    DownloadedSize = 1000,
-                    TotalDownloadSize = 10,
-                    GroupName = "tv",
-                    UiTitle = "Droned.1998.1080p.WEB-DL-DRONE"
-                };
+            {
+                Id = RandomNumber,
+                DownloadedSize = 1000,
+                TotalDownloadSize = 10,
+                GroupName = "tv",
+                UiTitle = "Droned.1998.1080p.WEB-DL-DRONE"
+            };
 
             _failed = new NzbVortexQueueItem
-                {
-                    DownloadedSize = 1000,
-                    TotalDownloadSize = 1000,
-                    GroupName = "tv",
-                    UiTitle = "Droned.1998.1080p.WEB-DL-DRONE",
-                    DestinationPath = "somedirectory",
-                    State =  NzbVortexStateType.UncompressFailed,
-                };
+            {
+                DownloadedSize = 1000,
+                TotalDownloadSize = 1000,
+                GroupName = "tv",
+                UiTitle = "Droned.1998.1080p.WEB-DL-DRONE",
+                DestinationPath = "somedirectory",
+                State = NzbVortexStateType.UncompressFailed,
+            };
 
             _completed = new NzbVortexQueueItem
-                {
-                    DownloadedSize = 1000,
-                    TotalDownloadSize = 1000,
-                    GroupName = "tv",
-                    UiTitle = "Droned.1998.1080p.WEB-DL-DRONE",
-                    DestinationPath = "/remote/mount/tv/Droned.1998.1080p.WEB-DL-DRONE",
-                    State = NzbVortexStateType.Done
-                };
+            {
+                DownloadedSize = 1000,
+                TotalDownloadSize = 1000,
+                GroupName = "tv",
+                UiTitle = "Droned.1998.1080p.WEB-DL-DRONE",
+                DestinationPath = "/remote/mount/tv/Droned.1998.1080p.WEB-DL-DRONE",
+                State = NzbVortexStateType.Done
+            };
         }
 
         protected void GivenFailedDownload()

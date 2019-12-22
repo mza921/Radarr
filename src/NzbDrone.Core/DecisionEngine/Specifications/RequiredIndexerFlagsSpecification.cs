@@ -27,7 +27,8 @@ namespace NzbDrone.Core.DecisionEngine.Specifications
 
 
             IIndexerSettings indexerSettings = null;
-            try {
+            try
+            {
                 indexerSettings = _indexerFactory.Get(subject.Release.IndexerId)?.Settings as IIndexerSettings;
             }
             catch (Exception)
@@ -43,7 +44,7 @@ namespace NzbDrone.Core.DecisionEngine.Specifications
             if (indexerSettings is ITorrentIndexerSettings torrentIndexerSettings)
             {
                 var requiredFlags = torrentIndexerSettings.RequiredFlags;
-                var requiredFlag = (IndexerFlags) 0;
+                var requiredFlag = (IndexerFlags)0;
 
                 if (requiredFlags == null || !requiredFlags.Any())
                 {

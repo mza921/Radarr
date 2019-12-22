@@ -15,8 +15,8 @@ namespace NzbDrone.Api.Movies
             : base("/movie/editor")
         {
             _movieService = movieService;
-            Put("/",  Movie => SaveAll());
-            Put("/delete",  Movie => DeleteSelected());
+            Put("/", Movie => SaveAll());
+            Put("/delete", Movie => DeleteSelected());
         }
 
         private object SaveAll()
@@ -26,8 +26,8 @@ namespace NzbDrone.Api.Movies
             var Movie = resources.Select(MovieResource => MovieResource.ToModel(_movieService.GetMovie(MovieResource.Id))).ToList();
 
             return ResponseWithCode(_movieService.UpdateMovie(Movie)
-                                 .ToResource()
-                                 , HttpStatusCode.Accepted);
+                                    .ToResource(),
+                                    HttpStatusCode.Accepted);
         }
 
         private object DeleteSelected()

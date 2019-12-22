@@ -30,7 +30,7 @@ namespace Radarr.Api.V3.Config
             GetResourceById = GetNamingConfig;
             UpdateResource = UpdateNamingConfig;
 
-            Get("/examples",  x => GetExamples(this.Bind<NamingConfigResource>()));
+            Get("/examples", x => GetExamples(this.Bind<NamingConfigResource>()));
 
             SharedValidator.RuleFor(c => c.StandardMovieFormat).ValidMovieFormat();
             SharedValidator.RuleFor(c => c.MovieFolderFormat).ValidMovieFolderFormat();

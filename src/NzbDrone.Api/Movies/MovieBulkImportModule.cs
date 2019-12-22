@@ -1,18 +1,18 @@
-using System.Collections.Generic;
-using Nancy;
-using NzbDrone.Core.MediaCover;
-using NzbDrone.Core.MetadataSource;
-using NzbDrone.Core.Parser;
-using System.Linq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Nancy;
+using NzbDrone.Common.Cache;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Core.Datastore;
+using NzbDrone.Core.MediaCover;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.MediaFiles.MovieImport;
-using NzbDrone.Core.RootFolders;
-using NzbDrone.Common.Cache;
+using NzbDrone.Core.MetadataSource;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser;
 using NzbDrone.Core.Profiles;
+using NzbDrone.Core.RootFolders;
 using Radarr.Http;
 
 namespace NzbDrone.Api.Movies
@@ -51,7 +51,7 @@ namespace NzbDrone.Api.Movies
             _movieService = movieService;
             _profileService = profileService;
             _parsingService = parsingService;
-            Get("/",  x => Search());
+            Get("/", x => Search());
         }
 
 
@@ -84,7 +84,7 @@ namespace NzbDrone.Api.Movies
 
             max = total_count >= max ? max : total_count;
 
-            var paged = unmapped.GetRange(min, max-min);
+            var paged = unmapped.GetRange(min, max - min);
 
             var mapped = paged.Select(f =>
             {

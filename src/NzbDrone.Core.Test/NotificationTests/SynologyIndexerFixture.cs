@@ -50,7 +50,7 @@ namespace NzbDrone.Core.Test.NotificationTests
             {
                 Settings = new SynologyIndexerSettings
                 {
-                   UpdateLibrary = true
+                    UpdateLibrary = true
                 }
             };
         }

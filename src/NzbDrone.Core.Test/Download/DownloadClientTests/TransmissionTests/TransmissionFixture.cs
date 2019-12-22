@@ -389,7 +389,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.TransmissionTests
         public void should_not_be_removable_if_overridden_max_idletime_not_reached_and_paused()
         {
             GivenGlobalSeedLimits(null, 20);
-            PrepareClientToReturnCompletedItem(true,  ratio: 2.0, seedingTime: 30, idleLimit: 40);
+            PrepareClientToReturnCompletedItem(true, ratio: 2.0, seedingTime: 30, idleLimit: 40);
 
             var item = Subject.GetItems().Single();
             item.CanBeRemoved.Should().BeFalse();

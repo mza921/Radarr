@@ -142,7 +142,7 @@ namespace NzbDrone.Core.Organizer
             AddReleaseDateTokens(tokenHandlers, movie.Year);
             AddImdbIdTokens(tokenHandlers, movie.ImdbId);
 
-            if(movie.MovieFile != null)
+            if (movie.MovieFile != null)
             {
 
                 AddQualityTokens(tokenHandlers, movie, movieFile);
@@ -194,7 +194,7 @@ namespace NzbDrone.Core.Organizer
             }
             else
             {
-                AddMovieFileTokens(tokenHandlers, new MovieFile { SceneName = $"{movie.Title} {movie.Year}", RelativePath = $"{movie.Title} {movie.Year}"});
+                AddMovieFileTokens(tokenHandlers, new MovieFile { SceneName = $"{movie.Title} {movie.Year}", RelativePath = $"{movie.Title} {movie.Year}" });
             }
 
             string name = ReplaceTokens(namingConfig.MovieFolderFormat, tokenHandlers, namingConfig);
@@ -314,7 +314,7 @@ namespace NzbDrone.Core.Organizer
         private static readonly IReadOnlyDictionary<string, int> MinimumMediaInfoSchemaRevisions =
             new Dictionary<string, int>(FileNameBuilderTokenEqualityComparer.Instance)
         {
-            {MediaInfoVideoDynamicRangeToken, 5}
+            { MediaInfoVideoDynamicRangeToken, 5 }
         };
 
         private void AddMediaInfoTokens(Dictionary<string, Func<TokenMatch, string>> tokenHandlers, MovieFile movieFile)
@@ -329,8 +329,8 @@ namespace NzbDrone.Core.Organizer
             var sceneName = movieFile.GetSceneOrFileName();
 
 
-            var videoCodec =  MediaInfoFormatter.FormatVideoCodec(movieFile.MediaInfo, sceneName);
-            var audioCodec =  MediaInfoFormatter.FormatAudioCodec(movieFile.MediaInfo, sceneName);
+            var videoCodec = MediaInfoFormatter.FormatVideoCodec(movieFile.MediaInfo, sceneName);
+            var audioCodec = MediaInfoFormatter.FormatAudioCodec(movieFile.MediaInfo, sceneName);
             var audioChannels = MediaInfoFormatter.FormatAudioChannels(movieFile.MediaInfo);
             var audioLanguages = movieFile.MediaInfo.AudioLanguages ?? string.Empty;
             var subtitles = movieFile.MediaInfo.Subtitles ?? string.Empty;

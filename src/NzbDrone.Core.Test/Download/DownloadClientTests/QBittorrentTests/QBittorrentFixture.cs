@@ -96,8 +96,8 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
 
         protected void GivenHighPriority()
         {
-            Subject.Definition.Settings.As<QBittorrentSettings>().OlderMoviePriority = (int) QBittorrentPriority.First;
-            Subject.Definition.Settings.As<QBittorrentSettings>().RecentMoviePriority = (int) QBittorrentPriority.First;
+            Subject.Definition.Settings.As<QBittorrentSettings>().OlderMoviePriority = (int)QBittorrentPriority.First;
+            Subject.Definition.Settings.As<QBittorrentSettings>().RecentMoviePriority = (int)QBittorrentPriority.First;
         }
 
         protected void GivenGlobalSeedLimits(float maxRatio, int maxSeedingTime = -1, bool removeOnMaxRatio = false)

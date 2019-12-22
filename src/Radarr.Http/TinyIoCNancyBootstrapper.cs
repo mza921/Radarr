@@ -1,12 +1,14 @@
-﻿using TinyIoC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Nancy;
-using Nancy.Diagnostics;
 using Nancy.Bootstrapper;
 using Nancy.Configuration;
+using Nancy.Diagnostics;
+using TinyIoC;
+
+#pragma warning disable SX1101
 
 namespace Radarr.Http
 {
@@ -53,7 +55,7 @@ namespace Radarr.Http
             return this.ApplicationContainer.Resolve<INancyEngine>();
         }
 
-                //
+        //
         // Summary:
         //     Gets the Nancy.Configuration.INancyEnvironmentConfigurator used by th.
         //

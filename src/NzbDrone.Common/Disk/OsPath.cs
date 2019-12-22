@@ -57,7 +57,7 @@ namespace NzbDrone.Common.Disk
 
         private static bool HasWindowsDriveLetter(string path)
         {
-            if (path.Length < 2)    return false;
+            if (path.Length < 2) return false;
             if (!char.IsLetter(path[0]) || path[1] != ':') return false;
             if (path.Length > 2 && path[2] != '\\' && path[2] != '/') return false;
 

@@ -114,7 +114,6 @@ namespace NzbDrone.Update
 
                 return exeFileInfo.DirectoryName;
             }
-
             else
             {
                 Logger.Debug("Using executing application: {0}", startupContext.ExecutingApplication);

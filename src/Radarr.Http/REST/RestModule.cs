@@ -280,9 +280,9 @@ namespace Radarr.Http.REST
             if (Request.Query.FilterKey != null)
             {
                 var filter = new PagingResourceFilter
-                             {
-                                 Key = Request.Query.FilterKey.ToString()
-                             };
+                {
+                    Key = Request.Query.FilterKey.ToString()
+                };
 
                 if (Request.Query.FilterValue != null)
                 {
@@ -302,10 +302,10 @@ namespace Radarr.Http.REST
                 }
 
                 pagingResource.Filters.Add(new PagingResourceFilter
-                                           {
-                                               Key = key,
-                                               Value = Request.Query[key]
-                                           });
+                {
+                    Key = key,
+                    Value = Request.Query[key]
+                });
             }
 
             return pagingResource;

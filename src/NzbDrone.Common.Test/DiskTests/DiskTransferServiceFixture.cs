@@ -1053,7 +1053,7 @@ namespace NzbDrone.Common.Test.DiskTests
 
             Mocker.GetMock<IDiskProvider>()
                 .Setup(v => v.DeleteFolder(It.IsAny<string>(), It.IsAny<bool>()))
-                .Callback<string, bool>((v,r) => Directory.Delete(v, r));
+                .Callback<string, bool>((v, r) => Directory.Delete(v, r));
 
             Mocker.GetMock<IDiskProvider>()
                 .Setup(v => v.DeleteFile(It.IsAny<string>()))
@@ -1081,7 +1081,8 @@ namespace NzbDrone.Common.Test.DiskTests
 
             Mocker.GetMock<IDiskProvider>()
                 .Setup(v => v.MoveFile(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>()))
-                .Callback<string, string, bool>((s,d,o) => {
+                .Callback<string, string, bool>((s, d, o) =>
+                {
                     if (File.Exists(d) && o) File.Delete(d);
                     File.Move(s, d);
                 });

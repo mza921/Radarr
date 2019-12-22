@@ -1,10 +1,10 @@
 ﻿using System.Data;
-using FluentMigrator;
-using NzbDrone.Core.Datastore.Migration.Framework;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Globalization;
+using FluentMigrator;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.Datastore.Migration.Framework;
 
 namespace NzbDrone.Core.Datastore.Migration
 {
@@ -13,7 +13,7 @@ namespace NzbDrone.Core.Datastore.Migration
     {
         protected override void MainDbUpgrade()
         {
-            if (!this.Schema.Schema("dbo").Table("ImportExclusions").Exists())
+            if (!Schema.Schema("dbo").Table("ImportExclusions").Exists())
             {
                 Create.TableForModel("ImportExclusions")
                     .WithColumn("TmdbId").AsInt64().NotNullable().Unique().PrimaryKey()
@@ -37,7 +37,8 @@ namespace NzbDrone.Core.Datastore.Migration
                         var Key = seriesReader.GetString(0);
                         var Value = seriesReader.GetString(1);
 
-                        var importExclusions = Value.Split(',').Select(x => {
+                        var importExclusions = Value.Split(',').Select(x =>
+                        {
                             return string.Format("(\"{0}\", \"{1}\")", Regex.Replace(x, @"^.*\-(.*)$", "$1"),
                                                  textInfo.ToTitleCase(string.Join(" ", x.Split('-').DropLast(1))));
                         }).ToList();

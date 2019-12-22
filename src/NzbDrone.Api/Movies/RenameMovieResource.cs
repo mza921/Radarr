@@ -1,6 +1,6 @@
-using Radarr.Http.REST;
 using System.Collections.Generic;
 using System.Linq;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Movies
 {

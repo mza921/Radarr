@@ -184,7 +184,7 @@ namespace NzbDrone.Core.Movies
 
             newMovies.ForEach(m =>
             {
-                 MoviePathState defaultState = MoviePathState.Static;
+                MoviePathState defaultState = MoviePathState.Static;
                 if (!_configService.PathsDefaultStatic)
                 {
                     defaultState = MoviePathState.Dynamic;
@@ -254,7 +254,7 @@ namespace NzbDrone.Core.Movies
                     length = movie.CleanTitle.Length,
                     movie = movie
                 })
-                    .Where(s => (s.position>=0))
+                    .Where(s => (s.position >= 0))
                     .ToList()
                     .OrderBy(s => s.position)
                     .ThenByDescending(s => s.length)
@@ -299,7 +299,7 @@ namespace NzbDrone.Core.Movies
             var movie = _movieRepository.Get(movieId);
             if (addExclusion)
             {
-                _exclusionService.AddExclusion(new ImportExclusion {TmdbId = movie.TmdbId, MovieTitle = movie.Title, MovieYear = movie.Year } );
+                _exclusionService.AddExclusion(new ImportExclusion { TmdbId = movie.TmdbId, MovieTitle = movie.Title, MovieYear = movie.Year });
             }
             _movieRepository.Delete(movieId);
             _eventAggregator.PublishEvent(new MovieDeletedEvent(movie, deleteFiles));
@@ -339,7 +339,6 @@ namespace NzbDrone.Core.Movies
                     s.Path = Path.Combine(s.RootFolderPath, folderName);
                     _logger.Trace("Changing path for {0} to {1}", s.Title, s.Path);
                 }
-
                 else
                 {
                     _logger.Trace("Not changing path for: {0}", s.Title);

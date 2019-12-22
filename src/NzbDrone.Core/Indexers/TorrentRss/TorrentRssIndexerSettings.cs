@@ -34,7 +34,7 @@ namespace NzbDrone.Core.Indexers.TorrentRss
         [FieldDefinition(1, Label = "Cookie", HelpText = "If you site requires a login cookie to access the rss, you'll have to retrieve it via a browser.")]
         public string Cookie { get; set; }
 
-        [FieldDefinition(2, Type = FieldType.Checkbox, Label = "Allow Zero Size", HelpText="Enabling this will allow you to use feeds that don't specify release size, but be careful, size related checks will not be performed.")]
+        [FieldDefinition(2, Type = FieldType.Checkbox, Label = "Allow Zero Size", HelpText = "Enabling this will allow you to use feeds that don't specify release size, but be careful, size related checks will not be performed.")]
         public bool AllowZeroSize { get; set; }
 
         // [FieldDefinition(3, Type = FieldType.Tag, SelectOptions = typeof(Language), Label = "Multi Languages", HelpText = "What languages are normally in a multi release on this indexer?", Advanced = true)]

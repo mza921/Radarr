@@ -1,24 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using NLog;
 using NzbDrone.Common.Cloud;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Http;
 using NzbDrone.Core.Exceptions;
-using NzbDrone.Core.MediaCover;
-using NzbDrone.Core.MetadataSource.SkyHook.Resource;
-using NzbDrone.Core.MetadataSource.PreDB;
-using NzbDrone.Core.Movies;
-using System.Threading;
-using NzbDrone.Core.Parser;
 using NzbDrone.Core.Languages;
-using NzbDrone.Core.Profiles;
-using NzbDrone.Core.NetImport.ImportExclusions;
+using NzbDrone.Core.MediaCover;
+using NzbDrone.Core.MetadataSource.PreDB;
 using NzbDrone.Core.MetadataSource.RadarrAPI;
+using NzbDrone.Core.MetadataSource.SkyHook.Resource;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.Movies.AlternativeTitles;
-using System.Globalization;
+using NzbDrone.Core.NetImport.ImportExclusions;
+using NzbDrone.Core.Parser;
+using NzbDrone.Core.Profiles;
 
 namespace NzbDrone.Core.MetadataSource.SkyHook
 {
@@ -50,7 +50,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             _logger = logger;
         }
 
-        public HashSet<int> GetChangedMovies (DateTime startTime)
+        public HashSet<int> GetChangedMovies(DateTime startTime)
         {
             var startDate = startTime.ToString("o");
 
@@ -179,7 +179,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
             movie.TitleSlug += "-" + movie.TmdbId.ToString();
 
-            movie.Images.Add(_configService.GetCoverForURL(resource.poster_path, MediaCoverTypes.Poster));//TODO: Update to load image specs from tmdb page!
+            movie.Images.Add(_configService.GetCoverForURL(resource.poster_path, MediaCoverTypes.Poster)); //TODO: Update to load image specs from tmdb page!
             movie.Images.Add(_configService.GetCoverForURL(resource.backdrop_path, MediaCoverTypes.Fanart));
             movie.Runtime = resource.runtime;
 
@@ -188,9 +188,9 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             //    movie.AlternativeTitles.Add(title.title);
             //}
 
-            foreach(ReleaseDates releaseDates in resource.release_dates.results)
+            foreach (ReleaseDates releaseDates in resource.release_dates.results)
             {
-                foreach(ReleaseDate releaseDate in releaseDates.release_dates)
+                foreach (ReleaseDate releaseDate in releaseDates.release_dates)
                 {
                     if (releaseDate.type == 5 || releaseDate.type == 4)
                     {
@@ -215,7 +215,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             movie.Ratings.Votes = resource.vote_count;
             movie.Ratings.Value = (decimal)resource.vote_average;
 
-            foreach(Genre genre in resource.genres)
+            foreach (Genre genre in resource.genres)
             {
                 movie.Genres.Add(genre.name);
             }
@@ -248,7 +248,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             }
 
             //since TMDB lacks alot of information lets assume that stuff is released if its been in cinemas for longer than 3 months.
-            if (!movie.PhysicalRelease.HasValue && (movie.Status == MovieStatusType.InCinemas) && (((DateTime.Now).Subtract(movie.InCinemas.Value)).TotalSeconds > 60*60*24*30*3))
+            if (!movie.PhysicalRelease.HasValue && (movie.Status == MovieStatusType.InCinemas) && (((DateTime.Now).Subtract(movie.InCinemas.Value)).TotalSeconds > 60 * 60 * 24 * 30 * 3))
             {
                 movie.Status = MovieStatusType.Released;
             }
@@ -376,10 +376,11 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
         private string StripTrailingTheFromTitle(string title)
         {
-            if(title.EndsWith(",the"))
+            if (title.EndsWith(",the"))
             {
                 title = title.Substring(0, title.Length - 4);
-            } else if(title.EndsWith(", the"))
+            }
+            else if (title.EndsWith(", the"))
             {
                 title = title.Substring(0, title.Length - 5);
             }
@@ -569,7 +570,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
                 imdbMovie.Images = new List<MediaCover.MediaCover>();
                 imdbMovie.Overview = result.overview;
-                imdbMovie.Ratings = new Ratings { Value = (decimal)result.vote_average, Votes = result.vote_count};
+                imdbMovie.Ratings = new Ratings { Value = (decimal)result.vote_average, Votes = result.vote_count };
 
                 try
                 {
@@ -661,7 +662,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
         {
             try
             {
-                 Movie newMovie = movie;
+                Movie newMovie = movie;
                 if (movie.TmdbId > 0)
                 {
                     newMovie = GetMovieInfo(movie.TmdbId);
@@ -699,7 +700,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             catch (Exception ex)
             {
                 _logger.Warn(ex, "Couldn't map movie {0} to a movie on The Movie DB. It will not be added :(", movie.Title);
-                    return null;
+                return null;
             }
         }
     }

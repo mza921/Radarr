@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Radarr.Http.REST;
-using NzbDrone.Core.Qualities;
+using System.Linq;
 using NzbDrone.Api.Movies;
 using NzbDrone.Core.Download.TrackedDownloads;
 using NzbDrone.Core.Indexers;
-using System.Linq;
+using NzbDrone.Core.Qualities;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Queue
 {

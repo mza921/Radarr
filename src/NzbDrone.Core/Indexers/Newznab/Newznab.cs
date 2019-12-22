@@ -66,17 +66,17 @@ namespace NzbDrone.Core.Indexers.Newznab
         private IndexerDefinition GetDefinition(string name, NewznabSettings settings)
         {
             return new IndexerDefinition
-                   {
-                       EnableRss = false,
-                       EnableAutomaticSearch = false,
-                       EnableInteractiveSearch = false,
-                       Name = name,
-                       Implementation = GetType().Name,
-                       Settings = settings,
-                       Protocol = DownloadProtocol.Usenet,
-                       SupportsRss = SupportsRss,
-                       SupportsSearch = SupportsSearch
-                   };
+            {
+                EnableRss = false,
+                EnableAutomaticSearch = false,
+                EnableInteractiveSearch = false,
+                Name = name,
+                Implementation = GetType().Name,
+                Settings = settings,
+                Protocol = DownloadProtocol.Usenet,
+                SupportsRss = SupportsRss,
+                SupportsSearch = SupportsSearch
+            };
         }
 
         private NewznabSettings GetSettings(string url, string apiPath = null, int[] categories = null)

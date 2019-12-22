@@ -36,9 +36,8 @@ namespace NzbDrone.Core.Download.Clients.DownloadStation
                                      IDiskProvider diskProvider,
                                      IRemotePathMappingService remotePathMappingService,
                                      IValidateNzbs nzbValidationService,
-                                     Logger logger
-                                     )
-            : base(httpClient, configService, namingConfigService, diskProvider, remotePathMappingService, nzbValidationService, logger)
+                                     Logger logger)
+        : base(httpClient, configService, namingConfigService, diskProvider, remotePathMappingService, nzbValidationService, logger)
         {
             _dsInfoProxy = dsInfoProxy;
             _dsTaskProxy = dsTaskProxy;

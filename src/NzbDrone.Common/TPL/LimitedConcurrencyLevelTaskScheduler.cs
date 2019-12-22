@@ -78,7 +78,7 @@ namespace NzbDrone.Common.TPL
                             }
 
                             // Execute the task we pulled out of the queue
-                            base.TryExecuteTask(item);
+                            TryExecuteTask(item);
                         }
                     }
                     // We're done processing items on the current thread
@@ -99,7 +99,7 @@ namespace NzbDrone.Common.TPL
             if (taskWasPreviouslyQueued) TryDequeue(task);
 
             // Try to run the task.
-            return base.TryExecuteTask(task);
+            return TryExecuteTask(task);
         }
 
         /// <summary>Attempts to remove a previously scheduled task from the scheduler.</summary>

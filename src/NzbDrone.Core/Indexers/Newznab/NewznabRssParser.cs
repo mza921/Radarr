@@ -162,9 +162,7 @@ namespace NzbDrone.Core.Indexers.Newznab
             {
                 return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(
                     Parser.Parser.ReplaceGermanUmlauts(
-                        Parser.Parser.NormalizeTitle(imdbTitle).Replace(" ", ".")
-                    )
-                 );
+                        Parser.Parser.NormalizeTitle(imdbTitle).Replace(" ", ".")));
             }
 
             return string.Empty;

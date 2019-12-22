@@ -43,6 +43,6 @@ namespace NzbDrone.Core.MediaFiles
             }
 
             return string.Empty;
-}
+        }
     }
 }

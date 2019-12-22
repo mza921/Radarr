@@ -17,7 +17,6 @@ namespace NzbDrone.Core.Notifications
           IHandle<MovieGrabbedEvent>,
           IHandle<MovieDownloadedEvent>,
           IHandle<HealthCheckFailedEvent>
-
     {
         private readonly INotificationFactory _notificationFactory;
         private readonly Logger _logger;
@@ -35,7 +34,7 @@ namespace NzbDrone.Core.Notifications
 
             if (quality.Revision.Version > 1)
             {
-                    qualityString += " Proper";
+                qualityString += " Proper";
             }
 
             return string.Format("{0} ({1}) [{2}] {3}",
@@ -98,7 +97,6 @@ namespace NzbDrone.Core.Notifications
                     if (!ShouldHandleMovie(notification.Definition, message.Movie.Movie)) continue;
                     notification.OnGrab(grabMessage);
                 }
-
                 catch (Exception ex)
                 {
                     _logger.Error(ex, "Unable to send OnGrab notification to {0}", notification.Definition.Name);
@@ -128,7 +126,6 @@ namespace NzbDrone.Core.Notifications
                         }
                     }
                 }
-
                 catch (Exception ex)
                 {
                     _logger.Warn(ex, "Unable to send OnDownload notification to: " + notification.Definition.Name);
@@ -147,7 +144,6 @@ namespace NzbDrone.Core.Notifications
                         notification.OnMovieRename(message.Movie);
                     }
                 }
-
                 catch (Exception ex)
                 {
                     _logger.Warn(ex, "Unable to send OnRename notification to: " + notification.Definition.Name);
@@ -166,7 +162,6 @@ namespace NzbDrone.Core.Notifications
                         notification.OnHealthIssue(message.HealthCheck);
                     }
                 }
-
                 catch (Exception ex)
                 {
                     _logger.Warn(ex, "Unable to send OnHealthIssue notification to: " + notification.Definition.Name);

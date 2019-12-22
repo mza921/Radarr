@@ -1,9 +1,9 @@
-using NLog;
-using NzbDrone.Core.Configuration;
-using NzbDrone.Core.Messaging.Events;
 using System.Collections.Generic;
 using System.Linq;
+using NLog;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.Configuration;
+using NzbDrone.Core.Messaging.Events;
 using NzbDrone.Core.Movies.Events;
 
 namespace NzbDrone.Core.Movies.AlternativeTitles

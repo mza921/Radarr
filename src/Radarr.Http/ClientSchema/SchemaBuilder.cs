@@ -156,32 +156,26 @@ namespace Radarr.Http.ClientSchema
             {
                 return fieldValue => fieldValue?.ToString().ParseInt32() ?? 0;
             }
-
             else if (propertyType == typeof(long))
             {
                 return fieldValue => fieldValue?.ToString().ParseInt64() ?? 0;
             }
-
             else if (propertyType == typeof(double))
             {
                 return fieldValue => fieldValue?.ToString().ParseDouble() ?? 0.0;
             }
-
             else if (propertyType == typeof(int?))
             {
                 return fieldValue => fieldValue?.ToString().ParseInt32();
             }
-
             else if (propertyType == typeof(Int64?))
             {
                 return fieldValue => fieldValue?.ToString().ParseInt64();
             }
-
             else if (propertyType == typeof(double?))
             {
                 return fieldValue => fieldValue?.ToString().ParseDouble();
             }
-
             else if (propertyType == typeof(IEnumerable<int>))
             {
                 return fieldValue =>
@@ -196,7 +190,6 @@ namespace Radarr.Http.ClientSchema
                     }
                 };
             }
-
             else if (propertyType == typeof(IEnumerable<string>))
             {
                 return fieldValue =>
@@ -211,7 +204,6 @@ namespace Radarr.Http.ClientSchema
                     }
                 };
             }
-
             else
             {
                 return fieldValue => fieldValue;

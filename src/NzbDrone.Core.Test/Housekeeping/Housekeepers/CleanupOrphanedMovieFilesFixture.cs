@@ -20,7 +20,7 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
         {
             var movieFile = Builder<MovieFile>.CreateNew()
                                                   .With(h => h.Quality = new QualityModel())
-                                                  .With(h => h.Languages = new List<Language> { Language.English})
+                                                  .With(h => h.Languages = new List<Language> { Language.English })
                                                   .BuildNew();
 
             Db.Insert(movieFile);

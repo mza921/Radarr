@@ -249,21 +249,21 @@ namespace NzbDrone.Core.History
                 //foreach (var matchingHistory in trackedDownload.EpisodeInfo.Episodes.Select(e => stillDownloading.Where(c => c.MovieId == e.Id).ToList()))
                 //foreach (var matchingHistory in stillDownloading.Where(c => c.MovieId == e.Id).ToList())
                 //{
-                    if (stillDownloading.Count != 1)
-                    {
-                        return null;
-                    }
+                if (stillDownloading.Count != 1)
+                {
+                    return null;
+                }
 
-                    var newDownloadId = stillDownloading.Single().DownloadId;
+                var newDownloadId = stillDownloading.Single().DownloadId;
 
-                    if (downloadId == null || downloadId == newDownloadId)
-                    {
-                        downloadId = newDownloadId;
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                if (downloadId == null || downloadId == newDownloadId)
+                {
+                    downloadId = newDownloadId;
+                }
+                else
+                {
+                    return null;
+                }
                 //}
             }
 

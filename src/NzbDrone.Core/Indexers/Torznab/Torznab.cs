@@ -54,17 +54,17 @@ namespace NzbDrone.Core.Indexers.Torznab
         private IndexerDefinition GetDefinition(string name, TorznabSettings settings)
         {
             return new IndexerDefinition
-                   {
-                       EnableRss = false,
-                       EnableAutomaticSearch = false,
-                       EnableInteractiveSearch = false,
-                       Name = name,
-                       Implementation = GetType().Name,
-                       Settings = settings,
-                       Protocol = DownloadProtocol.Usenet,
-                       SupportsRss = SupportsRss,
-                       SupportsSearch = SupportsSearch
-                   };
+            {
+                EnableRss = false,
+                EnableAutomaticSearch = false,
+                EnableInteractiveSearch = false,
+                Name = name,
+                Implementation = GetType().Name,
+                Settings = settings,
+                Protocol = DownloadProtocol.Usenet,
+                SupportsRss = SupportsRss,
+                SupportsSearch = SupportsSearch
+            };
         }
 
         private TorznabSettings GetSettings(string url, string apiPath = null, int[] categories = null)

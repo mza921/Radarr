@@ -46,7 +46,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
         private readonly IQBittorrentProxy _proxyV1;
         private readonly IQBittorrentProxy _proxyV2;
 
-        public  QBittorrentProxySelector(QBittorrentProxyV1 proxyV1,
+        public QBittorrentProxySelector(QBittorrentProxyV1 proxyV1,
                                          QBittorrentProxyV2 proxyV2,
                                          IHttpClient httpClient,
                                          ICacheManager cacheManager,

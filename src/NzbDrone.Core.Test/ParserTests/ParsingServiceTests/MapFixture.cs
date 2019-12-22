@@ -35,7 +35,7 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests
                                    .With(m => m.Title = "Fack Ju Göthe 2")
                                    .With(m => m.CleanTitle = "fackjugoethe2")
                                    .With(m => m.Year = 2015)
-                                   .With(m => m.AlternativeTitles = new LazyList<AlternativeTitle>( new List<AlternativeTitle> {new AlternativeTitle("Fack Ju Göthe 2: Same same")}))
+                                   .With(m => m.AlternativeTitles = new LazyList<AlternativeTitle>(new List<AlternativeTitle> { new AlternativeTitle("Fack Ju Göthe 2: Same same") }))
                                    .Build();
 
             _parsedMovieInfo = new ParsedMovieInfo

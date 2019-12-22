@@ -32,7 +32,7 @@ namespace NzbDrone.Core.Test.Qualities
             Subject.Handle(new ApplicationStartedEvent());
 
             Mocker.GetMock<IQualityDefinitionRepository>()
-                .Verify(v => v.InsertMany(It.Is<List<QualityDefinition>>(d => d.Count == Quality.All.Count -1 )), Times.Once());
+                .Verify(v => v.InsertMany(It.Is<List<QualityDefinition>>(d => d.Count == Quality.All.Count - 1)), Times.Once());
         }
 
         [Test]

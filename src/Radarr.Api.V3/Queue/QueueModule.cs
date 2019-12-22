@@ -61,7 +61,6 @@ namespace Radarr.Api.V3.Queue
                     ? fullQueue.OrderBy(q => q.Timeleft, new TimeleftComparer())
                     : fullQueue.OrderByDescending(q => q.Timeleft, new TimeleftComparer());
             }
-
             else if (pagingSpec.SortKey == "estimatedCompletionTime")
             {
                 ordered = ascending
@@ -69,35 +68,30 @@ namespace Radarr.Api.V3.Queue
                     : fullQueue.OrderByDescending(q => q.EstimatedCompletionTime,
                         new EstimatedCompletionTimeComparer());
             }
-
             else if (pagingSpec.SortKey == "protocol")
             {
                 ordered = ascending
                     ? fullQueue.OrderBy(q => q.Protocol)
                     : fullQueue.OrderByDescending(q => q.Protocol);
             }
-
             else if (pagingSpec.SortKey == "indexer")
             {
                 ordered = ascending
                     ? fullQueue.OrderBy(q => q.Indexer, StringComparer.InvariantCultureIgnoreCase)
                     : fullQueue.OrderByDescending(q => q.Indexer, StringComparer.InvariantCultureIgnoreCase);
             }
-
             else if (pagingSpec.SortKey == "downloadClient")
             {
                 ordered = ascending
                     ? fullQueue.OrderBy(q => q.DownloadClient, StringComparer.InvariantCultureIgnoreCase)
                     : fullQueue.OrderByDescending(q => q.DownloadClient, StringComparer.InvariantCultureIgnoreCase);
             }
-
             else if (pagingSpec.SortKey == "quality")
             {
                 ordered = ascending
                     ? fullQueue.OrderBy(q => q.Quality, QUALITY_COMPARER)
                     : fullQueue.OrderByDescending(q => q.Quality, QUALITY_COMPARER);
             }
-
             else
             {
                 ordered = ascending ? fullQueue.OrderBy(orderByFunc) : fullQueue.OrderByDescending(orderByFunc);

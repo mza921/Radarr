@@ -136,7 +136,6 @@ namespace NzbDrone.Common.Processes
                         {
                             _logger.Error(e, "Unable to set environment variable '{0}', value is null", environmentVariable.Key);
                         }
-
                         else
                         {
                             _logger.Error(e, "Unable to set environment variable '{0}'", environmentVariable.Key);

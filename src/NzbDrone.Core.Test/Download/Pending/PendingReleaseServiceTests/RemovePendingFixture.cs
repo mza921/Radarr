@@ -32,7 +32,7 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
 
             Mocker.GetMock<IPendingReleaseRepository>()
                   .Setup(s => s.All())
-                  .Returns( _pending);
+                  .Returns(_pending);
 
             Mocker.GetMock<IMovieService>()
                   .Setup(s => s.GetMovie(It.IsAny<int>()))
@@ -50,11 +50,11 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
         private void AddPending(int id, string title, int year)
         {
             _pending.Add(new PendingRelease
-             {
-                 Id = id,
-                 ParsedMovieInfo = new ParsedMovieInfo { MovieTitle = title, Year = year },
-                 MovieId = _movie.Id
-             });
+            {
+                Id = id,
+                ParsedMovieInfo = new ParsedMovieInfo { MovieTitle = title, Year = year },
+                MovieId = _movie.Id
+            });
         }
 
         [Test]

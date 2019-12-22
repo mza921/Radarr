@@ -76,9 +76,8 @@ namespace NzbDrone.SysTray
 
             if (InvokeRequired)
             {
-                base.Invoke(new MethodInvoker(() => Dispose(isDisposing)));
+                Invoke(new MethodInvoker(() => Dispose(isDisposing)));
             }
-
             else
             {
                 base.Dispose(isDisposing);

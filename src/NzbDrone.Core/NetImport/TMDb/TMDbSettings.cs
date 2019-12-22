@@ -1,9 +1,9 @@
-﻿using FluentValidation;
+﻿using System.Text.RegularExpressions;
+using FluentValidation;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Core.Annotations;
 using NzbDrone.Core.ThingiProvider;
 using NzbDrone.Core.Validation;
-using System.Text.RegularExpressions;
 
 namespace NzbDrone.Core.NetImport.TMDb
 {

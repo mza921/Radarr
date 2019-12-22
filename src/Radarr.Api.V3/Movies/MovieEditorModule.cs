@@ -19,8 +19,8 @@ namespace Radarr.Api.V3.Movies
         {
             _movieService = movieService;
             _commandQueueManager = commandQueueManager;
-            Put("/",  movie => SaveAll());
-            Delete("/",  movie => DeleteMovies());
+            Put("/", movie => SaveAll());
+            Delete("/", movie => DeleteMovies());
         }
 
         private object SaveAll()
@@ -86,8 +86,8 @@ namespace Radarr.Api.V3.Movies
             }
 
             return ResponseWithCode(_movieService.UpdateMovie(moviesToUpdate)
-                                 .ToResource()
-                                 , HttpStatusCode.Accepted);
+                                    .ToResource(),
+                                    HttpStatusCode.Accepted);
         }
 
         private object DeleteMovies()

@@ -44,8 +44,7 @@ namespace NzbDrone.Core.Datastore.Migration
                             var text = string.Format("UPDATE Notifications " +
                                                      "SET Settings = '{0}'" +
                                                      "WHERE Id = {1}",
-                                settings.ToJson(), id
-                                );
+                                                     settings.ToJson(), id);
 
                             updateCmd.Transaction = tran;
                             updateCmd.CommandText = text;

@@ -30,8 +30,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         {
             GivenPreferredDownloadProtocol(DownloadProtocol.Usenet);
 
-            _customFormat1 = new CustomFormats.CustomFormat("My Format 1", "L_ENGLISH"){Id=1};
-            _customFormat2 = new CustomFormats.CustomFormat("My Format 2", "L_FRENCH"){Id=2};
+            _customFormat1 = new CustomFormats.CustomFormat("My Format 1", "L_ENGLISH") { Id = 1 };
+            _customFormat2 = new CustomFormats.CustomFormat("My Format 2", "L_FRENCH") { Id = 2 };
 
             CustomFormatsFixture.GivenCustomFormats(CustomFormats.CustomFormat.None, _customFormat1, _customFormat2);
         }
@@ -44,8 +44,12 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             remoteMovie.ParsedMovieInfo.Year = 1998;
             remoteMovie.ParsedMovieInfo.Quality = quality;
 
-            remoteMovie.Movie = Builder<Movie>.CreateNew().With(m => m.Profile = new Profile { Items = Qualities.QualityFixture.GetDefaultQualities(),
-                PreferredTags = new List<string> { "DTS-HD", "SPARKS"}, FormatItems = CustomFormatsFixture.GetSampleFormatItems() })
+            remoteMovie.Movie = Builder<Movie>.CreateNew().With(m => m.Profile = new Profile
+            {
+                Items = Qualities.QualityFixture.GetDefaultQualities(),
+                PreferredTags = new List<string> { "DTS-HD", "SPARKS" },
+                FormatItems = CustomFormatsFixture.GetSampleFormatItems()
+            })
                 .With(m => m.Title = "A Movie").Build();
 
             remoteMovie.Release = new ReleaseInfo();
@@ -185,7 +189,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             decisions.Add(new DownloadDecision(remoteEpisode2));
 
             var qualifiedReports = Subject.PrioritizeDecisionsForMovies(decisions);
-            ((TorrentInfo) qualifiedReports.First().RemoteMovie.Release).Seeders.Should().Be(torrentInfo2.Seeders);
+            ((TorrentInfo)qualifiedReports.First().RemoteMovie.Release).Seeders.Should().Be(torrentInfo2.Seeders);
         }
 
         [Test]
@@ -277,7 +281,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             decisions.Add(new DownloadDecision(remoteEpisode2));
 
             var qualifiedReports = Subject.PrioritizeDecisionsForMovies(decisions);
-            ((TorrentInfo) qualifiedReports.First().RemoteMovie.Release).Should().Be(torrentInfo1);
+            ((TorrentInfo)qualifiedReports.First().RemoteMovie.Release).Should().Be(torrentInfo1);
         }
 
         [Test]

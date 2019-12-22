@@ -21,10 +21,10 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
                                      .Build();
 
             _localEpisode = new LocalMovie
-                                {
-                                    Path = @"C:\Test\30 Rock\30.rock.s01e01.avi",
-                                    Movie = _movie,
-                                };
+            {
+                Path = @"C:\Test\30 Rock\30.rock.s01e01.avi",
+                Movie = _movie,
+            };
         }
 
         [Test]

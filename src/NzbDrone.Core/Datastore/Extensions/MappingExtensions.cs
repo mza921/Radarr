@@ -37,7 +37,7 @@ namespace NzbDrone.Core.Datastore.Extensions
         {
             return mapBuilder.Relationships.AutoMapPropertiesWhere(m =>
                     m.MemberType == MemberTypes.Property &&
-                    typeof(ModelBase).IsAssignableFrom(((PropertyInfo) m).PropertyType));
+                    typeof(ModelBase).IsAssignableFrom(((PropertyInfo)m).PropertyType));
         }
 
         public static bool IsMappableProperty(MemberInfo memberInfo)

@@ -171,7 +171,7 @@ namespace NzbDrone.Core.Datastore.Migration
                     {
                         int id = definitionsReader.GetInt32(0);
                         int quality = definitionsReader.GetInt32(1);
-                        definitions.Add(new QualityDefinition70 {Id = id, Quality = quality});
+                        definitions.Add(new QualityDefinition70 { Id = id, Quality = quality });
                     }
                 }
             }

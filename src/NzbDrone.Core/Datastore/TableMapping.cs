@@ -87,20 +87,20 @@ namespace NzbDrone.Core.Datastore
             Mapper.Entity<History.History>().RegisterModel("History")
                   .AutoMapChildModels();
 
-           Mapper.Entity<MovieFile>().RegisterModel("MovieFiles")
-                .Ignore(f => f.Path)
-                .Relationships.AutoMapICollectionOrComplexProperties()
-                .For("Movie")
-                .LazyLoad(condition: parent => parent.Id > 0,
-                            query: (db, parent) => db.Query<Movie>().Where(c => c.MovieFileId == parent.Id).ToList())
-                .HasOne(file => file.Movie, file => file.MovieId);
+            Mapper.Entity<MovieFile>().RegisterModel("MovieFiles")
+                 .Ignore(f => f.Path)
+                 .Relationships.AutoMapICollectionOrComplexProperties()
+                 .For("Movie")
+                 .LazyLoad(condition: parent => parent.Id > 0,
+                             query: (db, parent) => db.Query<Movie>().Where(c => c.MovieFileId == parent.Id).ToList())
+                 .HasOne(file => file.Movie, file => file.MovieId);
 
             Mapper.Entity<Movie>().RegisterModel("Movies")
                 .Ignore(s => s.RootFolderPath)
                 .Ignore(m => m.Actors)
                 .Relationship()
                 .HasOne(s => s.Profile, s => s.ProfileId);
-                //.HasOne(m => m.MovieFile, m => m.MovieFileId);
+            //.HasOne(m => m.MovieFile, m => m.MovieFileId);
 
             Mapper.Entity<AlternativeTitle>().RegisterModel("AlternativeTitles")
                 .For(t => t.Id)

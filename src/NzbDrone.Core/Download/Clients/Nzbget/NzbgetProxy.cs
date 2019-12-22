@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using NLog;
+using NzbDrone.Common.Cache;
 using NzbDrone.Common.Http;
 using NzbDrone.Common.Serializer;
-using System.Net;
-using NzbDrone.Common.Cache;
 
 namespace NzbDrone.Core.Download.Clients.Nzbget
 {
@@ -187,7 +187,6 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
                     _logger.Warn("Failed to remove item from NZBGet, {0} [{1}]", queueItem.NzbName, queueItem.NzbId);
                 }
             }
-
             else if (historyItem != null)
             {
                 if (!EditQueue("HistoryDelete", 0, "", historyItem.Id, settings))
@@ -195,7 +194,6 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
                     _logger.Warn("Failed to remove item from NZBGet history, {0} [{1}]", historyItem.Name, historyItem.Id);
                 }
             }
-
             else
             {
                 _logger.Warn("Unable to remove item from NZBGet, Unknown ID: {0}", id);

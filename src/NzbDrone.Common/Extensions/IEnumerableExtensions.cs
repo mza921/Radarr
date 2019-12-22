@@ -115,8 +115,10 @@ namespace NzbDrone.Common.Extensions
                 throw new ArgumentNullException("source");
 
             if (n < 0)
+            {
                 throw new ArgumentOutOfRangeException("n",
                     "Argument n should be non-negative.");
+            }
 
             return InternalDropLast(source, n);
         }

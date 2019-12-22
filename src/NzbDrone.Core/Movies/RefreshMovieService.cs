@@ -245,7 +245,6 @@ namespace NzbDrone.Core.Movies
 
                         RescanMovie(movie, false, trigger);
                     }
-
                     else
                     {
                         _logger.Info("Skipping refresh of movie: {0}", movie.Title);

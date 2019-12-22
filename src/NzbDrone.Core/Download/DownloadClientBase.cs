@@ -154,7 +154,7 @@ namespace NzbDrone.Core.Download
 
         public virtual void MarkItemAsImported(DownloadClientItem downloadClientItem)
         {
-            throw new NotSupportedException(this.Name + " does not support marking items as imported");
+            throw new NotSupportedException(Name + " does not support marking items as imported");
         }
     }
 }

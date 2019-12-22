@@ -28,11 +28,11 @@ namespace NzbDrone.Core.Jobs
         public void SetLastExecutionTime(int id, DateTime executionTime, DateTime startTime)
         {
             var task = new ScheduledTask
-                {
-                    Id = id,
-                    LastExecution = executionTime,
-                    LastStartTime = startTime
-                };
+            {
+                Id = id,
+                LastExecution = executionTime,
+                LastStartTime = startTime
+            };
 
             SetFields(task, scheduledTask => scheduledTask.LastExecution, scheduledTask => scheduledTask.LastStartTime);
         }

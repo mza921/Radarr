@@ -189,8 +189,7 @@ namespace NzbDrone.Core.Profiles
                 Quality.Bluray720p,
                 Quality.Bluray1080p,
                 Quality.Remux1080p,
-                Quality.Remux2160p
-                );
+                Quality.Remux2160p);
         }
 
         public Profile GetDefaultProfile(string name, Quality cutoff = null, params Quality[] allowed)

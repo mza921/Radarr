@@ -26,53 +26,53 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.NzbgetTests
         {
             Subject.Definition = new DownloadClientDefinition();
             Subject.Definition.Settings = new NzbgetSettings
-                                          {
-                                              Host = "127.0.0.1",
-                                              Port = 2222,
-                                              Username = "admin",
-                                              Password = "pass",
-                                              MovieCategory = "movie",
-                                              RecentMoviePriority = (int)NzbgetPriority.High
-                                          };
+            {
+                Host = "127.0.0.1",
+                Port = 2222,
+                Username = "admin",
+                Password = "pass",
+                MovieCategory = "movie",
+                RecentMoviePriority = (int)NzbgetPriority.High
+            };
 
             _queued = new NzbgetQueueItem
-                {
-                    FileSizeLo = 1000,
-                    RemainingSizeLo = 10,
-                    Category = "movie",
-                    NzbName = "Droned.1998.1080p.WEB-DL-DRONE",
-                    Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } }
-                };
+            {
+                FileSizeLo = 1000,
+                RemainingSizeLo = 10,
+                Category = "movie",
+                NzbName = "Droned.1998.1080p.WEB-DL-DRONE",
+                Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } }
+            };
 
             _failed = new NzbgetHistoryItem
-                {
-                    FileSizeLo = 1000,
-                    Category = "movie",
-                    Name = "Droned.1998.1080p.WEB-DL-DRONE",
-                    DestDir = "somedirectory",
-                    Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } },
-                    ParStatus = "Some Error",
-                    UnpackStatus = "NONE",
-                    MoveStatus = "NONE",
-                    ScriptStatus = "NONE",
-                    DeleteStatus = "NONE",
-                    MarkStatus = "NONE"
-                };
+            {
+                FileSizeLo = 1000,
+                Category = "movie",
+                Name = "Droned.1998.1080p.WEB-DL-DRONE",
+                DestDir = "somedirectory",
+                Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } },
+                ParStatus = "Some Error",
+                UnpackStatus = "NONE",
+                MoveStatus = "NONE",
+                ScriptStatus = "NONE",
+                DeleteStatus = "NONE",
+                MarkStatus = "NONE"
+            };
 
             _completed = new NzbgetHistoryItem
-                {
-                    FileSizeLo = 1000,
-                    Category = "movie",
-                    Name = "Droned.1998.1080p.WEB-DL-DRONE",
-                    DestDir = "/remote/mount/tv/Droned.1998.1080p.WEB-DL-DRONE",
-                    Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } },
-                    ParStatus = "SUCCESS",
-                    UnpackStatus = "NONE",
-                    MoveStatus = "SUCCESS",
-                    ScriptStatus = "NONE",
-                    DeleteStatus = "NONE",
-                    MarkStatus = "NONE"
-                };
+            {
+                FileSizeLo = 1000,
+                Category = "movie",
+                Name = "Droned.1998.1080p.WEB-DL-DRONE",
+                DestDir = "/remote/mount/tv/Droned.1998.1080p.WEB-DL-DRONE",
+                Parameters = new List<NzbgetParameter> { new NzbgetParameter { Name = "drone", Value = "id" } },
+                ParStatus = "SUCCESS",
+                UnpackStatus = "NONE",
+                MoveStatus = "SUCCESS",
+                ScriptStatus = "NONE",
+                DeleteStatus = "NONE",
+                MarkStatus = "NONE"
+            };
 
             Mocker.GetMock<INzbgetProxy>()
                 .Setup(s => s.GetGlobalStatus(It.IsAny<NzbgetSettings>()))

@@ -25,65 +25,65 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.UTorrentTests
         {
             Subject.Definition = new DownloadClientDefinition();
             Subject.Definition.Settings = new UTorrentSettings
-                                          {
-                                              Host = "127.0.0.1",
-                                              Port = 2222,
-                                              Username = "admin",
-                                              Password = "pass",
-                                              MovieCategory = "movie"
-                                          };
+            {
+                Host = "127.0.0.1",
+                Port = 2222,
+                Username = "admin",
+                Password = "pass",
+                MovieCategory = "movie"
+            };
 
             _queued = new UTorrentTorrent
-                    {
-                        Hash = "HASH",
-                        Status = UTorrentTorrentStatus.Queued | UTorrentTorrentStatus.Loaded,
-                        Name = _title,
-                        Size = 1000,
-                        Remaining = 1000,
-                        Progress = 0,
-                        Label = "movie",
-                        DownloadUrl = _downloadUrl,
-                        RootDownloadPath = "somepath"
-                    };
+            {
+                Hash = "HASH",
+                Status = UTorrentTorrentStatus.Queued | UTorrentTorrentStatus.Loaded,
+                Name = _title,
+                Size = 1000,
+                Remaining = 1000,
+                Progress = 0,
+                Label = "movie",
+                DownloadUrl = _downloadUrl,
+                RootDownloadPath = "somepath"
+            };
 
             _downloading = new UTorrentTorrent
-                    {
-                        Hash = "HASH",
-                        Status = UTorrentTorrentStatus.Started | UTorrentTorrentStatus.Loaded,
-                        Name = _title,
-                        Size = 1000,
-                        Remaining = 100,
-                        Progress = 0.9,
-                        Label = "movie",
-                        DownloadUrl = _downloadUrl,
-                        RootDownloadPath = "somepath"
-                    };
+            {
+                Hash = "HASH",
+                Status = UTorrentTorrentStatus.Started | UTorrentTorrentStatus.Loaded,
+                Name = _title,
+                Size = 1000,
+                Remaining = 100,
+                Progress = 0.9,
+                Label = "movie",
+                DownloadUrl = _downloadUrl,
+                RootDownloadPath = "somepath"
+            };
 
             _failed = new UTorrentTorrent
-                    {
-                        Hash = "HASH",
-                        Status = UTorrentTorrentStatus.Error,
-                        Name = _title,
-                        Size = 1000,
-                        Remaining = 100,
-                        Progress = 0.9,
-                        Label = "movie",
-                        DownloadUrl = _downloadUrl,
-                        RootDownloadPath = "somepath"
-                    };
+            {
+                Hash = "HASH",
+                Status = UTorrentTorrentStatus.Error,
+                Name = _title,
+                Size = 1000,
+                Remaining = 100,
+                Progress = 0.9,
+                Label = "movie",
+                DownloadUrl = _downloadUrl,
+                RootDownloadPath = "somepath"
+            };
 
             _completed = new UTorrentTorrent
-                    {
-                        Hash = "HASH",
-                        Status = UTorrentTorrentStatus.Checked | UTorrentTorrentStatus.Loaded,
-                        Name = _title,
-                        Size = 1000,
-                        Remaining = 0,
-                        Progress = 1.0,
-                        Label = "movie",
-                        DownloadUrl = _downloadUrl,
-                        RootDownloadPath = "somepath"
-                    };
+            {
+                Hash = "HASH",
+                Status = UTorrentTorrentStatus.Checked | UTorrentTorrentStatus.Loaded,
+                Name = _title,
+                Size = 1000,
+                Remaining = 0,
+                Progress = 1.0,
+                Label = "movie",
+                DownloadUrl = _downloadUrl,
+                RootDownloadPath = "somepath"
+            };
 
             Mocker.GetMock<ITorrentFileInfoReader>()
                   .Setup(s => s.GetHashFromTorrentFile(It.IsAny<byte[]>()))

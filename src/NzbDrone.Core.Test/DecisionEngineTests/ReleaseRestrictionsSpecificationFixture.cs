@@ -20,15 +20,15 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         {
             _remoteMovie = new RemoteMovie
             {
-                               Movie = new Movie
-                                        {
-                                            Tags = new HashSet<int>()
-                                        },
-                               Release = new ReleaseInfo
-                                         {
-                                             Title = "Dexter.S08E01.EDITED.WEBRip.x264-KYR"
-                                         }
-                           };
+                Movie = new Movie
+                {
+                    Tags = new HashSet<int>()
+                },
+                Release = new ReleaseInfo
+                {
+                    Title = "Dexter.S08E01.EDITED.WEBRip.x264-KYR"
+                }
+            };
 
             Mocker.SetConstant<ITermMatcher>(Mocker.Resolve<TermMatcher>());
         }

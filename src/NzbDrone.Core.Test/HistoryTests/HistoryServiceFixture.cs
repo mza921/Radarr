@@ -73,10 +73,10 @@ namespace NzbDrone.Core.Test.HistoryTests
                                                   .Build();
 
             var localMovie = new LocalMovie()
-                               {
-                                   Movie = movie,
-                                   Path = @"C:\Test\Unsorted\Movie.2011.mkv"
-                               };
+            {
+                Movie = movie,
+                Path = @"C:\Test\Unsorted\Movie.2011.mkv"
+            };
 
             Subject.Handle(new MovieImportedEvent(localMovie, movieFile, true, "sab", "abcd"));
 

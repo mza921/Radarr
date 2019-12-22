@@ -155,8 +155,7 @@ namespace NzbDrone.Common.OAuth
             var ret = original.OfType<char>().Where(
                 c => !Unreserved.OfType<char>().Contains(c) && c != '%').Aggregate(
                     value, (current, c) => current.Replace(
-                          c.ToString(), PercentEncode(c.ToString())
-                          ));
+                          c.ToString(), PercentEncode(c.ToString())));
 
             return ret.Replace("%%", "%25%"); // Revisit to encode actual %'s
         }
@@ -211,7 +210,7 @@ namespace NzbDrone.Common.OAuth
 
             copy.RemoveAll(exclusions);
 
-            foreach(var parameter in copy)
+            foreach (var parameter in copy)
             {
                 parameter.Value = UrlEncodeStrict(parameter.Value);
             }

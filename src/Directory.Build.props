@@ -2,7 +2,7 @@
   <!-- Common to all Radarr Projects -->
   <PropertyGroup>
     <CodeAnalysisRuleSet>$(SolutionDir)Stylecop.ruleset</CodeAnalysisRuleSet>
-    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>

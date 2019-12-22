@@ -40,8 +40,8 @@ namespace NzbDrone.Core.CustomFormats
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((CustomFormat) obj);
+            if (obj.GetType() != GetType()) return false;
+            return Equals((CustomFormat)obj);
         }
 
         public override int GetHashCode()
@@ -62,7 +62,7 @@ namespace NzbDrone.Core.CustomFormats
             var list = formats.ToList();
             if (list.Any()) return list;
 
-            return new List<CustomFormat>{CustomFormat.None};
+            return new List<CustomFormat> { CustomFormat.None };
         }
     }
 }

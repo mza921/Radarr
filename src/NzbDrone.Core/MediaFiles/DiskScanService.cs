@@ -190,7 +190,6 @@ namespace NzbDrone.Core.MediaFiles
                 var permissions = _configService.FolderChmod;
                 _diskProvider.SetPermissions(path, permissions, _configService.ChownUser, _configService.ChownGroup);
             }
-
             catch (Exception ex)
             {
 
@@ -221,7 +220,6 @@ namespace NzbDrone.Core.MediaFiles
                 var movie = _movieService.GetMovie(message.MovieId.Value);
                 Scan(movie);
             }
-
             else
             {
                 var allMovies = _movieService.GetAllMovies();

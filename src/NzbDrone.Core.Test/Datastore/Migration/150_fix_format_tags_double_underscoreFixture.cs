@@ -15,7 +15,7 @@ namespace NzbDrone.Core.Test.Datastore.Migration
 
         public void AddCustomFormat(fix_format_tags_double_underscore c, string name, params string[] formatTags)
         {
-            var customFormat = new {Name = name, FormatTags = formatTags.ToList().ToJson()};
+            var customFormat = new { Name = name, FormatTags = formatTags.ToList().ToJson() };
 
             c.Insert.IntoTable("CustomFormats").Row(customFormat);
         }

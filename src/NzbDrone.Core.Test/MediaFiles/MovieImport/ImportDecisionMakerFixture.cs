@@ -201,7 +201,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport
                 .Setup(c => c.ParseMinimalPathMovieInfo(It.IsAny<string>()))
                 .Returns<ParsedMovieInfo>(null);
 
-            var folderInfo = new ParsedMovieInfo {SimpleReleaseTitle = "A Movie Folder 2018", Quality = _quality};
+            var folderInfo = new ParsedMovieInfo { SimpleReleaseTitle = "A Movie Folder 2018", Quality = _quality };
 
             var result = Subject.GetImportDecisions(_videoFiles, _movie, null, folderInfo, true);
 

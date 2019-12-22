@@ -92,8 +92,7 @@ namespace NzbDrone.Common.Composition
                 .Where(implementation =>
                        contractType.IsAssignableFrom(implementation) &&
                        !implementation.IsInterface &&
-                       !implementation.IsAbstract
-                );
+                       !implementation.IsAbstract);
         }
     }
 }

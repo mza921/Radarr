@@ -31,21 +31,21 @@ namespace Radarr.Api.V3.MovieFiles
             }
 
             return new MediaInfoResource
-                   {
-                       AudioBitrate = model.AudioBitrate,
-                       AudioChannels = MediaInfoFormatter.FormatAudioChannels(model),
-                       AudioLanguages = model.AudioLanguages,
-                       AudioStreamCount = model.AudioStreamCount,
-                       AudioCodec = MediaInfoFormatter.FormatAudioCodec(model, sceneName),
-                       VideoBitDepth = model.VideoBitDepth,
-                       VideoBitrate = model.VideoBitrate,
-                       VideoCodec = MediaInfoFormatter.FormatVideoCodec(model, sceneName),
-                       VideoFps = model.VideoFps,
-                       Resolution = $"{model.Width}x{model.Height}",
-                       RunTime = FormatRuntime(model.RunTime),
-                       ScanType = model.ScanType,
-                       Subtitles = model.Subtitles
-                   };
+            {
+                AudioBitrate = model.AudioBitrate,
+                AudioChannels = MediaInfoFormatter.FormatAudioChannels(model),
+                AudioLanguages = model.AudioLanguages,
+                AudioStreamCount = model.AudioStreamCount,
+                AudioCodec = MediaInfoFormatter.FormatAudioCodec(model, sceneName),
+                VideoBitDepth = model.VideoBitDepth,
+                VideoBitrate = model.VideoBitrate,
+                VideoCodec = MediaInfoFormatter.FormatVideoCodec(model, sceneName),
+                VideoFps = model.VideoFps,
+                Resolution = $"{model.Width}x{model.Height}",
+                RunTime = FormatRuntime(model.RunTime),
+                ScanType = model.ScanType,
+                Subtitles = model.Subtitles
+            };
         }
 
 

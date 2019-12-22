@@ -13,7 +13,7 @@ using NzbDrone.Mono.Disk;
 namespace NzbDrone.Mono.Test.DiskProviderTests
 {
     [TestFixture]
-    [Platform(Exclude="Win")]
+    [Platform(Exclude = "Win")]
     public class DiskProviderFixture : DiskProviderFixtureBase<DiskProvider>
     {
         public DiskProviderFixture()

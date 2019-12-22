@@ -64,29 +64,29 @@ namespace NzbDrone.Core.CustomFormats
                     }
                     if (TagModifier.HasFlag(TagModifier.Regex))
                     {
-                        Regex regexValue = (Regex) Value;
+                        Regex regexValue = (Regex)Value;
                         return regexValue.IsMatch(compared);
                     }
                     else
                     {
-                        string stringValue = (string) Value;
+                        string stringValue = (string)Value;
                         return compared.ToLower().Contains(stringValue.Replace(" ", string.Empty).ToLower());
                     }
                 case TagType.Language:
                     return movieInfo.Languages.Contains((Language)Value);
                 case TagType.Resolution:
-                    return movieInfo.Quality.Quality.Resolution == (int)(Resolution) Value;
+                    return movieInfo.Quality.Quality.Resolution == (int)(Resolution)Value;
                 case TagType.Modifier:
-                    return movieInfo.Quality.Quality.Modifier == (Modifier) Value;
+                    return movieInfo.Quality.Quality.Modifier == (Modifier)Value;
                 case TagType.Source:
-                    return movieInfo.Quality.Quality.Source == (Source) Value;
+                    return movieInfo.Quality.Quality.Source == (Source)Value;
                 case TagType.Size:
                     var size = (movieInfo.ExtraInfo.GetValueOrDefault("Size", 0.0) as long?) ?? 0;
                     var tuple = Value as (long, long)? ?? (0, 0);
                     return size > tuple.Item1 && size < tuple.Item2;
                 case TagType.Indexer:
 #if !LIBRARY
-                    return (movieInfo.ExtraInfo.GetValueOrDefault("IndexerFlags") as IndexerFlags?)?.HasFlag((IndexerFlags) Value) == true;
+                    return (movieInfo.ExtraInfo.GetValueOrDefault("IndexerFlags") as IndexerFlags?)?.HasFlag((IndexerFlags)Value) == true;
 #endif
                 default:
                     return false;

@@ -98,7 +98,9 @@ namespace NzbDrone.Core
                     length += byteSize;
                 }
                 else
+                {
                     break;
+                }
             }
             return s.Substring(0, i);
         }

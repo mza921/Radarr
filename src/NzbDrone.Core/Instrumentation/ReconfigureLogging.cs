@@ -64,7 +64,6 @@ namespace NzbDrone.Core.Instrumentation
                 {
                     rule.DisableLoggingForLevel(logLevel);
                 }
-
                 else
                 {
                     rule.EnableLoggingForLevel(logLevel);

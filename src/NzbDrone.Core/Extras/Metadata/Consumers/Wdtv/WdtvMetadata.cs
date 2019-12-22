@@ -58,11 +58,11 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Wdtv
             if (filename == null) return null;
 
             var metadata = new MetadataFile
-                           {
-                               MovieId = movie.Id,
-                               Consumer = GetType().Name,
-                               RelativePath = movie.Path.GetRelativePath(path)
-                           };
+            {
+                MovieId = movie.Id,
+                Consumer = GetType().Name,
+                RelativePath = movie.Path.GetRelativePath(path)
+            };
 
             if (Path.GetFileName(filename).Equals("folder.jpg", StringComparison.InvariantCultureIgnoreCase))
             {
@@ -100,27 +100,27 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Wdtv
 
             var xmlResult = string.Empty;
 
-                var sb = new StringBuilder();
-                var xws = new XmlWriterSettings();
-                xws.OmitXmlDeclaration = true;
-                xws.Indent = false;
+            var sb = new StringBuilder();
+            var xws = new XmlWriterSettings();
+            xws.OmitXmlDeclaration = true;
+            xws.Indent = false;
 
-                using (var xw = XmlWriter.Create(sb, xws))
-                {
-                    var doc = new XDocument();
+            using (var xw = XmlWriter.Create(sb, xws))
+            {
+                var doc = new XDocument();
 
-                    var details = new XElement("details");
-                    details.Add(new XElement("id", movie.Id));
-                    details.Add(new XElement("title", movie.Title));
-                    details.Add(new XElement("genre", string.Join(" / ", movie.Genres)));
-                    details.Add(new XElement("overview", movie.Overview));
+                var details = new XElement("details");
+                details.Add(new XElement("id", movie.Id));
+                details.Add(new XElement("title", movie.Title));
+                details.Add(new XElement("genre", string.Join(" / ", movie.Genres)));
+                details.Add(new XElement("overview", movie.Overview));
 
-                    doc.Add(details);
-                    doc.Save(xw);
+                doc.Add(details);
+                doc.Save(xw);
 
-                    xmlResult += doc.ToString();
-                    xmlResult += Environment.NewLine;
-                }
+                xmlResult += doc.ToString();
+                xmlResult += Environment.NewLine;
+            }
 
 
             var filename = GetMovieFileMetadataFilename(movieFile.RelativePath);

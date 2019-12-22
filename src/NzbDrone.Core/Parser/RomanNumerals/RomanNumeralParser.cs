@@ -21,13 +21,13 @@ namespace NzbDrone.Core.Parser.RomanNumerals
 
         private static void PopluateDictionariesReasonablyLarge()
         {
-            if(_simpleArabicNumeralMappings != null || _arabicRomanNumeralsMapping != null)
+            if (_simpleArabicNumeralMappings != null || _arabicRomanNumeralsMapping != null)
             {
                 return;
             }
             _arabicRomanNumeralsMapping = new HashSet<ArabicRomanNumeral>();
             _simpleArabicNumeralMappings = new Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>();
-            foreach (int arabicNumeral in Enumerable.Range(1,DICTIONARY_PREPOPULATION_SIZE +1))
+            foreach (int arabicNumeral in Enumerable.Range(1, DICTIONARY_PREPOPULATION_SIZE + 1))
             {
                 string romanNumeralAsString, arabicNumeralAsString;
                 GenerateRomanNumerals(arabicNumeral, out romanNumeralAsString, out arabicNumeralAsString);
@@ -71,8 +71,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             if (upToArabicNumber < DICTIONARY_PREPOPULATION_SIZE)
             {
                 return
-                    (HashSet<ArabicRomanNumeral>)
-                    new HashSet<ArabicRomanNumeral>(_arabicRomanNumeralsMapping).Take(upToArabicNumber);
+                    (HashSet<ArabicRomanNumeral>)new HashSet<ArabicRomanNumeral>(_arabicRomanNumeralsMapping).Take(upToArabicNumber);
             }
             if (upToArabicNumber >= DICTIONARY_PREPOPULATION_SIZE)
             {
@@ -107,8 +106,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 }
                 var moreSimpleNumerals = GenerateAdditionalSimpleNumerals(DICTIONARY_PREPOPULATION_SIZE, upToArabicNumer);
                 _simpleArabicNumeralMappings =
-                    (Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>)
-                    _simpleArabicNumeralMappings.Union(moreSimpleNumerals);
+                    (Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>)_simpleArabicNumeralMappings.Union(moreSimpleNumerals);
                 return take(_simpleArabicNumeralMappings, _arabicRomanNumeralsMapping.Count);
             }
             if (upToArabicNumer < DICTIONARY_PREPOPULATION_SIZE)
@@ -122,7 +120,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         private static Dictionary<SimpleArabicNumeral, SimpleRomanNumeral> GenerateAdditionalSimpleNumerals(int offset,
             int length)
         {
-            Dictionary<SimpleArabicNumeral,SimpleRomanNumeral> moreNumerals = new Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>();
+            Dictionary<SimpleArabicNumeral, SimpleRomanNumeral> moreNumerals = new Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>();
             foreach (int arabicNumeral in Enumerable.Range(offset, length))
             {
                 string romanNumeral;
@@ -130,7 +128,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 GenerateRomanNumerals(arabicNumeral, out romanNumeral, out arabicNumeralAsString);
                 SimpleArabicNumeral san = new SimpleArabicNumeral(arabicNumeral);
                 SimpleRomanNumeral srn = new SimpleRomanNumeral(romanNumeral);
-                moreNumerals.Add(san,srn);
+                moreNumerals.Add(san, srn);
             }
             return moreNumerals;
         }

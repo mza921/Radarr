@@ -58,17 +58,17 @@ namespace NzbDrone.Core.Test.Datastore.Migration
                 c.Insert.IntoTable("Series").Row(new
                 {
                     Tvdbid = 1,
-                    TvRageId =1,
-                    Title ="Title1",
-                    CleanTitle ="CleanTitle1",
-                    Status =1,
-                    Images ="",
-                    Path ="c:\\test",
-                    Monitored =1,
-                    SeasonFolder =1,
-                    Runtime= 0,
-                    SeriesType=0,
-                    UseSceneNumbering =0,
+                    TvRageId = 1,
+                    Title = "Title1",
+                    CleanTitle = "CleanTitle1",
+                    Status = 1,
+                    Images = "",
+                    Path = "c:\\test",
+                    Monitored = 1,
+                    SeasonFolder = 1,
+                    Runtime = 0,
+                    SeriesType = 0,
+                    UseSceneNumbering = 0,
                     LastInfoSync = "2000-01-01 00:00:00"
                 });
 

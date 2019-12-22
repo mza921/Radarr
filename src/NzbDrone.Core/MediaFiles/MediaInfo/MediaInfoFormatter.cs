@@ -42,7 +42,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
             var audioCodecID = mediaInfo.AudioCodecID ?? string.Empty;
             var audioProfile = mediaInfo.AudioProfile ?? string.Empty;
             var audioCodecLibrary = mediaInfo.AudioCodecLibrary ?? string.Empty;
-            var splitAdditionalFeatures = (mediaInfo.AudioAdditionalFeatures ?? string.Empty).Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            var splitAdditionalFeatures = (mediaInfo.AudioAdditionalFeatures ?? string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (audioFormat.Empty())
             {
@@ -460,7 +460,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
                     return Regex.Replace(audioChannelPositions, @"^\d+\sobjects", "",
                             RegexOptions.Compiled | RegexOptions.IgnoreCase)
                         .Replace("Object Based / ", "")
-                        .Split(new string[] {" / "}, StringSplitOptions.RemoveEmptyEntries)
+                        .Split(new string[] { " / " }, StringSplitOptions.RemoveEmptyEntries)
                         .FirstOrDefault()
                         ?.Split('/')
                         .Sum(s => decimal.Parse(s, CultureInfo.InvariantCulture));
@@ -527,7 +527,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
             return tokens.Last();
         }
 
-        private static readonly string[] ValidHdrTransferFunctions = {"PQ", "HLG"};
+        private static readonly string[] ValidHdrTransferFunctions = { "PQ", "HLG" };
         private const string ValidHdrColourPrimaries = "BT.2020";
 
         public static string FormatVideoDynamicRange(MediaInfoModel mediaInfo)

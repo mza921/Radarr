@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
-using Radarr.Http.REST;
+using NzbDrone.Core.DecisionEngine;
+using NzbDrone.Core.Indexers;
 using NzbDrone.Core.Languages;
 using NzbDrone.Core.Parser;
-using NzbDrone.Core.Qualities;
-using NzbDrone.Core.Indexers;
 using NzbDrone.Core.Parser.Model;
-using NzbDrone.Core.DecisionEngine;
-using System.Linq;
+using NzbDrone.Core.Qualities;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Indexers
 {

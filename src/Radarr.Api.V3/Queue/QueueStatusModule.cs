@@ -27,7 +27,7 @@ namespace Radarr.Api.V3.Queue
             _broadcastDebounce = new Debouncer(BroadcastChange, TimeSpan.FromSeconds(5));
 
 
-            Get("/",  x => GetQueueStatusResponse());
+            Get("/", x => GetQueueStatusResponse());
         }
 
         private object GetQueueStatusResponse()

@@ -35,11 +35,11 @@ namespace NzbDrone.Core.Test.IndexerTests.PTPTests
 
             Mocker.GetMock<IHttpClient>()
                   .Setup(o => o.Execute(It.Is<HttpRequest>(v => v.Method == HttpMethod.POST)))
-                  .Returns<HttpRequest>(r => new HttpResponse(r,new HttpHeader(), authStream.ToString()));
+                  .Returns<HttpRequest>(r => new HttpResponse(r, new HttpHeader(), authStream.ToString()));
 
             Mocker.GetMock<IHttpClient>()
                 .Setup(o => o.Execute(It.Is<HttpRequest>(v => v.Method == HttpMethod.GET)))
-                  .Returns<HttpRequest>(r => new HttpResponse(r, new HttpHeader {ContentType = HttpAccept.Json.Value}, responseJson));
+                  .Returns<HttpRequest>(r => new HttpResponse(r, new HttpHeader { ContentType = HttpAccept.Json.Value }, responseJson));
 
             var torrents = Subject.FetchRecent();
 

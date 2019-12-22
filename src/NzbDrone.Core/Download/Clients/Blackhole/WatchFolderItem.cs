@@ -1,5 +1,5 @@
-﻿using NzbDrone.Common.Disk;
-using System;
+﻿using System;
+using NzbDrone.Common.Disk;
 
 namespace NzbDrone.Core.Download.Clients.Blackhole
 {

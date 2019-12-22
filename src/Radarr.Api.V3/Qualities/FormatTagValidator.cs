@@ -19,7 +19,7 @@ namespace Radarr.Api.V3.Qualities
                 return false;
             }
 
-            var tags = (IEnumerable<string>) context.PropertyValue.ToString().Split(',');
+            var tags = (IEnumerable<string>)context.PropertyValue.ToString().Split(',');
 
             var invalidTags = tags.Where(t => !FormatTag.QualityTagRegex.IsMatch(t));
 

@@ -84,8 +84,7 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
                     "d.ratio=", // long
                     "d.is_open=", // long
                     "d.is_active=", // long
-                    "d.complete=") //long
-            );
+                    "d.complete=")); //long
 
             var items = new List<RTorrentTorrent>();
 

@@ -217,11 +217,16 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         private static void RangeGuard(int number)
         {
             if (number > MaxValue)
+            {
                 throw new ArgumentOutOfRangeException(nameof(number), number,
                 $"Roman numerals can not be larger than {MaxValue}.");
+            }
+
             if (number < MinValue)
+            {
                 throw new ArgumentOutOfRangeException(nameof(number), number,
                 $"Roman numerals can not be smaller than {MinValue}.");
+            }
         }
 
         #endregion

@@ -19,7 +19,7 @@ namespace NzbDrone.Api.Qualities
                 return false;
             }
 
-            var tags = (IEnumerable<string>) context.PropertyValue;
+            var tags = (IEnumerable<string>)context.PropertyValue;
 
             var invalidTags = tags.Where(t => !FormatTag.QualityTagRegex.IsMatch(t));
 

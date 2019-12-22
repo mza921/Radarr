@@ -128,19 +128,19 @@ namespace NzbDrone.Core.Blacklisting
         public void Handle(DownloadFailedEvent message)
         {
             var blacklist = new Blacklist
-                            {
-                                MovieId = message.MovieId,
-                                SourceTitle = message.SourceTitle,
-                                Quality = message.Quality,
-                                Date = DateTime.UtcNow,
-                                PublishedDate = DateTime.Parse(message.Data.GetValueOrDefault("publishedDate")),
-                                Size = long.Parse(message.Data.GetValueOrDefault("size", "0")),
-                                Indexer = message.Data.GetValueOrDefault("indexer"),
-                                Protocol = (DownloadProtocol)Convert.ToInt32(message.Data.GetValueOrDefault("protocol")),
-                                Message = message.Message,
-                                TorrentInfoHash = message.Data.GetValueOrDefault("torrentInfoHash"),
-                                Languages = message.Languages
-                            };
+            {
+                MovieId = message.MovieId,
+                SourceTitle = message.SourceTitle,
+                Quality = message.Quality,
+                Date = DateTime.UtcNow,
+                PublishedDate = DateTime.Parse(message.Data.GetValueOrDefault("publishedDate")),
+                Size = long.Parse(message.Data.GetValueOrDefault("size", "0")),
+                Indexer = message.Data.GetValueOrDefault("indexer"),
+                Protocol = (DownloadProtocol)Convert.ToInt32(message.Data.GetValueOrDefault("protocol")),
+                Message = message.Message,
+                TorrentInfoHash = message.Data.GetValueOrDefault("torrentInfoHash"),
+                Languages = message.Languages
+            };
 
             _blacklistRepository.Insert(blacklist);
         }

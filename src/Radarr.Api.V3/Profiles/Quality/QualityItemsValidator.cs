@@ -179,7 +179,6 @@ namespace Radarr.Api.V3.Profiles.Quality
                         qualityIds.Add(quality.Quality.Id);
                     }
                 }
-
                 else
                 {
                     if (qualityIds.Contains(item.Quality.Id))

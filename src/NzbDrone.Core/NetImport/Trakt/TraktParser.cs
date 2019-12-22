@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using NzbDrone.Core.NetImport.Exceptions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net;
+using Newtonsoft.Json;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.NetImport.Exceptions;
 
 namespace NzbDrone.Core.NetImport.Trakt
 {
@@ -27,7 +27,7 @@ namespace NzbDrone.Core.NetImport.Trakt
                 return movies;
             }
 
-            if (_settings.ListType == (int) TraktListType.Popular)
+            if (_settings.ListType == (int)TraktListType.Popular)
             {
                 var jsonResponse = JsonConvert.DeserializeObject<List<Movie>>(_importResponse.Content);
 

@@ -34,7 +34,7 @@ namespace NzbDrone.Core.Indexers.TorrentPotato
 
                 torrentInfo.Guid = GetGuid(torrent);
                 torrentInfo.Title = torrent.release_name;
-                torrentInfo.Size = (long)torrent.size*1000*1000;
+                torrentInfo.Size = (long)torrent.size * 1000 * 1000;
                 torrentInfo.DownloadUrl = torrent.download_url;
                 torrentInfo.InfoUrl = torrent.details_url;
                 torrentInfo.PublishDate = torrent.publish_date.ToUniversalTime();

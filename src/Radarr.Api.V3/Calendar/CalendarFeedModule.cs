@@ -1,4 +1,3 @@
-using Nancy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +5,11 @@ using Ical.Net;
 using Ical.Net.CalendarComponents;
 using Ical.Net.DataTypes;
 using Ical.Net.Serialization;
-using NzbDrone.Core.Movies;
+using Nancy;
 using Nancy.Responses;
-using NzbDrone.Core.Tags;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Tags;
 
 namespace Radarr.Api.V3.Calendar
 {
@@ -24,7 +24,7 @@ namespace Radarr.Api.V3.Calendar
             _movieService = movieService;
             _tagService = tagService;
 
-            Get("/Radarr.ics",  options => GetCalendarFeed());
+            Get("/Radarr.ics", options => GetCalendarFeed());
         }
 
         private object GetCalendarFeed()

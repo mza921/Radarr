@@ -41,7 +41,7 @@ namespace Radarr.Http
 
             if (action == ModelAction.Deleted)
             {
-                BroadcastResourceChange(action, new TResource {Id = id});
+                BroadcastResourceChange(action, new TResource { Id = id });
             }
             else
             {
@@ -57,11 +57,11 @@ namespace Radarr.Http
             if (GetType().Namespace.Contains("V3"))
             {
                 var signalRMessage = new SignalRMessage
-                                     {
-                                         Name = Resource,
-                                         Body = new ResourceChangeMessage<TResource>(resource, action),
-                                         Action = action
-                                     };
+                {
+                    Name = Resource,
+                    Body = new ResourceChangeMessage<TResource>(resource, action),
+                    Action = action
+                };
 
                 _signalRBroadcaster.BroadcastMessage(signalRMessage);
             }
@@ -74,11 +74,11 @@ namespace Radarr.Http
             if (GetType().Namespace.Contains("V3"))
             {
                 var signalRMessage = new SignalRMessage
-                                     {
-                                         Name = Resource,
-                                         Body = new ResourceChangeMessage<TResource>(action),
-                                         Action = action
-                                     };
+                {
+                    Name = Resource,
+                    Body = new ResourceChangeMessage<TResource>(action),
+                    Action = action
+                };
 
                 _signalRBroadcaster.BroadcastMessage(signalRMessage);
             }

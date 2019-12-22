@@ -151,7 +151,7 @@ namespace NzbDrone.Common
 
         public ServiceControllerStatus GetStatus(string serviceName)
         {
-          return  GetService(serviceName).Status;
+            return GetService(serviceName).Status;
         }
 
         public void Start(string serviceName)

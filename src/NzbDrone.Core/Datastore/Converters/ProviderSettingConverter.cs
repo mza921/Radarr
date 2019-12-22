@@ -26,7 +26,7 @@ namespace NzbDrone.Core.Datastore.Converters
             var contract = context.DataRecord.GetString(ordinal);
 
 
-            var impType = typeof (IProviderConfig).Assembly.FindTypeByName(contract);
+            var impType = typeof(IProviderConfig).Assembly.FindTypeByName(contract);
 
             if (impType == null)
             {

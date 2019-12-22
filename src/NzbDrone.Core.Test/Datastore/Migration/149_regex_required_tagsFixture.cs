@@ -15,7 +15,7 @@ namespace NzbDrone.Core.Test.Datastore.Migration
 
         public void AddCustomFormat(convert_regex_required_tags c, string name, params string[] formatTags)
         {
-            var customFormat = new {Name = name, FormatTags = formatTags.ToList().ToJson()};
+            var customFormat = new { Name = name, FormatTags = formatTags.ToList().ToJson() };
 
             c.Insert.IntoTable("CustomFormats").Row(customFormat);
         }
@@ -51,7 +51,7 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             var convertedTags = items.First().DeserializedTags;
 
             convertedTags.Should().HaveCount(3);
-            convertedTags.Should().BeEquivalentTo( "C_RQ_HDR", "C_RX_HDR", "E_NRXRQ_Director");
+            convertedTags.Should().BeEquivalentTo("C_RQ_HDR", "C_RX_HDR", "E_NRXRQ_Director");
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             var convertedTags = items.First().DeserializedTags;
 
             convertedTags.Should().HaveCount(3);
-            convertedTags.Should().BeEquivalentTo( "C_RQ_HDR", "C_RX_HDR", "E_NRXRQ_Director");
+            convertedTags.Should().BeEquivalentTo("C_RQ_HDR", "C_RX_HDR", "E_NRXRQ_Director");
 
             var convertedTags2 = items.Last().DeserializedTags;
 

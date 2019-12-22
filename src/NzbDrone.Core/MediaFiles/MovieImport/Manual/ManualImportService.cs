@@ -183,7 +183,7 @@ namespace NzbDrone.Core.MediaFiles.MovieImport.Manual
                 return MapItem(new ImportDecision(localMovie, new Rejection("Unknown Movie")), rootFolder, downloadId, null);
             }
 
-            var importDecisions = _importDecisionMaker.GetImportDecisions(new List<string> {file}, movie, downloadClientItem, null, SceneSource(movie, baseFolder));
+            var importDecisions = _importDecisionMaker.GetImportDecisions(new List<string> { file }, movie, downloadClientItem, null, SceneSource(movie, baseFolder));
 
             if (importDecisions.Any())
             {
@@ -288,10 +288,10 @@ namespace NzbDrone.Core.MediaFiles.MovieImport.Manual
                     imported.Add(importResult);
 
                     importedTrackedDownload.Add(new ManuallyImportedFile
-                                                {
-                                                    TrackedDownload = trackedDownload,
-                                                    ImportResult = importResult
-                                                });
+                    {
+                        TrackedDownload = trackedDownload,
+                        ImportResult = importResult
+                    });
                 }
             }
 

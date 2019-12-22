@@ -25,7 +25,7 @@ namespace NzbDrone.Api.History
             _failedDownloadService = failedDownloadService;
             GetResourcePaged = GetHistory;
 
-            Post("/failed",  x => MarkAsFailed());
+            Post("/failed", x => MarkAsFailed());
         }
 
         protected HistoryResource MapToResource(Core.History.History model)

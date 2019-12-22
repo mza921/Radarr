@@ -61,8 +61,8 @@ namespace NzbDrone.Core.Test.NotificationTests.Xbmc
 
             Subject.UpdateMovie(_settings, fakeMovie);
 
-             Mocker.GetMock<IXbmcJsonApiProxy>()
-                   .Verify(v => v.UpdateLibrary(_settings, null), Times.Once());
+            Mocker.GetMock<IXbmcJsonApiProxy>()
+                  .Verify(v => v.UpdateLibrary(_settings, null), Times.Once());
         }
     }
 }

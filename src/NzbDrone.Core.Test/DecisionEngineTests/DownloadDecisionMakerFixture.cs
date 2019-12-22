@@ -51,12 +51,13 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _fail3.Setup(c => c.IsSatisfiedBy(It.IsAny<RemoteMovie>(), null)).Returns(Decision.Reject("fail3"));
 
             _reports = new List<ReleaseInfo> { new ReleaseInfo { Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT" } };
-            _remoteEpisode = new RemoteMovie {
+            _remoteEpisode = new RemoteMovie
+            {
                 Movie = new Movie(),
                 ParsedMovieInfo = new ParsedMovieInfo()
             };
 
-            _mappingResult = new MappingResult {Movie = new Movie(), MappingResultType = MappingResultType.Success};
+            _mappingResult = new MappingResult { Movie = new Movie(), MappingResultType = MappingResultType.Success };
             _mappingResult.RemoteMovie = _remoteEpisode;
 
 

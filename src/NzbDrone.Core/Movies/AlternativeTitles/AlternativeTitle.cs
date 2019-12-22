@@ -51,7 +51,7 @@ namespace NzbDrone.Core.Movies.AlternativeTitles
                 return false;
             }
 
-            return item.CleanTitle == this.CleanTitle;
+            return item.CleanTitle == CleanTitle;
         }
 
         public override int GetHashCode()

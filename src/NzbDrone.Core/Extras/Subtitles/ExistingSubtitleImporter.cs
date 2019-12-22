@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Extras.Subtitles
         public ExistingSubtitleImporter(IExtraFileService<SubtitleFile> subtitleFileService,
                                         IParsingService parsingService,
                                         Logger logger)
-            : base (subtitleFileService)
+            : base(subtitleFileService)
         {
             _subtitleFileService = subtitleFileService;
             _parsingService = parsingService;
@@ -49,13 +49,13 @@ namespace NzbDrone.Core.Extras.Subtitles
                     }
 
                     var subtitleFile = new SubtitleFile
-                                       {
-                                           MovieId = movie.Id,
-                                           MovieFileId = movie.MovieFileId,
-                                           RelativePath = movie.Path.GetRelativePath(possibleSubtitleFile),
-                                           Language = LanguageParser.ParseSubtitleLanguage(possibleSubtitleFile),
-                                           Extension = extension
-                                       };
+                    {
+                        MovieId = movie.Id,
+                        MovieFileId = movie.MovieFileId,
+                        RelativePath = movie.Path.GetRelativePath(possibleSubtitleFile),
+                        Language = LanguageParser.ParseSubtitleLanguage(possibleSubtitleFile),
+                        Extension = extension
+                    };
 
                     subtitleFiles.Add(subtitleFile);
                 }

@@ -38,7 +38,9 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
         {
             var table = new TableDefinition();
 
-            while (reader.Read() != SqliteSyntaxReader.TokenType.StringToken || reader.ValueToUpper != "TABLE") ;
+            while (reader.Read() != SqliteSyntaxReader.TokenType.StringToken || reader.ValueToUpper != "TABLE")
+            {
+            }
 
             if (reader.Read() == SqliteSyntaxReader.TokenType.StringToken && reader.ValueToUpper == "IF")
             {

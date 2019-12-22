@@ -65,7 +65,6 @@ namespace Radarr.Http.Frontend.Mappers
                 {
                     url = match.Groups["path"].Value;
                 }
-
                 else
                 {
                     url = cacheBreakProvider.AddCacheBreakerToPath(match.Groups["path"].Value);

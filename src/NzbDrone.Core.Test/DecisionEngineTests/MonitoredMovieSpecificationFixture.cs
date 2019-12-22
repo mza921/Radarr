@@ -79,7 +79,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         public void should_return_true_for_single_episode_search()
         {
             _fakeSeries.Monitored = false;
-            _monitoredEpisodeSpecification.IsSatisfiedBy(_parseResultSingle, new MovieSearchCriteria {UserInvokedSearch = true}).Accepted.Should().BeTrue();
+            _monitoredEpisodeSpecification.IsSatisfiedBy(_parseResultSingle, new MovieSearchCriteria { UserInvokedSearch = true }).Accepted.Should().BeTrue();
         }
 
     }

@@ -30,7 +30,7 @@ namespace NzbDrone.Api.Config
             GetResourceById = GetNamingConfig;
             UpdateResource = UpdateNamingConfig;
 
-            Get("/samples",  x => GetExamples(this.Bind<NamingConfigResource>()));
+            Get("/samples", x => GetExamples(this.Bind<NamingConfigResource>()));
 
             SharedValidator.RuleFor(c => c.MultiEpisodeStyle).InclusiveBetween(0, 5);
             SharedValidator.RuleFor(c => c.StandardMovieFormat).ValidMovieFormat();

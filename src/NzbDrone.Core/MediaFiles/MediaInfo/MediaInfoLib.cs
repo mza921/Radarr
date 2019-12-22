@@ -55,8 +55,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
         FileOption_NoRecursive = 0x01,
         FileOption_CloseAll = 0x02,
         FileOption_Max = 0x04
-    };
-
+    }
 
     public class MediaInfo : IDisposable
     {
@@ -132,7 +131,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
                     return;
                 }
 
-                throw new NotSupportedException("Unsupported MediaInfoLib encoding, version check responses (may be gibberish, show it to the Sonarr devs): " + responses.Join(", ") );
+                throw new NotSupportedException("Unsupported MediaInfoLib encoding, version check responses (may be gibberish, show it to the Sonarr devs): " + responses.Join(", "));
             }
         }
 
@@ -233,7 +232,8 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
                         seekStart = seekPos;
                         MediaInfo_Open_Buffer_Init(_handle, stream.Length, seekPos);
                     }
-                } while (bufferRead > 0);
+                }
+                while (bufferRead > 0);
 
                 MediaInfo_Open_Buffer_Finalize(_handle);
 

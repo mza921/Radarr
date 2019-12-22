@@ -47,7 +47,7 @@ namespace NzbDrone.Core.NetImport
 
                 yield return new NetImportDefinition
                 {
-                    Name = this.Name,
+                    Name = Name,
                     Enabled = config.Validate().IsValid && Enabled,
                     EnableAuto = true,
                     ProfileId = 1,

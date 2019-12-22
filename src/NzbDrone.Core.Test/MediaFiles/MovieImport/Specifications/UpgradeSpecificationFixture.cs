@@ -26,11 +26,11 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
                                      .Build();
 
             _localMovie = new LocalMovie()
-                                {
-                                    Path = @"C:\Test\30 Rock\30.rock.s01e01.avi",
-                                    Quality = new QualityModel(Quality.HDTV720p, new Revision(version: 1)),
-                                    Movie = _movie
-                                };
+            {
+                Path = @"C:\Test\30 Rock\30.rock.s01e01.avi",
+                Quality = new QualityModel(Quality.HDTV720p, new Revision(version: 1)),
+                Movie = _movie
+            };
         }
 
         [Test]

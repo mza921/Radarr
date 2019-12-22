@@ -30,7 +30,7 @@ namespace NzbDrone.Core.Parser.Model
         public List<Language> Languages = new List<Language>();
         public string ReleaseGroup { get; set; }
         public string ReleaseHash { get; set; }
-        public string Edition { get; set;}
+        public string Edition { get; set; }
         public int Year { get; set; }
         public string ImdbId { get; set; }
 

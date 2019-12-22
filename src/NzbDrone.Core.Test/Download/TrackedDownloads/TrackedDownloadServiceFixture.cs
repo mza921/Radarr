@@ -52,7 +52,7 @@ namespace NzbDrone.Core.Test.Download.TrackedDownloads
 
             Mocker.GetMock<IParsingService>()
                   .Setup(s => s.Map(It.Is<ParsedMovieInfo>(i => i.MovieTitle == "A Movie"), It.IsAny<string>(), null))
-                  .Returns(new MappingResult{RemoteMovie = remoteEpisode});
+                  .Returns(new MappingResult { RemoteMovie = remoteEpisode });
 
             ParseMovieTitle();
 

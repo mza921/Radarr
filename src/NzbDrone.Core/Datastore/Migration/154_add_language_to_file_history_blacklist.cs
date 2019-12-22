@@ -1,16 +1,19 @@
-using System.Data;
-using FluentMigrator;
-using NzbDrone.Core.Datastore.Migration.Framework;
-using NzbDrone.Core.Datastore.Converters;
-using NzbDrone.Core.Languages;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using FluentMigrator;
+using NzbDrone.Core.Datastore.Converters;
+using NzbDrone.Core.Datastore.Migration.Framework;
+using NzbDrone.Core.Languages;
 
 namespace NzbDrone.Core.Datastore.Migration
 {
     // this is here to resolve ambiguity in GetValueOrDefault extension method in net core 3
+#pragma warning disable SA1200
     using NzbDrone.Common.Extensions;
+#pragma warning restore SA1200
+
 
     [Migration(154)]
     public class add_language_to_files_history_blacklist : NzbDroneMigrationBase

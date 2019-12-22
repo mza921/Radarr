@@ -24,15 +24,15 @@ namespace NzbDrone.Core.Datastore.Migration
                   .WithColumn("Tags").AsString().NotNullable();
 
             Insert.IntoTable("DelayProfiles").Row(new
-                                                  {
-                                                      EnableUsenet = 1,
-                                                      EnableTorrent = 1,
-                                                      PreferredProtocol = 1,
-                                                      UsenetDelay = 0,
-                                                      TorrentDelay = 0,
-                                                      Order = int.MaxValue,
-                                                      Tags = "[]"
-                                                  });
+            {
+                EnableUsenet = 1,
+                EnableTorrent = 1,
+                PreferredProtocol = 1,
+                UsenetDelay = 0,
+                TorrentDelay = 0,
+                Order = int.MaxValue,
+                Tags = "[]"
+            });
 
             Execute.WithConnection(ConvertProfile);
 

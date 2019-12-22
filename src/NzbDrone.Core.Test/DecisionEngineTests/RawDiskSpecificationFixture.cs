@@ -20,10 +20,10 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _remoteMovie = new RemoteMovie
             {
                 Release = new ReleaseInfo
-                          {
-                              Title = "Movie.title.1998",
-                              DownloadProtocol = DownloadProtocol.Torrent
-                          }
+                {
+                    Title = "Movie.title.1998",
+                    DownloadProtocol = DownloadProtocol.Torrent
+                }
             };
         }
 

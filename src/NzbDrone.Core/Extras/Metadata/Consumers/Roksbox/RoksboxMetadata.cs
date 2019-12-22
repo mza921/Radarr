@@ -61,11 +61,11 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Roksbox
             var parentdir = Directory.GetParent(path);
 
             var metadata = new MetadataFile
-                           {
-                               MovieId = movie.Id,
-                               Consumer = GetType().Name,
-                               RelativePath = movie.Path.GetRelativePath(path)
-                           };
+            {
+                MovieId = movie.Id,
+                Consumer = GetType().Name,
+                RelativePath = movie.Path.GetRelativePath(path)
+            };
 
             var parseResult = Parser.Parser.ParseMovieTitle(filename, false);
 
@@ -103,28 +103,28 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Roksbox
 
             var xmlResult = string.Empty;
 
-                var sb = new StringBuilder();
-                var xws = new XmlWriterSettings();
-                xws.OmitXmlDeclaration = true;
-                xws.Indent = false;
+            var sb = new StringBuilder();
+            var xws = new XmlWriterSettings();
+            xws.OmitXmlDeclaration = true;
+            xws.Indent = false;
 
-                using (var xw = XmlWriter.Create(sb, xws))
-                {
-                    var doc = new XDocument();
+            using (var xw = XmlWriter.Create(sb, xws))
+            {
+                var doc = new XDocument();
 
-                    var details = new XElement("video");
-                    details.Add(new XElement("title", movie.Title));
+                var details = new XElement("video");
+                details.Add(new XElement("title", movie.Title));
 
-                    details.Add(new XElement("genre", string.Join(" / ", movie.Genres)));
-                    details.Add(new XElement("description", movie.Overview));
-                    details.Add(new XElement("length", movie.Runtime));
+                details.Add(new XElement("genre", string.Join(" / ", movie.Genres)));
+                details.Add(new XElement("description", movie.Overview));
+                details.Add(new XElement("length", movie.Runtime));
 
-                    doc.Add(details);
-                    doc.Save(xw);
+                doc.Add(details);
+                doc.Save(xw);
 
-                    xmlResult += doc.ToString();
-                    xmlResult += Environment.NewLine;
-                }
+                xmlResult += doc.ToString();
+                xmlResult += Environment.NewLine;
+            }
 
 
             return new MetadataFileResult(GetMovieFileMetadataFilename(movieFile.RelativePath), xmlResult.Trim(Environment.NewLine.ToCharArray()));

@@ -1,9 +1,9 @@
-﻿using NLog;
+﻿using System.Collections.Generic;
+using NLog;
 using NzbDrone.Core.IndexerSearch;
 using NzbDrone.Core.MediaFiles.Events;
 using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Messaging.Events;
-using System.Collections.Generic;
 
 namespace NzbDrone.Core.Movies
 {
@@ -16,7 +16,7 @@ namespace NzbDrone.Core.Movies
 
         private readonly Logger _logger;
 
-        public MovieScannedHandler( IMovieService movieService,
+        public MovieScannedHandler(IMovieService movieService,
                                     IManageCommandQueue commandQueueManager,
                                     Logger logger)
         {

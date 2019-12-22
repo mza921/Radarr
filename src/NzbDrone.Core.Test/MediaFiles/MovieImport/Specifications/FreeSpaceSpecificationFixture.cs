@@ -23,17 +23,17 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
         [SetUp]
         public void Setup()
         {
-             _rootFolder = @"C:\Test\TV".AsOsAgnostic();
+            _rootFolder = @"C:\Test\TV".AsOsAgnostic();
 
             _movie = Builder<Movie>.CreateNew()
                 .With(s => s.Path = Path.Combine(_rootFolder, "30 Rock"))
                 .Build();
 
             _localMovie = new LocalMovie()
-                                {
-                                    Path = @"C:\Test\Unsorted\30 Rock\30.rock.s01e01.avi".AsOsAgnostic(),
-                                    Movie = _movie
-                                };
+            {
+                Path = @"C:\Test\Unsorted\30 Rock\30.rock.s01e01.avi".AsOsAgnostic(),
+                Movie = _movie
+            };
         }
 
         private void GivenFileSize(long size)

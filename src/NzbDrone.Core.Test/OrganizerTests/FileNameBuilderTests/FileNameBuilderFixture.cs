@@ -68,7 +68,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         {
             _namingConfig.StandardMovieFormat = "{Movie_Title}";
 
-            Subject.BuildFileName( _movie, _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("South_Park");
         }
 
@@ -77,7 +77,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         {
             _namingConfig.StandardMovieFormat = "{Movie.Title}";
 
-            Subject.BuildFileName( _movie, _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("South.Park");
         }
 
@@ -86,7 +86,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         {
             _namingConfig.StandardMovieFormat = "{Movie-Title}";
 
-            Subject.BuildFileName( _movie, _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("South-Park");
         }
 
@@ -95,7 +95,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         {
             _namingConfig.StandardMovieFormat = "{MOVIE TITLE}";
 
-            Subject.BuildFileName( _movie, _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("SOUTH PARK");
         }
 
@@ -113,7 +113,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         {
             _namingConfig.StandardMovieFormat = "{movie title}";
 
-            Subject.BuildFileName( _movie, _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("south park");
         }
 
@@ -347,7 +347,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_not_include_quality_proper_when_release_is_not_a_proper()
         {
-            _namingConfig.StandardMovieFormat= "{Quality Title} {Quality Proper}";
+            _namingConfig.StandardMovieFormat = "{Quality Title} {Quality Proper}";
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("HDTV-720p");
@@ -356,7 +356,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_wrap_proper_in_square_brackets()
         {
-            _namingConfig.StandardMovieFormat= "{Movie Title} [{Quality Title}] {[Quality Proper]}";
+            _namingConfig.StandardMovieFormat = "{Movie Title} [{Quality Title}] {[Quality Proper]}";
 
             GivenProper();
 
@@ -367,7 +367,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_not_wrap_proper_in_square_brackets_when_not_a_proper()
         {
-            _namingConfig.StandardMovieFormat= "{Movie Title} [{Quality Title}] {[Quality Proper]}";
+            _namingConfig.StandardMovieFormat = "{Movie Title} [{Quality Title}] {[Quality Proper]}";
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("South Park [HDTV-720p]");
@@ -376,7 +376,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_replace_quality_full_with_quality_title_only_when_not_a_proper()
         {
-            _namingConfig.StandardMovieFormat= "{Movie Title} [{Quality Full}]";
+            _namingConfig.StandardMovieFormat = "{Movie Title} [{Quality Full}]";
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("South Park [HDTV-720p]");
@@ -385,7 +385,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_replace_quality_full_with_quality_title_and_proper_only_when_a_proper()
         {
-            _namingConfig.StandardMovieFormat= "{Movie Title} [{Quality Full}]";
+            _namingConfig.StandardMovieFormat = "{Movie Title} [{Quality Full}]";
 
             GivenProper();
 
@@ -396,7 +396,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [Test]
         public void should_replace_quality_full_with_quality_title_and_real_when_a_real()
         {
-            _namingConfig.StandardMovieFormat= "{Movie Title} [{Quality Full}]";
+            _namingConfig.StandardMovieFormat = "{Movie Title} [{Quality Full}]";
             GivenReal();
 
             Subject.BuildFileName(_movie, _movieFile)
@@ -409,7 +409,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [TestCase('_')]
         public void should_trim_extra_separators_from_end_when_quality_proper_is_not_included(char separator)
         {
-            _namingConfig.StandardMovieFormat= string.Format("{{Quality{0}Title}}{0}{{Quality{0}Proper}}", separator);
+            _namingConfig.StandardMovieFormat = string.Format("{{Quality{0}Title}}{0}{{Quality{0}Proper}}", separator);
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("HDTV-720p");
@@ -421,7 +421,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [TestCase('_')]
         public void should_trim_extra_separators_from_middle_when_quality_proper_is_not_included(char separator)
         {
-            _namingConfig.StandardMovieFormat= string.Format("{{Quality{0}Title}}{0}{{Quality{0}Proper}}{0}{{Movie{0}Title}}", separator);
+            _namingConfig.StandardMovieFormat = string.Format("{{Quality{0}Title}}{0}{{Quality{0}Proper}}{0}{{Movie{0}Title}}", separator);
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(string.Format("HDTV-720p{0}South{0}Park", separator));
@@ -431,7 +431,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         public void should_be_able_to_use_original_filename()
         {
             _movie.Title = "30 Rock";
-            _namingConfig.StandardMovieFormat= "{Movie Title} - {Original Filename}";
+            _namingConfig.StandardMovieFormat = "{Movie Title} - {Original Filename}";
 
             _movieFile.SceneName = "30.Rock.S01E01.xvid-LOL";
             _movieFile.RelativePath = "30 Rock - S01E01 - Test";
@@ -444,7 +444,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         public void should_be_able_to_use_original_filename_only()
         {
             _movie.Title = "30 Rock";
-            _namingConfig.StandardMovieFormat= "{Original Filename}";
+            _namingConfig.StandardMovieFormat = "{Original Filename}";
 
             _movieFile.SceneName = "30.Rock.S01E01.xvid-LOL";
             _movieFile.RelativePath = "30 Rock - S01E01 - Test";
@@ -457,7 +457,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         public void should_use_Sonarr_as_release_group_when_not_available()
         {
             _movieFile.ReleaseGroup = null;
-            _namingConfig.StandardMovieFormat= "{Release Group}";
+            _namingConfig.StandardMovieFormat = "{Release Group}";
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("Radarr");
@@ -469,7 +469,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         public void should_not_use_Sonarr_as_release_group_if_pattern_has_separator(string pattern, string expectedFileName)
         {
             _movieFile.ReleaseGroup = null;
-            _namingConfig.StandardMovieFormat= pattern;
+            _namingConfig.StandardMovieFormat = pattern;
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(expectedFileName);
@@ -481,7 +481,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         public void should_use_existing_casing_for_release_group(string releaseGroup)
         {
             _movieFile.ReleaseGroup = releaseGroup;
-            _namingConfig.StandardMovieFormat= "{Release Group}";
+            _namingConfig.StandardMovieFormat = "{Release Group}";
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(releaseGroup);
@@ -499,7 +499,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             _namingConfig.StandardMovieFormat = "{MediaInfo AudioLanguages}";
 
 
-            Subject.BuildFileName( _movie , _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(expected);
         }
 
@@ -515,7 +515,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             _namingConfig.StandardMovieFormat = "{MediaInfo AudioLanguagesAll}";
 
 
-            Subject.BuildFileName( _movie , _movieFile)
+            Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(expected);
         }
 
@@ -543,7 +543,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 
             GivenMediaInfoModel(schemaRevision: 3);
 
-            Subject.BuildFileName( _movie, _movieFile);
+            Subject.BuildFileName(_movie, _movieFile);
 
             Mocker.GetMock<IUpdateMediaInfo>().Verify(v => v.Update(_movieFile, _movie), Times.Once());
         }
@@ -557,7 +557,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             GivenMediaInfoModel(schemaRevision: 3);
             _movie.Path = null;
 
-            Subject.BuildFileName( _movie, _movieFile);
+            Subject.BuildFileName(_movie, _movieFile);
 
             Mocker.GetMock<IUpdateMediaInfo>().Verify(v => v.Update(_movieFile, _movie), Times.Never());
         }
@@ -570,7 +570,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 
             GivenMediaInfoModel(schemaRevision: 3);
 
-            Subject.BuildFileName( _movie, _movieFile);
+            Subject.BuildFileName(_movie, _movieFile);
 
             Mocker.GetMock<IUpdateMediaInfo>().Verify(v => v.Update(_movieFile, _movie), Times.Never());
         }
@@ -583,7 +583,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 
             GivenMediaInfoModel(schemaRevision: 5);
 
-            Subject.BuildFileName( _movie, _movieFile);
+            Subject.BuildFileName(_movie, _movieFile);
 
             Mocker.GetMock<IUpdateMediaInfo>().Verify(v => v.Update(_movieFile, _movie), Times.Never());
         }

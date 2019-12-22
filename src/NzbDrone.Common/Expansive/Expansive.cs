@@ -106,12 +106,12 @@ namespace NzbDrone.Common.Expansive
         private static void Initialize()
         {
             _patternStyle = new PatternStyle
-                {
-                    TokenMatchPattern = @"\{[a-zA-Z]\w*\}",
-                    TokenReplaceFilter = token => token.Replace("{", "").Replace("}", ""),
-                    OutputFilter = output => (output.StartsWith("{") && output.EndsWith("}") ? output : @"\{" + output + @"\}"),
-                    TokenFilter = tokens => "{(" + tokens + ")}"
-                };
+            {
+                TokenMatchPattern = @"\{[a-zA-Z]\w*\}",
+                TokenReplaceFilter = token => token.Replace("{", "").Replace("}", ""),
+                OutputFilter = output => (output.StartsWith("{") && output.EndsWith("}") ? output : @"\{" + output + @"\}"),
+                TokenFilter = tokens => "{(" + tokens + ")}"
+            };
         }
 
         private static string ExpandInternal(this string source, Func<string, string> expansionFactory)
@@ -139,9 +139,11 @@ namespace NzbDrone.Common.Expansive
 
                     // if we have already encountered this token in this call tree, we have a circular reference
                     if (thisNode.CallTree.Contains(token))
+                    {
                         throw new CircularReferenceException(string.Format("Circular Reference Detected for token '{0}'. Call Tree: {1}->{2}",
                                                                            token,
                                                                            string.Join("->", thisNode.CallTree.ToArray().Reverse()), token));
+                    }
 
                     // expand this match
                     var expandedValue = expansionFactory(token);

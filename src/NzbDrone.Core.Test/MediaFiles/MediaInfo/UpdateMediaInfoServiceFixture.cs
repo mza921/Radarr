@@ -23,10 +23,10 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaInfo
         public void Setup()
         {
             _movie = new Movie
-                      {
-                          Id = 1,
-                          Path = @"C:\movie".AsOsAgnostic()
-                      };
+            {
+                Id = 1,
+                Path = @"C:\movie".AsOsAgnostic()
+            };
 
             Mocker.GetMock<IConfigService>()
                   .SetupGet(s => s.EnableMediaInfo)
@@ -240,7 +240,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaInfo
         {
             var movieFile = Builder<MovieFile>.CreateNew()
                 .With(v => v.RelativePath = "media.mkv")
-                .With(e => e.MediaInfo = new MediaInfoModel{SchemaRevision = 3})
+                .With(e => e.MediaInfo = new MediaInfoModel { SchemaRevision = 3 })
                 .Build();
 
             GivenFileExists();
@@ -260,7 +260,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaInfo
         {
             var movieFile = Builder<MovieFile>.CreateNew()
                 .With(v => v.RelativePath = "media.mkv")
-                .With(e => e.MediaInfo = new MediaInfoModel{SchemaRevision = 3})
+                .With(e => e.MediaInfo = new MediaInfoModel { SchemaRevision = 3 })
                 .Build();
 
             GivenFileExists();
@@ -276,7 +276,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaInfo
         {
             var movieFile = Builder<MovieFile>.CreateNew()
                 .With(v => v.RelativePath = "media.mkv")
-                .With(e => e.MediaInfo = new MediaInfoModel{SchemaRevision = 3})
+                .With(e => e.MediaInfo = new MediaInfoModel { SchemaRevision = 3 })
                 .Build();
 
             GivenFileExists();

@@ -30,7 +30,7 @@ namespace NzbDrone.Core.Configuration
 
             if (dbValue == null)
             {
-                return Insert(new Config {Key = key, Value = value});
+                return Insert(new Config { Key = key, Value = value });
             }
 
             dbValue.Value = value;

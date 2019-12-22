@@ -206,7 +206,7 @@ namespace NzbDrone.Integration.Test
                 {
                     Console.WriteLine("Connecting to signalR");
 
-                        await _signalrConnection.StartAsync();
+                    await _signalrConnection.StartAsync();
                     connected = true;
                     break;
                 }

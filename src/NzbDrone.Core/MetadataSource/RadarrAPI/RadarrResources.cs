@@ -41,7 +41,7 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
             {
                 return $"{error.Title} ({error.Status}, RayId: {error.RayId}), Details: {error.Detail}";
             }));
-           return $"Error while calling api: {firstError.Title}\nFull error(s): {details}";
+            return $"Error while calling api: {firstError.Title}\nFull error(s): {details}";
         }
     }
 

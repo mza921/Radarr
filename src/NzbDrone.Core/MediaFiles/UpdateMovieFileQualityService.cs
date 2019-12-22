@@ -57,7 +57,7 @@ namespace NzbDrone.Core.MediaFiles
                 var sizeMovie = new LocalMovie();
                 sizeMovie.Size = movieFile.Size;
 
-                var helpers = new List<object>{sizeMovie};
+                var helpers = new List<object> { sizeMovie };
 
                 if (movieFile.MediaInfo != null)
                 {

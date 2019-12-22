@@ -87,7 +87,6 @@ namespace NzbDrone.Core.Notifications.Xbmc
                     moviePath = new OsPath(moviePath).Directory.FullPath.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
                     _logger.Debug("Updating movie {0} (Path: {1}) on XBMC host: {2}", movie, moviePath, settings.Address);
                 }
-
                 else
                 {
                     _logger.Debug("Movie {0} doesn't exist on XBMC host: {1}, Updating Entire Library", movie,
@@ -101,7 +100,6 @@ namespace NzbDrone.Core.Notifications.Xbmc
                     _logger.Debug("Failed to update library for: {0}", settings.Address);
                 }
             }
-
             catch (Exception ex)
             {
                 _logger.Debug(ex, ex.Message);

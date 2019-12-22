@@ -11,8 +11,7 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
     {
         private static readonly Regex DarwinVersionRegex = new Regex("<string>(?<version>10\\.\\d{1,2}\\.?\\d{0,2}?)<\\/string>",
             RegexOptions.Compiled |
-            RegexOptions.IgnoreCase
-        );
+            RegexOptions.IgnoreCase);
 
         private const string PLIST_DIR = "/System/Library/CoreServices/";
 
@@ -40,8 +39,7 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
 
             var versionFile = allFiles.SingleOrDefault(c =>
                 c.EndsWith("SystemVersion.plist") ||
-                c.EndsWith("ServerVersion.plist")
-            );
+                c.EndsWith("ServerVersion.plist"));
 
             if (string.IsNullOrWhiteSpace(versionFile))
             {

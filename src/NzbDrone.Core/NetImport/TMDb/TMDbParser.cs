@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using NzbDrone.Core.NetImport.Exceptions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net;
+using Newtonsoft.Json;
 using NzbDrone.Common.Extensions;
-using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 using NzbDrone.Core.MetadataSource;
+using NzbDrone.Core.MetadataSource.SkyHook.Resource;
+using NzbDrone.Core.NetImport.Exceptions;
 
 namespace NzbDrone.Core.NetImport.TMDb
 {

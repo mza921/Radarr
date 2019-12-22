@@ -127,18 +127,15 @@ namespace NzbDrone.Core.Profiles.Delay
                 {
                     delayProfile.Order = afterOrder + 1;
                 }
-
                 else if (delayProfile.Id == after?.Id)
                 {
                     delayProfile.Order = afterOrder;
                 }
-
                 else if (delayProfile.Order > afterOrder)
                 {
                     delayProfile.Order = afterCount;
                     afterCount++;
                 }
-
                 else if (delayProfile.Order > movingOrder)
                 {
                     delayProfile.Order--;

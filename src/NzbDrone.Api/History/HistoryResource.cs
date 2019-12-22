@@ -41,7 +41,7 @@ namespace NzbDrone.Api.History
 
                 EventType = model.EventType,
 
-                Data  = model.Data
+                Data = model.Data
             };
         }
     }

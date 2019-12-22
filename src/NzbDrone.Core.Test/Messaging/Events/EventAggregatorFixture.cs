@@ -86,49 +86,49 @@ namespace NzbDrone.Core.Test.Messaging.Events
         }
 
 
-       /* [Test]
-        public void should_queue_multiple_async_events()
-        {
-            var eventA = new EventA();
+        /* [Test]
+         public void should_queue_multiple_async_events()
+         {
+             var eventA = new EventA();
 
 
 
-            var handlers = new List<IHandleAsync<EventA>>
-                {
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                    AsyncHandlerA1.Object,
-                };
+             var handlers = new List<IHandleAsync<EventA>>
+                 {
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                     AsyncHandlerA1.Object,
+                 };
 
-            Mocker.GetMock<IServiceFactory>()
-          .Setup(c => c.BuildAll<IHandle<EventA>>())
-          .Returns(new List<IHandle<EventA>>());
+             Mocker.GetMock<IServiceFactory>()
+           .Setup(c => c.BuildAll<IHandle<EventA>>())
+           .Returns(new List<IHandle<EventA>>());
 
-            Mocker.GetMock<IServiceFactory>()
-                  .Setup(c => c.BuildAll<IHandleAsync<EventA>>())
-                  .Returns(handlers);
+             Mocker.GetMock<IServiceFactory>()
+                   .Setup(c => c.BuildAll<IHandleAsync<EventA>>())
+                   .Returns(handlers);
 
-            var counter = new ConcurrencyCounter(handlers.Count);
+             var counter = new ConcurrencyCounter(handlers.Count);
 
 
-            AsyncHandlerA1.Setup(c => c.HandleAsync(It.IsAny<EventA>()))
-                .Callback<EventA>(c =>
-                {
-                    var id = counter.Start();
-                    Thread.Sleep(1000);
-                    counter.Stop(id);
-                });
+             AsyncHandlerA1.Setup(c => c.HandleAsync(It.IsAny<EventA>()))
+                 .Callback<EventA>(c =>
+                 {
+                     var id = counter.Start();
+                     Thread.Sleep(1000);
+                     counter.Stop(id);
+                 });
 
-            Subject.PublishEvent(eventA);
+             Subject.PublishEvent(eventA);
 
-            counter.WaitForAllItems();
+             counter.WaitForAllItems();
 
-            counter.MaxThreads.Should().Be(3);
-        }*/
+             counter.MaxThreads.Should().Be(3);
+         }*/
     }
 
 

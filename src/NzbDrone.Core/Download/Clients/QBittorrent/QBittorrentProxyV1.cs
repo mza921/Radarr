@@ -325,7 +325,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             {
                 _authCookieCache.Remove(authKey);
 
-                var authLoginRequest = BuildRequest(settings).Resource( "/login")
+                var authLoginRequest = BuildRequest(settings).Resource("/login")
                                                              .Post()
                                                              .AddFormParameter("username", settings.Username ?? string.Empty)
                                                              .AddFormParameter("password", settings.Password ?? string.Empty)

@@ -140,18 +140,18 @@ namespace NzbDrone.Core.Messaging.Events
         internal static int GetEventHandleOrder<TEvent>(IHandle<TEvent> eventHandler) where TEvent : class, IEvent
         {
             // TODO: Convert "Handle" to nameof(eventHandler.Handle) after .net 4.5
-            var method = eventHandler.GetType().GetMethod("Handle", new Type[] {typeof(TEvent)});
+            var method = eventHandler.GetType().GetMethod("Handle", new Type[] { typeof(TEvent) });
 
             if (method == null)
             {
-                return (int) EventHandleOrder.Any;
+                return (int)EventHandleOrder.Any;
             }
 
             var attribute = method.GetCustomAttributes(typeof(EventHandleOrderAttribute), true).FirstOrDefault() as EventHandleOrderAttribute;
 
             if (attribute == null)
             {
-                return (int) EventHandleOrder.Any;
+                return (int)EventHandleOrder.Any;
             }
 
             return (int)attribute.EventHandleOrder;

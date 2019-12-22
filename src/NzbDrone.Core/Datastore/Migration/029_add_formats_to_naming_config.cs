@@ -53,7 +53,6 @@ namespace NzbDrone.Core.Datastore.Migration
                             {
                                 seriesTitlePattern = "{Series.Title}";
                             }
-
                             else
                             {
                                 seriesTitlePattern = "{Series Title}";
@@ -70,7 +69,6 @@ namespace NzbDrone.Core.Datastore.Migration
                             {
                                 episodeTitlePattern += "{Episode.Title}";
                             }
-
                             else
                             {
                                 episodeTitlePattern += "{Episode Title}";

@@ -56,7 +56,6 @@ namespace NzbDrone.Core.DecisionEngine
             {
                 _logger.ProgressInfo("Processing {0} releases", reports.Count);
             }
-
             else
             {
                 _logger.ProgressInfo("No results found");
@@ -72,7 +71,7 @@ namespace NzbDrone.Core.DecisionEngine
                 try
                 {
 
-                    var parsedMovieInfo = _parsingService.ParseMovieInfo(report.Title, new List<object>{report});
+                    var parsedMovieInfo = _parsingService.ParseMovieInfo(report.Title, new List<object> { report });
 
                     MappingResult result = null;
 
@@ -83,7 +82,7 @@ namespace NzbDrone.Core.DecisionEngine
                         {
                             MovieTitle = report.Title,
                             Year = 1290,
-                            Languages = new List<Language>{Language.Unknown},
+                            Languages = new List<Language> { Language.Unknown },
                             Quality = new QualityModel(),
                         };
 
@@ -94,7 +93,7 @@ namespace NzbDrone.Core.DecisionEngine
 
                         if (result == null || result.MappingResultType != MappingResultType.SuccessLenientMapping)
                         {
-                            result = new MappingResult {MappingResultType = MappingResultType.NotParsable};
+                            result = new MappingResult { MappingResultType = MappingResultType.NotParsable };
                             result.Movie = null; //To ensure we have a remote movie, else null exception on next line!
                             result.RemoteMovie.ParsedMovieInfo = parsedMovieInfo;
                         }
@@ -165,7 +164,6 @@ namespace NzbDrone.Core.DecisionEngine
                     {
                         _logger.Debug("Release rejected for the following reasons: {0}", string.Join(", ", decision.Rejections));
                     }
-
                     else
                     {
                         _logger.Debug("Release accepted");

@@ -32,11 +32,11 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.MediaBrowser
             if (filename == null) return null;
 
             var metadata = new MetadataFile
-                           {
-                               MovieId = movie.Id,
-                               Consumer = GetType().Name,
-                               RelativePath = movie.Path.GetRelativePath(path)
-                           };
+            {
+                MovieId = movie.Id,
+                Consumer = GetType().Name,
+                RelativePath = movie.Path.GetRelativePath(path)
+            };
 
             if (filename.Equals("movie.xml", StringComparison.InvariantCultureIgnoreCase))
             {

@@ -23,7 +23,7 @@ namespace NzbDrone.Core.Download.Clients.Transmission
         void MoveTorrentToTopInQueue(string hashString, TransmissionSettings settings);
     }
 
-    public class TransmissionProxy: ITransmissionProxy
+    public class TransmissionProxy : ITransmissionProxy
     {
         private readonly IHttpClient _httpClient;
         private readonly Logger _logger;
@@ -155,7 +155,8 @@ namespace NzbDrone.Core.Download.Clients.Transmission
 
         private TransmissionResponse GetTorrentStatus(IEnumerable<string> hashStrings, TransmissionSettings settings)
         {
-            var fields = new string[]{
+            var fields = new string[]
+            {
                 "id",
                 "hashString", // Unique torrent ID. Use this instead of the client id?
                 "name",

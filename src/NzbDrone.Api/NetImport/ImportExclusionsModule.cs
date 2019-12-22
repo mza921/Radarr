@@ -35,7 +35,7 @@ namespace NzbDrone.Api.NetImport
             return _exclusionService.AddExclusion(model).Id;
         }
 
-        public void RemoveExclusion (int id)
+        public void RemoveExclusion(int id)
         {
             _exclusionService.RemoveExclusion(new ImportExclusion { Id = id });
         }

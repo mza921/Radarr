@@ -40,7 +40,7 @@ namespace NzbDrone.Core.Messaging.Commands
                 {
                     try
                     {
-                        ExecuteCommand((dynamic) command.Body, command);
+                        ExecuteCommand((dynamic)command.Body, command);
                     }
                     catch (Exception ex)
                     {

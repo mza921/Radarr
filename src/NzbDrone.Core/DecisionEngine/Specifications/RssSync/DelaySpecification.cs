@@ -67,18 +67,18 @@ namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
 
             if (isPreferredProtocol && (subject.Movie.MovieFileId != 0 && subject.Movie.MovieFile != null) && (preferredCount > 0 || preferredWords == null))
             {
-                    var upgradable = _qualityUpgradableSpecification.IsUpgradable(profile, subject.Movie.MovieFile.Quality, subject.ParsedMovieInfo.Quality);
+                var upgradable = _qualityUpgradableSpecification.IsUpgradable(profile, subject.Movie.MovieFile.Quality, subject.ParsedMovieInfo.Quality);
 
-                    if (upgradable)
+                if (upgradable)
+                {
+                    var revisionUpgrade = _qualityUpgradableSpecification.IsRevisionUpgrade(subject.Movie.MovieFile.Quality, subject.ParsedMovieInfo.Quality);
+
+                    if (revisionUpgrade)
                     {
-                        var revisionUpgrade = _qualityUpgradableSpecification.IsRevisionUpgrade(subject.Movie.MovieFile.Quality, subject.ParsedMovieInfo.Quality);
-
-                        if (revisionUpgrade)
-                        {
-                            _logger.Debug("New quality is a better revision for existing quality and preferred word count is {0}, skipping delay", preferredCount);
-                            return Decision.Accept();
-                        }
+                        _logger.Debug("New quality is a better revision for existing quality and preferred word count is {0}, skipping delay", preferredCount);
+                        return Decision.Accept();
                     }
+                }
 
             }
 
@@ -86,7 +86,7 @@ namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
             var bestQualityInProfile = profile.LastAllowedQuality();
             var isBestInProfile = comparer.Compare(subject.ParsedMovieInfo.Quality.Quality, bestQualityInProfile) >= 0;
 
-            if (isBestInProfile && isPreferredProtocol && (preferredCount > 0  || preferredWords == null))
+            if (isBestInProfile && isPreferredProtocol && (preferredCount > 0 || preferredWords == null))
             {
                 _logger.Debug("Quality is highest in profile for preferred protocol and preferred word count is {0}, will not delay.", preferredCount);
                 return Decision.Accept();

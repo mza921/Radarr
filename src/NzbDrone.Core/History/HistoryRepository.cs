@@ -55,8 +55,8 @@ namespace NzbDrone.Core.History
                  h.Quality == quality &&
                  (h.EventType == HistoryEventType.Grabbed ||
                  h.EventType == HistoryEventType.DownloadFailed ||
-                 h.EventType == HistoryEventType.DownloadFolderImported)
-                 ).ToList();
+                 h.EventType == HistoryEventType.DownloadFolderImported))
+                 .ToList();
         }
 
         public List<History> GetByMovieId(int movieId, HistoryEventType? eventType)

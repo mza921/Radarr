@@ -39,7 +39,7 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
             {
                 if (_customSubject == null)
                 {
-                    _customSubject = new AugmentWithHistory(Mocker.GetMock<IIndexerFactory>().Object, new List<IAugmentParsedMovieInfo>{ Mocker.Resolve<AugmentWithReleaseInfo>()});
+                    _customSubject = new AugmentWithHistory(Mocker.GetMock<IIndexerFactory>().Object, new List<IAugmentParsedMovieInfo> { Mocker.Resolve<AugmentWithReleaseInfo>() });
                 }
 
                 return _customSubject;
@@ -57,8 +57,9 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
         private History.History HistoryWithData(params string[] data)
         {
             var dict = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-            for (var i = 0; i < data.Length; i += 2) {
-                dict.Add(data[i], data[i+1]);
+            for (var i = 0; i < data.Length; i += 2)
+            {
+                dict.Add(data[i], data[i + 1]);
             }
 
             return new History.History

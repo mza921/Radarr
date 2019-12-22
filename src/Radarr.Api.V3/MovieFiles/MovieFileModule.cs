@@ -46,8 +46,8 @@ namespace Radarr.Api.V3.MovieFiles
             UpdateResource = SetMovieFile;
             DeleteResource = DeleteMovieFile;
 
-            Put("/editor",  movieFiles => SetMovieFile());
-            Delete("/bulk",  movieFiles => DeleteMovieFiles());
+            Put("/editor", movieFiles => SetMovieFile());
+            Delete("/bulk", movieFiles => DeleteMovieFiles());
         }
 
         private MovieFileResource GetMovieFile(int id)
@@ -75,7 +75,6 @@ namespace Radarr.Api.V3.MovieFiles
 
                 return _mediaFileService.GetFilesByMovie(movieId).ConvertAll(f => f.ToResource(movie, _qualityUpgradableSpecification));
             }
-
             else
             {
                 string movieFileIdsValue = movieFileIdsQuery.Value.ToString();
@@ -88,7 +87,7 @@ namespace Radarr.Api.V3.MovieFiles
 
                 return movieFiles.GroupBy(e => e.MovieId)
                                    .SelectMany(f => f.ToList()
-                                                     .ConvertAll( e => e.ToResource(_movieService.GetMovie(f.Key), _qualityUpgradableSpecification)))
+                                                     .ConvertAll(e => e.ToResource(_movieService.GetMovie(f.Key), _qualityUpgradableSpecification)))
                                    .ToList();
             }
         }
@@ -124,8 +123,8 @@ namespace Radarr.Api.V3.MovieFiles
 
             var movie = _movieService.GetMovie(movieFiles.First().MovieId);
 
-            return ResponseWithCode(movieFiles.ConvertAll(f => f.ToResource(movie, _qualityUpgradableSpecification))
-                               , HttpStatusCode.Accepted);
+            return ResponseWithCode(movieFiles.ConvertAll(f => f.ToResource(movie, _qualityUpgradableSpecification)),
+                                    HttpStatusCode.Accepted);
         }
 
         private void DeleteMovieFile(int id)

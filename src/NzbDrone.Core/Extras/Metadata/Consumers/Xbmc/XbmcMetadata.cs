@@ -162,7 +162,6 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Xbmc
                     {
                         details.Add(new XElement("thumb"));
                     }
-
                     else
                     {
                         details.Add(new XElement("thumb", thumbnail.Url));

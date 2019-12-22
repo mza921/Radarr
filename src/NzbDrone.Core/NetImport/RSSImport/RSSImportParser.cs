@@ -1,6 +1,4 @@
-﻿using NzbDrone.Core.NetImport.Exceptions;
-using NzbDrone.Core.Movies;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +11,8 @@ using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Http;
 using NzbDrone.Core.Indexers;
 using NzbDrone.Core.Indexers.Exceptions;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.NetImport.Exceptions;
 
 namespace NzbDrone.Core.NetImport.RSSImport
 {
@@ -143,7 +143,7 @@ namespace NzbDrone.Core.NetImport.RSSImport
             }
 
             releaseInfo.Title = title;
-            var result = Parser.Parser.ParseMovieTitle(title, false);//Depreciated anyways
+            var result = Parser.Parser.ParseMovieTitle(title, false); //Depreciated anyways
 
             if (result != null)
             {

@@ -42,7 +42,7 @@ namespace NzbDrone.Api.Indexers
             _logger = logger;
 
             GetResourceAll = GetReleases;
-            Post("/",  x => DownloadRelease(this.Bind<ReleaseResource>()));
+            Post("/", x => DownloadRelease(this.Bind<ReleaseResource>()));
 
             //PostValidator.RuleFor(s => s.DownloadAllowed).Equal(true);
             PostValidator.RuleFor(s => s.Guid).NotEmpty();
@@ -116,9 +116,9 @@ namespace NzbDrone.Api.Indexers
         protected override ReleaseResource MapDecision(DownloadDecision decision, int initialWeight)
         {
 
-           _remoteMovieCache.Set(decision.RemoteMovie.Release.Guid, decision.RemoteMovie, TimeSpan.FromMinutes(30));
+            _remoteMovieCache.Set(decision.RemoteMovie.Release.Guid, decision.RemoteMovie, TimeSpan.FromMinutes(30));
 
-           return base.MapDecision(decision, initialWeight);
+            return base.MapDecision(decision, initialWeight);
         }
     }
 }

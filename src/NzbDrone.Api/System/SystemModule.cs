@@ -35,10 +35,10 @@ namespace NzbDrone.Api.System
             _configFileProvider = configFileProvider;
             _database = database;
             _lifecycleService = lifecycleService;
-            Get("/status",  x => GetStatus());
-            Get("/routes",  x => GetRoutes());
-            Post("/shutdown",  x => Shutdown());
-            Post("/restart",  x => Restart());
+            Get("/status", x => GetStatus());
+            Get("/routes", x => GetRoutes());
+            Post("/shutdown", x => Shutdown());
+            Post("/restart", x => Restart());
         }
 
         private object GetStatus()

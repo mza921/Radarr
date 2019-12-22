@@ -21,7 +21,8 @@ namespace NzbDrone.Common.Instrumentation.Sentry
         // don't report uninformative SQLite exceptions
         // busy/locked are benign https://forums.sonarr.tv/t/owin-sqlite-error-5-database-is-locked/5423/11
         // The others will be user configuration problems and silt up Sentry
-        private static readonly HashSet<SQLiteErrorCode> FilteredSQLiteErrors = new HashSet<SQLiteErrorCode> {
+        private static readonly HashSet<SQLiteErrorCode> FilteredSQLiteErrors = new HashSet<SQLiteErrorCode>
+        {
             SQLiteErrorCode.Busy,
             SQLiteErrorCode.Locked,
             SQLiteErrorCode.Perm,
@@ -35,7 +36,8 @@ namespace NzbDrone.Common.Instrumentation.Sentry
 
         // use string and not Type so we don't need a reference to the project
         // where these are defined
-        private static readonly HashSet<string> FilteredExceptionTypeNames = new HashSet<string> {
+        private static readonly HashSet<string> FilteredExceptionTypeNames = new HashSet<string>
+        {
             // UnauthorizedAccessExceptions will just be user configuration issues
             "UnauthorizedAccessException",
             // Filter out people stuck in boot loops
@@ -44,7 +46,8 @@ namespace NzbDrone.Common.Instrumentation.Sentry
             "TinyIoCResolutionException"
         };
 
-        public static readonly List<string> FilteredExceptionMessages = new List<string> {
+        public static readonly List<string> FilteredExceptionMessages = new List<string>
+        {
             // Swallow the many, many exceptions flowing through from Jackett
             "Jackett.Common.IndexerException",
             // Fix openflixr being stupid with permissions
@@ -54,28 +57,29 @@ namespace NzbDrone.Common.Instrumentation.Sentry
         // exception types in this list will additionally have the exception message added to the
         // sentry fingerprint.  Make sure that this message doesn't vary by exception
         // (e.g. containing a path or a url) so that the sentry grouping is sensible
-        private static readonly HashSet<string> IncludeExceptionMessageTypes = new HashSet<string> {
+        private static readonly HashSet<string> IncludeExceptionMessageTypes = new HashSet<string>
+        {
             "SQLiteException"
         };
 
         private static readonly IDictionary<LogLevel, SentryLevel> LoggingLevelMap = new Dictionary<LogLevel, SentryLevel>
         {
-            {LogLevel.Debug, SentryLevel.Debug},
-            {LogLevel.Error, SentryLevel.Error},
-            {LogLevel.Fatal, SentryLevel.Fatal},
-            {LogLevel.Info, SentryLevel.Info},
-            {LogLevel.Trace, SentryLevel.Debug},
-            {LogLevel.Warn, SentryLevel.Warning},
+            { LogLevel.Debug, SentryLevel.Debug },
+            { LogLevel.Error, SentryLevel.Error },
+            { LogLevel.Fatal, SentryLevel.Fatal },
+            { LogLevel.Info, SentryLevel.Info },
+            { LogLevel.Trace, SentryLevel.Debug },
+            { LogLevel.Warn, SentryLevel.Warning },
         };
 
         private static readonly IDictionary<LogLevel, BreadcrumbLevel> BreadcrumbLevelMap = new Dictionary<LogLevel, BreadcrumbLevel>
         {
-            {LogLevel.Debug, BreadcrumbLevel.Debug},
-            {LogLevel.Error, BreadcrumbLevel.Error},
-            {LogLevel.Fatal, BreadcrumbLevel.Critical},
-            {LogLevel.Info, BreadcrumbLevel.Info},
-            {LogLevel.Trace, BreadcrumbLevel.Debug},
-            {LogLevel.Warn, BreadcrumbLevel.Warning},
+            { LogLevel.Debug, BreadcrumbLevel.Debug },
+            { LogLevel.Error, BreadcrumbLevel.Error },
+            { LogLevel.Fatal, BreadcrumbLevel.Critical },
+            { LogLevel.Info, BreadcrumbLevel.Info },
+            { LogLevel.Trace, BreadcrumbLevel.Debug },
+            { LogLevel.Warn, BreadcrumbLevel.Warning },
         };
 
         private readonly DateTime _startTime = DateTime.UtcNow;

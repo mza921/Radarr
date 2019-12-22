@@ -39,7 +39,6 @@ namespace Radarr.Http.Authentication
                 RegisterFormsAuth(pipelines);
                 pipelines.AfterRequest.AddItemToEndOfPipeline((Action<NancyContext>)SlidingAuthenticationForFormsAuth);
             }
-
             else if (_configFileProvider.AuthenticationMethod == AuthenticationType.Basic)
             {
                 pipelines.EnableBasicAuthentication(new BasicAuthenticationConfiguration(_authenticationService, "Radarr"));
@@ -77,8 +76,7 @@ namespace Radarr.Http.Authentication
 
             var cryptographyConfiguration = new CryptographyConfiguration(
                     new AesEncryptionProvider(new PassphraseKeyGenerator(_configService.RijndaelPassphrase, Encoding.ASCII.GetBytes(_configService.RijndaelSalt))),
-                    new DefaultHmacProvider(new PassphraseKeyGenerator(_configService.HmacPassphrase, Encoding.ASCII.GetBytes(_configService.HmacSalt)))
-                );
+                    new DefaultHmacProvider(new PassphraseKeyGenerator(_configService.HmacPassphrase, Encoding.ASCII.GetBytes(_configService.HmacSalt))));
 
             FormsAuthConfig = new FormsAuthenticationConfiguration
             {

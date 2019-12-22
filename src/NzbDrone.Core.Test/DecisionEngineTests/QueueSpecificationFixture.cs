@@ -27,7 +27,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             Mocker.Resolve<UpgradableSpecification>();
 
             _movie = Builder<Movie>.CreateNew()
-                                     .With(e => e.Profile = new Profile {
+                                     .With(e => e.Profile = new Profile
+                                     {
                                          Items = Qualities.QualityFixture.GetDefaultQualities(),
                                          UpgradeAllowed = true
                                      })
@@ -88,9 +89,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
                                                       .With(r => r.Movie = _movie)
                                                       .With(r => r.ParsedMovieInfo = new ParsedMovieInfo
-                                                                                       {
-                                                                                           Quality = new QualityModel(Quality.SDTV)
-                                                                                       })
+                                                      {
+                                                          Quality = new QualityModel(Quality.SDTV)
+                                                      })
                                                       .Build();
 
             GivenQueue(new List<RemoteMovie> { remoteMovie });
@@ -103,9 +104,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
                                                       .With(r => r.Movie = _movie)
                                                       .With(r => r.ParsedMovieInfo = new ParsedMovieInfo
-                                                                                       {
-                                                                                           Quality = new QualityModel(Quality.DVD)
-                                                                                       })
+                                                      {
+                                                          Quality = new QualityModel(Quality.DVD)
+                                                      })
                                                       .Build();
 
             GivenQueue(new List<RemoteMovie> { remoteMovie });
@@ -120,9 +121,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             var remoteMovie = Builder<RemoteMovie>.CreateNew()
                                                       .With(r => r.Movie = _movie)
                                                       .With(r => r.ParsedMovieInfo = new ParsedMovieInfo
-                                                                                       {
-                                                                                           Quality = new QualityModel(Quality.HDTV720p)
-                                                                                       })
+                                                      {
+                                                          Quality = new QualityModel(Quality.HDTV720p)
+                                                      })
                                                       .Build();
 
             GivenQueue(new List<RemoteMovie> { remoteMovie });

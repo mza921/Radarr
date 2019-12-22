@@ -20,10 +20,10 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaFileServiceTests
         public void Setup()
         {
             _series = new Movie
-                      {
-                          Id = 10,
-                          Path = @"C:\".AsOsAgnostic()
-                      };
+            {
+                Id = 10,
+                Path = @"C:\".AsOsAgnostic()
+            };
         }
 
         [Test]

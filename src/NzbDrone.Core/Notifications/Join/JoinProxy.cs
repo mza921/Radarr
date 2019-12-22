@@ -49,7 +49,7 @@ namespace NzbDrone.Core.Notifications.Join
                 SendNotification(title, body, settings);
                 return null;
             }
-            catch(JoinInvalidDeviceException ex)
+            catch (JoinInvalidDeviceException ex)
             {
                 _logger.Error(ex, "Unable to send test Join message. Invalid Device IDs supplied.");
                 return new ValidationFailure("DeviceIds", "Device IDs appear invalid.");
@@ -59,7 +59,7 @@ namespace NzbDrone.Core.Notifications.Join
                 _logger.Error(ex, "Unable to send test Join message.");
                 return new ValidationFailure("ApiKey", ex.Message);
             }
-            catch(RestException ex)
+            catch (RestException ex)
             {
                 _logger.Error(ex, "Unable to send test Join message. Server connection failed.");
                 return new ValidationFailure("ApiKey", "Unable to connect to Join API. Please try again later.");

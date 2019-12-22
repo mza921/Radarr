@@ -73,7 +73,6 @@ namespace NzbDrone.Core.HealthCheck
                 {
                     _healthCheckResults.Remove(result.Source.Name);
                 }
-
                 else
                 {
                     if (_healthCheckResults.Find(result.Source.Name) == null)

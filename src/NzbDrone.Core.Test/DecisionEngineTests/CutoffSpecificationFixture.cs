@@ -23,7 +23,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
 
         private void GivenCustomFormatHigher()
         {
-            _customFormat = new CustomFormats.CustomFormat("My Format", "L_ENGLISH") {Id = 1};
+            _customFormat = new CustomFormats.CustomFormat("My Format", "L_ENGLISH") { Id = 1 };
 
             CustomFormatsFixture.GivenCustomFormats(_customFormat, CustomFormats.CustomFormat.None);
         }
@@ -70,9 +70,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         {
             GivenCustomFormatHigher();
             var old = new QualityModel(Quality.HDTV720p);
-            old.CustomFormats = new List<CustomFormats.CustomFormat> {CustomFormats.CustomFormat.None};
+            old.CustomFormats = new List<CustomFormats.CustomFormat> { CustomFormats.CustomFormat.None };
             var newQ = new QualityModel(Quality.Bluray1080p);
-            newQ.CustomFormats = new List<CustomFormats.CustomFormat> {_customFormat};
+            newQ.CustomFormats = new List<CustomFormats.CustomFormat> { _customFormat };
             Subject.CutoffNotMet(
                 new Profile
                 {

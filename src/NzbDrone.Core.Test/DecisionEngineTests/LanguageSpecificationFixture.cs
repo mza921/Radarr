@@ -24,26 +24,26 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             {
                 ParsedMovieInfo = new ParsedMovieInfo
                 {
-                    Languages = new List<Language> {Language.English}
+                    Languages = new List<Language> { Language.English }
                 },
                 Movie = new Movie
-                         {
-                             Profile = new LazyLoaded<Profile>(new Profile
-                                                               {
-                                                                   Language = Language.English
-                                                               })
-                         }
+                {
+                    Profile = new LazyLoaded<Profile>(new Profile
+                    {
+                        Language = Language.English
+                    })
+                }
             };
         }
 
         private void WithEnglishRelease()
         {
-            _remoteMovie.ParsedMovieInfo.Languages = new List<Language> {Language.English};
+            _remoteMovie.ParsedMovieInfo.Languages = new List<Language> { Language.English };
         }
 
         private void WithGermanRelease()
         {
-            _remoteMovie.ParsedMovieInfo.Languages = new List<Language> {Language.German};
+            _remoteMovie.ParsedMovieInfo.Languages = new List<Language> { Language.German };
         }
 
         [Test]

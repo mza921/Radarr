@@ -41,7 +41,7 @@ namespace NzbDrone.Common.Composition
             }
 
             var toRegisterResolver = new List<string> { "System.Data.SQLite" };
-            toRegisterResolver.AddRange(assemblies.Intersect(new [] { "Radarr.Core" }));
+            toRegisterResolver.AddRange(assemblies.Intersect(new[] { "Radarr.Core" }));
             RegisterNativeResolver(toRegisterResolver);
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(ContainerResolveEventHandler);
 #endif
@@ -72,8 +72,7 @@ namespace NzbDrone.Common.Composition
             foreach (var name in assemblyNames)
             {
                 var assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{name}.dll")
-                    );
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{name}.dll"));
 
                 try
                 {

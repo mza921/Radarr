@@ -74,7 +74,7 @@ namespace NzbDrone.Core.DecisionEngine
             var right = y.RemoteMovie.ParsedMovieInfo.Quality.CustomFormats;
 
             var leftIndicies = QualityModelComparer.GetIndicies(left, x.RemoteMovie.Movie.Profile.Value);
-            var rightIndicies =  QualityModelComparer.GetIndicies(right, y.RemoteMovie.Movie.Profile.Value);
+            var rightIndicies = QualityModelComparer.GetIndicies(right, y.RemoteMovie.Movie.Profile.Value);
 
             var leftTotal = leftIndicies.Sum();
             var rightTotal = rightIndicies.Sum();

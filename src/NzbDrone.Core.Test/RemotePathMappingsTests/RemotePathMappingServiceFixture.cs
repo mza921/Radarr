@@ -128,7 +128,7 @@ namespace NzbDrone.Core.Test.RemotePathMappingsTests
             {
                 Host = "my-server.localdomain",
                 RemotePath = remotePath,
-                LocalPath = @"D:\mountedstorage\downloads\tv" .AsOsAgnostic()
+                LocalPath = @"D:\mountedstorage\downloads\tv".AsOsAgnostic()
             };
 
             var result = Subject.Add(mapping);

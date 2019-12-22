@@ -9,7 +9,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd.JsonConverters
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var ts = (TimeSpan)value;
-                writer.WriteValue(ts.ToString());
+            writer.WriteValue(ts.ToString());
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

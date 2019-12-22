@@ -1,15 +1,15 @@
-using NLog;
-using NzbDrone.Common;
-using NzbDrone.Common.EnsureThat;
-using NzbDrone.Common.Serializer;
-using NzbDrone.Core.Lifecycle;
-using NzbDrone.Core.Messaging.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using NLog;
+using NzbDrone.Common;
+using NzbDrone.Common.EnsureThat;
+using NzbDrone.Common.Serializer;
 using NzbDrone.Core.Exceptions;
+using NzbDrone.Core.Lifecycle;
+using NzbDrone.Core.Messaging.Events;
 
 namespace NzbDrone.Core.Messaging.Commands
 {

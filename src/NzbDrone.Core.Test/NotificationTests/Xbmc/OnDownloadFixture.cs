@@ -33,9 +33,9 @@ namespace NzbDrone.Core.Test.NotificationTests.Xbmc
 
             Subject.Definition = new NotificationDefinition();
             Subject.Definition.Settings = new XbmcSettings
-                                          {
-                                              UpdateLibrary = true
-                                          };
+            {
+                UpdateLibrary = true
+            };
         }
 
         private void GivenOldFiles()
@@ -45,10 +45,10 @@ namespace NzbDrone.Core.Test.NotificationTests.Xbmc
                                                                .ToList();
 
             Subject.Definition.Settings = new XbmcSettings
-                                          {
-                                              UpdateLibrary = true,
-                                              CleanLibrary = true
-                                          };
+            {
+                UpdateLibrary = true,
+                CleanLibrary = true
+            };
         }
 
         [Test]

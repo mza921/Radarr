@@ -69,8 +69,7 @@ namespace NzbDrone.Core.DecisionEngine.Specifications
 
                 //If the parsed size is greater than maxSize we don't want it
                 if (subject.Release.Size > maxSize)
-                {;
-
+                {
                     _logger.Debug("Item: {0}, Size: {1} is greater than maximum allowed size ({2} for {3}), rejecting.", subject, subject.Release.Size, maxSize, subject.Movie.Title);
                     return Decision.Reject("{0} is larger than maximum allowed {1} (for {2})", subject.Release.Size.SizeSuffix(), maxSize.SizeSuffix(), subject.Movie.Title);
                 }

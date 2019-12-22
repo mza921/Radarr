@@ -36,16 +36,16 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
 
 
             _profile = new Profile
-                       {
-                           Name = "Test",
-                           Cutoff = Quality.HDTV720p.Id,
-                           Items = new List<ProfileQualityItem>
+            {
+                Name = "Test",
+                Cutoff = Quality.HDTV720p.Id,
+                Items = new List<ProfileQualityItem>
                                    {
                                        new ProfileQualityItem { Allowed = true, Quality = Quality.HDTV720p },
                                        new ProfileQualityItem { Allowed = true, Quality = Quality.WEBDL720p },
                                        new ProfileQualityItem { Allowed = true, Quality = Quality.Bluray720p }
                                    },
-                       };
+            };
 
             _movie.Profile = new LazyLoaded<Profile>(_profile);
 

@@ -8,7 +8,6 @@ using NzbDrone.Core.Parser.Model;
 namespace NzbDrone.Core.Parser.Augmenters
 {
     public class AugmentWithReleaseInfo : IAugmentParsedMovieInfo
-
     {
         private readonly IIndexerFactory _indexerFactory;
 
@@ -31,7 +30,8 @@ namespace NzbDrone.Core.Parser.Augmenters
             {
 
                 IIndexerSettings indexerSettings = null;
-                try {
+                try
+                {
                     indexerSettings = _indexerFactory.Get(releaseInfo.IndexerId)?.Settings as IIndexerSettings;
                 }
                 catch (Exception)
@@ -45,7 +45,7 @@ namespace NzbDrone.Core.Parser.Augmenters
                     {
                         foreach (var i in indexerSettings.MultiLanguages)
                         {
-                            var language = (Language) i;
+                            var language = (Language)i;
                             if (!movieInfo.Languages.Contains(language))
                                 movieInfo.Languages.Add(language);
                         }

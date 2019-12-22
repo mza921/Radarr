@@ -16,12 +16,12 @@ namespace NzbDrone.Common.OAuth
             {
                 var parameters = this.Where(p => p.Name.Equals(name));
 
-                if(parameters.Count() == 0)
+                if (parameters.Count() == 0)
                 {
                     return null;
                 }
 
-                if(parameters.Count() == 1)
+                if (parameters.Count() == 1)
                 {
                     return parameters.Single();
                 }

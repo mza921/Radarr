@@ -37,7 +37,7 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
             var minor = "0";
 
             var fileContent = _diskProvider.ReadAllText(versionFile);
-            var lines = Regex.Split(fileContent, "\r\n|\r|\n"); ;
+            var lines = Regex.Split(fileContent, "\r\n|\r|\n");
 
             foreach (var line in lines)
             {

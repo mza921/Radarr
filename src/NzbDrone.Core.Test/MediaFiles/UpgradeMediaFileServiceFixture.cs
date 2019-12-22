@@ -21,9 +21,9 @@ namespace NzbDrone.Core.Test.MediaFiles
         {
             _localMovie = new LocalMovie();
             _localMovie.Movie = new Movie
-                                   {
-                                       Path = @"C:\Test\TV\Series".AsOsAgnostic()
-                                   };
+            {
+                Path = @"C:\Test\TV\Series".AsOsAgnostic()
+            };
 
             _movieFile = Builder<MovieFile>
                 .CreateNew()
