@@ -415,7 +415,7 @@ namespace NzbDrone.Core.Organizer
             {
                 return;
             }
-           
+
             var schemaRevision = movieFile.MediaInfo != null ? movieFile.MediaInfo.SchemaRevision : 0;
             var matches = TitleRegex.Matches(pattern);
 
