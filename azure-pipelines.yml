@@ -38,7 +38,7 @@ stages:
       - powershell: Write-Host "##vso[build.updatebuildnumber]$($env:RADARRVERSION)"
         displayName: Set Build Name
       - powershell: |
-          $files=$(git diff origin/$env:SYSTEM_PULLREQUEST_TARGETBRANCH HEAD~ --name-only)
+          $files=$(git diff origin/$env:SYSTEM_PULLREQUEST_TARGETBRANCH...HEAD --name-only)
           $temp=$files -split ' '
           $count=$temp.Length
           echo "Total changed $count files"
