@@ -13,6 +13,7 @@ variables:
   buildName: '$(Build.SourceBranchName).$(radarrVersion)'
   sentryOrg: 'radarr'
   dotnetVersion: '3.1.x'
+  backendUpdated: 'False'
 
 trigger:
   branches:
@@ -25,9 +26,38 @@ pr:
 - aphrodite
 
 stages:
+  - stage: Setup
+    displayName: Setup
+    jobs:
+    - job:
+      displayName: Build Variables
+      pool:
+        vmImage: 'windows-2019'
+      steps:
+      # Set the build name properly.  The 'name' property won't recursively expand so hack here:
+      - powershell: Write-Host "##vso[build.updatebuildnumber]$($env:RADARRVERSION)"
+        displayName: Set Build Name
+      - powershell: |
+          $files=$(git diff origin/$env:SYSTEM_PULLREQUEST_TARGETBRANCH HEAD~ --name-only)
+          $temp=$files -split ' '
+          $count=$temp.Length
+          echo "Total changed $count files"
+          For ($i=0; $i -lt $temp.Length; $i++)
+          {
+            $name=$temp[$i]
+            echo "$name"
+            if ($name -match "^(src\/|azure-pipelines.yml)")
+              {
+                Write-Host "##vso[task.setvariable variable=backendUpdated;isOutput=true]True"
+                echo "Backend changes detected"
+              }
+          }
+        displayName: Check for Backend File Changes
+
   - stage: Build_Backend
     displayName: Build Backend
-          
+    dependsOn:
+    - Setup   
     jobs:
     - job: Backend
       strategy:
@@ -45,9 +75,6 @@ stages:
       pool:
         vmImage: $(imageName)
       steps:
-      # Set the build name properly.  The 'name' property won't recursively expand so hack here:
-      - powershell: Write-Host "##vso[build.updatebuildnumber]$($env:RADARRVERSION)"
-        displayName: Set Build Name
       - checkout: self
         submodules: true
         fetchDepth: 1
@@ -87,8 +114,8 @@ stages:
 
   - stage: Build_Frontend
     displayName: Frontend
-    dependsOn: []
-    
+    dependsOn:
+    - Setup
     jobs:
     - job: Build
       strategy:
@@ -260,7 +287,7 @@ stages:
   - stage: Unit_Test
     displayName: Unit Tests
     dependsOn: Build_Backend
-    condition: succeeded()
+    condition: and(succeeded(), eq(variables['backendUpdated'], 'True'))
     jobs:
     - job: Unit
       displayName: Unit Native
@@ -391,6 +418,7 @@ stages:
   - stage: Integration
     displayName: Integration
     dependsOn: Packages
+    condition: and(succeeded(), eq(variables['backendUpdated'], 'True'))
     jobs:
     
     - job: Integration_Native
@@ -623,7 +651,8 @@ stages:
         displayName: Publish Test Results
 
   - stage: Analyze
-    dependsOn: []
+    dependsOn:
+    - Setup
     displayName: Analyze
 
       
@@ -676,6 +705,7 @@ stages:
 
     - job: Analyze_Backend
       displayName: Backend
+      condition: eq(variables['backendUpdated'], 'True')
       pool:
         vmImage: windows-2019
       variables:
