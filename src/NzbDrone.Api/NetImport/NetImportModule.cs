@@ -6,7 +6,8 @@ namespace NzbDrone.Api.NetImport
 {
     public class NetImportModule : ProviderModuleBase<NetImportResource, INetImport, NetImportDefinition>
     {
-        public NetImportModule(NetImportFactory netImportFactory) : base(netImportFactory, "netimport")
+        public NetImportModule(NetImportFactory netImportFactory)
+            : base(netImportFactory, "netimport")
         {
             PostValidator.RuleFor(c => c.RootFolderPath).IsValidPath();
             PostValidator.RuleFor(c => c.MinimumAvailability).NotNull();

@@ -15,7 +15,8 @@ namespace NzbDrone.Core.Blacklisting
 
     public class BlacklistRepository : BasicRepository<Blacklist>, IBlacklistRepository
     {
-        public BlacklistRepository(IMainDatabase database, IEventAggregator eventAggregator) : base(database, eventAggregator)
+        public BlacklistRepository(IMainDatabase database, IEventAggregator eventAggregator)
+            : base(database, eventAggregator)
         {
         }
 

@@ -29,7 +29,8 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
     {
         public RadarrError APIErrors;
 
-        public RadarrAPIException(RadarrError apiError) : base(HumanReadable(apiError))
+        public RadarrAPIException(RadarrError apiError)
+            : base(HumanReadable(apiError))
         {
             APIErrors = apiError;
         }

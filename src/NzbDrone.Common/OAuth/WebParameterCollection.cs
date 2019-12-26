@@ -47,7 +47,8 @@ namespace NzbDrone.Common.OAuth
         }
 
 #if !WINRT
-        public WebParameterCollection(NameValueCollection collection) : this()
+        public WebParameterCollection(NameValueCollection collection)
+            : this()
         {
             AddCollection(collection);
         }
@@ -67,7 +68,8 @@ namespace NzbDrone.Common.OAuth
         }
 #endif
 
-        public WebParameterCollection(IDictionary<string, string> collection) : this()
+        public WebParameterCollection(IDictionary<string, string> collection)
+            : this()
         {
             AddCollection(collection);
         }

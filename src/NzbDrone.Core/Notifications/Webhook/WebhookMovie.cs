@@ -22,7 +22,8 @@ namespace NzbDrone.Core.Notifications.Webhook
             FolderPath = movie.Path;
         }
 
-        public WebhookMovie(Movie movie, MovieFile movieFile) : this(movie)
+        public WebhookMovie(Movie movie, MovieFile movieFile)
+            : this(movie)
         {
             FilePath = Path.Combine(movie.Path, movieFile.RelativePath);
         }

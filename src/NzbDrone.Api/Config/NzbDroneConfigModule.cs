@@ -16,7 +16,8 @@ namespace NzbDrone.Api.Config
         {
         }
 
-        protected NzbDroneConfigModule(string resource, IConfigService configService) : base("config/" + resource.Trim('/'))
+        protected NzbDroneConfigModule(string resource, IConfigService configService)
+            : base("config/" + resource.Trim('/'))
         {
             _configService = configService;
 

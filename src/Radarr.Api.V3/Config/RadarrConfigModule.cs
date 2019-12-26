@@ -16,7 +16,8 @@ namespace Radarr.Api.V3.Config
         {
         }
 
-        protected RadarrConfigModule(string resource, IConfigService configService) : base("config/" + resource.Trim('/'))
+        protected RadarrConfigModule(string resource, IConfigService configService)
+            : base("config/" + resource.Trim('/'))
         {
             _configService = configService;
 

@@ -7,7 +7,8 @@ namespace Radarr.Api.V3.Qualities
 {
     public class FormatTagValidator : PropertyValidator
     {
-        public FormatTagValidator() : base("{ValidationMessage}")
+        public FormatTagValidator()
+            : base("{ValidationMessage}")
         {
         }
 

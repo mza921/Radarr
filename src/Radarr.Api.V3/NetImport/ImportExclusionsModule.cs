@@ -10,7 +10,8 @@ namespace Radarr.Api.V3.NetImport
     {
         private readonly IImportExclusionsService _exclusionService;
 
-        public ImportExclusionsModule(NetImportFactory netImportFactory, IImportExclusionsService exclusionService) : base("exclusions")
+        public ImportExclusionsModule(NetImportFactory netImportFactory, IImportExclusionsService exclusionService)
+            : base("exclusions")
         {
             _exclusionService = exclusionService;
             GetResourceAll = GetAll;

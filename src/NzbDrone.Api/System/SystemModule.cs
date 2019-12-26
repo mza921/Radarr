@@ -25,7 +25,8 @@ namespace NzbDrone.Api.System
                             IRouteCacheProvider routeCacheProvider,
                             IConfigFileProvider configFileProvider,
                             IMainDatabase database,
-                            ILifecycleService lifecycleService) : base("system")
+                            ILifecycleService lifecycleService)
+            : base("system")
         {
             _appFolderInfo = appFolderInfo;
             _runtimeInfo = runtimeInfo;

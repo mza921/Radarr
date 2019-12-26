@@ -5,7 +5,8 @@ namespace NzbDrone.Api.Wanted
 {
     class LegacyMissingModule : NzbDroneApiModule
     {
-        public LegacyMissingModule() : base("missing")
+        public LegacyMissingModule()
+            : base("missing")
         {
             Get("/", x =>
             {
