@@ -48,9 +48,11 @@ namespace NzbDrone.Common.Expansive
                     {
                         tokenIndex = tokens.IndexOf(token);
                     }
+
                     output = Regex.Replace(output, _patternStyle.OutputFilter(match.Value), "{" + tokenIndex + "}");
                 }
             }
+
             var newArgs = new List<string>();
             foreach (var arg in args)
             {
@@ -71,8 +73,10 @@ namespace NzbDrone.Common.Expansive
                         newArg = Regex.Replace(newArg, _patternStyle.OutputFilter(match.Value), args[tokens.IndexOf(token)]);
                     }
                 }
+
                 newArgs.Add(newArg);
             }
+
             return string.Format(output, newArgs.ToArray());
         }
 
@@ -160,6 +164,7 @@ namespace NzbDrone.Common.Expansive
                     output = Regex.Replace(output, patternStyle.OutputFilter(match.Value), child);
                 }
             }
+
             return output;
         }
 
@@ -193,8 +198,10 @@ namespace NzbDrone.Common.Expansive
                     d.Add(item.Name, item.GetValue(o, null));
                 }
             }
+
             return result;
         }
+
         /// <summary>
         /// Turns the object into a Dictionary
         /// </summary>

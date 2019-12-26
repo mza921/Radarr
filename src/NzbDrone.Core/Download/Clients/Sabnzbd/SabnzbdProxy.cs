@@ -166,6 +166,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                 requestBuilder.AddSuffixQueryParam("ma_username", settings.Username);
                 requestBuilder.AddSuffixQueryParam("ma_password", settings.Password);
             }
+
             requestBuilder.AddSuffixQueryParam("output", "json");
 
             return requestBuilder;

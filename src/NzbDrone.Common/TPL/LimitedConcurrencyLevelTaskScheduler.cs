@@ -85,6 +85,7 @@ namespace NzbDrone.Common.TPL
                             TryExecuteTask(item);
                         }
                     }
+
                     // We're done processing items on the current thread
                     finally
                     {

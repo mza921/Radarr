@@ -60,6 +60,7 @@ namespace NzbDrone.Core.MediaCover
                 {
                     _diskProvider.DeleteFile(destination);
                 }
+
                 throw;
             }
         }

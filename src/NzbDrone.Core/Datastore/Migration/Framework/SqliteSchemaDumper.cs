@@ -215,6 +215,7 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
 
                 tableDefinitionList.Add(table);
             }
+
             return tableDefinitionList;
         }
 
@@ -257,6 +258,7 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
                 var index = ReadIndexSchema(sql);
                 indexes.Add(index);
             }
+
             return indexes;
         }
     }

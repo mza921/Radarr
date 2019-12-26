@@ -55,6 +55,7 @@ namespace NzbDrone.Test.Common
 
                 errors += Environment.NewLine + string.Format("[{0}] {1}: {2} {3}", log.Level, log.LoggerName, log.FormattedMessage, exception);
             }
+
             return errors;
         }
 

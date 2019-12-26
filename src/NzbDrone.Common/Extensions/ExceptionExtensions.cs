@@ -11,6 +11,7 @@ namespace NzbDrone.Common.Extensions
 
             return ex;
         }
+
         public static T WithData<T>(this T ex, string key, int value)
             where T : Exception
         {
@@ -53,6 +54,7 @@ namespace NzbDrone.Common.Extensions
             {
                 ex.AddData("ContentType", response.Headers.ContentType ?? string.Empty);
             }
+
             ex.AddData("ContentLength", response.Content.Length.ToString());
             ex.AddData("ContentSample", contentSample);
 

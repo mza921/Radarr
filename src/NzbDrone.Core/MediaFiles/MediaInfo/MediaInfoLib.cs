@@ -86,6 +86,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
             {
                 MediaInfo_Delete(_handle);
             }
+
             GC.SuppressFinalize(this);
         }
 

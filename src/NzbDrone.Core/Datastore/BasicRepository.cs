@@ -185,6 +185,7 @@ namespace NzbDrone.Core.Datastore
                 Insert(model);
                 return model;
             }
+
             Update(model);
             return model;
         }

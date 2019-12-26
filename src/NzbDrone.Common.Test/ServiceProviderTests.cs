@@ -135,6 +135,7 @@ namespace NzbDrone.Common.Test
 
             ExceptionVerification.ExpectedWarns(1);
         }
+
         private static bool IsAnAdministrator()
         {
             var principal = new WindowsPrincipal(WindowsIdentity.GetCurrent());

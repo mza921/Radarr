@@ -133,6 +133,7 @@ namespace NzbDrone.Common.Composition
             {
                 return;
             }
+
             if (implementations.Count == 1)
             {
                 var impl = implementations.Single();

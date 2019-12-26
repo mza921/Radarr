@@ -65,6 +65,7 @@ namespace NzbDrone.Core.CustomFormats
                     {
                         compared = movieInfo.Edition;
                     }
+
                     if (TagModifier.HasFlag(TagModifier.Regex))
                     {
                         Regex regexValue = (Regex)Value;
@@ -75,6 +76,7 @@ namespace NzbDrone.Core.CustomFormats
                         string stringValue = (string)Value;
                         return compared.ToLower().Contains(stringValue.Replace(" ", string.Empty).ToLower());
                     }
+
                 case TagType.Language:
                     return movieInfo.Languages.Contains((Language)Value);
                 case TagType.Resolution:
@@ -138,6 +140,7 @@ namespace NzbDrone.Core.CustomFormats
                             Value = Resolution.R480p;
                             break;
                     }
+
                     break;
                 case "s":
                     TagType = TagType.Source;
@@ -168,6 +171,7 @@ namespace NzbDrone.Core.CustomFormats
                             Value = Source.BLURAY;
                             break;
                     }
+
                     break;
                 case "m":
                     TagType = TagType.Modifier;
@@ -189,6 +193,7 @@ namespace NzbDrone.Core.CustomFormats
                             Value = Modifier.REMUX;
                             break;
                     }
+
                     break;
                 case "e":
                     TagType = TagType.Edition;
@@ -200,6 +205,7 @@ namespace NzbDrone.Core.CustomFormats
                     {
                         Value = value;
                     }
+
                     break;
                 case "l":
                     TagType = TagType.Language;
@@ -241,6 +247,7 @@ namespace NzbDrone.Core.CustomFormats
                     {
                         Value = value;
                     }
+
                     break;
             }
         }

@@ -26,6 +26,7 @@ namespace NzbDrone.Core.Backup
             {
                 sourceConnectionString = db.ConnectionString;
             }
+
             var backupConnectionStringBuilder = new SQLiteConnectionStringBuilder(sourceConnectionString);
 
             backupConnectionStringBuilder.DataSource = Path.Combine(targetDirectory, Path.GetFileName(backupConnectionStringBuilder.DataSource));

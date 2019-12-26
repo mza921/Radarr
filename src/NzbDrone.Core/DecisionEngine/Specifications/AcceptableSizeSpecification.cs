@@ -56,6 +56,7 @@ namespace NzbDrone.Core.DecisionEngine.Specifications
                     return Decision.Reject("{0} is smaller than minimum allowed {1} (for {2})", subject.Release.Size.SizeSuffix(), minSize.SizeSuffix(), runtimeMessage);
                 }
             }
+
             if (!qualityDefinition.MaxSize.HasValue || qualityDefinition.MaxSize.Value == 0)
             {
                 _logger.Debug("Max size is unlimited - skipping check.");

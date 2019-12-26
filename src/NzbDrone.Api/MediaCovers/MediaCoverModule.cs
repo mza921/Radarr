@@ -39,6 +39,7 @@ namespace NzbDrone.Api.MediaCovers
                 {
                     return new NotFoundResponse();
                 }
+
                 filePath = basefilePath;
             }
 

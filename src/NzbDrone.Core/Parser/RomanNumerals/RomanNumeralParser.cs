@@ -23,6 +23,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             {
                 return;
             }
+
             _arabicRomanNumeralsMapping = new HashSet<ArabicRomanNumeral>();
             _simpleArabicNumeralMappings = new Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>();
             foreach (int arabicNumeral in Enumerable.Range(1, DICTIONARY_PREPOPULATION_SIZE + 1))
@@ -56,6 +57,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 ArabicRomanNumeral arm = new ArabicRomanNumeral(arabicNumeral, arabicNumeralAsString, romanNumeral);
                 additionalArabicRomanNumerals.Add(arm);
             }
+
             return additionalArabicRomanNumerals;
         }
 
@@ -71,15 +73,18 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 return
                     (HashSet<ArabicRomanNumeral>)new HashSet<ArabicRomanNumeral>(_arabicRomanNumeralsMapping).Take(upToArabicNumber);
             }
+
             if (upToArabicNumber >= DICTIONARY_PREPOPULATION_SIZE)
             {
                 if (_arabicRomanNumeralsMapping.Count >= upToArabicNumber)
                 {
                     return new HashSet<ArabicRomanNumeral>(_arabicRomanNumeralsMapping.Take(upToArabicNumber));
                 }
+
                 HashSet<ArabicRomanNumeral> largerMapping = GenerateAdditionalMappings(DICTIONARY_PREPOPULATION_SIZE + 1, upToArabicNumber);
                 _arabicRomanNumeralsMapping = (HashSet<ArabicRomanNumeral>)_arabicRomanNumeralsMapping.Union(largerMapping);
             }
+
             return _arabicRomanNumeralsMapping;
         }
 
@@ -96,21 +101,25 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             {
                 return take(_simpleArabicNumeralMappings, upToArabicNumer);
             }
+
             if (upToArabicNumer > DICTIONARY_PREPOPULATION_SIZE)
             {
                 if (_simpleArabicNumeralMappings.Count >= upToArabicNumer)
                 {
                     return take(_simpleArabicNumeralMappings, upToArabicNumer);
                 }
+
                 var moreSimpleNumerals = GenerateAdditionalSimpleNumerals(DICTIONARY_PREPOPULATION_SIZE, upToArabicNumer);
                 _simpleArabicNumeralMappings =
                     (Dictionary<SimpleArabicNumeral, SimpleRomanNumeral>)_simpleArabicNumeralMappings.Union(moreSimpleNumerals);
                 return take(_simpleArabicNumeralMappings, _arabicRomanNumeralsMapping.Count);
             }
+
             if (upToArabicNumer < DICTIONARY_PREPOPULATION_SIZE)
             {
                 return take(_simpleArabicNumeralMappings, upToArabicNumer);
             }
+
             return _simpleArabicNumeralMappings;
         }
 
@@ -127,6 +136,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 SimpleRomanNumeral srn = new SimpleRomanNumeral(romanNumeral);
                 moreNumerals.Add(san, srn);
             }
+
             return moreNumerals;
         }
     }

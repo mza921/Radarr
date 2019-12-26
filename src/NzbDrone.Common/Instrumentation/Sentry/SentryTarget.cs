@@ -109,6 +109,7 @@ namespace NzbDrone.Common.Instrumentation.Sentry
                                           // TODO: Check specific version
                                           o.RequestBodyCompressionLevel = System.IO.Compression.CompressionLevel.NoCompression;
                                       }
+
                                       o.BeforeSend = x => SentryCleanser.CleanseEvent(x);
                                       o.BeforeBreadcrumb = x => SentryCleanser.CleanseBreadcrumb(x);
                                       o.Environment = BuildInfo.Branch;
@@ -325,6 +326,7 @@ namespace NzbDrone.Common.Instrumentation.Sentry
                 {
                     _sdk?.Dispose();
                 }
+
                 // Flag us as disposed.  This allows us to handle multiple calls to Dispose() as well as ObjectDisposedException
                 _disposed = true;
             }

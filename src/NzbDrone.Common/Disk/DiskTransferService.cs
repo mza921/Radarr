@@ -297,6 +297,7 @@ namespace NzbDrone.Common.Disk
                 {
                     return TransferMode.HardLink;
                 }
+
                 if (!mode.HasFlag(TransferMode.Copy))
                 {
                     throw new IOException("Hardlinking from '" + sourcePath + "' to '" + targetPath + "' failed.");
@@ -550,6 +551,7 @@ namespace NzbDrone.Common.Disk
                             {
                                 throw new IOException(string.Format("Temporary file '{0}' still exists, aborting.", tempTargetPath));
                             }
+
                             _logger.Trace("Hardlink move succeeded, deleting source.");
                             _diskProvider.DeleteFile(sourcePath);
                             return true;

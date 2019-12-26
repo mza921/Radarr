@@ -78,6 +78,7 @@ namespace NzbDrone.Core.Indexers.Newznab
                     {
                         queryString += $"%20{searchCriteria.Movie.Year}";
                     }
+
                     pageableRequests.Add(GetPagedRequests(realMaxPages, Settings.Categories, "search", queryString));
                 }
             }

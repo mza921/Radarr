@@ -91,6 +91,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 request.AddQueryParam("label", settings.MovieCategory);
                 request.AddQueryParam("category", settings.MovieCategory);
             }
+
             var response = ProcessRequest<List<QBittorrentTorrent>>(request, settings);
 
             return response;

@@ -377,6 +377,7 @@ namespace TinyIoC
 
             return method;
         }
+
         //#endif
 #if NETFX_CORE
         private static MethodInfo GetMethod(Type sourceType, BindingFlags flags, string methodName, Type[] genericTypes, Type[] parameterTypes)
@@ -2913,6 +2914,7 @@ namespace TinyIoC
                 return _hashCode;
             }
         }
+
         private readonly SafeDictionary<TypeRegistration, ObjectFactoryBase> _RegisteredTypes;
 #if USE_OBJECT_CONSTRUCTOR
         private delegate object ObjectConstructor(params object[] parameters);
@@ -3684,6 +3686,7 @@ namespace TinyIoC
                     return false;
                 }
             }
+
             //#endif
             return true;
         }

@@ -53,6 +53,7 @@ namespace NzbDrone.Common.Http
 
             return converter(value);
         }
+
         protected void SetSingleValue(string key, string value)
         {
             if (value == null)

@@ -103,6 +103,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
                     {
                         int.TryParse(mediaInfo.Get(StreamKind.Video, 0, "BitRate_Nominal"), out videoBitRate);
                     }
+
                     decimal.TryParse(mediaInfo.Get(StreamKind.Video, 0, "FrameRate"), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out videoFrameRate);
                     int.TryParse(mediaInfo.Get(StreamKind.Video, 0, "BitDepth"), out videoBitDepth);
                     int.TryParse(mediaInfo.Get(StreamKind.Video, 0, "MultiView_Count"), out videoMultiViewCount);

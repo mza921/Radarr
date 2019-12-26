@@ -116,6 +116,7 @@ namespace NzbDrone.Core.Notifications.Join
                 {
                     throw new JoinInvalidDeviceException(res.errorMessage);
                 }
+
                 // Oddly enough, rather than give us an "Invalid API key", the Join API seems to assume the key is valid,
                 // but fails when doing a device lookup associated with that key.
                 // In our case we are using "deviceIds" rather than "deviceId" so when the singular form error shows up
@@ -124,6 +125,7 @@ namespace NzbDrone.Core.Notifications.Join
                 {
                     throw new JoinAuthException("Authentication failed.");
                 }
+
                 throw new JoinException(res.errorMessage);
             }
 

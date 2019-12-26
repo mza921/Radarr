@@ -277,6 +277,7 @@ namespace NzbDrone.Core.Extras.Metadata
                 {
                     _diskProvider.CopyFile(image.Url, fullPath);
                 }
+
                 _mediaFileAttributeService.SetFilePermissions(fullPath);
             }
             catch (WebException ex)

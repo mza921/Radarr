@@ -359,6 +359,7 @@ namespace NzbDrone.Core.Test.ParserTests
             {
                 result.Quality.Resolution.Should().Be((int)resolution);
             }
+
             result.Quality.Source.Should().Be(source);
             if (modifier != Modifier.NONE)
             {

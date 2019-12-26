@@ -24,6 +24,7 @@ namespace NzbDrone.Core.Datastore.Migration
             updater.Commit();
         }
     }
+
     public class Profile70
     {
         public int Id { get; set; }

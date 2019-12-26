@@ -110,6 +110,7 @@ namespace NzbDrone.Common.Test
 
             _parent.IsParentPath(path).Should().BeTrue();
         }
+
         [TestCase(@"C:\Test\", @"C:\Test\mydir")]
         [TestCase(@"C:\Test\", @"C:\Test\mydir\")]
         [TestCase(@"C:\Test", @"C:\Test\30.Rock.S01E01.Pilot.avi")]

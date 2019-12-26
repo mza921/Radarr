@@ -79,6 +79,7 @@ namespace NzbDrone.Core.Test.Framework
                         Mocker.SetConstant<IMainDatabase>(mainDb);
                         break;
                     }
+
                 case MigrationType.Log:
                     {
                         var logDb = new LogDatabase(database);
@@ -86,6 +87,7 @@ namespace NzbDrone.Core.Test.Framework
                         Mocker.SetConstant<ILogDatabase>(logDb);
                         break;
                     }
+
                 default:
                     {
                         throw new ArgumentException("Invalid MigrationType");

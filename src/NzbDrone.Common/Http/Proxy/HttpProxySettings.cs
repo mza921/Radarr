@@ -37,8 +37,10 @@ namespace NzbDrone.Common.Http.Proxy
                             hostlist[i] = ";" + hostlist[i];
                         }
                     }
+
                     return hostlist;
                 }
+
                 return new string[] { };
             }
         }

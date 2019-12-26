@@ -52,6 +52,7 @@ namespace NzbDrone.Core.IndexerSearch
                 var decisions = _nzbSearchService.MovieSearch(movieId, false, false); //_nzbSearchService.SeasonSearch(message.MovieId, season.SeasonNumber, false, message.Trigger == CommandTrigger.Manual);
                 downloadedCount += _processDownloadDecisions.ProcessDecisions(decisions).Grabbed.Count;
             }
+
             _logger.ProgressInfo("Movie search completed. {0} reports downloaded.", downloadedCount);
         }
 

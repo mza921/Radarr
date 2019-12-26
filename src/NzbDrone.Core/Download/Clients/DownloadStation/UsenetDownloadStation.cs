@@ -278,6 +278,7 @@ namespace NzbDrone.Core.Download.Clients.DownloadStation
                         DetailedDescription = "Please verify the hostname and port."
                     };
                 }
+
                 return new NzbDroneValidationFailure(string.Empty, "Unknown exception: " + ex.Message);
             }
             catch (Exception ex)

@@ -44,6 +44,7 @@ namespace NzbDrone.Core.Datastore.Converters
             {
                 return null;
             }
+
             return JsonConvert.DeserializeObject(stringValue, context.ColumnMap.FieldType, SerializerSetting);
         }
 

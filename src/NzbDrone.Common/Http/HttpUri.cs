@@ -47,6 +47,7 @@ namespace NzbDrone.Common.Http
                 {
                     builder.Append('/');
                 }
+
                 builder.Append(path.TrimStart('/'));
             }
 
@@ -126,6 +127,7 @@ namespace NzbDrone.Common.Http
 
                     _queryParams = dict.AsReadOnly();
                 }
+
                 return _queryParams;
             }
         }
@@ -200,6 +202,7 @@ namespace NzbDrone.Common.Http
                 {
                     builder.Append("&");
                 }
+
                 builder.Append(Uri.EscapeDataString(pair.Key));
                 builder.Append("=");
                 builder.Append(Uri.EscapeDataString(pair.Value));

@@ -114,6 +114,7 @@ namespace NzbDrone.Common.Disk
                     {
                         return File.Exists(path) && path == path.GetActualCasing();
                     }
+
                 default:
                     {
                         return File.Exists(path);

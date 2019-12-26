@@ -60,6 +60,7 @@ namespace NzbDrone.Api.Indexers
 
                 return new NotFoundResponse();
             }
+
             try
             {
                 _downloadService.DownloadReport(remoteMovie);

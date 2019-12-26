@@ -29,6 +29,7 @@ namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
                     return Decision.Accept();
                 }
             }
+
             if (!subject.Movie.IsAvailable(_settingsService.AvailabilityDelay))
             {
                 return Decision.Reject("Movie {0} will only be considered available {1} days after {2}", subject.Movie, _settingsService.AvailabilityDelay, subject.Movie.MinimumAvailability.ToString());

@@ -19,6 +19,7 @@ namespace NzbDrone.Core.Movies
             Tags = new HashSet<int>();
             AlternativeTitles = new List<AlternativeTitle>();
         }
+
         public int TmdbId { get; set; }
         public string ImdbId { get; set; }
         public string Title { get; set; }
@@ -85,6 +86,7 @@ namespace NzbDrone.Core.Movies
             {
                 return "";
             }
+
             //Well what about Path = Null?
             //return new DirectoryInfo(Path).Name;
             return Path;

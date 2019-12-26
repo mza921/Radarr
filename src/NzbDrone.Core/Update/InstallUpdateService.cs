@@ -53,6 +53,7 @@ namespace NzbDrone.Core.Update
             {
                 throw new ArgumentNullException(nameof(configFileProvider));
             }
+
             _checkUpdateService = checkUpdateService;
             _appFolderInfo = appFolderInfo;
             _diskProvider = diskProvider;

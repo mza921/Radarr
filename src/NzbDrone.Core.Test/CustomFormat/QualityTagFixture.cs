@@ -45,11 +45,13 @@ namespace NzbDrone.Core.Test.CustomFormat
             {
                 modifier |= m;
             }
+
             parsed.TagType.Should().Be(type);
             if (value is long[])
             {
                 value = (((long[])value)[0], ((long[])value)[1]);
             }
+
             if ((parsed.Value as Regex) != null)
             {
                 (parsed.Value as Regex).ToString().Should().Be((value as string));
@@ -58,6 +60,7 @@ namespace NzbDrone.Core.Test.CustomFormat
             {
                 parsed.Value.Should().Be(value);
             }
+
             parsed.TagModifier.Should().Be(modifier);
         }
     }

@@ -264,6 +264,7 @@ namespace NzbDrone.Core.History
                 {
                     return null;
                 }
+
                 //}
             }
 

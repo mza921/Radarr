@@ -80,6 +80,7 @@ namespace NzbDrone.Core.CustomFormats
                 _formatRepository.Delete(ret);
                 throw;
             }
+
             _cache.Clear();
             return ret;
         }

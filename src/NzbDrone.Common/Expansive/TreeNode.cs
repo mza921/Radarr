@@ -57,6 +57,7 @@ namespace NzbDrone.Common.Expansive
                 {
                     node = node.Parent;
                 }
+
                 return node;
             }
         }
@@ -74,6 +75,7 @@ namespace NzbDrone.Common.Expansive
                     node = node.Parent;
                     _CallTree.Add(node.Value);
                 }
+
                 return _CallTree;
             }
             private set { _CallTree = value; }

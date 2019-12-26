@@ -42,6 +42,7 @@ namespace NzbDrone.Mono.Disk
                     dir += dirs[0];
                     realPath.Append(GetRealPath(dir));
                 }
+
                 for (var i = 1; i < lastIndex; ++i)
                 {
                     realPath.Append("/").Append(dirs[i]);
@@ -49,6 +50,7 @@ namespace NzbDrone.Mono.Disk
                     realPath.Remove(0, realPath.Length);
                     realPath.Append(realSubPath);
                 }
+
                 return realPath.ToString();
             }
             catch (Exception ex)
@@ -85,6 +87,7 @@ namespace NzbDrone.Mono.Disk
                     dirs[target++] = dirs[i];
                 }
             }
+
             components = dirs;
             lastIndex = target;
         }

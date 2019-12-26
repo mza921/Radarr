@@ -187,6 +187,7 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Xbmc
                                 fanartElement.Add(new XElement("thumb", fanart.Url));
                             }
                         }
+
                         details.Add(fanartElement);
                     }
 
@@ -241,6 +242,7 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Xbmc
                     xmlResult += Environment.NewLine;
                 }
             }
+
             if (Settings.MovieMetadataURL)
             {
                 xmlResult += "https://www.themoviedb.org/movie/" + movie.TmdbId;

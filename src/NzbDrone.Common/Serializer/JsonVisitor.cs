@@ -65,6 +65,7 @@ namespace NzbDrone.Common.Serializer
                 Visit(token);
             }
         }
+
         public virtual void Visit(JConstructor json)
         {
         }

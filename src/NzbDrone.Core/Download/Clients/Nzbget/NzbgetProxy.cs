@@ -102,6 +102,7 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
 
             return droneId;
         }
+
         private string DownloadNzbLegacy12(byte[] nzbData, string title, string category, int priority, NzbgetSettings settings)
         {
             var response = ProcessRequest<bool>(settings, "append", title, category, priority, false, nzbData);

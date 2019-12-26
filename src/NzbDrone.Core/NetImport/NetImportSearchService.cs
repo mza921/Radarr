@@ -183,6 +183,7 @@ namespace NzbDrone.Core.NetImport
                             break;
                         }
                     }
+
                     if (!foundMatch)
                     {
                         switch (_configService.ListSyncLevel)

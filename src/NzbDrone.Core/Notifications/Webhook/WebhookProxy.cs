@@ -35,6 +35,7 @@ namespace NzbDrone.Core.Notifications.Webhook
                 {
                     request.AddBasicAuthentication(settings.Username, settings.Password);
                 }
+
                 _httpClient.Execute(request);
             }
             catch (RestException ex)

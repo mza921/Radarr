@@ -6,6 +6,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook.Resource
     {
         public MovieResult[] movie_results { get; set; }
     }
+
     public class MovieSearchRoot
     {
         public int page { get; set; }

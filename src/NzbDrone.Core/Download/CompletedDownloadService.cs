@@ -125,6 +125,7 @@ namespace NzbDrone.Core.Download
                         {
                             return new TrackedDownloadStatusMessage("", v.Errors);
                         }
+
                         return new TrackedDownloadStatusMessage(Path.GetFileName(v.ImportDecision.LocalMovie.Path), v.Errors);
                     })
                     .ToArray();

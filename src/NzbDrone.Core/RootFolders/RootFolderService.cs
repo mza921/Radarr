@@ -76,6 +76,7 @@ namespace NzbDrone.Core.RootFolders
                         GetDetails(folder);
                     }
                 }
+
                 //We don't want an exception to prevent the root folders from loading in the UI, so they can still be deleted
                 catch (Exception ex)
                 {

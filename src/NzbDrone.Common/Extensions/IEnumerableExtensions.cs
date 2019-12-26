@@ -66,6 +66,7 @@ namespace NzbDrone.Common.Extensions
                     result[key] = item;
                 }
             }
+
             return result;
         }
 
@@ -80,6 +81,7 @@ namespace NzbDrone.Common.Extensions
                     result[key] = valueSelector(item);
                 }
             }
+
             return result;
         }
 
@@ -143,6 +145,7 @@ namespace NzbDrone.Common.Extensions
                 }
             }
         }
+
         public static bool In<T>(this T source, List<T> list)
         {
             return list.Contains(source);

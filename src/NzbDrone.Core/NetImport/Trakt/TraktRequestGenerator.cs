@@ -23,6 +23,7 @@ namespace NzbDrone.Core.NetImport.Trakt
         public TraktRequestGenerator()
         {
         }
+
         public virtual NetImportPageableRequestChain GetMovies()
         {
             var pageableRequests = new NetImportPageableRequestChain();

@@ -90,6 +90,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             {
                 request.AddQueryParam("category", settings.MovieCategory);
             }
+
             var response = ProcessRequest<List<QBittorrentTorrent>>(request, settings);
 
             return response;
@@ -327,6 +328,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 {
                     throw new DownloadClientAuthenticationException("Failed to authenticate with qBittorrent.");
                 }
+
                 return;
             }
 

@@ -76,6 +76,7 @@ namespace Radarr.Http.ClientSchema
 
                     _mappings[type] = result;
                 }
+
                 return result;
             }
         }

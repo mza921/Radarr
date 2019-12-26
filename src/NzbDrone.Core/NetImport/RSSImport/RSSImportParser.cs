@@ -195,6 +195,7 @@ namespace NzbDrone.Core.NetImport.RSSImport
             {
                 return "";
             }
+
             return Parser.Parser.ParseImdbId(url);
         }
 

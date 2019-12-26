@@ -149,6 +149,7 @@ namespace Radarr.Host
                     {
                         return true;
                     }
+
                 default:
                     {
                         return false;

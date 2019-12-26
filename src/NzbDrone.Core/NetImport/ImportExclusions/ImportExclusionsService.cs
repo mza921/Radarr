@@ -39,6 +39,7 @@ namespace NzbDrone.Core.NetImport.ImportExclusions
             {
                 return _exclusionRepository.GetByTmdbid(exclusion.TmdbId);
             }
+
             return _exclusionRepository.Insert(exclusion);
         }
 

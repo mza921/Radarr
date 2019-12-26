@@ -168,6 +168,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                         {
                             historyItem.OutputPath = parent;
                         }
+
                         parent = parent.Directory;
                     }
                 }
@@ -392,10 +393,12 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                 {
                     return new ValidationFailure("APIKey", "API Key Incorrect");
                 }
+
                 if (ex.Message.ContainsIgnoreCase("API Key Required"))
                 {
                     return new ValidationFailure("APIKey", "API Key Required");
                 }
+
                 throw;
             }
 
@@ -444,6 +447,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                     };
                 }
             }
+
             if (config.Misc.enable_tv_sorting && ContainsCategory(config.Misc.tv_categories, Settings.MovieCategory))
             {
                 return new NzbDroneValidationFailure("MovieCategory", "Disable TV Sorting")
@@ -452,6 +456,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                     DetailedDescription = "You must disable SABnzbd TV Sorting for the category Radarr uses to prevent import issues. Go to SABnzbd to fix it."
                 };
             }
+
             if (config.Misc.enable_movie_sorting && ContainsCategory(config.Misc.movie_categories, Settings.MovieCategory))
             {
                 return new NzbDroneValidationFailure("MovieCategory", "Disable Movie Sorting")
@@ -460,6 +465,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                     DetailedDescription = "You must disable SABnzbd Movie Sorting for the category Radarr uses to prevent import issues. Go to SABnzbd to fix it."
                 };
             }
+
             if (config.Misc.enable_date_sorting && ContainsCategory(config.Misc.date_categories, Settings.MovieCategory))
             {
                 return new NzbDroneValidationFailure("MovieCategory", "Disable Date Sorting")

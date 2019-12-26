@@ -90,6 +90,7 @@ namespace NzbDrone.Core.Download
                 {
                     _indexerStatusService.RecordFailure(remoteMovie.Release.IndexerId);
                 }
+
                 throw;
             }
 

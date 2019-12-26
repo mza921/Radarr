@@ -35,6 +35,7 @@ namespace NzbDrone.Console
                     System.Console.WriteLine("NLog Exception: " + ex.ToString());
                     throw;
                 }
+
                 Bootstrap.Start(startupArgs, new ConsoleAlerts());
             }
             catch (RadarrStartupException ex)

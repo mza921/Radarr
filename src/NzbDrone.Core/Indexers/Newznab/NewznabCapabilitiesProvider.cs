@@ -128,6 +128,7 @@ namespace NzbDrone.Core.Indexers.Newznab
                     capabilities.SupportedTvSearchParameters = xmlTvSearch.Attribute("supportedParams").Value.Split(',');
                     capabilities.SupportsAggregateIdSearch = true;
                 }
+
                 var xmlMovieSearch = xmlSearching.Element("movie-search");
                 if (xmlMovieSearch == null || xmlMovieSearch.Attribute("available").Value != "yes")
                 {

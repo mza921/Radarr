@@ -239,6 +239,7 @@ namespace NzbDrone.Core.Parser
                 result = new MappingResult { Movie = movie, MappingResultType = MappingResultType.WrongYear };
                 return false;
             }
+
             if (movie != null)
             {
                 result = new MappingResult { Movie = movie };
@@ -247,6 +248,7 @@ namespace NzbDrone.Core.Parser
             {
                 result = new MappingResult { Movie = movie, MappingResultType = MappingResultType.TitleNotFound };
             }
+
             return movie != null;
         }
 
@@ -353,6 +355,7 @@ namespace NzbDrone.Core.Parser
                     result = new MappingResult { Movie = possibleMovie, MappingResultType = MappingResultType.Success };
                     return true;
                 }
+
                 result = new MappingResult { Movie = possibleMovie, MappingResultType = MappingResultType.WrongYear };
                 return false;
             }
@@ -429,6 +432,7 @@ namespace NzbDrone.Core.Parser
                 {
                     parsedInfo = RemoteMovie.ParsedMovieInfo;
                 }
+
                 RemoteMovie = new RemoteMovie
                 {
                     Movie = value,

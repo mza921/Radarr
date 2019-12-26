@@ -18,6 +18,7 @@ namespace NzbDrone.Core.Blacklisting
         PagingSpec<Blacklist> Paged(PagingSpec<Blacklist> pagingSpec);
         void Delete(int id);
     }
+
     public class BlacklistService : IBlacklistService,
 
                                     IExecute<ClearBlacklistCommand>,

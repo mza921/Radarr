@@ -58,6 +58,7 @@ namespace Radarr.Host.AccessControl
             {
                 _logger.Warn(ex, "Failed to check for open port in firewall");
             }
+
             return false;
         }
 

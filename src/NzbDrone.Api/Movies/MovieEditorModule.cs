@@ -41,10 +41,12 @@ namespace NzbDrone.Api.Movies
             {
                 deleteFiles = Convert.ToBoolean(deleteFilesQuery.Value);
             }
+
             if (addExclusionQuery.HasValue)
             {
                 addExclusion = Convert.ToBoolean(addExclusionQuery.Value);
             }
+
             var ids = Request.Body.FromJson<List<int>>();
 
             foreach (var id in ids)

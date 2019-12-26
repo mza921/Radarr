@@ -73,6 +73,7 @@ namespace NzbDrone.Common
                     {
                         continue; // Ignore directories
                     }
+
                     string entryFileName = zipEntry.Name;
                     // to remove the folder from the entry:- entryFileName = Path.GetFileName(entryFileName);
                     // Optionally match entrynames against a selection list here to skip as desired.

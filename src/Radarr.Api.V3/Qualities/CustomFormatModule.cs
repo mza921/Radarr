@@ -100,6 +100,7 @@ namespace Radarr.Api.V3.Qualities
             {
                 return null;
             }
+
             return new CustomFormatTestResource
             {
                 Matches = _parsingService.MatchFormatTags(parsed).ToResource(),
@@ -121,6 +122,7 @@ namespace Radarr.Api.V3.Qualities
             {
                 return null;
             }
+
             return new CustomFormatTestResource
             {
                 Matches = _parsingService.MatchFormatTags(parsed).ToResource(),

@@ -16,6 +16,7 @@ namespace NzbDrone.Core.Test.NetImport
         {
             Subject.Definition = Subject.DefaultDefinitions.First();
         }
+
         private void GivenRecentFeedResponse(string rssXmlFile)
         {
             var recentFeed = ReadAllText(@"Files/" + rssXmlFile);

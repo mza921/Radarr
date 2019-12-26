@@ -33,6 +33,7 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                     CookiesUpdater(null, null);
                     throw new IndexerException(indexerResponse, "We are being redirected to the PTP login page. Most likely your session expired or was killed. Try testing the indexer in the settings.");
                 }
+
                 throw new IndexerException(indexerResponse, $"Unexpected response status {indexerResponse.HttpResponse.StatusCode} code from API request");
             }
 
@@ -43,6 +44,7 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                     CookiesUpdater(null, null);
                     throw new IndexerException(indexerResponse, "We are currently on the login page. Most likely your session expired or was killed. Try testing the indexer in the settings.");
                 }
+
                 // Remove cookie cache
                 throw new IndexerException(indexerResponse, $"Unexpected response header {indexerResponse.HttpResponse.Headers.ContentType} from API request, expected {HttpAccept.Json.Value}");
             }
@@ -117,6 +119,7 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                     }
                 }
             }
+
             return
                 torrentInfos;
         }

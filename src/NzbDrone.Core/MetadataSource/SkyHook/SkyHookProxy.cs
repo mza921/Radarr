@@ -98,6 +98,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             {
                 throw new MovieNotFoundException("Movie not found.");
             }
+
             if (response.StatusCode != HttpStatusCode.OK)
             {
                 throw new HttpException(request, response);
@@ -180,6 +181,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                         lowestYear.Add(DateTime.Parse(releaseDate.release_date).Year);
                     }
                 }
+
                 movie.Year = lowestYear.Min();
             }
 
@@ -243,16 +245,19 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                     movie.Status = MovieStatusType.Released;
                 }
             }
+
             //handle the case when we have theatrical release dates but we dont know the physical release date
             else if (movie.InCinemas.HasValue && (now >= movie.InCinemas))
             {
                 movie.Status = MovieStatusType.InCinemas;
             }
+
             //handle the case where we only have a physical release date
             else if (movie.PhysicalRelease.HasValue && (now >= movie.PhysicalRelease))
             {
                 movie.Status = MovieStatusType.Released;
             }
+
             //otherwise the title has only been announced
             else
             {
@@ -395,6 +400,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             {
                 title = title.Substring(0, title.Length - 5);
             }
+
             return title;
         }
 
@@ -559,16 +565,19 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                         imdbMovie.Status = MovieStatusType.Released;
                     }
                 }
+
                 //handle the case when we have theatrical release dates but we dont know the physical release date
                 else if (imdbMovie.InCinemas.HasValue && (now >= imdbMovie.InCinemas))
                 {
                     imdbMovie.Status = MovieStatusType.InCinemas;
                 }
+
                 //handle the case where we only have a physical release date
                 else if (imdbMovie.PhysicalRelease.HasValue && (now >= imdbMovie.PhysicalRelease))
                 {
                     imdbMovie.Status = MovieStatusType.Released;
                 }
+
                 //otherwise the title has only been announced
                 else
                 {
@@ -692,6 +701,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                     {
                         yearStr = $" {movie.Year}";
                     }
+
                     newMovie = SearchForNewMovie(movie.Title + yearStr).FirstOrDefault();
                 }
 

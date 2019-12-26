@@ -448,6 +448,7 @@ namespace NzbDrone.Core.Parser
                     {
                         return string.Empty;
                     }
+
                     return m.Value;
                 });
 
@@ -475,6 +476,7 @@ namespace NzbDrone.Core.Parser
                 {
                     nextPart = parts[n + 1];
                 }
+
                 if (part.Length == 1 && part.ToLower() != "a" && !int.TryParse(part, out n))
                 {
                     movieName += part + ".";
@@ -492,8 +494,10 @@ namespace NzbDrone.Core.Parser
                         movieName += " ";
                         previousAcronym = false;
                     }
+
                     movieName += part + " ";
                 }
+
                 n++;
             }
 

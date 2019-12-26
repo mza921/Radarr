@@ -82,6 +82,7 @@ namespace NzbDrone.Core.Datastore
 
                         break;
                     }
+
                 case MigrationType.Log:
                     {
                         connectionString = _connectionStringFactory.LogDbConnectionString;
@@ -89,6 +90,7 @@ namespace NzbDrone.Core.Datastore
 
                         break;
                     }
+
                 default:
                     {
                         throw new ArgumentException("Invalid MigrationType");

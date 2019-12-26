@@ -25,6 +25,7 @@ namespace NzbDrone.Core.NetImport.RSSImport
                 {
                     yield return def;
                 }
+
                 yield return new NetImportDefinition
                 {
                     Name = "IMDb List",

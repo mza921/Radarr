@@ -20,6 +20,7 @@ namespace NzbDrone.Core.Datastore.Migration
                     .WithColumn("MovieTitle").AsString().Nullable()
                     .WithColumn("MovieYear").AsInt64().Nullable().WithDefaultValue(0);
             }
+
             Execute.WithConnection(AddExisting);
         }
 

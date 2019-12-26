@@ -71,6 +71,7 @@ namespace NzbDrone.Core.Notifications.Twitter
                     accessTokenSecret = oauthToken.AccessTokenSecret
                 };
             }
+
             return new { };
         }
 

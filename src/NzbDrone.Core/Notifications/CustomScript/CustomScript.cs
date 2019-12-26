@@ -124,6 +124,7 @@ namespace NzbDrone.Core.Notifications.CustomScript
 
             ExecuteScript(environmentVariables);
         }
+
         public override ValidationResult Test()
         {
             var failures = new List<ValidationFailure>();

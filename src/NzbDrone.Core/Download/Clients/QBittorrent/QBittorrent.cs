@@ -192,6 +192,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                             item.Status = DownloadItemStatus.Warning;
                             item.Message = "qBittorrent cannot resolve magnet link with DHT disabled";
                         }
+
                         break;
 
                     case "forcedDL": //torrent is being downloaded, and was forced started
@@ -306,6 +307,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                         DetailedDescription = "Please verify the hostname and port."
                     };
                 }
+
                 return new NzbDroneValidationFailure(string.Empty, "Unknown exception: " + ex.Message);
             }
             catch (Exception ex)

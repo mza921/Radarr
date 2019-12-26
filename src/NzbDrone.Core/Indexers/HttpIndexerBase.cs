@@ -131,6 +131,7 @@ namespace NzbDrone.Core.Indexers
                                     fullyUpdated = true;
                                     break;
                                 }
+
                                 var oldestReleaseDate = page.Select(v => v.PublishDate).Min();
                                 if (oldestReleaseDate < lastReleaseInfo.PublishDate || page.Any(v => v.DownloadUrl == lastReleaseInfo.DownloadUrl))
                                 {
@@ -175,6 +176,7 @@ namespace NzbDrone.Core.Indexers
                         var gapEnd = ordered.Last().PublishDate;
                         _logger.Warn("Indexer {0} rss sync didn't cover the period between {1} and {2} UTC. Search may be required.", Definition.Name, gapStart, gapEnd);
                     }
+
                     lastReleaseInfo = ordered.First();
                     _indexerStatusService.UpdateRssSyncStatus(Definition.Id, lastReleaseInfo);
                 }
@@ -213,6 +215,7 @@ namespace NzbDrone.Core.Indexers
                 {
                     _indexerStatusService.RecordFailure(Definition.Id, TimeSpan.FromHours(1));
                 }
+
                 _logger.Warn("API Request Limit reached for {0}", this);
             }
             catch (HttpException ex)

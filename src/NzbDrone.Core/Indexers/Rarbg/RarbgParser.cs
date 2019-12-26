@@ -23,6 +23,7 @@ namespace NzbDrone.Core.Indexers.Rarbg
                     {
                         throw new IndexerException(indexerResponse, "Indexer API call returned an unexpected StatusCode [{0}]", indexerResponse.HttpResponse.StatusCode);
                     }
+
                     break;
             }
 

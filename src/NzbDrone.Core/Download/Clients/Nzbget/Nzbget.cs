@@ -276,6 +276,7 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
                 {
                     return new ValidationFailure("Username", "Authentication failed");
                 }
+
                 _logger.Error(ex, "Unable to connect to NZBGet");
                 return new ValidationFailure("Host", "Unable to connect to NZBGet");
             }

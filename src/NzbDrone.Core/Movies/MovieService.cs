@@ -127,6 +127,7 @@ namespace NzbDrone.Core.Movies
                     }
                 }
             }
+
             return v => true;
         }
 
@@ -154,6 +155,7 @@ namespace NzbDrone.Core.Movies
             {
                 defaultState = MoviePathState.Dynamic;
             }
+
             if (string.IsNullOrWhiteSpace(newMovie.Path))
             {
                 var folderName = _fileNameBuilder.GetMovieFolder(newMovie);
@@ -188,6 +190,7 @@ namespace NzbDrone.Core.Movies
                 {
                     defaultState = MoviePathState.Dynamic;
                 }
+
                 if (string.IsNullOrWhiteSpace(m.Path))
                 {
                     var folderName = _fileNameBuilder.GetMovieFolder(m);
@@ -245,6 +248,7 @@ namespace NzbDrone.Core.Movies
                 // no movie matched
                 return list;
             }
+
             // build ordered list of movie by position in the search string
             var query =
                 list.Select(movie => new
@@ -275,6 +279,7 @@ namespace NzbDrone.Core.Movies
             {
                 _logger.Debug("Multiple movie match candidate: {0} cleantitle: {1}", entry.Title, entry.CleanTitle);
             }
+
             return match;
         }
 
@@ -300,6 +305,7 @@ namespace NzbDrone.Core.Movies
             {
                 _exclusionService.AddExclusion(new ImportExclusion { TmdbId = movie.TmdbId, MovieTitle = movie.Title, MovieYear = movie.Year });
             }
+
             _movieRepository.Delete(movieId);
             _eventAggregator.PublishEvent(new MovieDeletedEvent(movie, deleteFiles));
             _logger.Info("Deleted movie {}", movie);

@@ -17,6 +17,7 @@ namespace Radarr.Http
             {
                 return "/api/v3/";
             }
+
             return "/api/";
         }
 

@@ -227,6 +227,7 @@ namespace NzbDrone.Core.Download.Clients.Deluge
                     {
                         return response.Result;
                     }
+
                     error = response.Error.ToObject<DelugeError>();
 
                     throw new DownloadClientAuthenticationException(error.Message);
@@ -297,6 +298,7 @@ namespace NzbDrone.Core.Download.Clients.Deluge
                     _logger.Debug("Deluge authentication failed.");
                     throw new DownloadClientAuthenticationException("Failed to authenticate with Deluge.");
                 }
+
                 _logger.Debug("Deluge authentication succeeded.");
 
                 cookies = response.GetCookies();

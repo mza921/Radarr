@@ -119,6 +119,7 @@ namespace NzbDrone.Core
                     break;
                 }
             }
+
             return s.Substring(0, i);
         }
 

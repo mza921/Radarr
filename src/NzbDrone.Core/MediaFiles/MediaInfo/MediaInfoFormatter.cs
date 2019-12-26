@@ -82,6 +82,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
                     {
                         return "DTS-X";
                     }
+
                     return "DTS-HD MA";
                 }
 

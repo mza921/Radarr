@@ -47,6 +47,7 @@ namespace NzbDrone.Core.Test.Framework
                     {
                         result.Quality = QualityParser.ParseQuality(title);
                     }
+
                     return result;
                 });
         }

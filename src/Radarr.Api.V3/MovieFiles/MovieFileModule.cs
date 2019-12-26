@@ -111,6 +111,7 @@ namespace Radarr.Api.V3.MovieFiles
                 {
                     movieFile.Quality = resource.Quality;
                 }
+
                 if (resource.Languages != null)
                 {
                     movieFile.Languages = resource.Languages;

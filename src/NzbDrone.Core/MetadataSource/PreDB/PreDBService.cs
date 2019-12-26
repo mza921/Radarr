@@ -176,6 +176,7 @@ namespace NzbDrone.Core.MetadataSource.PreDB
                     {
                         parsed = new Parser.Model.ParsedMovieInfo { MovieTitle = result.Title, Year = 0 };
                     }
+
                     var match = _parsingService.Map(parsed, "", new MovieSearchCriteria { Movie = movie });
 
                     if (match != null && match.RemoteMovie.Movie != null && match.RemoteMovie.Movie.Id == movie.Id)
