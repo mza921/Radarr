@@ -46,7 +46,6 @@ namespace NzbDrone.Common.Http
         public HttpRequestBuilder(bool useHttps, string host, int port, string urlBase = null)
             : this(BuildBaseUrl(useHttps, host, port, urlBase))
         {
-
         }
 
         public static string BuildBaseUrl(bool useHttps, string host, int port, string urlBase = null)

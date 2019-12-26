@@ -15,7 +15,6 @@ namespace NzbDrone.Core.MediaFiles
 {
     public interface IUpdateMovieFileQualityService
     {
-
     }
 
     public class UpdateMovieFileQualityService : IUpdateMovieFileQualityService, IExecute<UpdateMovieFileQualityCommand>

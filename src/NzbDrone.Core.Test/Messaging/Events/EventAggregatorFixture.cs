@@ -134,11 +134,9 @@ namespace NzbDrone.Core.Test.Messaging.Events
 
     public class EventA : IEvent
     {
-
     }
 
     public class EventB : IEvent
     {
-
     }
 }

@@ -7,7 +7,6 @@ namespace NzbDrone.Core.Test.IndexerTests.NewznabTests
 {
     public class NewznabSettingFixture : CoreTest
     {
-
         [TestCase("http://nzbs.org")]
         [TestCase("http:///www.nzbplanet.net")]
         public void requires_apikey(string url)

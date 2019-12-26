@@ -72,7 +72,6 @@ namespace NzbDrone.Core.DecisionEngine
 
                 try
                 {
-
                     var parsedMovieInfo = _parsingService.ParseMovieInfo(report.Title, new List<object> { report });
 
                     MappingResult result = null;

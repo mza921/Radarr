@@ -106,7 +106,6 @@ namespace NzbDrone.Core.MediaFiles
 
         public void HandleAsync(MovieDeletedEvent message)
         {
-
             var files = GetFilesByMovie(message.Movie.Id);
             _mediaFileRepository.DeleteMany(files);
 

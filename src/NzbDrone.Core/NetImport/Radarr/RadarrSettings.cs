@@ -5,7 +5,6 @@ using NzbDrone.Core.Validation;
 
 namespace NzbDrone.Core.NetImport.Radarr
 {
-
     public class RadarrSettingsValidator : AbstractValidator<RadarrSettings>
     {
         public RadarrSettingsValidator()

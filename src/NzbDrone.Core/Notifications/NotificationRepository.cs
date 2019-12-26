@@ -7,7 +7,6 @@ namespace NzbDrone.Core.Notifications
 {
     public interface INotificationRepository : IProviderRepository<NotificationDefinition>
     {
-
     }
 
     public class NotificationRepository : ProviderRepository<NotificationDefinition>, INotificationRepository

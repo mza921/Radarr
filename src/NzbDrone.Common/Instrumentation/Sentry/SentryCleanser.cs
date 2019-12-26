@@ -36,7 +36,6 @@ namespace NzbDrone.Common.Instrumentation.Sentry
             }
             catch (Exception)
             {
-
             }
 
             return sentryEvent;
@@ -52,7 +51,6 @@ namespace NzbDrone.Common.Instrumentation.Sentry
             }
             catch (Exception)
             {
-
             }
 
             return b;
@@ -60,7 +58,6 @@ namespace NzbDrone.Common.Instrumentation.Sentry
 
         private static string ShortenPath(string path)
         {
-
             if (string.IsNullOrWhiteSpace(path))
             {
                 return null;

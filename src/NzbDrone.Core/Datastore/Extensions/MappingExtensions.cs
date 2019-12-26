@@ -8,7 +8,6 @@ namespace NzbDrone.Core.Datastore.Extensions
 {
     public static class MappingExtensions
     {
-
         public static ColumnMapBuilder<T> MapResultSet<T>(this FluentMappings.MappingsFluentEntity<T> mapBuilder)
             where T : ResultSet, new()
         {

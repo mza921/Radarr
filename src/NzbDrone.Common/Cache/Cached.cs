@@ -6,7 +6,6 @@ using NzbDrone.Common.EnsureThat;
 
 namespace NzbDrone.Common.Cache
 {
-
     public class Cached<T> : ICached<T>
     {
         private class CacheItem

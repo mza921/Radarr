@@ -17,7 +17,6 @@ namespace NzbDrone.Test.Common
     public abstract class TestBase<TSubject> : TestBase
         where TSubject : class
     {
-
         private TSubject _subject;
 
         [SetUp]
@@ -45,7 +44,6 @@ namespace NzbDrone.Test.Common
 
     public abstract class TestBase : LoggingTest
     {
-
         private static readonly Random _random = new Random();
         private static int _nextUid;
 

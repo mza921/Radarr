@@ -17,14 +17,12 @@ namespace NzbDrone.Core.Datastore.Migration
 
         private void ConvertConfig(IDbConnection conn, IDbTransaction tran)
         {
-
             using (IDbCommand namingConfigCmd = conn.CreateCommand())
             {
                 namingConfigCmd.Transaction = tran;
                 namingConfigCmd.CommandText = @"SELECT * FROM NamingConfig LIMIT 1";
                 using (IDataReader namingConfigReader = namingConfigCmd.ExecuteReader())
                 {
-
                     while (namingConfigReader.Read())
                     {
                         // Output Settings

@@ -23,7 +23,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         [SetUp]
         public void Setup()
         {
-
             movie = Builder<Movie>.CreateNew().Build();
 
             qualityType = Builder<QualityDefinition>.CreateNew()

@@ -9,7 +9,6 @@ using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Datastore
 {
-
     [TestFixture]
     public class
         BasicRepositoryFixture : DbTest<BasicRepository<ScheduledTask>, ScheduledTask>

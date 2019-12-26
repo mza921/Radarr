@@ -54,7 +54,6 @@ namespace NzbDrone.Core.Parser
 
         private static readonly Regex[] ReportMovieTitleLenientRegexAfter = new Regex[]
         {
-
         };
 
         private static readonly Regex[] RejectHashedReleasesRegex = new Regex[]

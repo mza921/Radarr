@@ -270,7 +270,6 @@ namespace NzbDrone.Core.Indexers.TorrentRss
 
             if (distinct.Length != total.Length)
             {
-
                 throw new UnsupportedFeedException("Feed contains releases with same guid, rejecting malformed rss feed.");
             }
         }

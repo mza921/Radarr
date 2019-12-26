@@ -23,7 +23,6 @@ namespace NzbDrone.Core.Qualities
         public QualityModel()
             : this(Quality.Unknown, new Revision())
         {
-
         }
 
         public QualityModel(Quality quality, Revision revision = null, List<CustomFormat> customFormats = null)

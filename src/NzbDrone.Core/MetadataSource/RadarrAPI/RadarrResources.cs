@@ -48,7 +48,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class TitleInfo
     {
-
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -61,7 +60,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class YearInfo
     {
-
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -71,7 +69,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class Title
     {
-
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -99,7 +96,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class Year
     {
-
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -127,7 +123,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class Mappings
     {
-
         [JsonProperty("titles")]
         public IList<Title> Titles { get; set; }
 
@@ -137,7 +132,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class Mapping
     {
-
         [JsonProperty("id")]
         public int Id { get; set; }
 
@@ -153,7 +147,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class AddTitleMapping
     {
-
         [JsonProperty("tmdbid")]
         public string Tmdbid { get; set; }
 
@@ -181,7 +174,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
     public class AddYearMapping
     {
-
         [JsonProperty("tmdbid")]
         public string Tmdbid { get; set; }
 

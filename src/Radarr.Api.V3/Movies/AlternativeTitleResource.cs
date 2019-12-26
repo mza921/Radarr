@@ -10,7 +10,6 @@ namespace Radarr.Api.V3.Movies
     {
         public AlternativeTitleResource()
         {
-
         }
 
         //Todo: Sorters should be done completely on the client

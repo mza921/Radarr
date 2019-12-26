@@ -7,7 +7,6 @@ using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.ThingiProvider
 {
-
     public class ProviderRepositoryFixture : DbTest<IndexerRepository, IndexerDefinition>
     {
         [Test]

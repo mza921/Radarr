@@ -37,7 +37,6 @@ namespace NzbDrone.Core.CustomFormats
         // This function is needed for json deserialization to work.
         private FormatTag()
         {
-
         }
 
         public bool DoesItMatch(ParsedMovieInfo movieInfo)

@@ -10,7 +10,6 @@ namespace NzbDrone.Api.Movies
     {
         public AlternativeTitleResource()
         {
-
         }
 
         //Todo: Sorters should be done completely on the client

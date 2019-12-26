@@ -5,7 +5,6 @@ using NzbDrone.Core.Validation;
 
 namespace NzbDrone.Core.NetImport.StevenLu
 {
-
     public class StevenLuSettingsValidator : AbstractValidator<StevenLuSettings>
     {
         public StevenLuSettingsValidator()

@@ -15,7 +15,6 @@ using NzbDrone.Test.Common;
 
 namespace NzbDrone.Core.Test.Download.DownloadClientTests.Blackhole
 {
-
     [TestFixture]
     public class UsenetBlackholeFixture : DownloadClientFixtureBase<UsenetBlackhole>
     {

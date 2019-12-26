@@ -73,7 +73,6 @@ namespace NzbDrone.Core.Notifications.Join
 
         private void SendNotification(string title, string message, RestRequest request, JoinSettings settings)
         {
-
             var client = RestClientFactory.BuildClient(URL);
 
             if (settings.DeviceNames.IsNotNullOrWhiteSpace())

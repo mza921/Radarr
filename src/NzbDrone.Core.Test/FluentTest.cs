@@ -87,10 +87,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MaxOrDefault_should_return_zero_when_collection_is_empty()
         {
-
-
-
-
             var result = (new List<int>()).MaxOrDefault();
 
             //Resolve
@@ -100,7 +96,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MaxOrDefault_should_return_max_when_collection_is_not_empty()
         {
-
             var list = new List<int> { 6, 4, 5, 3, 8, 10 };
 
 
@@ -113,7 +108,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MaxOrDefault_should_return_zero_when_collection_is_null()
         {
-
             List<int> list = null;
 
 
@@ -126,7 +120,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void Truncate_should_truncate_strings_to_max_specified_number_of_bytes()
         {
-
             var str = ReadAllText("Files/LongOverview.txt");
 
 
@@ -140,7 +133,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void Truncate_should_not_truncate_string_shorter_than_max_bytes()
         {
-
             var str = "Hello World";
 
 
@@ -154,10 +146,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MinOrDefault_should_return_zero_when_collection_is_empty()
         {
-
-
-
-
             var result = (new List<int>()).MinOrDefault();
 
             //Resolve
@@ -167,7 +155,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MinOrDefault_should_return_min_when_collection_is_not_empty()
         {
-
             var list = new List<int> { 6, 4, 5, 3, 8, 10 };
 
 
@@ -180,7 +167,6 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MinOrDefault_should_return_zero_when_collection_is_null()
         {
-
             List<int> list = null;
 
 

@@ -5,7 +5,6 @@ namespace NzbDrone.Api.Config
 {
     public class NetImportConfigModule : NzbDroneConfigModule<NetImportConfigResource>
     {
-
         public NetImportConfigModule(IConfigService configService)
             : base(configService)
         {

@@ -100,7 +100,6 @@ namespace NzbDrone.Core.Test.HealthCheck.Checks
         [Test]
         public void should_delete_html_images()
         {
-
             var imagePath = "C:\\Movie\\image.jpg".AsOsAgnostic();
             _metadata.First().LastUpdated = new DateTime(2014, 12, 29);
             _metadata.First().RelativePath = "image.jpg".AsOsAgnostic();
@@ -122,7 +121,6 @@ namespace NzbDrone.Core.Test.HealthCheck.Checks
         [Test]
         public void should_delete_empty_images()
         {
-
             var imagePath = "C:\\Movie\\image.jpg".AsOsAgnostic();
             _metadata.First().LastUpdated = new DateTime(2014, 12, 29);
             _metadata.First().Type = MetadataType.MovieImage;
@@ -143,7 +141,6 @@ namespace NzbDrone.Core.Test.HealthCheck.Checks
         [Test]
         public void should_not_delete_non_html_files()
         {
-
             var imagePath = "C:\\Movie\\image.jpg".AsOsAgnostic();
             _metadata.First().LastUpdated = new DateTime(2014, 12, 29);
             _metadata.First().RelativePath = "image.jpg".AsOsAgnostic();

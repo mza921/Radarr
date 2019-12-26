@@ -6,7 +6,6 @@ namespace Radarr.Api.V3.Config
 {
     public class IndexerConfigModule : RadarrConfigModule<IndexerConfigResource>
     {
-
         public IndexerConfigModule(IConfigService configService)
             : base(configService)
         {

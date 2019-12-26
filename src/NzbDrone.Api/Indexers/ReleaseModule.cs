@@ -115,7 +115,6 @@ namespace NzbDrone.Api.Indexers
 
         protected override ReleaseResource MapDecision(DownloadDecision decision, int initialWeight)
         {
-
             _remoteMovieCache.Set(decision.RemoteMovie.Release.Guid, decision.RemoteMovie, TimeSpan.FromMinutes(30));
 
             return base.MapDecision(decision, initialWeight);

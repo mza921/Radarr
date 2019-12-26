@@ -30,7 +30,6 @@ namespace NzbDrone.Test.Common
             int threadId = Thread.CurrentThread.ManagedThreadId;
             lock (_mutex)
             {
-
                 _threads[threadId] = 1;
             }
 

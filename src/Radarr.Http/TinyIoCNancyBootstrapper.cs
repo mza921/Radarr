@@ -12,8 +12,6 @@ using TinyIoC;
 
 namespace Radarr.Http
 {
-
-
     /// <summary>
     /// TinyIoC bootstrapper - registers default route resolver and registers itself as
     /// INancyModuleCatalog for resolving modules but behaviour can be overridden if required.

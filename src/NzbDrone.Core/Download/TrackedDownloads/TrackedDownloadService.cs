@@ -97,7 +97,6 @@ namespace NzbDrone.Core.Download.TrackedDownloads
 
             try
             {
-
                 var historyItems = _historyService.FindByDownloadId(downloadItem.DownloadId);
                 var grabbedHistoryItem = historyItems.OrderByDescending(h => h.Date).FirstOrDefault(h => h.EventType == HistoryEventType.Grabbed);
                 var firstHistoryItem = historyItems.OrderByDescending(h => h.Date).FirstOrDefault();

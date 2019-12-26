@@ -61,7 +61,6 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
         [Test]
         public void should_reject_when_there_isnt_enough_space_for_file_plus_min_free_space()
         {
-
             Mocker.GetMock<IConfigService>()
                 .Setup(s => s.MinimumFreeSpaceWhenImporting)
                 .Returns(100);

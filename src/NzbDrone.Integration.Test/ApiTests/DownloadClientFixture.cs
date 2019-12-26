@@ -7,7 +7,6 @@ namespace NzbDrone.Integration.Test.ApiTests
     [TestFixture]
     public class DownloadClientFixture : IntegrationTest
     {
-
         [Test, Order(0)]
         public void add_downloadclient_without_name_should_return_badrequest()
         {

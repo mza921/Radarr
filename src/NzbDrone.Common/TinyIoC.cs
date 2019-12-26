@@ -3526,15 +3526,12 @@ namespace TinyIoC
 
                 try
                 {
-
                     if (ctorParams[parameterIndex].ParameterType == typeof(Logger))
                     {
                         args[parameterIndex] = LogManager.GetLogger(implementationType.Name);
                     }
                     else
                     {
-
-
                         args[parameterIndex] = parameters.ContainsKey(currentParam.Name) ?
                                                 parameters[currentParam.Name] :
                                                 ResolveInternal(

@@ -32,7 +32,6 @@ namespace NzbDrone.Core.Organizer
 
     public static class ColonReplacementFormatMethods
     {
-
         public static string GetFormatString(this ColonReplacementFormat format)
         {
             switch (format)

@@ -17,7 +17,6 @@ namespace NzbDrone.Common.Test
     [TestFixture]
     public class ProcessProviderFixture : TestBase<ProcessProvider>
     {
-
         [SetUp]
         public void Setup()
         {

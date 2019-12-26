@@ -2,7 +2,6 @@ using System;
 
 namespace NzbDrone.Core.Indexers.TorrentPotato
 {
-
     public class TorrentPotatoResponse
     {
         public Result[] results { get; set; }

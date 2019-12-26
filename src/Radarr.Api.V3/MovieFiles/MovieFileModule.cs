@@ -107,7 +107,6 @@ namespace Radarr.Api.V3.MovieFiles
 
             foreach (var movieFile in movieFiles)
             {
-
                 if (resource.Quality != null)
                 {
                     movieFile.Quality = resource.Quality;

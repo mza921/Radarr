@@ -144,7 +144,6 @@ namespace NzbDrone.Common.OAuth
 
         public virtual void Add(WebParameter parameter)
         {
-
             _parameters.Add(parameter);
         }
 

@@ -61,7 +61,6 @@ namespace NzbDrone.Common.Instrumentation
 
         private static void RegisterSentry(bool updateClient)
         {
-
             string dsn;
 
             if (updateClient)

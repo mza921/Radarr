@@ -160,7 +160,6 @@ namespace NzbDrone.Common.EnvironmentInfo
             }
             catch
             {
-
             }
 
             try
@@ -178,7 +177,6 @@ namespace NzbDrone.Common.EnvironmentInfo
             }
             catch
             {
-
             }
 
             var lowerCurrentDir = Directory.GetCurrentDirectory().ToLower();

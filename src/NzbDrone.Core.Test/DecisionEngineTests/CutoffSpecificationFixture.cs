@@ -12,13 +12,11 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
     [TestFixture]
     public class CutoffSpecificationFixture : CoreTest<UpgradableSpecification>
     {
-
         private CustomFormats.CustomFormat _customFormat;
 
         [SetUp]
         public void Setup()
         {
-
         }
 
         private void GivenCustomFormatHigher()

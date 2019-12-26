@@ -9,7 +9,6 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
 {
     public class PassThePopcornRequestGenerator : IIndexerRequestGenerator
     {
-
         public PassThePopcornSettings Settings { get; set; }
 
         public IDictionary<string, string> Cookies { get; set; }

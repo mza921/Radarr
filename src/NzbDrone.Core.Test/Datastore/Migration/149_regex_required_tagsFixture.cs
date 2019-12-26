@@ -12,7 +12,6 @@ namespace NzbDrone.Core.Test.Datastore.Migration
     [TestFixture]
     public class regex_required_tagsFixture : MigrationTest<convert_regex_required_tags>
     {
-
         public void AddCustomFormat(convert_regex_required_tags c, string name, params string[] formatTags)
         {
             var customFormat = new { Name = name, FormatTags = formatTags.ToList().ToJson() };

@@ -10,7 +10,6 @@ namespace NzbDrone.Core.Movies
     public class MovieScannedHandler : IHandle<MovieScannedEvent>,
                                         IHandle<MovieScanSkippedEvent>
     {
-
         private readonly IMovieService _movieService;
         private readonly IManageCommandQueue _commandQueueManager;
 

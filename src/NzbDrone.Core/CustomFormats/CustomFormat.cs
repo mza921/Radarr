@@ -9,7 +9,6 @@ namespace NzbDrone.Core.CustomFormats
     {
         public CustomFormat()
         {
-
         }
 
         public CustomFormat(string name, params string[] tags)

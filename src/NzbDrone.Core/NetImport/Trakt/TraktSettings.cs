@@ -8,7 +8,6 @@ using NzbDrone.Core.Validation;
 
 namespace NzbDrone.Core.NetImport.Trakt
 {
-
     public class TraktSettingsValidator : AbstractValidator<TraktSettings>
     {
         public TraktSettingsValidator()

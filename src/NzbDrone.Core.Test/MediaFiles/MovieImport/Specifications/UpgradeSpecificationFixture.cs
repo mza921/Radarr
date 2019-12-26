@@ -45,7 +45,6 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
         [Test]
         public void should_return_true_if_upgrade_for_existing_episodeFile()
         {
-
             _localMovie.Movie.MovieFileId = 1;
             _localMovie.Movie.MovieFile = new LazyLoaded<MovieFile>(
                     new MovieFile

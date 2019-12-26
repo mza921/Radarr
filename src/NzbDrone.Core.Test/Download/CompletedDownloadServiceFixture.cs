@@ -318,7 +318,6 @@ namespace NzbDrone.Core.Test.Download
         [Test]
         public void should_mark_as_import_title_mismatch_if_ignore_warnings_is_true()
         {
-
             Mocker.GetMock<IDownloadedMovieImportService>()
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>

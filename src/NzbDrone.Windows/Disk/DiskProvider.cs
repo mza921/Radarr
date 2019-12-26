@@ -49,7 +49,6 @@ namespace NzbDrone.Windows.Disk
 
         public override void SetPermissions(string path, string mask, string user, string group)
         {
-
         }
 
         public override long? GetTotalSize(string path)

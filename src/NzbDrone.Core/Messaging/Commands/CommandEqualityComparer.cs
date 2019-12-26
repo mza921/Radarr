@@ -10,7 +10,6 @@ namespace NzbDrone.Core.Messaging.Commands
 
         private CommandEqualityComparer()
         {
-
         }
 
         public bool Equals(Command x, Command y)

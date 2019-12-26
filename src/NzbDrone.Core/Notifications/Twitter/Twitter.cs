@@ -8,7 +8,6 @@ namespace NzbDrone.Core.Notifications.Twitter
 {
     public class Twitter : NotificationBase<TwitterSettings>
     {
-
         private readonly ITwitterService _twitterService;
 
         public Twitter(ITwitterService twitterService)

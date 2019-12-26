@@ -60,7 +60,6 @@ namespace NzbDrone.Common
 
         public virtual void Install(string serviceName)
         {
-
             _logger.Info("Installing service '{0}'", serviceName);
 
             var args = $"create {serviceName} " +

@@ -19,7 +19,6 @@ namespace NzbDrone.Core.Movies.AlternativeTitles
 
         public AlternativeTitle()
         {
-
         }
 
         public AlternativeTitle(string title, SourceType sourceType = SourceType.TMDB, int sourceId = 0, Language language = null)

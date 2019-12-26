@@ -11,7 +11,6 @@ namespace NzbDrone.Core.Test.NetImport
     [TestFixture]
     public class RSSImportFixture : CoreTest<RSSImport>
     {
-
         [SetUp]
         public void Setup()
         {

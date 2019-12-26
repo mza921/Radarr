@@ -12,7 +12,6 @@ namespace NzbDrone.Api.MovieFiles
     {
         public MovieFileResource()
         {
-
         }
 
         //Todo: Sorters should be done completely on the client
@@ -79,7 +78,6 @@ namespace NzbDrone.Api.MovieFiles
 
             return new MovieFile
             {
-
             };
         }
 

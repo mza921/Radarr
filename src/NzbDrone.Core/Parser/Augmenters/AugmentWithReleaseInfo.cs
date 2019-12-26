@@ -28,7 +28,6 @@ namespace NzbDrone.Core.Parser.Augmenters
         {
             if (helper is ReleaseInfo releaseInfo)
             {
-
                 IIndexerSettings indexerSettings = null;
                 try
                 {

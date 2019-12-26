@@ -39,7 +39,6 @@ namespace NzbDrone.Core.Messaging.Commands
         {
             using (var mapper = _database.GetDataMapper())
             {
-
                 mapper.Parameters.Add(new SQLiteParameter("@orphaned", (int)CommandStatus.Orphaned));
                 mapper.Parameters.Add(new SQLiteParameter("@started", (int)CommandStatus.Started));
                 mapper.Parameters.Add(new SQLiteParameter("@ended", DateTime.UtcNow));

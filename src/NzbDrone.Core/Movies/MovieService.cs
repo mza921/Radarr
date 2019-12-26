@@ -378,7 +378,6 @@ namespace NzbDrone.Core.Movies
 
         public void Handle(MovieFileDeletedEvent message)
         {
-
             var movie = _movieRepository.GetMoviesByFileId(message.MovieFile.Id).First();
             movie.MovieFileId = 0;
             _logger.Debug("Detaching movie {0} from file.", movie.Id);

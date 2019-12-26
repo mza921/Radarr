@@ -4,8 +4,6 @@ using System.Linq;
 
 namespace NzbDrone.Core.Parser.RomanNumerals
 {
-
-
     public static class RomanNumeralParser
     {
         private const int DICTIONARY_PREPOPULATION_SIZE = 20;

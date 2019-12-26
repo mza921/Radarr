@@ -5,7 +5,6 @@ using System.Text;
 
 namespace NzbDrone.Core.Datastore.Migration.Framework
 {
-
     public class SqliteSyntaxReader
     {
         public string Buffer { get; private set; }

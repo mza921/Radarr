@@ -12,10 +12,8 @@ namespace NzbDrone.Core.Test.Datastore
     [TestFixture]
     public class MappingExtensionFixture
     {
-
         public class EmbeddedType : IEmbeddedDocument
         {
-
         }
 
         public class TypeWithAllMappableProperties

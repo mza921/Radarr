@@ -134,7 +134,6 @@ namespace NzbDrone.Integration.Test
         {
             if (_signalrConnection != null)
             {
-
                 await _signalrConnection.StopAsync();
 
                 _signalrConnection = null;

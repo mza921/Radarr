@@ -30,7 +30,6 @@ namespace Radarr.Api.V3.Commands
         {
             get
             {
-
                 if (Started.HasValue)
                 {
                     return Started.Value;

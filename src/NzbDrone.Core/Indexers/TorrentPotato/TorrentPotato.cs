@@ -16,7 +16,6 @@ namespace NzbDrone.Core.Indexers.TorrentPotato
         public TorrentPotato(IHttpClient httpClient, IIndexerStatusService indexerStatusService, IConfigService configService, IParsingService parsingService, Logger logger)
             : base(httpClient, indexerStatusService, configService, parsingService, logger)
         {
-
         }
 
         private IndexerDefinition GetDefinition(string name, TorrentPotatoSettings settings)

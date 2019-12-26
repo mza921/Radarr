@@ -142,7 +142,6 @@ namespace NzbDrone.Core.MediaFiles
             var newFolder = _filenameBuilder.BuildMoviePath(movie);
             if (newFolder != movie.Path && movie.PathState == MoviePathState.Dynamic)
             {
-
                 if (!_configService.AutoRenameFolders)
                 {
                     _logger.Info("{0}'s movie should be {1} according to your naming config.", movie, newFolder);

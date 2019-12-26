@@ -11,7 +11,6 @@ namespace NzbDrone.Core.Test.ParserTests
 
     public class QualityParserFixture : CoreTest
     {
-
         [SetUp]
         public void Setup()
         {

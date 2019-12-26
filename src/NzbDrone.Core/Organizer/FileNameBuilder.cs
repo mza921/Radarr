@@ -144,7 +144,6 @@ namespace NzbDrone.Core.Organizer
 
             if (movie.MovieFile != null)
             {
-
                 AddQualityTokens(tokenHandlers, movie, movieFile);
                 AddMediaInfoTokens(tokenHandlers, movieFile);
                 AddMovieFileTokens(tokenHandlers, movieFile);

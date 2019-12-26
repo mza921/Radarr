@@ -144,7 +144,6 @@ namespace NzbDrone.Test.Common
 
                 if (levelLogs.Count != count)
                 {
-
                     var message = string.Format("{0} {1}(s) were expected but {2} were logged.\n\r{3}",
                         count,
                         level,

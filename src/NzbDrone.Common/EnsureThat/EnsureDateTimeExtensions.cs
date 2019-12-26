@@ -7,7 +7,6 @@ namespace NzbDrone.Common.EnsureThat
 {
     public static class EnsureDateTimeExtensions
     {
-
         private static readonly DateTime _minTime = new DateTime(1960, 1, 1);
 
         [DebuggerStepThrough]

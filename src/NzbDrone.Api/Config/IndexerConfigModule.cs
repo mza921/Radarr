@@ -6,7 +6,6 @@ namespace NzbDrone.Api.Config
 {
     public class IndexerConfigModule : NzbDroneConfigModule<IndexerConfigResource>
     {
-
         public IndexerConfigModule(IConfigService configService)
             : base(configService)
         {

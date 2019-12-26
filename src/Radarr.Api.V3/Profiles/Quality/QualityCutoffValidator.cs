@@ -18,7 +18,6 @@ namespace Radarr.Api.V3.Profiles.Quality
         public ValidCutoffValidator()
             : base("Cutoff must be an allowed quality or group")
         {
-
         }
 
         protected override bool IsValid(PropertyValidatorContext context)

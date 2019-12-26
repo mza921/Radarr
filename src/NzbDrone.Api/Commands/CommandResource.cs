@@ -59,7 +59,6 @@ namespace NzbDrone.Api.Commands
         {
             get
             {
-
                 if (Started.HasValue)
                 {
                     return Started.Value;

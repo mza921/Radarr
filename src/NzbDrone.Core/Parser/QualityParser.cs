@@ -128,7 +128,6 @@ namespace NzbDrone.Core.Parser
             {
                 if (sourceMatch.Groups["bluray"].Success)
                 {
-
                     if (brDiskMatch)
                     {
                         result.Quality = Quality.BRDISK;

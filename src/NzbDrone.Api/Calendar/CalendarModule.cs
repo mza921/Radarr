@@ -20,7 +20,6 @@ namespace NzbDrone.Api.Calendar
                             IMapCoversToLocal coverMapper)
             : base(signalR, "calendar")
         {
-
             _moviesService = moviesService;
             _coverMapper = coverMapper;
 

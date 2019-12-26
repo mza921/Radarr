@@ -2,7 +2,6 @@
 
 namespace NzbDrone.Common.Serializer
 {
-
     public class JsonVisitor
     {
         protected void Dispatch(JToken json)
@@ -85,7 +84,6 @@ namespace NzbDrone.Common.Serializer
 
         public virtual void Visit(JValue value)
         {
-
         }
     }
 }

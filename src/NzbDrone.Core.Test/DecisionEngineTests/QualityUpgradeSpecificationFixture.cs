@@ -26,7 +26,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         [SetUp]
         public void Setup()
         {
-
         }
 
         private void GivenAutoDownloadPropers(bool autoDownloadPropers)

@@ -84,7 +84,6 @@ namespace NzbDrone.Integration.Test.Client
         public ClientBase(IRestClient restClient, string apiKey, string resource = null)
             : base(restClient, apiKey, resource ?? new TResource().ResourceName)
         {
-
         }
 
         public List<TResource> All()

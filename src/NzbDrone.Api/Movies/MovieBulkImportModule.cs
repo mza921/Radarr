@@ -17,7 +17,6 @@ using Radarr.Http;
 
 namespace NzbDrone.Api.Movies
 {
-
     public class UnmappedComparer : IComparer<UnmappedFolder>
     {
         public int Compare(UnmappedFolder a, UnmappedFolder b)

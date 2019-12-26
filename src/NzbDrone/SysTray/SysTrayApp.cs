@@ -98,7 +98,6 @@ namespace NzbDrone.SysTray
             }
             catch (Exception)
             {
-
             }
         }
 
@@ -128,7 +127,6 @@ namespace NzbDrone.SysTray
             }
             catch (Exception)
             {
-
             }
         }
     }

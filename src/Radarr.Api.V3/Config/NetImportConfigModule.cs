@@ -5,7 +5,6 @@ namespace Radarr.Api.V3.Config
 {
     public class NetImportConfigModule : RadarrConfigModule<NetImportConfigResource>
     {
-
         public NetImportConfigModule(IConfigService configService)
             : base(configService)
         {

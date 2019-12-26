@@ -85,7 +85,6 @@ namespace NzbDrone.Common.Test
         [Test]
         public void GetLaunchBrowser_Success()
         {
-
             var result = Subject.LaunchBrowser;
 
 

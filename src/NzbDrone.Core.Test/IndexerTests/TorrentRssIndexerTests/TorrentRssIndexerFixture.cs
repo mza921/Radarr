@@ -12,7 +12,6 @@ using NzbDrone.Test.Common;
 
 namespace NzbDrone.Core.Test.IndexerTests.TorrentRssIndexerTests
 {
-
     [TestFixture]
     public class TorrentRssIndexerFixture : CoreTest<TestTorrentRssIndexer>
     {

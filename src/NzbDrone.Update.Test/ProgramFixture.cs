@@ -11,8 +11,6 @@ namespace NzbDrone.Update.Test
     [TestFixture]
     public class ProgramFixture : TestBase<UpdateApp>
     {
-
-
         [Test]
         public void should_throw_if_null_passed_in()
         {

@@ -30,7 +30,6 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
         [Test]
         public void should_delete_orphaned_items()
         {
-
             var history = Builder<History.History>.CreateNew()
                                                   .With(h => h.Quality = new QualityModel())
                                                   .With(h => h.Languages = new List<Language>())

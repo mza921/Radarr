@@ -30,7 +30,6 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests
         [SetUp]
         public void Setup()
         {
-
             _movie = Builder<Movie>.CreateNew()
                                    .With(m => m.Title = "Fack Ju Göthe 2")
                                    .With(m => m.CleanTitle = "fackjugoethe2")

@@ -7,7 +7,6 @@ using NzbDrone.Core.Validation;
 
 namespace NzbDrone.Core.NetImport.TMDb
 {
-
     public class TMDbSettingsValidator : AbstractValidator<TMDbSettings>
     {
         public TMDbSettingsValidator()

@@ -32,22 +32,18 @@ namespace NzbDrone.Core.Notifications
 
         public virtual void OnGrab(GrabMessage grabMessage)
         {
-
         }
 
         public virtual void OnDownload(DownloadMessage message)
         {
-
         }
 
         public virtual void OnMovieRename(Movie movie)
         {
-
         }
 
         public virtual void OnHealthIssue(HealthCheck.HealthCheck healthCheck)
         {
-
         }
 
         public bool SupportsOnGrab => HasConcreteImplementation("OnGrab");
