@@ -82,8 +82,15 @@ namespace NzbDrone.Common.EnvironmentInfo
 
                 if (_startupContext.Args.ContainsKey(StartupContext.APPDATA))
                 {
-                    if (_diskProvider.FileExists(_appFolderInfo.GetDatabase())) return;
-                    if (!_diskProvider.FileExists(oldDbFile)) return;
+                    if (_diskProvider.FileExists(_appFolderInfo.GetDatabase()))
+                    {
+                        return;
+                    }
+
+                    if (!_diskProvider.FileExists(oldDbFile))
+                    {
+                        return;
+                    }
 
                     _diskProvider.MoveFile(oldDbFile, _appFolderInfo.GetDatabase());
                     CleanupSqLiteRollbackFiles();
@@ -91,7 +98,10 @@ namespace NzbDrone.Common.EnvironmentInfo
                 }
 
                 // Exit if a radarr.db already exists
-                if (_diskProvider.FileExists(_appFolderInfo.GetDatabase())) return;
+                if (_diskProvider.FileExists(_appFolderInfo.GetDatabase()))
+                {
+                    return;
+                }
 
                 // Rename the DB file
                 if (_diskProvider.FileExists(oldDbFile))
@@ -115,7 +125,10 @@ namespace NzbDrone.Common.EnvironmentInfo
 
         private void InitializeMonoApplicationData()
         {
-            if (OsInfo.IsWindows) return;
+            if (OsInfo.IsWindows)
+            {
+                return;
+            }
 
             try
             {

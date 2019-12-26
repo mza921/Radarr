@@ -161,7 +161,9 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.SabnzbdTests
         protected virtual void GivenHistory(SabnzbdHistory history)
         {
             if (history == null)
+            {
                 history = new SabnzbdHistory() { Items = new List<SabnzbdHistoryItem>() };
+            }
 
             Mocker.GetMock<ISabnzbdProxy>()
                 .Setup(s => s.GetHistory(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>(), It.IsAny<SabnzbdSettings>()))

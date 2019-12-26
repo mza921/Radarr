@@ -42,18 +42,27 @@ namespace NzbDrone.Core.Download.Clients.Transmission
             foreach (var torrent in torrents)
             {
                 // If totalsize == 0 the torrent is a magnet downloading metadata
-                if (torrent.TotalSize == 0) continue;
+                if (torrent.TotalSize == 0)
+                {
+                    continue;
+                }
 
                 var outputPath = new OsPath(torrent.DownloadDir);
 
                 if (Settings.MovieDirectory.IsNotNullOrWhiteSpace())
                 {
-                    if (!new OsPath(Settings.MovieDirectory).Contains(outputPath)) continue;
+                    if (!new OsPath(Settings.MovieDirectory).Contains(outputPath))
+                    {
+                        continue;
+                    }
                 }
                 else if (Settings.MovieCategory.IsNotNullOrWhiteSpace())
                 {
                     var directories = outputPath.FullPath.Split('\\', '/');
-                    if (!directories.Contains(Settings.MovieCategory)) continue;
+                    if (!directories.Contains(Settings.MovieCategory))
+                    {
+                        continue;
+                    }
                 }
 
                 outputPath = _remotePathMappingService.RemapRemoteToLocal(Settings.Host, outputPath);
@@ -207,7 +216,11 @@ namespace NzbDrone.Core.Download.Clients.Transmission
         protected override void Test(List<ValidationFailure> failures)
         {
             failures.AddIfNotNull(TestConnection());
-            if (failures.HasErrors()) return;
+            if (failures.HasErrors())
+            {
+                return;
+            }
+
             failures.AddIfNotNull(TestGetTorrents());
         }
 
@@ -223,7 +236,10 @@ namespace NzbDrone.Core.Download.Clients.Transmission
                 return Settings.MovieDirectory;
             }
 
-            if (!Settings.MovieCategory.IsNotNullOrWhiteSpace()) return null;
+            if (!Settings.MovieCategory.IsNotNullOrWhiteSpace())
+            {
+                return null;
+            }
 
             var config = _proxy.GetConfig(Settings);
             var destDir = config.DownloadDir;

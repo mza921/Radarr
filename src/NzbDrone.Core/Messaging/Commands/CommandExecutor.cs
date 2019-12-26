@@ -126,7 +126,10 @@ namespace NzbDrone.Core.Messaging.Commands
 
             var envLimit = Environment.GetEnvironmentVariable("THREAD_LIMIT") ?? $"{THREAD_LIMIT}";
             int threadLimit = THREAD_LIMIT;
-            if (int.TryParse(envLimit, out int parsedLimit)) threadLimit = parsedLimit;
+            if (int.TryParse(envLimit, out int parsedLimit))
+            {
+                threadLimit = parsedLimit;
+            }
 
             threadLimit = Math.Max(THREAD_LOWER_BOUND, threadLimit);
             threadLimit = Math.Min(THREAD_UPPER_BOUND, threadLimit);

@@ -73,7 +73,10 @@ namespace Radarr.Api.V3.Movies
     {
         public static MovieResource ToResource(this Movie model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             long size = model.MovieFile?.Size ?? 0;
             MovieFileResource movieFile = model.MovieFile?.ToResource(model);
@@ -131,7 +134,10 @@ namespace Radarr.Api.V3.Movies
 
         public static Movie ToModel(this MovieResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new Movie
             {

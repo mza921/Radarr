@@ -25,7 +25,10 @@ namespace NzbDrone.Api.Blacklist
     {
         public static BlacklistResource MapToResource(this Core.Blacklisting.Blacklist model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new BlacklistResource
             {

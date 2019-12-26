@@ -17,7 +17,10 @@ namespace Radarr.Api.V3.Movies
     {
         public static RenameMovieResource ToResource(this RenameMovieFilePreview model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new RenameMovieResource
             {

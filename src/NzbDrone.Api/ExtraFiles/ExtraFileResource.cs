@@ -21,7 +21,10 @@ namespace NzbDrone.Api.ExtraFiles
     {
         public static ExtraFileResource ToResource(this MetadataFile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new ExtraFileResource
             {
@@ -36,7 +39,10 @@ namespace NzbDrone.Api.ExtraFiles
 
         public static ExtraFileResource ToResource(this SubtitleFile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new ExtraFileResource
             {
@@ -51,7 +57,10 @@ namespace NzbDrone.Api.ExtraFiles
 
         public static ExtraFileResource ToResource(this OtherExtraFile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new ExtraFileResource
             {

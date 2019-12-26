@@ -29,7 +29,10 @@ namespace NzbDrone.Api.Queue
     {
         public static QueueResource ToResource(this Core.Queue.Queue model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new QueueResource
             {

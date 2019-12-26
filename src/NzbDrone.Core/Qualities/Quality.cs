@@ -39,15 +39,30 @@ namespace NzbDrone.Core.Qualities
 
         public bool Equals(Quality other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
             return Id.Equals(other.Id);
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
 
             return Equals(obj as Quality);
         }
@@ -201,12 +216,17 @@ namespace NzbDrone.Core.Qualities
 #endif
         public static Quality FindById(int id)
         {
-            if (id == 0) return Unknown;
+            if (id == 0)
+            {
+                return Unknown;
+            }
 
             var quality = AllLookup[id];
 
             if (quality == null)
+            {
                 throw new ArgumentException("ID does not match a known quality", "id");
+            }
 
             return quality;
         }

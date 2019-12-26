@@ -18,7 +18,10 @@ namespace NzbDrone.Api.RootFolders
     {
         public static RootFolderResource ToResource(this RootFolder model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new RootFolderResource
             {
@@ -33,7 +36,10 @@ namespace NzbDrone.Api.RootFolders
 
         public static RootFolder ToModel(this RootFolderResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new RootFolder
             {

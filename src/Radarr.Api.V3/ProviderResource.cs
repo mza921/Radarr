@@ -46,7 +46,10 @@ namespace Radarr.Api.V3
 
         public virtual TProviderDefinition ToModel(TProviderResource resource)
         {
-            if (resource == null) return default(TProviderDefinition);
+            if (resource == null)
+            {
+                return default(TProviderDefinition);
+            }
 
             var definition = new TProviderDefinition
             {

@@ -90,7 +90,9 @@ namespace NzbDrone.Core.Test.Qualities
             };
 
             if (allowed.Length == 0)
+            {
                 allowed = qualities.ToArray();
+            }
 
             var items = qualities
                 .Except(allowed)

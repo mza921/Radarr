@@ -94,7 +94,11 @@ namespace NzbDrone.Core.Notifications
             {
                 try
                 {
-                    if (!ShouldHandleMovie(notification.Definition, message.Movie.Movie)) continue;
+                    if (!ShouldHandleMovie(notification.Definition, message.Movie.Movie))
+                    {
+                        continue;
+                    }
+
                     notification.OnGrab(grabMessage);
                 }
                 catch (Exception ex)

@@ -32,7 +32,10 @@ namespace NzbDrone.Core.Download
         {
             var availableProviders = _downloadClientFactory.GetAvailableProviders().Where(v => v.Protocol == downloadProtocol).ToList();
 
-            if (!availableProviders.Any()) return null;
+            if (!availableProviders.Any())
+            {
+                return null;
+            }
 
             var blockedProviders = new HashSet<int>(_downloadClientStatusService.GetBlockedProviders().Select(v => v.ProviderId));
 

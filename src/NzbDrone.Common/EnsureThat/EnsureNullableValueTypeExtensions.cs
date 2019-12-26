@@ -10,7 +10,9 @@ namespace NzbDrone.Common.EnsureThat
             where T : struct
         {
             if (param.Value == null || !param.Value.HasValue)
+            {
                 throw ExceptionFactory.CreateForParamNullValidation(param.Name, ExceptionMessages.EnsureExtensions_IsNotNull);
+            }
 
             return param;
         }

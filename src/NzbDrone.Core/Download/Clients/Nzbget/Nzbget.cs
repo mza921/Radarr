@@ -223,7 +223,10 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
             {
                 var name = config.GetValueOrDefault("Category" + i + ".Name");
 
-                if (name == null) yield break;
+                if (name == null)
+                {
+                    yield break;
+                }
 
                 var destDir = config.GetValueOrDefault("Category" + i + ".DestDir");
 

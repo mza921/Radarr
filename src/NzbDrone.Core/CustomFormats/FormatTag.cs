@@ -43,7 +43,11 @@ namespace NzbDrone.Core.CustomFormats
         public bool DoesItMatch(ParsedMovieInfo movieInfo)
         {
             var match = DoesItMatchWithoutMods(movieInfo);
-            if (TagModifier.HasFlag(TagModifier.Not)) match = !match;
+            if (TagModifier.HasFlag(TagModifier.Not))
+            {
+                match = !match;
+            }
+
             return match;
         }
 
@@ -98,9 +102,20 @@ namespace NzbDrone.Core.CustomFormats
             var type = match.Groups["type"].Value.ToLower();
             var value = match.Groups["value"].Value.ToLower();
 
-            if (match.Groups["m_re"].Success) TagModifier |= TagModifier.AbsolutelyRequired;
-            if (match.Groups["m_r"].Success) TagModifier |= TagModifier.Regex;
-            if (match.Groups["m_n"].Success) TagModifier |= TagModifier.Not;
+            if (match.Groups["m_re"].Success)
+            {
+                TagModifier |= TagModifier.AbsolutelyRequired;
+            }
+
+            if (match.Groups["m_r"].Success)
+            {
+                TagModifier |= TagModifier.Regex;
+            }
+
+            if (match.Groups["m_n"].Success)
+            {
+                TagModifier |= TagModifier.Not;
+            }
 
             switch (type)
             {
@@ -199,7 +214,11 @@ namespace NzbDrone.Core.CustomFormats
                     foreach (IndexerFlags flagValue in flagValues)
                     {
                         var flagString = flagValue.ToString();
-                        if (flagString.ToLower().Replace("_", string.Empty) != value.ToLower().Replace("_", string.Empty)) continue;
+                        if (flagString.ToLower().Replace("_", string.Empty) != value.ToLower().Replace("_", string.Empty))
+                        {
+                            continue;
+                        }
+
                         Value = flagValue;
                         break;
                     }

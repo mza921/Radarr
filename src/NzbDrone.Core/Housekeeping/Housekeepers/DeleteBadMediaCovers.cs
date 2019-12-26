@@ -32,7 +32,10 @@ namespace NzbDrone.Core.Housekeeping.Housekeepers
 
         public void Clean()
         {
-            if (!_configService.CleanupMetadataImages) return;
+            if (!_configService.CleanupMetadataImages)
+            {
+                return;
+            }
 
             var movies = _movieService.GetAllMovies();
 
@@ -75,7 +78,11 @@ namespace NzbDrone.Core.Housekeeping.Housekeepers
 
             using (var imageStream = _diskProvider.OpenReadStream(path))
             {
-                if (imageStream.Length < buffer.Length) return false;
+                if (imageStream.Length < buffer.Length)
+                {
+                    return false;
+                }
+
                 imageStream.Read(buffer, 0, buffer.Length);
             }
 

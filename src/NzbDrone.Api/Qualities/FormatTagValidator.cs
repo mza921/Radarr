@@ -24,7 +24,10 @@ namespace NzbDrone.Api.Qualities
 
             var invalidTags = tags.Where(t => !FormatTag.QualityTagRegex.IsMatch(t));
 
-            if (invalidTags.Count() == 0) return true;
+            if (invalidTags.Count() == 0)
+            {
+                return true;
+            }
 
             var formatMessage =
                 $"Format Tags ({string.Join(", ", invalidTags)}) are in an invalid format! Check the Wiki to learn how they should look.";

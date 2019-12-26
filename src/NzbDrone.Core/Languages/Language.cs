@@ -32,15 +32,30 @@ namespace NzbDrone.Core.Languages
 
         public bool Equals(Language other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
             return Id.Equals(other.Id);
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
 
             return Equals(obj as Language);
         }
@@ -123,7 +138,10 @@ namespace NzbDrone.Core.Languages
 
         public static Language FindById(int id)
         {
-            if (id == 0) return Unknown;
+            if (id == 0)
+            {
+                return Unknown;
+            }
 
             Language language = All.FirstOrDefault(v => v.Id == id);
 

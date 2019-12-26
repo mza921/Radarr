@@ -29,7 +29,10 @@ namespace Radarr.Api.V3.History
     {
         public static HistoryResource ToResource(this NzbDrone.Core.History.History model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new HistoryResource
             {

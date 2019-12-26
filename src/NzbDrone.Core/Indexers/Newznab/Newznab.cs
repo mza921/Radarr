@@ -99,7 +99,11 @@ namespace NzbDrone.Core.Indexers.Newznab
         protected override void Test(List<ValidationFailure> failures)
         {
             base.Test(failures);
-            if (failures.HasErrors()) return;
+            if (failures.HasErrors())
+            {
+                return;
+            }
+
             failures.AddIfNotNull(TestCapabilities());
         }
 
@@ -110,7 +114,9 @@ namespace NzbDrone.Core.Indexers.Newznab
             foreach (var category in categories)
             {
                 if (category.Subcategories != null)
+                {
                     l.AddRange(CategoryIds(category.Subcategories));
+                }
             }
 
             return l;
@@ -128,7 +134,9 @@ namespace NzbDrone.Core.Indexers.Newznab
                 {
                     _logger.Warn($"{Definition.Name} does not support the following categories: {string.Join(", ", notSupported)}. You should probably remove them.");
                     if (notSupported.Count() == Settings.Categories.Count())
+                    {
                         return new ValidationFailure(string.Empty, $"This indexer does not support any of the selected categories! (You may need to turn on advanced settings to see them)");
+                    }
                 }
 
                 if (capabilities.SupportedSearchParameters != null && capabilities.SupportedSearchParameters.Contains("q"))

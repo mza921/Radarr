@@ -25,7 +25,10 @@ namespace NzbDrone.Api.ManualImport
     {
         public static ManualImportResource ToResource(this Core.MediaFiles.MovieImport.Manual.ManualImportItem model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new ManualImportResource
             {

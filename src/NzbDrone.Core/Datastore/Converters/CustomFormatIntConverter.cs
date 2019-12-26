@@ -38,7 +38,10 @@ namespace NzbDrone.Core.Datastore.Converters
 
         public object ToDB(object clrValue)
         {
-            if (clrValue == DBNull.Value) return null;
+            if (clrValue == DBNull.Value)
+            {
+                return null;
+            }
 
             if (!(clrValue is CustomFormat))
             {

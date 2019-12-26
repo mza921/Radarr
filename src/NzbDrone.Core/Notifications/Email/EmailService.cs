@@ -35,7 +35,9 @@ namespace NzbDrone.Core.Notifications.Email
             NetworkCredential credentials = null;
 
             if (!string.IsNullOrWhiteSpace(settings.Username))
+            {
                 credentials = new NetworkCredential(settings.Username, settings.Password);
+            }
 
             try
             {

@@ -125,7 +125,10 @@ namespace NzbDrone.Core.Download.Clients.Deluge
 
             foreach (var torrent in torrents)
             {
-                if (torrent.Hash == null) continue;
+                if (torrent.Hash == null)
+                {
+                    continue;
+                }
 
                 var item = new DownloadClientItem();
                 item.DownloadId = torrent.Hash.ToUpper();
@@ -219,7 +222,11 @@ namespace NzbDrone.Core.Download.Clients.Deluge
         protected override void Test(List<ValidationFailure> failures)
         {
             failures.AddIfNotNull(TestConnection());
-            if (failures.HasErrors()) return;
+            if (failures.HasErrors())
+            {
+                return;
+            }
+
             failures.AddIfNotNull(TestCategory());
             failures.AddIfNotNull(TestGetTorrents());
         }

@@ -114,7 +114,10 @@ namespace NzbDrone.Core.Profiles
         {
             // Hack to force custom formats to be loaded into memory, if you have a better solution please let me know.
             _formatService.All();
-            if (All().Any()) return;
+            if (All().Any())
+            {
+                return;
+            }
 
             _logger.Info("Setting up default quality profiles");
 

@@ -229,13 +229,17 @@ namespace NzbDrone.Integration.Test
             for (var i = 0; i < count; i++)
             {
                 if (predicate())
+                {
                     return;
+                }
 
                 Thread.Sleep(interval);
             }
 
             if (predicate())
+            {
                 return;
+            }
 
             Assert.Fail("Timed on wait");
         }

@@ -87,7 +87,10 @@ namespace NzbDrone.Core.Rest
         {
             var header = response.Headers.FirstOrDefault(v => v.Name == key);
 
-            if (header == null) return null;
+            if (header == null)
+            {
+                return null;
+            }
 
             return header.Value;
         }

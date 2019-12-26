@@ -75,7 +75,9 @@ namespace NzbDrone.Test.Common
                 }
 
                 if (!_waitEvent.Wait(msec))
+                {
                     break;
+                }
             }
 
             Expected(LogLevel.Error, count);

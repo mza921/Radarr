@@ -31,7 +31,10 @@ namespace NzbDrone.Common.Extensions
         public static T WithData<T>(this T ex, Http.HttpResponse response, int maxSampleLength = 512)
             where T : Exception
         {
-            if (response == null || response.Content == null) return ex;
+            if (response == null || response.Content == null)
+            {
+                return ex;
+            }
 
             var contentSample = response.Content.Substring(0, Math.Min(response.Content.Length, maxSampleLength));
 
@@ -60,7 +63,10 @@ namespace NzbDrone.Common.Extensions
 
         private static void AddData(this Exception ex, string key, string value)
         {
-            if (value.IsNullOrWhiteSpace()) return;
+            if (value.IsNullOrWhiteSpace())
+            {
+                return;
+            }
 
             ex.Data[key] = value;
         }

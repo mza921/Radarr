@@ -274,7 +274,10 @@ namespace NzbDrone.Core.Download.Pending
                 var movie = movieMap.GetValueOrDefault(release.MovieId);
 
                 // Just in case the series was removed, but wasn't cleaned up yet (housekeeper will clean it up)
-                if (movie == null) return null;
+                if (movie == null)
+                {
+                    return null;
+                }
 
                 release.RemoteMovie = new RemoteMovie
                 {

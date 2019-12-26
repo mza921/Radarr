@@ -23,7 +23,10 @@ namespace Radarr.Http.Extensions.Pipelines
 
         private void Handle(NancyContext context)
         {
-            if (context.Request.Method == "OPTIONS") return;
+            if (context.Request.Method == "OPTIONS")
+            {
+                return;
+            }
 
             if (_cacheableSpecification.IsCacheable(context))
             {

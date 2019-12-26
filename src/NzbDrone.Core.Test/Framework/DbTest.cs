@@ -57,7 +57,9 @@ namespace NzbDrone.Core.Test.Framework
             get
             {
                 if (_db == null)
+                {
                     throw new InvalidOperationException("Test object database doesn't exists. Make sure you call WithRealDb() if you intend to use an actual database.");
+                }
 
                 return _db;
             }

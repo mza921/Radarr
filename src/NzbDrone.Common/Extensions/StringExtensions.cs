@@ -18,7 +18,11 @@ namespace NzbDrone.Common.Extensions
 
         public static object NullSafe(this object target)
         {
-            if (target != null) return target;
+            if (target != null)
+            {
+                return target;
+            }
+
             return "[NULL]";
         }
 
@@ -76,7 +80,9 @@ namespace NzbDrone.Common.Extensions
         public static string TrimEnd(this string text, string postfix)
         {
             if (text.EndsWith(postfix))
+            {
                 text = text.Substring(0, text.Length - postfix.Length);
+            }
 
             return text;
         }

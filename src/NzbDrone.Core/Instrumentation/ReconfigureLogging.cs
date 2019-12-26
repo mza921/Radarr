@@ -26,11 +26,17 @@ namespace NzbDrone.Core.Instrumentation
             LogLevel minimumConsoleLogLevel;
 
             if (_configFileProvider.ConsoleLogLevel.IsNotNullOrWhiteSpace())
+            {
                 minimumConsoleLogLevel = LogLevel.FromString(_configFileProvider.ConsoleLogLevel);
+            }
             else if (minimumLogLevel > LogLevel.Info)
+            {
                 minimumConsoleLogLevel = minimumLogLevel;
+            }
             else
+            {
                 minimumConsoleLogLevel = LogLevel.Info;
+            }
 
             var rules = LogManager.Configuration.LoggingRules;
 

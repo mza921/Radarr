@@ -90,8 +90,10 @@ namespace NzbDrone.Api.Movies
     {
         public static MovieResource ToResource(this Core.Movies.Movie model)
         {
-            if (model == null) return null;
-
+            if (model == null)
+            {
+                return null;
+            }
 
             long size = model.MovieFile?.Size ?? 0;
             bool downloaded = model.MovieFile != null;
@@ -173,7 +175,10 @@ namespace NzbDrone.Api.Movies
 
         public static Core.Movies.Movie ToModel(this MovieResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new Core.Movies.Movie
             {

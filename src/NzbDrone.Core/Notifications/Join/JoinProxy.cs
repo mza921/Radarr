@@ -99,7 +99,10 @@ namespace NzbDrone.Core.Notifications.Join
             var response = client.ExecuteAndValidate(request);
             var res = Json.Deserialize<JoinResponseModel>(response.Content);
 
-            if (res.success) return;
+            if (res.success)
+            {
+                return;
+            }
 
             if (res.userAuthError)
             {

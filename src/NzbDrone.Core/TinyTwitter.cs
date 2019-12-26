@@ -127,17 +127,23 @@ namespace TinyTwitter
             private void WriteRequestBody(HttpWebRequest request)
             {
                 if (method == "GET")
+                {
                     return;
+                }
 
                 var requestBody = Encoding.ASCII.GetBytes(GetCustomParametersString());
                 using (var stream = request.GetRequestStream())
+                {
                     stream.Write(requestBody, 0, requestBody.Length);
+                }
             }
 
             private string GetRequestUrl()
             {
                 if (method != "GET" || customParameters.Count == 0)
+                {
                     return url;
+                }
 
                 return string.Format("{0}?{1}", url, GetCustomParametersString());
             }
@@ -216,7 +222,9 @@ namespace TinyTwitter
             // From Twitterizer http://www.twitterizer.net/
 
             if (string.IsNullOrEmpty(value))
+            {
                 return string.Empty;
+            }
 
             var encoded = Uri.EscapeDataString(value);
 

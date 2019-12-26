@@ -31,7 +31,10 @@ namespace Radarr.Api.V3.Commands
             get
             {
 
-                if (Started.HasValue) return Started.Value;
+                if (Started.HasValue)
+                {
+                    return Started.Value;
+                }
 
                 return Ended;
             }
@@ -43,7 +46,10 @@ namespace Radarr.Api.V3.Commands
         {
             get
             {
-                if (Body != null) return Body.SendUpdatesToClient;
+                if (Body != null)
+                {
+                    return Body.SendUpdatesToClient;
+                }
 
                 return false;
             }
@@ -55,7 +61,10 @@ namespace Radarr.Api.V3.Commands
         {
             get
             {
-                if (Body != null) return Body.UpdateScheduledTask;
+                if (Body != null)
+                {
+                    return Body.UpdateScheduledTask;
+                }
 
                 return false;
             }
@@ -70,7 +79,10 @@ namespace Radarr.Api.V3.Commands
     {
         public static CommandResource ToResource(this CommandModel model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new CommandResource
             {

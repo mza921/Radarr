@@ -16,7 +16,10 @@ namespace NzbDrone.Api.Movies
     {
         public static RenameMovieResource ToResource(this Core.MediaFiles.RenameMovieFilePreview model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new RenameMovieResource
             {

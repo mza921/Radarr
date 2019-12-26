@@ -57,9 +57,20 @@ namespace NzbDrone.Common.Disk
 
         private static bool HasWindowsDriveLetter(string path)
         {
-            if (path.Length < 2) return false;
-            if (!char.IsLetter(path[0]) || path[1] != ':') return false;
-            if (path.Length > 2 && path[2] != '\\' && path[2] != '/') return false;
+            if (path.Length < 2)
+            {
+                return false;
+            }
+
+            if (!char.IsLetter(path[0]) || path[1] != ':')
+            {
+                return false;
+            }
+
+            if (path.Length > 2 && path[2] != '\\' && path[2] != '/')
+            {
+                return false;
+            }
 
             return true;
         }
@@ -245,7 +256,10 @@ namespace NzbDrone.Common.Disk
 
         public bool Equals(OsPath other)
         {
-            if (ReferenceEquals(other, null)) return false;
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
 
             if (_path == other._path)
             {
@@ -264,14 +278,20 @@ namespace NzbDrone.Common.Disk
 
         public static bool operator ==(OsPath left, OsPath right)
         {
-            if (ReferenceEquals(left, null)) return ReferenceEquals(right, null);
+            if (ReferenceEquals(left, null))
+            {
+                return ReferenceEquals(right, null);
+            }
 
             return left.Equals(right);
         }
 
         public static bool operator !=(OsPath left, OsPath right)
         {
-            if (ReferenceEquals(left, null)) return !ReferenceEquals(right, null);
+            if (ReferenceEquals(left, null))
+            {
+                return !ReferenceEquals(right, null);
+            }
 
             return !left.Equals(right);
         }

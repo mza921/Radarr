@@ -53,7 +53,11 @@ namespace NzbDrone.Common.Extensions
                 comparison = DiskProviderBase.PathStringComparison;
             }
 
-            if (firstPath.Equals(secondPath, comparison.Value)) return true;
+            if (firstPath.Equals(secondPath, comparison.Value))
+            {
+                return true;
+            }
+
             return string.Equals(firstPath.CleanFilePath(), secondPath.CleanFilePath(), comparison.Value);
         }
 

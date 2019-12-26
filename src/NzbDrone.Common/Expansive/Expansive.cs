@@ -63,7 +63,11 @@ namespace NzbDrone.Common.Expansive
                     foreach (Match match in tokenPattern.Matches(newArg))
                     {
                         var token = _patternStyle.TokenReplaceFilter(match.Value);
-                        if (calls.Contains(string.Format("{0}:{1}", callingToken, token))) throw new CircularReferenceException(string.Format("Circular Reference Detected for token '{0}'.", callingToken));
+                        if (calls.Contains(string.Format("{0}:{1}", callingToken, token)))
+                        {
+                            throw new CircularReferenceException(string.Format("Circular Reference Detected for token '{0}'.", callingToken));
+                        }
+
                         calls.Push(string.Format("{0}:{1}", callingToken, token));
                         callingToken = token;
                         newArg = Regex.Replace(newArg, _patternStyle.OutputFilter(match.Value), args[tokens.IndexOf(token)]);
@@ -116,7 +120,10 @@ namespace NzbDrone.Common.Expansive
 
         private static string ExpandInternal(this string source, Func<string, string> expansionFactory)
         {
-            if (expansionFactory == null) throw new ApplicationException("ExpansionFactory not defined.\nDefine a DefaultExpansionFactory or call Expand(source, Func<string, string> expansionFactory))");
+            if (expansionFactory == null)
+            {
+                throw new ApplicationException("ExpansionFactory not defined.\nDefine a DefaultExpansionFactory or call Expand(source, Func<string, string> expansionFactory))");
+            }
 
             var pattern = new Regex(_patternStyle.TokenMatchPattern, RegexOptions.IgnoreCase);
 
@@ -174,7 +181,11 @@ namespace NzbDrone.Common.Expansive
         {
             var result = new ExpandoObject();
             var d = result as IDictionary<string, object>; //work with the Expando as a Dictionary
-            if (o is ExpandoObject) return o; //shouldn't have to... but just in case
+            if (o is ExpandoObject)
+            {
+                return o; //shouldn't have to... but just in case
+            }
+
             if (o is NameValueCollection || o.GetType().IsSubclassOf(typeof(NameValueCollection)))
             {
                 var nv = (NameValueCollection)o;

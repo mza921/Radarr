@@ -88,7 +88,10 @@ namespace NzbDrone.Core.Datastore.Migration
         {
             foreach (var profile in _profiles)
             {
-                if (profile.Items.Any(v => v.Quality == quality)) continue;
+                if (profile.Items.Any(v => v.Quality == quality))
+                {
+                    continue;
+                }
 
                 profile.Items.Insert(0, new ProfileItem70
                 {
@@ -104,7 +107,10 @@ namespace NzbDrone.Core.Datastore.Migration
         {
             foreach (var profile in _profiles)
             {
-                if (profile.Items.Any(v => v.Quality == quality)) continue;
+                if (profile.Items.Any(v => v.Quality == quality))
+                {
+                    continue;
+                }
 
                 profile.Items.Add(new ProfileItem70
                 {
@@ -120,7 +126,10 @@ namespace NzbDrone.Core.Datastore.Migration
         {
             foreach (var profile in _profiles)
             {
-                if (profile.Items.Any(v => v.Quality == quality)) continue;
+                if (profile.Items.Any(v => v.Quality == quality))
+                {
+                    continue;
+                }
 
                 var findIndex = profile.Items.FindIndex(v => v.Quality == find);
 
@@ -143,7 +152,10 @@ namespace NzbDrone.Core.Datastore.Migration
         {
             foreach (var profile in _profiles)
             {
-                if (profile.Items.Any(v => v.Quality == quality)) continue;
+                if (profile.Items.Any(v => v.Quality == quality))
+                {
+                    continue;
+                }
 
                 var findIndex = profile.Items.FindIndex(v => v.Quality == find);
 

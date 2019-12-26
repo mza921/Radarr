@@ -388,7 +388,9 @@ namespace NzbDrone.Core.Organizer
             foreach (var item in mediaInfoLanguages.Split('/'))
             {
                 if (!string.IsNullOrWhiteSpace(item))
+                {
                     tokens.Add(item.Trim());
+                }
             }
 
             var cultures = CultureInfo.GetCultures(CultureTypes.NeutralCultures);
@@ -399,7 +401,9 @@ namespace NzbDrone.Core.Organizer
                     var cultureInfo = cultures.FirstOrDefault(p => p.EnglishName == tokens[i]);
 
                     if (cultureInfo != null)
+                    {
                         tokens[i] = cultureInfo.TwoLetterISOLanguageName.ToUpper();
+                    }
                 }
                 catch
                 {
@@ -482,7 +486,10 @@ namespace NzbDrone.Core.Organizer
         private string ReplaceNumberToken(string token, int value)
         {
             var split = token.Trim('{', '}').Split(':');
-            if (split.Length == 1) return value.ToString("0");
+            if (split.Length == 1)
+            {
+                return value.ToString("0");
+            }
 
             return value.ToString(split[1]);
         }

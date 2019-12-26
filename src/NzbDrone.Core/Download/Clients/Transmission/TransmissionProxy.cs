@@ -77,7 +77,10 @@ namespace NzbDrone.Core.Download.Clients.Transmission
 
         public void SetTorrentSeedingConfiguration(string hash, TorrentSeedConfiguration seedConfiguration, TransmissionSettings settings)
         {
-            if (seedConfiguration == null) return;
+            if (seedConfiguration == null)
+            {
+                return;
+            }
 
             var arguments = new Dictionary<string, object>();
             arguments.Add("ids", new[] { hash });

@@ -26,7 +26,10 @@ namespace NzbDrone.Api.History
     {
         public static HistoryResource ToResource(this Core.History.History model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new HistoryResource
             {

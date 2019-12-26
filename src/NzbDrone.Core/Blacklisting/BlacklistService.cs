@@ -39,7 +39,10 @@ namespace NzbDrone.Core.Blacklisting
             {
                 var torrentInfo = release as TorrentInfo;
 
-                if (torrentInfo == null) return false;
+                if (torrentInfo == null)
+                {
+                    return false;
+                }
 
                 if (torrentInfo.InfoHash.IsNullOrWhiteSpace())
                 {
@@ -105,7 +108,10 @@ namespace NzbDrone.Core.Blacklisting
 
         private bool HasSamePublishedDate(Blacklist item, DateTime publishedDate)
         {
-            if (!item.PublishedDate.HasValue) return true;
+            if (!item.PublishedDate.HasValue)
+            {
+                return true;
+            }
 
             return item.PublishedDate.Value.AddMinutes(-2) <= publishedDate &&
                    item.PublishedDate.Value.AddMinutes(2) >= publishedDate;
@@ -113,7 +119,10 @@ namespace NzbDrone.Core.Blacklisting
 
         private bool HasSameSize(Blacklist item, long size)
         {
-            if (!item.Size.HasValue) return true;
+            if (!item.Size.HasValue)
+            {
+                return true;
+            }
 
             var difference = Math.Abs(item.Size.Value - size);
 

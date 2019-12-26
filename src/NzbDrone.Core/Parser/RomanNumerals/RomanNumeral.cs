@@ -101,7 +101,11 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         public static bool TryParse(string text, out int value)
         {
             value = 0;
-            if (string.IsNullOrEmpty(text)) return false;
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
+
             text = text.ToUpper();
             int len = 0;
 
@@ -188,10 +192,26 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             tens = number / 10;
             units = number % 10;
             var sb = new StringBuilder();
-            if (thousands > 0) sb.Append(Thousands[3 - thousands]);
-            if (hundreds > 0) sb.Append(Hundreds[9 - hundreds]);
-            if (tens > 0) sb.Append(Tens[9 - tens]);
-            if (units > 0) sb.Append(Units[9 - units]);
+            if (thousands > 0)
+            {
+                sb.Append(Thousands[3 - thousands]);
+            }
+
+            if (hundreds > 0)
+            {
+                sb.Append(Hundreds[9 - hundreds]);
+            }
+
+            if (tens > 0)
+            {
+                sb.Append(Tens[9 - tens]);
+            }
+
+            if (units > 0)
+            {
+                sb.Append(Units[9 - units]);
+            }
+
             return sb.ToString();
         }
 

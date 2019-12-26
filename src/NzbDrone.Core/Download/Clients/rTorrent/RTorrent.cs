@@ -111,7 +111,10 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
             foreach (RTorrentTorrent torrent in torrents)
             {
                 // Don't concern ourselves with categories other than specified
-                if (Settings.MovieCategory.IsNotNullOrWhiteSpace() && torrent.Category != Settings.MovieCategory) continue;
+                if (Settings.MovieCategory.IsNotNullOrWhiteSpace() && torrent.Category != Settings.MovieCategory)
+                {
+                    continue;
+                }
 
                 if (torrent.Path.StartsWith("."))
                 {
@@ -185,7 +188,11 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
         protected override void Test(List<ValidationFailure> failures)
         {
             failures.AddIfNotNull(TestConnection());
-            if (failures.HasErrors()) return;
+            if (failures.HasErrors())
+            {
+                return;
+            }
+
             failures.AddIfNotNull(TestGetTorrents());
             failures.AddIfNotNull(TestDirectory());
         }

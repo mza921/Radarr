@@ -49,7 +49,10 @@ namespace NzbDrone.Common.Test.Http
             {
                 var req = WebRequest.Create($"http://{site}/get") as HttpWebRequest;
                 var res = req.GetResponse() as HttpWebResponse;
-                if (res.StatusCode != HttpStatusCode.OK) return false;
+                if (res.StatusCode != HttpStatusCode.OK)
+                {
+                    return false;
+                }
 
                 try
                 {
@@ -61,7 +64,10 @@ namespace NzbDrone.Common.Test.Http
                     res = ex.Response as HttpWebResponse;
                 }
 
-                if (res == null || res.StatusCode != (HttpStatusCode)429) return false;
+                if (res == null || res.StatusCode != (HttpStatusCode)429)
+                {
+                    return false;
+                }
 
                 return true;
             }

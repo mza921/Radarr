@@ -197,7 +197,10 @@ namespace NzbDrone.Mono.Disk
             {
                 var fileInfo = UnixFileSystemInfo.GetFileSystemEntry(source);
 
-                if (fileInfo.IsSymbolicLink) return false;
+                if (fileInfo.IsSymbolicLink)
+                {
+                    return false;
+                }
 
                 fileInfo.CreateLink(destination);
                 return true;

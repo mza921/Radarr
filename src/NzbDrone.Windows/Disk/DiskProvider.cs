@@ -30,7 +30,9 @@ namespace NzbDrone.Windows.Disk
             var root = GetPathRoot(path);
 
             if (!FolderExists(root))
+            {
                 throw new DirectoryNotFoundException(root);
+            }
 
             return DriveFreeSpaceEx(root);
         }
@@ -57,7 +59,9 @@ namespace NzbDrone.Windows.Disk
             var root = GetPathRoot(path);
 
             if (!FolderExists(root))
+            {
                 throw new DirectoryNotFoundException(root);
+            }
 
             return DriveTotalSizeEx(root);
         }

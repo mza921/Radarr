@@ -24,7 +24,10 @@ namespace NzbDrone.Mono.Disk
 
         public string GetCompleteRealPath(string path)
         {
-            if (path == null) return null;
+            if (path == null)
+            {
+                return null;
+            }
 
             try
             {

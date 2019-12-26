@@ -116,7 +116,10 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
             reader.Read();
             index.IsUnique = reader.ValueToUpper == "UNIQUE";
 
-            while (reader.ValueToUpper != "INDEX") reader.Read();
+            while (reader.ValueToUpper != "INDEX")
+            {
+                reader.Read();
+            }
 
             if (reader.Read() == SqliteSyntaxReader.TokenType.StringToken && reader.ValueToUpper == "IF")
             {

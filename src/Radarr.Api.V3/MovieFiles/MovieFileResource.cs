@@ -27,7 +27,10 @@ namespace Radarr.Api.V3.MovieFiles
     {
         private static MovieFileResource ToResource(this MovieFile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new MovieFileResource
             {
@@ -49,7 +52,10 @@ namespace Radarr.Api.V3.MovieFiles
 
         public static MovieFileResource ToResource(this MovieFile model, NzbDrone.Core.Movies.Movie movie)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new MovieFileResource
             {
@@ -70,7 +76,10 @@ namespace Radarr.Api.V3.MovieFiles
 
         public static MovieFileResource ToResource(this MovieFile model, NzbDrone.Core.Movies.Movie movie, IUpgradableSpecification upgradableSpecification)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new MovieFileResource
             {

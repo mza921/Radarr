@@ -44,8 +44,15 @@ namespace Radarr.Api.V3.Calendar
             var queryUnmonitored = Request.Query.Unmonitored;
             var queryTags = Request.Query.Tags;
 
-            if (queryStart.HasValue) start = DateTime.Parse(queryStart.Value);
-            if (queryEnd.HasValue) end = DateTime.Parse(queryEnd.Value);
+            if (queryStart.HasValue)
+            {
+                start = DateTime.Parse(queryStart.Value);
+            }
+
+            if (queryEnd.HasValue)
+            {
+                end = DateTime.Parse(queryEnd.Value);
+            }
 
             if (queryPastDays.HasValue)
             {

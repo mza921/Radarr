@@ -21,7 +21,10 @@ namespace Radarr.Api.V3.Profiles.Delay
     {
         public static DelayProfileResource ToResource(this DelayProfile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new DelayProfileResource
             {
@@ -39,7 +42,10 @@ namespace Radarr.Api.V3.Profiles.Delay
 
         public static DelayProfile ToModel(this DelayProfileResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new DelayProfile
             {

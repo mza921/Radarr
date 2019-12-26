@@ -38,7 +38,10 @@ namespace NzbDrone.Api.MovieFiles
     {
         public static MovieFileResource ToResource(this MovieFile model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             MovieResource movie = null;
 
@@ -69,7 +72,10 @@ namespace NzbDrone.Api.MovieFiles
 
         public static MovieFile ToModel(this MovieFileResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new MovieFile
             {

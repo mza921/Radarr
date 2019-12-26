@@ -59,7 +59,10 @@ namespace Radarr.Http.REST
 
         private void ValidateModule()
         {
-            if (GetResourceById != null) return;
+            if (GetResourceById != null)
+            {
+                return;
+            }
 
             if (CreateResource != null || UpdateResource != null)
             {
@@ -239,12 +242,17 @@ namespace Radarr.Http.REST
         {
             int pageSize;
             int.TryParse(Request.Query.PageSize.ToString(), out pageSize);
-            if (pageSize == 0) pageSize = 10;
+            if (pageSize == 0)
+            {
+                pageSize = 10;
+            }
 
             int page;
             int.TryParse(Request.Query.Page.ToString(), out page);
-            if (page == 0) page = 1;
-
+            if (page == 0)
+            {
+                page = 1;
+            }
 
             var pagingResource = new PagingResource<TResource>
             {

@@ -170,14 +170,20 @@ namespace Radarr.Http.Authentication
 
         private bool ValidUser(NancyContext context)
         {
-            if (context.CurrentUser != null) return true;
+            if (context.CurrentUser != null)
+            {
+                return true;
+            }
 
             return false;
         }
 
         private bool ValidApiKey(string apiKey)
         {
-            if (API_KEY.Equals(apiKey)) return true;
+            if (API_KEY.Equals(apiKey))
+            {
+                return true;
+            }
 
             return false;
         }

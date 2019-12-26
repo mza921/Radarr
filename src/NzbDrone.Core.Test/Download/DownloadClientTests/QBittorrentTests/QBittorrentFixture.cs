@@ -117,7 +117,9 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
         protected virtual void GivenTorrents(List<QBittorrentTorrent> torrents)
         {
             if (torrents == null)
+            {
                 torrents = new List<QBittorrentTorrent>();
+            }
 
             Mocker.GetMock<IQBittorrentProxy>()
                 .Setup(s => s.GetTorrents(It.IsAny<QBittorrentSettings>()))

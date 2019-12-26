@@ -29,7 +29,10 @@ namespace Radarr.Api.V3.ManualImport
     {
         public static ManualImportResource ToResource(this ManualImportItem model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new ManualImportResource
             {

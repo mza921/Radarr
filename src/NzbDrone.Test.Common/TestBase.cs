@@ -81,7 +81,10 @@ namespace NzbDrone.Test.Common
             get
             {
                 var virtualPath = Path.Combine(TempFolder, "VirtualNzbDrone");
-                if (!Directory.Exists(virtualPath)) Directory.CreateDirectory(virtualPath);
+                if (!Directory.Exists(virtualPath))
+                {
+                    Directory.CreateDirectory(virtualPath);
+                }
 
                 return virtualPath;
             }

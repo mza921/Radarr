@@ -232,11 +232,18 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             if (movie.InCinemas.HasValue && movie.PhysicalRelease.HasValue)
             {
                 if (now < movie.InCinemas)
+                {
                     movie.Status = MovieStatusType.Announced;
+                }
                 else if (now >= movie.InCinemas)
+                {
                     movie.Status = MovieStatusType.InCinemas;
+                }
+
                 if (now >= movie.PhysicalRelease)
+                {
                     movie.Status = MovieStatusType.Released;
+                }
             }
             //handle the case when we have theatrical release dates but we dont know the physical release date
             else if (movie.InCinemas.HasValue && (now >= movie.InCinemas))
@@ -545,11 +552,18 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 if (imdbMovie.InCinemas.HasValue && imdbMovie.PhysicalRelease.HasValue)
                 {
                     if (now < imdbMovie.InCinemas)
+                    {
                         imdbMovie.Status = MovieStatusType.Announced;
+                    }
                     else if (now >= imdbMovie.InCinemas)
+                    {
                         imdbMovie.Status = MovieStatusType.InCinemas;
+                    }
+
                     if (now >= imdbMovie.PhysicalRelease)
+                    {
                         imdbMovie.Status = MovieStatusType.Released;
+                    }
                 }
                 //handle the case when we have theatrical release dates but we dont know the physical release date
                 else if (imdbMovie.InCinemas.HasValue && (now >= imdbMovie.InCinemas))

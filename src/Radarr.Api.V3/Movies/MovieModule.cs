@@ -91,7 +91,10 @@ namespace Radarr.Api.V3.Movies
 
         protected MovieResource MapToResource(Movie movies)
         {
-            if (movies == null) return null;
+            if (movies == null)
+            {
+                return null;
+            }
 
             var resource = movies.ToResource();
             MapCoversToLocal(resource);
@@ -157,7 +160,10 @@ namespace Radarr.Api.V3.Movies
 
         public void Handle(MovieFileDeletedEvent message)
         {
-            if (message.Reason == DeleteMediaFileReason.Upgrade) return;
+            if (message.Reason == DeleteMediaFileReason.Upgrade)
+            {
+                return;
+            }
 
             BroadcastResourceChange(ModelAction.Updated, message.MovieFile.MovieId);
         }

@@ -171,7 +171,10 @@ namespace NzbDrone.Core.Parser
         {
             try
             {
-                if (!ValidateBeforeParsing(title)) return null;
+                if (!ValidateBeforeParsing(title))
+                {
+                    return null;
+                }
 
                 Logger.Debug("Parsing string '{0}'", title);
 
@@ -287,7 +290,9 @@ namespace NzbDrone.Core.Parser
             catch (Exception e)
             {
                 if (!title.ToLower().Contains("password") && !title.ToLower().Contains("yenc"))
+                {
                     Logger.Error(e, "An error has occurred while trying to parse {0}", title);
+                }
             }
 
             Logger.Debug("Unable to parse {0}", title);
@@ -377,7 +382,9 @@ namespace NzbDrone.Core.Parser
 
             //If Title only contains numbers return it as is.
             if (long.TryParse(title, out number))
+            {
                 return title;
+            }
 
             return ReplaceGermanUmlauts(NormalizeRegex.Replace(title, string.Empty).ToLower()).RemoveAccent();
         }

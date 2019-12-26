@@ -105,9 +105,14 @@ namespace NzbDrone.Core.Movies
                     break;
                 case MovieStatusType.InCinemas:
                     if (InCinemas.HasValue)
+                    {
                         minimumAvailabilityDate = InCinemas.Value;
+                    }
                     else
+                    {
                         minimumAvailabilityDate = DateTime.MaxValue;
+                    }
+
                     break;
 
                 case MovieStatusType.Released:

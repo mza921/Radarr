@@ -29,7 +29,10 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.MediaBrowser
         {
             var filename = Path.GetFileName(path);
 
-            if (filename == null) return null;
+            if (filename == null)
+            {
+                return null;
+            }
 
             var metadata = new MetadataFile
             {

@@ -86,7 +86,10 @@ namespace NzbDrone.Core.MediaFiles
         {
             var movieFiles = GetFilesByMovie(movie.Id).Select(f => Path.Combine(movie.Path, f.RelativePath)).ToList();
 
-            if (!movieFiles.Any()) return files;
+            if (!movieFiles.Any())
+            {
+                return files;
+            }
 
             return files.Except(movieFiles, PathEqualityComparer.Instance).ToList();
         }

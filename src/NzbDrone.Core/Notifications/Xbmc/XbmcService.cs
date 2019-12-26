@@ -71,7 +71,10 @@ namespace NzbDrone.Core.Notifications.Xbmc
 
             });
 
-            if (matchingMovies != null) return matchingMovies.File;
+            if (matchingMovies != null)
+            {
+                return matchingMovies.File;
+            }
 
             return null;
         }

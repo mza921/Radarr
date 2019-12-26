@@ -23,9 +23,16 @@ namespace NzbDrone.Core.ProgressMessaging
         {
             var command = ProgressMessageContext.CommandModel;
 
-            if (!IsClientMessage(logEvent, command)) return;
+            if (!IsClientMessage(logEvent, command))
+            {
+                return;
+            }
 
-            if (!ProgressMessageContext.LockReentrancy()) return;
+            if (!ProgressMessageContext.LockReentrancy())
+            {
+                return;
+            }
+
             try
             {
                 _commandQueueManager.SetMessage(command, logEvent.FormattedMessage);

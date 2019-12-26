@@ -60,7 +60,9 @@ namespace Radarr.Api.V3.Logs
             var filePath = GetLogFilePath(filename);
 
             if (!_diskProvider.FileExists(filePath))
+            {
                 return new NotFoundResponse();
+            }
 
             var data = _diskProvider.ReadAllText(filePath);
 

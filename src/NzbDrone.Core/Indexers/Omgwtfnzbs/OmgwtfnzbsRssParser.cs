@@ -19,9 +19,15 @@ namespace NzbDrone.Core.Indexers.Omgwtfnzbs
             var xdoc = LoadXmlDocument(indexerResponse);
             var notice = xdoc.Descendants("notice").FirstOrDefault();
 
-            if (notice == null) return true;
+            if (notice == null)
+            {
+                return true;
+            }
 
-            if (!notice.Value.ContainsIgnoreCase("api")) return true;
+            if (!notice.Value.ContainsIgnoreCase("api"))
+            {
+                return true;
+            }
 
             throw new ApiKeyException(notice.Value);
         }

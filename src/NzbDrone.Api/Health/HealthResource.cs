@@ -17,7 +17,10 @@ namespace NzbDrone.Api.Health
     {
         public static HealthResource ToResource(this HealthCheck model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new HealthResource
             {

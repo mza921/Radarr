@@ -33,7 +33,10 @@ namespace Radarr.Api.V3.Movies
     {
         public static AlternativeTitleResource ToResource(this AlternativeTitle model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new AlternativeTitleResource
             {
@@ -50,7 +53,10 @@ namespace Radarr.Api.V3.Movies
 
         public static AlternativeTitle ToModel(this AlternativeTitleResource resource)
         {
-            if (resource == null) return null;
+            if (resource == null)
+            {
+                return null;
+            }
 
             return new AlternativeTitle
             {

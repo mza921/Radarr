@@ -155,7 +155,10 @@ namespace NzbDrone.Common.Processes
 
             process.OutputDataReceived += (sender, eventArgs) =>
             {
-                if (string.IsNullOrWhiteSpace(eventArgs.Data)) return;
+                if (string.IsNullOrWhiteSpace(eventArgs.Data))
+                {
+                    return;
+                }
 
                 logger.Debug(eventArgs.Data);
 
@@ -167,7 +170,10 @@ namespace NzbDrone.Common.Processes
 
             process.ErrorDataReceived += (sender, eventArgs) =>
             {
-                if (string.IsNullOrWhiteSpace(eventArgs.Data)) return;
+                if (string.IsNullOrWhiteSpace(eventArgs.Data))
+                {
+                    return;
+                }
 
                 logger.Error(eventArgs.Data);
 
@@ -285,7 +291,10 @@ namespace NzbDrone.Common.Processes
 
         private ProcessInfo ConvertToProcessInfo(Process process)
         {
-            if (process == null) return null;
+            if (process == null)
+            {
+                return null;
+            }
 
             process.Refresh();
 
@@ -293,7 +302,10 @@ namespace NzbDrone.Common.Processes
 
             try
             {
-                if (process.Id <= 0) return null;
+                if (process.Id <= 0)
+                {
+                    return null;
+                }
 
                 processInfo = new ProcessInfo();
                 processInfo.Id = process.Id;

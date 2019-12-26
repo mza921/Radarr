@@ -47,7 +47,9 @@ namespace NzbDrone.Core.Parser.Augmenters
                         {
                             var language = (Language)i;
                             if (!movieInfo.Languages.Contains(language))
+                            {
                                 movieInfo.Languages.Add(language);
+                            }
                         }
                     }
 

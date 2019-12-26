@@ -47,8 +47,10 @@ namespace NzbDrone.Core.Datastore.Extensions
         {
             var propertyInfo = memberInfo as PropertyInfo;
 
-            if (propertyInfo == null) return false;
-
+            if (propertyInfo == null)
+            {
+                return false;
+            }
 
             if (!propertyInfo.IsReadable() || !propertyInfo.IsWritable())
             {

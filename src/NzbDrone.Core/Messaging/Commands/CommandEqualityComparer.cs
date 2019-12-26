@@ -15,7 +15,10 @@ namespace NzbDrone.Core.Messaging.Commands
 
         public bool Equals(Command x, Command y)
         {
-            if (x.GetType() != y.GetType()) return false;
+            if (x.GetType() != y.GetType())
+            {
+                return false;
+            }
 
             var xProperties = x.GetType().GetProperties();
             var yProperties = y.GetType().GetProperties();

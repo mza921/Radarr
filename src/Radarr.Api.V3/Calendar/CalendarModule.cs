@@ -32,9 +32,20 @@ namespace Radarr.Api.V3.Calendar
             var queryEnd = Request.Query.End;
             var queryIncludeUnmonitored = Request.Query.Unmonitored;
 
-            if (queryStart.HasValue) start = DateTime.Parse(queryStart.Value);
-            if (queryEnd.HasValue) end = DateTime.Parse(queryEnd.Value);
-            if (queryIncludeUnmonitored.HasValue) includeUnmonitored = Convert.ToBoolean(queryIncludeUnmonitored.Value);
+            if (queryStart.HasValue)
+            {
+                start = DateTime.Parse(queryStart.Value);
+            }
+
+            if (queryEnd.HasValue)
+            {
+                end = DateTime.Parse(queryEnd.Value);
+            }
+
+            if (queryIncludeUnmonitored.HasValue)
+            {
+                includeUnmonitored = Convert.ToBoolean(queryIncludeUnmonitored.Value);
+            }
 
             var resources = _moviesService.GetMoviesBetweenDates(start, end, includeUnmonitored).Select(MapToResource);
 
@@ -43,7 +54,10 @@ namespace Radarr.Api.V3.Calendar
 
         protected MovieResource MapToResource(Movie movie)
         {
-            if (movie == null) return null;
+            if (movie == null)
+            {
+                return null;
+            }
 
             var resource = movie.ToResource();
 

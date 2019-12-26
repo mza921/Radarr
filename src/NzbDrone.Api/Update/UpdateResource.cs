@@ -27,7 +27,10 @@ namespace NzbDrone.Api.Update
     {
         public static UpdateResource ToResource(this UpdatePackage model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new UpdateResource
             {

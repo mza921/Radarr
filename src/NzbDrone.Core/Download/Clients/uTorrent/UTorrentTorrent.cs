@@ -102,7 +102,9 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
                 result.Unknown28 = reader.Value;
 
                 while (reader.TokenType != JsonToken.EndArray)
+                {
                     reader.Read();
+                }
             }
 
             return result;

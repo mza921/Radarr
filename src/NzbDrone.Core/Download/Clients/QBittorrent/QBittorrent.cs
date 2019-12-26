@@ -234,7 +234,11 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
         protected override void Test(List<ValidationFailure> failures)
         {
             failures.AddIfNotNull(TestConnection());
-            if (failures.HasErrors()) return;
+            if (failures.HasErrors())
+            {
+                return;
+            }
+
             failures.AddIfNotNull(TestCategory());
             failures.AddIfNotNull(TestPrioritySupport());
             failures.AddIfNotNull(TestGetTorrents());
@@ -453,15 +457,23 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
         {
             if (torrent.RatioLimit >= 0)
             {
-                if (torrent.Ratio >= torrent.RatioLimit) return true;
+                if (torrent.Ratio >= torrent.RatioLimit)
+                {
+                    return true;
+                }
             }
             else if (torrent.RatioLimit == -2 && config.MaxRatioEnabled)
             {
-                if (torrent.Ratio >= config.MaxRatio) return true;
+                if (torrent.Ratio >= config.MaxRatio)
+                {
+                    return true;
+                }
             }
 
-            if (HasReachedSeedingTimeLimit(torrent, config)) return true;
-
+            if (HasReachedSeedingTimeLimit(torrent, config))
+            {
+                return true;
+            }
 
             return false;
         }

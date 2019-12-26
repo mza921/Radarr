@@ -18,7 +18,10 @@ namespace NzbDrone.Core.Datastore.Extensions
 
         public static Marr.Data.QGen.SortDirection ToSortDirection<TModel>(this PagingSpec<TModel> pagingSpec)
         {
-            if (pagingSpec.SortDirection == SortDirection.Descending) return Marr.Data.QGen.SortDirection.Desc;
+            if (pagingSpec.SortDirection == SortDirection.Descending)
+            {
+                return Marr.Data.QGen.SortDirection.Desc;
+            }
 
             return Marr.Data.QGen.SortDirection.Asc;
         }

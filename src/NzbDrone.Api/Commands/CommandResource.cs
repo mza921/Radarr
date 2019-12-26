@@ -60,7 +60,10 @@ namespace NzbDrone.Api.Commands
             get
             {
 
-                if (Started.HasValue) return Started.Value;
+                if (Started.HasValue)
+                {
+                    return Started.Value;
+                }
 
                 return Ended;
             }
@@ -72,7 +75,10 @@ namespace NzbDrone.Api.Commands
         {
             get
             {
-                if (Body != null) return (Body as Command).SendUpdatesToClient;
+                if (Body != null)
+                {
+                    return (Body as Command).SendUpdatesToClient;
+                }
 
                 return false;
             }
@@ -84,7 +90,10 @@ namespace NzbDrone.Api.Commands
         {
             get
             {
-                if (Body != null) return (Body as Command).UpdateScheduledTask;
+                if (Body != null)
+                {
+                    return (Body as Command).UpdateScheduledTask;
+                }
 
                 return false;
             }
@@ -99,7 +108,10 @@ namespace NzbDrone.Api.Commands
     {
         public static CommandResource ToResource(this CommandModel model)
         {
-            if (model == null) return null;
+            if (model == null)
+            {
+                return null;
+            }
 
             return new CommandResource
             {

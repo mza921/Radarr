@@ -237,7 +237,10 @@ namespace NzbDrone.Common.Http
 
         public bool Equals(HttpUri other)
         {
-            if (object.ReferenceEquals(other, null)) return false;
+            if (object.ReferenceEquals(other, null))
+            {
+                return false;
+            }
 
             return _uri.Equals(other._uri);
         }

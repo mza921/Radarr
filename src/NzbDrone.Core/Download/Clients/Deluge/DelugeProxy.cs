@@ -167,7 +167,10 @@ namespace NzbDrone.Core.Download.Clients.Deluge
 
         public void SetTorrentSeedingConfiguration(string hash, TorrentSeedConfiguration seedConfiguration, DelugeSettings settings)
         {
-            if (seedConfiguration == null) return;
+            if (seedConfiguration == null)
+            {
+                return;
+            }
 
             var ratioArguments = new Dictionary<string, object>();
 
