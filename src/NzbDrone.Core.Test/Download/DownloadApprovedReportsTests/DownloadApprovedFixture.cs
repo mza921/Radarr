@@ -99,12 +99,10 @@ namespace NzbDrone.Core.Test.Download.DownloadApprovedReportsTests
         public void should_not_download_if_any_movie_was_already_downloaded()
         {
             var remoteMovie1 = GetRemoteMovie(
-                                                    new QualityModel(Quality.HDTV720p)
-                                                 );
+                                                    new QualityModel(Quality.HDTV720p));
 
             var remoteMovie2 = GetRemoteMovie(
-                                                    new QualityModel(Quality.HDTV720p)
-                                                 );
+                                                    new QualityModel(Quality.HDTV720p));
 
             var decisions = new List<DownloadDecision>();
             decisions.Add(new DownloadDecision(remoteMovie1));
@@ -128,15 +126,9 @@ namespace NzbDrone.Core.Test.Download.DownloadApprovedReportsTests
         [Test]
         public void should_return_all_downloaded_reports()
         {
-            var remoteMovie1 = GetRemoteMovie(
-                                                    new QualityModel(Quality.HDTV720p),
-                                            GetMovie(1)
-                                                 );
+            var remoteMovie1 = GetRemoteMovie(new QualityModel(Quality.HDTV720p), GetMovie(1));
 
-            var remoteMovie2 = GetRemoteMovie(
-                                                    new QualityModel(Quality.HDTV720p),
-                                            GetMovie(2)
-                                                 );
+            var remoteMovie2 = GetRemoteMovie(new QualityModel(Quality.HDTV720p), GetMovie(2));
 
             var decisions = new List<DownloadDecision>();
             decisions.Add(new DownloadDecision(remoteMovie1));
@@ -150,18 +142,15 @@ namespace NzbDrone.Core.Test.Download.DownloadApprovedReportsTests
         {
             var remoteMovie1 = GetRemoteMovie(
                                                     new QualityModel(Quality.HDTV720p),
-                                            GetMovie(1)
-                                                 );
+                                                    GetMovie(1));
 
             var remoteMovie2 = GetRemoteMovie(
                                                     new QualityModel(Quality.HDTV720p),
-                                            GetMovie(2)
-                                                 );
+                                                    GetMovie(2));
 
             var remoteMovie3 = GetRemoteMovie(
                                                     new QualityModel(Quality.HDTV720p),
-                                            GetMovie(2)
-                                                 );
+                                                    GetMovie(2));
 
             var decisions = new List<DownloadDecision>();
             decisions.Add(new DownloadDecision(remoteMovie1));

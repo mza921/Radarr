@@ -95,8 +95,7 @@ namespace NzbDrone.Core.Test.Datastore.Migration
                 Quality.Bluray720p,
                 Quality.Bluray1080p,
                 Quality.Remux1080p,
-                Quality.Remux2160p
-                );
+                Quality.Remux2160p);
         }
 
         [Test]

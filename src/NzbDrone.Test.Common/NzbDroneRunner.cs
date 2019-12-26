@@ -133,9 +133,7 @@ namespace NzbDrone.Test.Common
                 new XDeclaration("1.0", "utf-8", "yes"),
                 new XElement(ConfigFileProvider.CONFIG_ELEMENT_NAME,
                              new XElement(nameof(ConfigFileProvider.ApiKey), apiKey),
-                             new XElement(nameof(ConfigFileProvider.AnalyticsEnabled), false)
-                    )
-                );
+                             new XElement(nameof(ConfigFileProvider.AnalyticsEnabled), false)));
 
             var data = xDoc.ToString();
 

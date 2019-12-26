@@ -136,7 +136,7 @@ namespace NzbDrone.Core.Test.InstrumentationTests
         private void VerifyLog(Log logItem, LogLevel level)
         {
             logItem.Time.Should().BeWithin(TimeSpan.FromSeconds(2));
-            logItem.Logger.Should().Be(this.GetType().Name);
+            logItem.Logger.Should().Be(GetType().Name);
             logItem.Level.Should().Be(level.Name);
             _logger.Name.Should().EndWith(logItem.Logger);
         }

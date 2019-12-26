@@ -1,11 +1,11 @@
-﻿using NUnit.Framework;
-using FluentAssertions;
-using NzbDrone.Common.Instrumentation.Sentry;
-using System;
-using NLog;
-using NzbDrone.Test.Common;
+﻿using System;
 using System.Globalization;
 using System.Linq;
+using FluentAssertions;
+using NLog;
+using NUnit.Framework;
+using NzbDrone.Common.Instrumentation.Sentry;
+using NzbDrone.Test.Common;
 
 namespace NzbDrone.Common.Test.InstrumentationTests
 {
@@ -18,7 +18,8 @@ namespace NzbDrone.Common.Test.InstrumentationTests
         private static LogLevel[] SentryLevels = LogLevel.AllLevels.Where(x => x >= LogLevel.Error).ToArray();
         private static LogLevel[] OtherLevels = AllLevels.Except(SentryLevels).ToArray();
 
-        private static Exception[] FilteredExceptions = new Exception[] {
+        private static Exception[] FilteredExceptions = new Exception[]
+        {
             new UnauthorizedAccessException(),
             new TinyIoC.TinyIoCResolutionException(typeof(string))
         };

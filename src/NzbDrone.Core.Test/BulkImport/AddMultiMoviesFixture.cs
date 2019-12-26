@@ -1,11 +1,11 @@
-﻿using FizzWare.NBuilder;
+﻿using System.Collections.Generic;
+using FizzWare.NBuilder;
 using FluentAssertions;
-using NUnit.Framework;
 using Moq;
-using NzbDrone.Core.Organizer;
+using NUnit.Framework;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Organizer;
 using NzbDrone.Core.Test.Framework;
-using System.Collections.Generic;
 
 namespace NzbDrone.Core.Test.BulkImport
 {

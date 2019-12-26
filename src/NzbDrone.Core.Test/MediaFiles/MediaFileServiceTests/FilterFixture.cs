@@ -76,7 +76,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaFileServiceTests
                 .Setup(c => c.GetFilesByMovie(It.IsAny<int>()))
                 .Returns(new List<MovieFile>
                 {
-                    new MovieFile{ RelativePath = "file2.avi".AsOsAgnostic()}
+                    new MovieFile { RelativePath = "file2.avi".AsOsAgnostic() }
                 });
 
 
@@ -100,7 +100,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaFileServiceTests
                 .Setup(c => c.GetFilesByMovie(It.IsAny<int>()))
                 .Returns(new List<MovieFile>
                 {
-                    new MovieFile{ RelativePath = "file2.avi".AsOsAgnostic()}
+                    new MovieFile { RelativePath = "file2.avi".AsOsAgnostic() }
                 });
 
 
@@ -124,7 +124,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MediaFileServiceTests
                 .Setup(c => c.GetFilesByMovie(It.IsAny<int>()))
                 .Returns(new List<MovieFile>
                 {
-                    new MovieFile{ RelativePath = "file2.avi".AsOsAgnostic()}
+                    new MovieFile { RelativePath = "file2.avi".AsOsAgnostic() }
                 });
 
             Subject.FilterExistingFiles(files, _series).Should().HaveCount(3);

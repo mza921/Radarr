@@ -168,11 +168,11 @@ namespace NzbDrone.Core.Test.Download
                            {
                                new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"})),
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" })),
 
-                                new ImportResult(
+                               new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}))
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }))
                            });
 
             Subject.Process(_trackedDownload);
@@ -189,11 +189,11 @@ namespace NzbDrone.Core.Test.Download
                            {
                                new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}, new Rejection("Rejected!")), "Test Failure"),
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }, new Rejection("Rejected!")), "Test Failure"),
 
-                                new ImportResult(
+                               new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1999.mkv"},new Rejection("Rejected!")), "Test Failure")
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1999.mkv" }, new Rejection("Rejected!")), "Test Failure")
                            });
 
             Subject.Process(_trackedDownload);
@@ -213,11 +213,11 @@ namespace NzbDrone.Core.Test.Download
                            {
                                new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}, new Rejection("Rejected!")), "Test Failure"),
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }, new Rejection("Rejected!")), "Test Failure"),
 
-                                new ImportResult(
+                               new ImportResult(
                                    new ImportDecision(
-                                       new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"},new Rejection("Rejected!")), "Test Failure")
+                                       new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }, new Rejection("Rejected!")), "Test Failure")
                            });
 
             _trackedDownload.RemoteMovie.Movie = null;
@@ -234,8 +234,8 @@ namespace NzbDrone.Core.Test.Download
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>
                            {
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}),"Test Failure"),
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}),"Test Failure")
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }), "Test Failure"),
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }), "Test Failure")
                            });
 
 
@@ -253,8 +253,8 @@ namespace NzbDrone.Core.Test.Download
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>
                            {
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"})),
-                               new ImportResult(new ImportDecision(new LocalMovie{Path = @"C:\TestPath\Droned.1998.mkv"}),"Test Failure")
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" })),
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }), "Test Failure")
                            });
 
             Subject.Process(_trackedDownload);
@@ -271,7 +271,7 @@ namespace NzbDrone.Core.Test.Download
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>
                            {
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}))
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }))
                            });
 
             Mocker.GetMock<IMovieService>()
@@ -292,7 +292,7 @@ namespace NzbDrone.Core.Test.Download
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>
                            {
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}))
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }))
                            });
 
             Mocker.GetMock<IHistoryService>()
@@ -323,7 +323,7 @@ namespace NzbDrone.Core.Test.Download
                   .Setup(v => v.ProcessPath(It.IsAny<string>(), It.IsAny<ImportMode>(), It.IsAny<Movie>(), It.IsAny<DownloadClientItem>()))
                   .Returns(new List<ImportResult>
                            {
-                               new ImportResult(new ImportDecision(new LocalMovie {Path = @"C:\TestPath\Droned.1998.mkv"}))
+                               new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }))
                            });
 
             Subject.Process(_trackedDownload, true);

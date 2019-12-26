@@ -1,18 +1,18 @@
+using System.Collections.Generic;
 using System.IO;
 using FizzWare.NBuilder;
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using NzbDrone.Core.History;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.MediaFiles.Events;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.Parser.Model;
 using NzbDrone.Core.Profiles;
-using NzbDrone.Core.Test.Framework;
-using NzbDrone.Core.History;
 using NzbDrone.Core.Qualities;
-using System.Collections.Generic;
+using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.Test.Qualities;
-using FluentAssertions;
-using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.Test.HistoryTests
 {

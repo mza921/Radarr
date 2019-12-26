@@ -40,7 +40,6 @@ namespace NzbDrone.Core.Test.UpdateTests
                     Version = new Version("2.0.0.0")
                 };
             }
-
             else
             {
                 _updatePackage = new UpdatePackage

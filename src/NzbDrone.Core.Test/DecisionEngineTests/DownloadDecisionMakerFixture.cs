@@ -185,9 +185,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
 
             _reports = new List<ReleaseInfo>
                 {
-                    new ReleaseInfo{Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT"},
-                    new ReleaseInfo{Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT"},
-                    new ReleaseInfo{Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT"}
+                    new ReleaseInfo { Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT" },
+                    new ReleaseInfo { Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT" },
+                    new ReleaseInfo { Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT" }
                 };
 
             Subject.GetRssDecision(_reports);
@@ -249,7 +249,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
 
             _reports = new List<ReleaseInfo>
                 {
-                    new ReleaseInfo{Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT"},
+                    new ReleaseInfo { Title = "Trolls.2016.720p.WEB-DL.DD5.1.H264-FGT" },
                 };
 
             Subject.GetRssDecision(_reports).Should().HaveCount(1);

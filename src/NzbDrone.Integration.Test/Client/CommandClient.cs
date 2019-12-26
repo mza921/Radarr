@@ -1,12 +1,12 @@
-﻿using RestSharp;
-using NzbDrone.Core.Messaging.Commands;
-using FluentAssertions;
-using System.Threading;
-using NUnit.Framework;
+﻿using System;
 using System.Linq;
-using System;
-using Radarr.Http.REST;
+using System.Threading;
+using FluentAssertions;
 using Newtonsoft.Json;
+using NUnit.Framework;
+using NzbDrone.Core.Messaging.Commands;
+using Radarr.Http.REST;
+using RestSharp;
 
 namespace NzbDrone.Integration.Test.Client
 {

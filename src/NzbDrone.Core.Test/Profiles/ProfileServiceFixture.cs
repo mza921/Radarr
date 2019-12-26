@@ -1,14 +1,14 @@
+using System.Collections.Generic;
 using System.Linq;
 using FizzWare.NBuilder;
 using Moq;
 using NUnit.Framework;
+using NzbDrone.Core.CustomFormats;
 using NzbDrone.Core.Lifecycle;
-using NzbDrone.Core.Profiles;
-using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.Movies;
 using NzbDrone.Core.NetImport;
-using NzbDrone.Core.CustomFormats;
-using System.Collections.Generic;
+using NzbDrone.Core.Profiles;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Profiles
 {

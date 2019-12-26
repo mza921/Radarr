@@ -1,8 +1,8 @@
+using System.Linq;
+using System.Net;
 using FluentAssertions;
 using NUnit.Framework;
 using Radarr.Api.V3.Indexers;
-using System.Linq;
-using System.Net;
 
 namespace NzbDrone.Integration.Test.ApiTests
 {

@@ -48,7 +48,7 @@ namespace NzbDrone.Core.Test.MediaCoverTests
         {
             var covers = new List<MediaCover.MediaCover>
                 {
-                    new MediaCover.MediaCover {CoverType = MediaCoverTypes.Banner}
+                    new MediaCover.MediaCover { CoverType = MediaCoverTypes.Banner }
                 };
 
             Mocker.GetMock<IDiskProvider>().Setup(c => c.FileGetLastWrite(It.IsAny<string>()))
@@ -68,7 +68,7 @@ namespace NzbDrone.Core.Test.MediaCoverTests
         {
             var covers = new List<MediaCover.MediaCover>
                 {
-                    new MediaCover.MediaCover {CoverType = MediaCoverTypes.Banner}
+                    new MediaCover.MediaCover { CoverType = MediaCoverTypes.Banner }
                 };
 
 

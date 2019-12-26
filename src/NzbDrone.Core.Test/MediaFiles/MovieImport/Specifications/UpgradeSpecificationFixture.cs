@@ -51,8 +51,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
                     new MovieFile
                     {
                         Quality = new QualityModel(Quality.SDTV, new Revision(version: 1))
-                    }
-                );
+                    });
 
 
             Subject.IsSatisfiedBy(_localMovie, null).Accepted.Should().BeTrue();
@@ -67,8 +66,7 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
                 new MovieFile
                 {
                     Quality = new QualityModel(Quality.Bluray720p, new Revision(version: 1))
-                }
-            );
+                });
 
             Subject.IsSatisfiedBy(_localMovie, null).Accepted.Should().BeFalse();
         }

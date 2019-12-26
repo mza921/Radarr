@@ -1,8 +1,8 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using FluentAssertions;
 using NUnit.Framework;
-using System.Linq;
-using System.IO;
-using System.Collections.Generic;
 
 namespace NzbDrone.Integration.Test.ApiTests
 {

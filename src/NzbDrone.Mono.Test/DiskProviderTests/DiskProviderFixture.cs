@@ -100,7 +100,8 @@ namespace NzbDrone.Mono.Test.DiskProviderTests
 
             Mocker.GetMock<IProcMountProvider>()
                 .Setup(v => v.GetMounts())
-                .Returns(new List<IMount> {
+                .Returns(new List<IMount>
+                {
                     new ProcMount(DriveType.Fixed, rootDir, rootDir, "myfs", new MountOptions(new Dictionary<string, string>()))
                 });
         }

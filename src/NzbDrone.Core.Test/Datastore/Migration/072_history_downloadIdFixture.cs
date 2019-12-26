@@ -20,14 +20,14 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             {
                 InsertHistory(c, new Dictionary<string, string>
                 {
-                    {"indexer","test"},
-                    {"downloadClientId","123"}
+                    { "indexer", "test" },
+                    { "downloadClientId", "123" }
                 });
 
                 InsertHistory(c, new Dictionary<string, string>
                 {
-                    {"indexer","test"},
-                    {"downloadClientId","abc"}
+                    { "indexer", "test" },
+                    { "downloadClientId", "abc" }
                 });
 
             });
@@ -48,13 +48,13 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             {
                 InsertHistory(c, new Dictionary<string, string>
                 {
-                    {"indexer","test"},
-                    {"downloadClientId","123"}
+                    { "indexer", "test" },
+                    { "downloadClientId", "123" }
                 });
 
                 InsertHistory(c, new Dictionary<string, string>
                 {
-                    {"indexer","test"}
+                    { "indexer", "test" }
                 });
 
             });
@@ -74,9 +74,9 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             {
                 InsertHistory(c, new Dictionary<string, string>
                 {
-                    {"indexer","test"},
-                    {"group","test2"},
-                    {"downloadClientId","123"}
+                    { "indexer", "test" },
+                    { "group", "test2" },
+                    { "downloadClientId", "123" }
                 });
             });
 

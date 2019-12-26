@@ -129,8 +129,6 @@ namespace NzbDrone.Test.Common.AutoMoq
             }
         }
 
-        #region private methods
-
         private void SetupAutoMoqer(IUnityContainer container)
         {
             _container = container;
@@ -140,9 +138,8 @@ namespace NzbDrone.Test.Common.AutoMoq
 
             _registeredMocks = new Dictionary<Type, object>();
             AddTheAutoMockingContainerExtensionToTheContainer(container);
-
 #if NETCOREAPP
-            ContainerBuilderBase.RegisterNativeResolver(new [] {"System.Data.SQLite", "Radarr.Core"});
+            ContainerBuilderBase.RegisterNativeResolver(new[] { "System.Data.SQLite", "Radarr.Core" });
 #endif
         }
 
@@ -190,7 +187,5 @@ namespace NzbDrone.Test.Common.AutoMoq
 
             Assembly.Load(assemblyName);
         }
-
-        #endregion
     }
 }
