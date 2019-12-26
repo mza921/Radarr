@@ -7,6 +7,6 @@ namespace NzbDrone.Core.NetImport
 
         public override bool SendUpdatesToClient => true;
 
-        public int listId = 0;
+        public int ListId = 0;
     }
 }
