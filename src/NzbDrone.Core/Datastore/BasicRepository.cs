@@ -12,7 +12,8 @@ using NzbDrone.Core.Messaging.Events;
 
 namespace NzbDrone.Core.Datastore
 {
-    public interface IBasicRepository<TModel> where TModel : ModelBase, new()
+    public interface IBasicRepository<TModel>
+        where TModel : ModelBase, new()
     {
         IEnumerable<TModel> All();
         int Count();
@@ -35,7 +36,8 @@ namespace NzbDrone.Core.Datastore
         PagingSpec<TModel> GetPaged(PagingSpec<TModel> pagingSpec);
     }
 
-    public class BasicRepository<TModel> : IBasicRepository<TModel> where TModel : ModelBase, new()
+    public class BasicRepository<TModel> : IBasicRepository<TModel>
+        where TModel : ModelBase, new()
     {
         private readonly IDatabase _database;
         private readonly IEventAggregator _eventAggregator;

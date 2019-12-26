@@ -14,7 +14,8 @@ using NzbDrone.Test.Common.AutoMoq;
 
 namespace NzbDrone.Test.Common
 {
-    public abstract class TestBase<TSubject> : TestBase where TSubject : class
+    public abstract class TestBase<TSubject> : TestBase
+        where TSubject : class
     {
 
         private TSubject _subject;
@@ -202,17 +203,20 @@ namespace NzbDrone.Test.Common
             return Path.Combine(TempFolder, Path.GetRandomFileName());
         }
 
-        protected void VerifyEventPublished<TEvent>() where TEvent : class, IEvent
+        protected void VerifyEventPublished<TEvent>()
+            where TEvent : class, IEvent
         {
             VerifyEventPublished<TEvent>(Times.Once());
         }
 
-        protected void VerifyEventPublished<TEvent>(Times times) where TEvent : class, IEvent
+        protected void VerifyEventPublished<TEvent>(Times times)
+            where TEvent : class, IEvent
         {
             Mocker.GetMock<IEventAggregator>().Verify(c => c.PublishEvent(It.IsAny<TEvent>()), times);
         }
 
-        protected void VerifyEventNotPublished<TEvent>() where TEvent : class, IEvent
+        protected void VerifyEventNotPublished<TEvent>()
+            where TEvent : class, IEvent
         {
             Mocker.GetMock<IEventAggregator>().Verify(c => c.PublishEvent(It.IsAny<TEvent>()), Times.Never());
         }

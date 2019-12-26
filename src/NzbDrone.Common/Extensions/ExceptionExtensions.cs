@@ -4,20 +4,23 @@ namespace NzbDrone.Common.Extensions
 {
     public static class ExceptionExtensions
     {
-        public static T WithData<T>(this T ex, string key, string value) where T : Exception
+        public static T WithData<T>(this T ex, string key, string value)
+            where T : Exception
         {
             ex.AddData(key, value);
 
             return ex;
         }
-        public static T WithData<T>(this T ex, string key, int value) where T : Exception
+        public static T WithData<T>(this T ex, string key, int value)
+            where T : Exception
         {
             ex.AddData(key, value.ToString());
 
             return ex;
         }
 
-        public static T WithData<T>(this T ex, string key, Http.HttpUri value) where T : Exception
+        public static T WithData<T>(this T ex, string key, Http.HttpUri value)
+            where T : Exception
         {
             ex.AddData(key, value.ToString());
 
@@ -25,7 +28,8 @@ namespace NzbDrone.Common.Extensions
         }
 
 
-        public static T WithData<T>(this T ex, Http.HttpResponse response, int maxSampleLength = 512) where T : Exception
+        public static T WithData<T>(this T ex, Http.HttpResponse response, int maxSampleLength = 512)
+            where T : Exception
         {
             if (response == null || response.Content == null) return ex;
 

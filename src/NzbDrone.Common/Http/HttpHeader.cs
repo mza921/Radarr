@@ -42,7 +42,8 @@ namespace NzbDrone.Common.Http
             return values[0];
         }
 
-        protected T? GetSingleValue<T>(string key, Func<string, T> converter) where T : struct
+        protected T? GetSingleValue<T>(string key, Func<string, T> converter)
+            where T : struct
         {
             var value = GetSingleValue(key);
             if (value == null)
@@ -64,7 +65,8 @@ namespace NzbDrone.Common.Http
             }
         }
 
-        protected void SetSingleValue<T>(string key, T? value, Func<T, string> converter = null) where T : struct
+        protected void SetSingleValue<T>(string key, T? value, Func<T, string> converter = null)
+            where T : struct
         {
             if (!value.HasValue)
             {

@@ -4,7 +4,8 @@ using Radarr.Http.REST;
 
 namespace Radarr.Http
 {
-    public class ResourceChangeMessage<TResource> where TResource : RestResource
+    public class ResourceChangeMessage<TResource>
+        where TResource : RestResource
     {
         public TResource Resource { get; private set; }
         public ModelAction Action { get; private set; }

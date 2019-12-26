@@ -7,7 +7,8 @@ using NzbDrone.Test.Common;
 
 namespace NzbDrone.Common.Test.DiskTests
 {
-    public abstract class DiskProviderFixtureBase<TSubject> : TestBase<TSubject> where TSubject : class, IDiskProvider
+    public abstract class DiskProviderFixtureBase<TSubject> : TestBase<TSubject>
+        where TSubject : class, IDiskProvider
     {
         [Test]
         [Retry(5)]

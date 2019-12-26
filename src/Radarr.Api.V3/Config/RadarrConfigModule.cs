@@ -6,7 +6,8 @@ using NzbDrone.Core.Configuration;
 
 namespace Radarr.Api.V3.Config
 {
-    public abstract class RadarrConfigModule<TResource> : RadarrRestModule<TResource> where TResource : RestResource, new()
+    public abstract class RadarrConfigModule<TResource> : RadarrRestModule<TResource>
+        where TResource : RestResource, new()
     {
         private readonly IConfigService _configService;
 

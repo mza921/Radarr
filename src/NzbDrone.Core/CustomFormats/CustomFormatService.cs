@@ -141,7 +141,8 @@ namespace NzbDrone.Core.CustomFormats
         private void DeleteInRepo<TModel>(IBasicRepository<TModel> repository,
             Func<TModel, List<CustomFormat>> queryFunc,
             Func<TModel, List<CustomFormat>, TModel> updateFunc,
-            int customFormatId) where TModel : ModelBase, new()
+            int customFormatId)
+            where TModel : ModelBase, new()
         {
             var allItems = repository.All();
 

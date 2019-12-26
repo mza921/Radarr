@@ -15,8 +15,10 @@ namespace NzbDrone.Core.Messaging.Commands
 {
     public interface IManageCommandQueue
     {
-        List<CommandModel> PushMany<TCommand>(List<TCommand> commands) where TCommand : Command;
-        CommandModel Push<TCommand>(TCommand command, CommandPriority priority = CommandPriority.Normal, CommandTrigger trigger = CommandTrigger.Unspecified) where TCommand : Command;
+        List<CommandModel> PushMany<TCommand>(List<TCommand> commands)
+            where TCommand : Command;
+        CommandModel Push<TCommand>(TCommand command, CommandPriority priority = CommandPriority.Normal, CommandTrigger trigger = CommandTrigger.Unspecified)
+            where TCommand : Command;
         CommandModel Push(string commandName, DateTime? lastExecutionTime, DateTime? lastStartTime, CommandPriority priority = CommandPriority.Normal, CommandTrigger trigger = CommandTrigger.Unspecified);
         IEnumerable<CommandModel> Queue(CancellationToken cancellationToken);
         List<CommandModel> All();
@@ -50,7 +52,8 @@ namespace NzbDrone.Core.Messaging.Commands
             _commandQueue = new CommandQueue();
         }
 
-        public List<CommandModel> PushMany<TCommand>(List<TCommand> commands) where TCommand : Command
+        public List<CommandModel> PushMany<TCommand>(List<TCommand> commands)
+            where TCommand : Command
         {
             _logger.Trace("Publishing {0} commands", commands.Count);
 
@@ -89,7 +92,8 @@ namespace NzbDrone.Core.Messaging.Commands
             return commandModels;
         }
 
-        public CommandModel Push<TCommand>(TCommand command, CommandPriority priority = CommandPriority.Normal, CommandTrigger trigger = CommandTrigger.Unspecified) where TCommand : Command
+        public CommandModel Push<TCommand>(TCommand command, CommandPriority priority = CommandPriority.Normal, CommandTrigger trigger = CommandTrigger.Unspecified)
+            where TCommand : Command
         {
             Ensure.That(command, () => command).IsNotNull();
 

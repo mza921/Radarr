@@ -54,7 +54,8 @@ namespace NzbDrone.Core.Rest
             }
         }
 
-        public static T Read<T>(this IRestResponse restResponse, IRestClient restClient) where T : class, new()
+        public static T Read<T>(this IRestResponse restResponse, IRestClient restClient)
+            where T : class, new()
         {
             restResponse.ValidateResponse(restClient);
 
@@ -66,7 +67,8 @@ namespace NzbDrone.Core.Rest
             return Json.Deserialize<T>(restResponse.Content);
         }
 
-        public static T ExecuteAndValidate<T>(this IRestClient client, IRestRequest request) where T : class, new()
+        public static T ExecuteAndValidate<T>(this IRestClient client, IRestRequest request)
+            where T : class, new()
         {
             return client.Execute(request).Read<T>(client);
         }

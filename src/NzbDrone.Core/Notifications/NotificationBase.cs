@@ -6,7 +6,8 @@ using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.Notifications
 {
-    public abstract class NotificationBase<TSettings> : INotification where TSettings : IProviderConfig, new()
+    public abstract class NotificationBase<TSettings> : INotification
+        where TSettings : IProviderConfig, new()
     {
         protected const string MOVIE_GRABBED_TITLE = "Movie Grabbed";
         protected const string MOVIE_DOWNLOADED_TITLE = "Movie Downloaded";

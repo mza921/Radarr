@@ -63,7 +63,8 @@ namespace NzbDrone.Core.Messaging.Commands
             }
         }
 
-        private void ExecuteCommand<TCommand>(TCommand command, CommandModel commandModel) where TCommand : Command
+        private void ExecuteCommand<TCommand>(TCommand command, CommandModel commandModel)
+            where TCommand : Command
         {
             var handlerContract = typeof(IExecute<>).MakeGenericType(command.GetType());
             var handler = (IExecute<TCommand>)_serviceFactory.Build(handlerContract);

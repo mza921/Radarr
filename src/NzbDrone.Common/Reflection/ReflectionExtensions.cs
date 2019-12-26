@@ -48,7 +48,8 @@ namespace NzbDrone.Common.Reflection
             return propertyInfo.CanWrite && propertyInfo.GetSetMethod(false) != null;
         }
 
-        public static T GetAttribute<T>(this MemberInfo member, bool isRequired = true) where T : Attribute
+        public static T GetAttribute<T>(this MemberInfo member, bool isRequired = true)
+            where T : Attribute
         {
             var attribute = member.GetCustomAttributes(typeof(T), false).SingleOrDefault();
 
@@ -60,7 +61,8 @@ namespace NzbDrone.Common.Reflection
             return (T)attribute;
         }
 
-        public static T[] GetAttributes<T>(this MemberInfo member) where T : Attribute
+        public static T[] GetAttributes<T>(this MemberInfo member)
+            where T : Attribute
         {
             return member.GetCustomAttributes(typeof(T), false).OfType<T>().ToArray();
         }

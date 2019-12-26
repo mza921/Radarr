@@ -51,7 +51,8 @@ namespace NzbDrone.Core.IndexerSearch
             return Dispatch(indexer => indexer.Fetch(searchSpec), searchSpec);
         }
 
-        private TSpec Get<TSpec>(Movie movie, bool userInvokedSearch, bool interactiveSearch) where TSpec : SearchCriteriaBase, new()
+        private TSpec Get<TSpec>(Movie movie, bool userInvokedSearch, bool interactiveSearch)
+            where TSpec : SearchCriteriaBase, new()
         {
             var spec = new TSpec()
             {

@@ -22,7 +22,8 @@ namespace NzbDrone.Common.Test.Http
 {
     [IntegrationTest]
     [TestFixture(typeof(ManagedHttpDispatcher))]
-    public class HttpClientFixture<TDispatcher> : TestBase<HttpClient> where TDispatcher : IHttpDispatcher
+    public class HttpClientFixture<TDispatcher> : TestBase<HttpClient>
+        where TDispatcher : IHttpDispatcher
     {
         private string[] _httpBinHosts;
         private int _httpBinSleep;

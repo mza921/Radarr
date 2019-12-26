@@ -91,7 +91,8 @@ namespace NzbDrone.Common.Http
     }
 
 
-    public class HttpResponse<T> : HttpResponse where T : new()
+    public class HttpResponse<T> : HttpResponse
+        where T : new()
     {
         public HttpResponse(HttpResponse response)
             : base(response.Request, response.Headers, response.ResponseData, response.StatusCode)

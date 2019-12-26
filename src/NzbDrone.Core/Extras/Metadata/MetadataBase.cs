@@ -9,7 +9,8 @@ using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.Extras.Metadata
 {
-    public abstract class MetadataBase<TSettings> : IMetadata where TSettings : IProviderConfig, new()
+    public abstract class MetadataBase<TSettings> : IMetadata
+        where TSettings : IProviderConfig, new()
     {
         public abstract string Name { get; }
 
