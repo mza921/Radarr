@@ -337,7 +337,7 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
         [DllImport("mediainfo")]
         private static extern IntPtr MediaInfo_State_Get(IntPtr handle);
         [DllImport("mediainfo")]
-        private static extern IntPtr MediaInfo_Count_Get(IntPtr handle, IntPtr StreamKind, IntPtr streamNumber);
+        private static extern IntPtr MediaInfo_Count_Get(IntPtr handle, IntPtr streamKind, IntPtr streamNumber);
 
         [DllImport("mediainfo")]
         private static extern IntPtr MediaInfoA_New();
@@ -364,6 +364,6 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
         [DllImport("mediainfo")]
         private static extern IntPtr MediaInfoA_State_Get(IntPtr handle);
         [DllImport("mediainfo")]
-        private static extern IntPtr MediaInfoA_Count_Get(IntPtr handle, IntPtr StreamKind, IntPtr streamNumber);
+        private static extern IntPtr MediaInfoA_Count_Get(IntPtr handle, IntPtr streamKind, IntPtr streamNumber);
     }
 }

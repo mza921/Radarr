@@ -15,15 +15,15 @@ namespace NzbDrone.Api.Movies
             : base("/movie/editor")
         {
             _movieService = movieService;
-            Put("/", Movie => SaveAll());
-            Put("/delete", Movie => DeleteSelected());
+            Put("/", movie => SaveAll());
+            Put("/delete", movie => DeleteSelected());
         }
 
         private object SaveAll()
         {
             var resources = Request.Body.FromJson<List<MovieResource>>();
 
-            var movie = resources.Select(MovieResource => MovieResource.ToModel(_movieService.GetMovie(MovieResource.Id))).ToList();
+            var movie = resources.Select(movieResource => movieResource.ToModel(_movieService.GetMovie(movieResource.Id))).ToList();
 
             return ResponseWithCode(_movieService.UpdateMovie(movie)
                                     .ToResource(),

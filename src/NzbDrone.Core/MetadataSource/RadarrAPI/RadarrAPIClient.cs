@@ -14,9 +14,9 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
     {
         IHttpRequestBuilderFactory RadarrAPI { get; }
         List<MovieResult> DiscoverMovies(string action, Func<HttpRequest, HttpRequest> enhanceRequest);
-        List<AlternativeTitle> AlternativeTitlesForMovie(int TmdbId);
+        List<AlternativeTitle> AlternativeTitlesForMovie(int tmdbId);
         Tuple<List<AlternativeTitle>, AlternativeYear> AlternativeTitlesAndYearForMovie(int tmdbId);
-        AlternativeTitle AddNewAlternativeTitle(AlternativeTitle title, int TmdbId);
+        AlternativeTitle AddNewAlternativeTitle(AlternativeTitle title, int tmdbId);
         AlternativeYear AddNewAlternativeYear(int year, int tmdbId);
         string APIURL { get; }
     }
@@ -104,9 +104,9 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
         }
 
 
-        public List<AlternativeTitle> AlternativeTitlesForMovie(int TmdbId)
+        public List<AlternativeTitle> AlternativeTitlesForMovie(int tmdbId)
         {
-            var request = RadarrAPI.Create().SetSegment("route", "mappings").SetSegment("action", "find").AddQueryParam("tmdbid", TmdbId).Build();
+            var request = RadarrAPI.Create().SetSegment("route", "mappings").SetSegment("action", "find").AddQueryParam("tmdbid", tmdbId).Build();
 
             var mappings = Execute<Mapping>(request);
 
@@ -149,10 +149,10 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
             return new Tuple<List<AlternativeTitle>, AlternativeYear>(titles, newYear);
         }
 
-        public AlternativeTitle AddNewAlternativeTitle(AlternativeTitle title, int TmdbId)
+        public AlternativeTitle AddNewAlternativeTitle(AlternativeTitle title, int tmdbId)
         {
             var request = RadarrAPI.Create().SetSegment("route", "mappings").SetSegment("action", "add")
-                .AddQueryParam("tmdbid", TmdbId).AddQueryParam("type", "title")
+                .AddQueryParam("tmdbid", tmdbId).AddQueryParam("type", "title")
                 .AddQueryParam("language", IsoLanguages.Get(title.Language).TwoLetterCode)
                 .AddQueryParam("aka_title", title.Title).Build();
 

@@ -7,18 +7,18 @@ namespace NzbDrone.Common.Expansive
         private List<T> _CallTree;
         private TreeNode<T> _Parent;
 
-        public TreeNode(T Value)
+        public TreeNode(T value)
         {
-            this.Value = Value;
+            Value = value;
             Parent = null;
             Children = new TreeNodeList<T>(this);
             _CallTree = new List<T>();
         }
 
-        public TreeNode(T Value, TreeNode<T> Parent)
+        public TreeNode(T value, TreeNode<T> parent)
         {
-            this.Value = Value;
-            this.Parent = Parent;
+            Value = value;
+            Parent = parent;
             Children = new TreeNodeList<T>(this);
             _CallTree = new List<T>();
         }

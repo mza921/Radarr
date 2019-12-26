@@ -45,7 +45,7 @@ namespace NzbDrone.Core.Movies
         bool MoviePathExists(string folder);
         void RemoveAddOptions(Movie movie);
         List<Movie> MoviesWithFiles(int movieId);
-        System.Linq.Expressions.Expression<Func<Movie, bool>> ConstructFilterExpression(string FilterKey, string FilterValue, string filterType = null);
+        System.Linq.Expressions.Expression<Func<Movie, bool>> ConstructFilterExpression(string filterKey, string filterValue, string filterType = null);
     }
 
     public class MovieService : IMovieService, IHandle<MovieFileAddedEvent>,
@@ -74,23 +74,23 @@ namespace NzbDrone.Core.Movies
         }
 
 
-        public System.Linq.Expressions.Expression<Func<Movie, bool>> ConstructFilterExpression(string FilterKey, string FilterValue, string FilterType = null)
+        public System.Linq.Expressions.Expression<Func<Movie, bool>> ConstructFilterExpression(string filterKey, string filterValue, string filterType = null)
         {
             //if (FilterKey == "all" && FilterValue == "all")
             //{
             //    return v => v.Monitored == true || v.Monitored == false;
             //}
-            if (FilterKey == "monitored" && FilterValue == "false")
+            if (filterKey == "monitored" && filterValue == "false")
             {
                 return v => v.Monitored == false;
             }
-            else if (FilterKey == "monitored" && FilterValue == "true")
+            else if (filterKey == "monitored" && filterValue == "true")
             {
                 return v => v.Monitored == true;
             }
-            else if (FilterKey == "status")
+            else if (filterKey == "status")
             {
-                switch (FilterValue)
+                switch (filterValue)
                 {
                     case "released":
                         return v => v.Status == MovieStatusType.Released;
@@ -106,25 +106,25 @@ namespace NzbDrone.Core.Movies
                              (v.MinimumAvailability == MovieStatusType.PreDB && v.Status >= MovieStatusType.Released || v.HasPreDBEntry == true));
                 }
             }
-            else if (FilterKey == "downloaded")
+            else if (filterKey == "downloaded")
             {
                 return v => v.MovieFileId == 0;
             }
-            else if (FilterKey == "title")
+            else if (filterKey == "title")
             {
-                if (FilterValue == string.Empty || FilterValue == null)
+                if (filterValue == string.Empty || filterValue == null)
                 {
                     return v => true;
                 }
                 else
                 {
-                    if (FilterType == "contains")
+                    if (filterType == "contains")
                     {
-                        return v => v.CleanTitle.Contains(FilterValue);
+                        return v => v.CleanTitle.Contains(filterValue);
                     }
                     else
                     {
-                        return v => v.CleanTitle == FilterValue;
+                        return v => v.CleanTitle == filterValue;
                     }
                 }
             }

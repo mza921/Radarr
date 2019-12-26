@@ -76,13 +76,13 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             return new HashSet<int>(response.Resource.results.Select(c => c.id));
         }
 
-        public Movie GetMovieInfo(int TmdbId, Profile profile = null, bool hasPreDBEntry = false)
+        public Movie GetMovieInfo(int tmdbId, Profile profile = null, bool hasPreDBEntry = false)
         {
             var langCode = profile != null ? IsoLanguages.Get(profile.Language)?.TwoLetterCode ?? "en" : "en";
 
             var request = _movieBuilder.Create()
                .SetSegment("route", "movie")
-               .SetSegment("id", TmdbId.ToString())
+               .SetSegment("id", tmdbId.ToString())
                .SetSegment("secondaryRoute", "")
                .AddQueryParam("append_to_response", "alternative_titles,release_dates,videos")
                .AddQueryParam("language", langCode.ToUpper())
@@ -127,7 +127,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             {
                 if (resource.status_code == 34)
                 {
-                    _logger.Warn("Movie with TmdbId {0} could not be found. This is probably the case when the movie was deleted from TMDB.", TmdbId);
+                    _logger.Warn("Movie with TmdbId {0} could not be found. This is probably the case when the movie was deleted from TMDB.", tmdbId);
                     return null;
                 }
 
@@ -143,7 +143,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 var iso = IsoLanguages.Find(resource.original_language);
                 if (iso != null)
                 {
-                    altTitles.Add(new AlternativeTitle(resource.original_title, SourceType.TMDB, TmdbId, iso.Language));
+                    altTitles.Add(new AlternativeTitle(resource.original_title, SourceType.TMDB, tmdbId, iso.Language));
                 }
             }
 
@@ -151,15 +151,15 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             {
                 if (alternativeTitle.iso_3166_1.ToLower() == langCode)
                 {
-                    altTitles.Add(new AlternativeTitle(alternativeTitle.title, SourceType.TMDB, TmdbId, IsoLanguages.Find(alternativeTitle.iso_3166_1.ToLower())?.Language ?? Language.English));
+                    altTitles.Add(new AlternativeTitle(alternativeTitle.title, SourceType.TMDB, tmdbId, IsoLanguages.Find(alternativeTitle.iso_3166_1.ToLower())?.Language ?? Language.English));
                 }
                 else if (alternativeTitle.iso_3166_1.ToLower() == "us")
                 {
-                    altTitles.Add(new AlternativeTitle(alternativeTitle.title, SourceType.TMDB, TmdbId, Language.English));
+                    altTitles.Add(new AlternativeTitle(alternativeTitle.title, SourceType.TMDB, tmdbId, Language.English));
                 }
             }
 
-            movie.TmdbId = TmdbId;
+            movie.TmdbId = tmdbId;
             movie.ImdbId = resource.imdb_id;
             movie.Title = resource.title;
             movie.TitleSlug = Parser.Parser.ToUrlSlug(resource.title);
