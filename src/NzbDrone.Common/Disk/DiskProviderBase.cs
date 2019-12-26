@@ -362,9 +362,11 @@ namespace NzbDrone.Common.Disk
                     return;
                 }
 
-                var accessRule = new FileSystemAccessRule(sid, rights,
+                var accessRule = new FileSystemAccessRule(sid,
+                                                          rights,
                                                           InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit,
-                                                          PropagationFlags.InheritOnly, controlType);
+                                                          PropagationFlags.InheritOnly,
+                                                          controlType);
 
                 bool modified;
                 directorySecurity.ModifyAccessRule(AccessControlModification.Add, accessRule, out modified);

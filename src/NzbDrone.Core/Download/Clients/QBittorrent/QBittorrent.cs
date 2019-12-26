@@ -57,8 +57,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 }
                 catch (DownloadClientException)
                 {
-                    _logger.Warn("Failed to set post-import torrent label \"{0}\" for {1} in qBittorrent. Does the label exist?",
-                        Settings.MovieImportedCategory, downloadClientItem.Title);
+                    _logger.Warn("Failed to set post-import torrent label \"{0}\" for {1} in qBittorrent. Does the label exist?", Settings.MovieImportedCategory, downloadClientItem.Title);
                 }
             }
         }

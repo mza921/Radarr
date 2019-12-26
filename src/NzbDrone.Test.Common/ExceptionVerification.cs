@@ -144,7 +144,10 @@ namespace NzbDrone.Test.Common
                 {
 
                     var message = string.Format("{0} {1}(s) were expected but {2} were logged.\n\r{3}",
-                        count, level, levelLogs.Count, GetLogsString(levelLogs));
+                        count,
+                        level,
+                        levelLogs.Count,
+                        GetLogsString(levelLogs));
 
                     message = "\n\r****************************************************************************************\n\r"
                         + message +

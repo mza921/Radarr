@@ -15,7 +15,10 @@ namespace NzbDrone.Core.NetImport.TMDb
 
         private readonly ISearchForNewMovie _skyhookProxy;
 
-        public TMDbImport(IHttpClient httpClient, IConfigService configService, IParsingService parsingService, ISearchForNewMovie skyhookProxy,
+        public TMDbImport(IHttpClient httpClient,
+            IConfigService configService,
+            IParsingService parsingService,
+            ISearchForNewMovie skyhookProxy,
             Logger logger)
             : base(httpClient, configService, parsingService, logger)
         {

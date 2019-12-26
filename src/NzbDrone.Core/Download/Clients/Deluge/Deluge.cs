@@ -46,7 +46,8 @@ namespace NzbDrone.Core.Download.Clients.Deluge
                 catch (DownloadClientUnavailableException)
                 {
                     _logger.Warn("Failed to set torrent post-import label \"{0}\" for {1} in Deluge. Does the label exist?",
-                        Settings.MovieImportedCategory, downloadClientItem.Title);
+                        Settings.MovieImportedCategory,
+                        downloadClientItem.Title);
                 }
             }
         }

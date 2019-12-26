@@ -92,11 +92,13 @@ namespace NzbDrone.Common.Test.CacheTests
 
             for (int i = 0; i < 10; i++)
             {
-                _cachedString.Get("key", () =>
-                {
-                    hitCount++;
-                    return null;
-                }, TimeSpan.FromMilliseconds(300));
+                _cachedString.Get("key",
+                    () =>
+                    {
+                        hitCount++;
+                        return null;
+                    },
+                    TimeSpan.FromMilliseconds(300));
 
                 Thread.Sleep(100);
             }

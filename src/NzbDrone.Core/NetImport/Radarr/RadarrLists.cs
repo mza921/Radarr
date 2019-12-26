@@ -17,7 +17,10 @@ namespace NzbDrone.Core.NetImport.Radarr
 
         private readonly ISearchForNewMovie _skyhookProxy;
 
-        public RadarrLists(IHttpClient httpClient, IConfigService configService, IParsingService parsingService, ISearchForNewMovie skyhookProxy,
+        public RadarrLists(IHttpClient httpClient,
+            IConfigService configService,
+            IParsingService parsingService,
+            ISearchForNewMovie skyhookProxy,
             Logger logger)
             : base(httpClient, configService, parsingService, logger)
         {

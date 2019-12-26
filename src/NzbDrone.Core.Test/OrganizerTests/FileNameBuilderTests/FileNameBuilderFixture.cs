@@ -523,8 +523,10 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
         [TestCase(10, "BT.2020", "PQ", "South.Park.HDR")]
         [TestCase(10, "BT.2020", "HLG", "South.Park.HDR")]
         [TestCase(0, null, null, "South.Park")]
-        public void should_include_hdr_for_mediainfo_videodynamicrange_with_valid_properties(int bitDepth, string colourPrimaries,
-            string transferCharacteristics, string expectedName)
+        public void should_include_hdr_for_mediainfo_videodynamicrange_with_valid_properties(int bitDepth,
+            string colourPrimaries,
+            string transferCharacteristics,
+            string expectedName)
         {
             _namingConfig.StandardMovieFormat =
                 "{Movie.Title}.{MediaInfo VideoDynamicRange}";
@@ -601,9 +603,15 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             Mocker.GetMock<IUpdateMediaInfo>().Verify(v => v.Update(_movieFile, _movie), Times.Never());
         }
 
-        private void GivenMediaInfoModel(string videoCodec = "AVC", string audioCodec = "DTS", int audioChannels = 6, int videoBitDepth = 8,
-                string videoColourPrimaries = "", string videoTransferCharacteristics = "", string audioLanguages = "English",
-                string subtitles = "English/Spanish/Italian", int schemaRevision = 5)
+        private void GivenMediaInfoModel(string videoCodec = "AVC",
+            string audioCodec = "DTS",
+            int audioChannels = 6,
+            int videoBitDepth = 8,
+            string videoColourPrimaries = "",
+            string videoTransferCharacteristics = "",
+            string audioLanguages = "English",
+            string subtitles = "English/Spanish/Italian",
+            int schemaRevision = 5)
         {
             _movieFile.MediaInfo = new MediaInfoModel
             {

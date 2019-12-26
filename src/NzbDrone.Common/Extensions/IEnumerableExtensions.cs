@@ -13,8 +13,10 @@ namespace NzbDrone.Common.Extensions
             return source.Where(element => knownKeys.Add(keySelector(element)));
         }
 
-        public static IEnumerable<TFirst> IntersectBy<TFirst, TSecond, TKey>(this IEnumerable<TFirst> first, Func<TFirst, TKey> firstKeySelector,
-                                                                             IEnumerable<TSecond> second, Func<TSecond, TKey> secondKeySelector,
+        public static IEnumerable<TFirst> IntersectBy<TFirst, TSecond, TKey>(this IEnumerable<TFirst> first,
+                                                                             Func<TFirst, TKey> firstKeySelector,
+                                                                             IEnumerable<TSecond> second,
+                                                                             Func<TSecond, TKey> secondKeySelector,
                                                                              IEqualityComparer<TKey> keyComparer)
         {
             var keys = new HashSet<TKey>(second.Select(secondKeySelector), keyComparer);
@@ -31,9 +33,11 @@ namespace NzbDrone.Common.Extensions
             }
         }
 
-        public static IEnumerable<TFirst> ExceptBy<TFirst, TSecond, TKey>(this IEnumerable<TFirst> first, Func<TFirst, TKey> firstKeySelector,
-                                                                             IEnumerable<TSecond> second, Func<TSecond, TKey> secondKeySelector,
-                                                                             IEqualityComparer<TKey> keyComparer)
+        public static IEnumerable<TFirst> ExceptBy<TFirst, TSecond, TKey>(this IEnumerable<TFirst> first,
+                                                                          Func<TFirst, TKey> firstKeySelector,
+                                                                          IEnumerable<TSecond> second,
+                                                                          Func<TSecond, TKey> secondKeySelector,
+                                                                          IEqualityComparer<TKey> keyComparer)
         {
             var keys = new HashSet<TKey>(second.Select(secondKeySelector), keyComparer);
             var matchedKeys = new HashSet<TKey>();

@@ -30,8 +30,10 @@ namespace NzbDrone.Core.DecisionEngine
         private readonly Logger _logger;
 
         public DownloadDecisionMaker(IEnumerable<IDecisionEngineSpecification> specifications,
-            IParsingService parsingService, IConfigService configService,
-            IQualityDefinitionService qualityDefinitionService, Logger logger)
+            IParsingService parsingService,
+            IConfigService configService,
+            IQualityDefinitionService qualityDefinitionService,
+            Logger logger)
         {
             _specifications = specifications;
             _parsingService = parsingService;

@@ -34,9 +34,7 @@ namespace NzbDrone.Core.Datastore.Migration
 
                         movieTitlePattern = "{Movie Title}";
 
-                        var standardMovieFormat = string.Format("{0} {1} {2}", movieTitlePattern,
-                                                                             movieYearPattern,
-                                                                             qualityFormat);
+                        var standardMovieFormat = string.Format("{0} {1} {2}", movieTitlePattern, movieYearPattern, qualityFormat);
 
                         var movieFolderFormat = string.Format("{0} {1}", movieTitlePattern, movieYearPattern);
 

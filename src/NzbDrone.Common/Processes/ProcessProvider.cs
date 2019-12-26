@@ -208,8 +208,11 @@ namespace NzbDrone.Common.Processes
         public ProcessOutput StartAndCapture(string path, string args = null, StringDictionary environmentVariables = null)
         {
             var output = new ProcessOutput();
-            var process = Start(path, args, environmentVariables, s => output.Lines.Add(new ProcessOutputLine(ProcessOutputLevel.Standard, s)),
-                                                                  error => output.Lines.Add(new ProcessOutputLine(ProcessOutputLevel.Error, error)));
+            var process = Start(path,
+                                args,
+                                environmentVariables,
+                                s => output.Lines.Add(new ProcessOutputLine(ProcessOutputLevel.Standard, s)),
+                                error => output.Lines.Add(new ProcessOutputLine(ProcessOutputLevel.Error, error)));
 
             process.WaitForExit();
             output.ExitCode = process.ExitCode;

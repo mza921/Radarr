@@ -89,8 +89,7 @@ namespace NzbDrone.Core.Notifications.Xbmc
                 }
                 else
                 {
-                    _logger.Debug("Movie {0} doesn't exist on XBMC host: {1}, Updating Entire Library", movie,
-                                 settings.Address);
+                    _logger.Debug("Movie {0} doesn't exist on XBMC host: {1}, Updating Entire Library", movie, settings.Address);
                 }
 
                 var response = _proxy.UpdateLibrary(settings, moviePath);

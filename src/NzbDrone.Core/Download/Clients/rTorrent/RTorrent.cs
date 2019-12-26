@@ -51,8 +51,10 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
                 }
                 catch (Exception ex)
                 {
-                    _logger.Warn(ex, "Failed to set torrent post-import label \"{0}\" for {1} in rTorrent. Does the label exist?",
-                        Settings.MovieImportedCategory, downloadClientItem.Title);
+                    _logger.Warn(ex,
+                        "Failed to set torrent post-import label \"{0}\" for {1} in rTorrent. Does the label exist?",
+                        Settings.MovieImportedCategory,
+                        downloadClientItem.Title);
                 }
             }
         }

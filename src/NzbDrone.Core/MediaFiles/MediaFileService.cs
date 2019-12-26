@@ -30,7 +30,8 @@ namespace NzbDrone.Core.MediaFiles
         private readonly Logger _logger;
 
         public MediaFileService(IMediaFileRepository mediaFileRepository,
-                                IEventAggregator eventAggregator, Logger logger)
+                                IEventAggregator eventAggregator,
+                                Logger logger)
         {
             _mediaFileRepository = mediaFileRepository;
             _eventAggregator = eventAggregator;

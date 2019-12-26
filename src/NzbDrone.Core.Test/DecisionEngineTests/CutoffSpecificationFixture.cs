@@ -80,7 +80,9 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
                     Items = Qualities.QualityFixture.GetDefaultQualities(),
                     FormatCutoff = CustomFormats.CustomFormat.None.Id,
                     FormatItems = CustomFormatsFixture.GetSampleFormatItems("None", "My Format")
-                }, old, newQ).Should().BeFalse();
+                },
+                old,
+                newQ).Should().BeFalse();
         }
 
         [Test]

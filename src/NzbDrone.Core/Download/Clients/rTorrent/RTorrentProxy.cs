@@ -73,7 +73,9 @@ namespace NzbDrone.Core.Download.Clients.RTorrent
             _logger.Debug("Executing remote method: d.multicall2");
 
             var client = BuildClient(settings);
-            var ret = ExecuteRequest(() => client.TorrentMulticall("", "",
+            var ret = ExecuteRequest(() => client.TorrentMulticall(
+                    "",
+                    "",
                     "d.name=", // string
                     "d.hash=", // string
                     "d.base_path=", // string

@@ -457,7 +457,9 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
 
                 if (audioChannelPositions.Contains("/"))
                 {
-                    return Regex.Replace(audioChannelPositions, @"^\d+\sobjects", "",
+                    return Regex.Replace(audioChannelPositions,
+                            @"^\d+\sobjects",
+                            "",
                             RegexOptions.Compiled | RegexOptions.IgnoreCase)
                         .Replace("Object Based / ", "")
                         .Split(new string[] { " / " }, StringSplitOptions.RemoveEmptyEntries)

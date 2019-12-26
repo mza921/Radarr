@@ -216,9 +216,12 @@ namespace NzbDrone.Core.Movies
         protected override QueryBuilder<TActual> AddJoinQueries<TActual>(QueryBuilder<TActual> baseQuery)
         {
             baseQuery = base.AddJoinQueries(baseQuery);
-            baseQuery = baseQuery.Join<Movie, AlternativeTitle>(JoinType.Left, m => m.AlternativeTitles,
+            baseQuery = baseQuery.Join<Movie, AlternativeTitle>(JoinType.Left,
+                m => m.AlternativeTitles,
                 (m, t) => m.Id == t.MovieId);
-            baseQuery = baseQuery.Join<Movie, MovieFile>(JoinType.Left, m => m.MovieFile, (m, f) => m.Id == f.MovieId);
+            baseQuery = baseQuery.Join<Movie, MovieFile>(JoinType.Left,
+                m => m.MovieFile,
+                (m, f) => m.Id == f.MovieId);
 
             return baseQuery;
         }

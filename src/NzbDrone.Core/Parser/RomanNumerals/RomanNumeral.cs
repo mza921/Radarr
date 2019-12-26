@@ -218,14 +218,12 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         {
             if (number > MaxValue)
             {
-                throw new ArgumentOutOfRangeException(nameof(number), number,
-                $"Roman numerals can not be larger than {MaxValue}.");
+                throw new ArgumentOutOfRangeException(nameof(number), number, $"Roman numerals can not be larger than {MaxValue}.");
             }
 
             if (number < MinValue)
             {
-                throw new ArgumentOutOfRangeException(nameof(number), number,
-                $"Roman numerals can not be smaller than {MinValue}.");
+                throw new ArgumentOutOfRangeException(nameof(number), number, $"Roman numerals can not be smaller than {MinValue}.");
             }
         }
 

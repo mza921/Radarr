@@ -35,8 +35,15 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
         private readonly IAlternativeTitleService _altTitleService;
         private readonly IRadarrAPIClient _radarrAPI;
 
-        public SkyHookProxy(IHttpClient httpClient, IRadarrCloudRequestBuilder requestBuilder, ITmdbConfigService configService, IMovieService movieService,
-                            IPreDBService predbService, IImportExclusionsService exclusionService, IAlternativeTitleService altTitleService, IRadarrAPIClient radarrAPI, Logger logger)
+        public SkyHookProxy(IHttpClient httpClient,
+            IRadarrCloudRequestBuilder requestBuilder,
+            ITmdbConfigService configService,
+            IMovieService movieService,
+            IPreDBService predbService,
+            IImportExclusionsService exclusionService,
+            IAlternativeTitleService altTitleService,
+            IRadarrAPIClient radarrAPI,
+            Logger logger)
         {
             _httpClient = httpClient;
             _movieBuilder = requestBuilder.TMDB;

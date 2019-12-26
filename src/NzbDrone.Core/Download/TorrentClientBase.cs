@@ -193,7 +193,8 @@ namespace NzbDrone.Core.Download
             {
                 _logger.Debug(
                     "{0} did not return the expected InfoHash for '{1}', Radarr could potentially lose track of the download in progress.",
-                    Definition.Implementation, remoteMovie.Release.DownloadUrl);
+                    Definition.Implementation,
+                    remoteMovie.Release.DownloadUrl);
             }
 
             return actualHash;
@@ -224,7 +225,8 @@ namespace NzbDrone.Core.Download
             {
                 _logger.Debug(
                     "{0} did not return the expected InfoHash for '{1}', Radarr could potentially lose track of the download in progress.",
-                    Definition.Implementation, remoteMovie.Release.DownloadUrl);
+                    Definition.Implementation,
+                    remoteMovie.Release.DownloadUrl);
             }
 
             return actualHash;

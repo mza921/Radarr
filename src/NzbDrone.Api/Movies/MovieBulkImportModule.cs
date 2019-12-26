@@ -37,10 +37,14 @@ namespace NzbDrone.Api.Movies
         private readonly IProfileService _profileService;
         private readonly IMovieService _movieService;
 
-        public MovieBulkImportModule(ISearchForNewMovie searchProxy, IRootFolderService rootFolderService,
+        public MovieBulkImportModule(ISearchForNewMovie searchProxy,
+            IRootFolderService rootFolderService,
             IMakeImportDecision importDecisionMaker,
-            IDiskScanService diskScanService, ICacheManager cacheManager,
-            IParsingService parsingService, IProfileService profileService, IMovieService movieService)
+            IDiskScanService diskScanService,
+            ICacheManager cacheManager,
+            IParsingService parsingService,
+            IProfileService profileService,
+            IMovieService movieService)
             : base("/movies/bulkimport")
         {
             _searchProxy = searchProxy;

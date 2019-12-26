@@ -142,7 +142,8 @@ namespace NzbDrone.Common.Expansive
                     {
                         throw new CircularReferenceException(string.Format("Circular Reference Detected for token '{0}'. Call Tree: {1}->{2}",
                                                                            token,
-                                                                           string.Join("->", thisNode.CallTree.ToArray().Reverse()), token));
+                                                                           string.Join("->", thisNode.CallTree.ToArray().Reverse()),
+                                                                           token));
                     }
 
                     // expand this match

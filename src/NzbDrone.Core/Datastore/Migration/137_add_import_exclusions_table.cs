@@ -39,8 +39,9 @@ namespace NzbDrone.Core.Datastore.Migration
 
                         var importExclusions = Value.Split(',').Select(x =>
                         {
-                            return string.Format("(\"{0}\", \"{1}\")", Regex.Replace(x, @"^.*\-(.*)$", "$1"),
-                                                 textInfo.ToTitleCase(string.Join(" ", x.Split('-').DropLast(1))));
+                            return string.Format("(\"{0}\", \"{1}\")",
+                                Regex.Replace(x, @"^.*\-(.*)$", "$1"),
+                                textInfo.ToTitleCase(string.Join(" ", x.Split('-').DropLast(1))));
                         }).ToList();
 
                         using (IDbCommand updateCmd = conn.CreateCommand())

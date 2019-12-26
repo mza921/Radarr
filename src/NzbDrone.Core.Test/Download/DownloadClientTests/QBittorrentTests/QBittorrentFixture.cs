@@ -414,8 +414,10 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
 
         protected virtual QBittorrentTorrent GivenCompletedTorrent(
             string state = "pausedUP",
-            float ratio = 0.1f, float ratioLimit = -2,
-            int seedingTime = 1, int seedingTimeLimit = -2)
+            float ratio = 0.1f,
+            float ratioLimit = -2,
+            int seedingTime = 1,
+            int seedingTimeLimit = -2)
         {
             var torrent = new QBittorrentTorrent
             {

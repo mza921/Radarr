@@ -111,8 +111,13 @@ namespace NzbDrone.Core.Datastore.Migration
             return defaultValue;
         }
 
-        private void AddDownloadClient(IDbConnection conn, IDbTransaction tran, string name, string implementation, string settings,
-                                                                                string configContract, int protocol)
+        private void AddDownloadClient(IDbConnection conn,
+            IDbTransaction tran,
+            string name,
+            string implementation,
+            string settings,
+            string configContract,
+            int protocol)
         {
             using (IDbCommand updateCmd = conn.CreateCommand())
             {

@@ -75,13 +75,15 @@ namespace NzbDrone.Core.Datastore.Migration
                             }
                         }
 
-                        var standardEpisodeFormat = string.Format("{0}{1}{2}", seriesTitlePattern,
-                                                                             GetNumberStyle(numberStyle).Pattern,
-                                                                             episodeTitlePattern);
+                        var standardEpisodeFormat = string.Format("{0}{1}{2}",
+                            seriesTitlePattern,
+                            GetNumberStyle(numberStyle).Pattern,
+                            episodeTitlePattern);
 
-                        var dailyEpisodeFormat = string.Format("{0}{1}{2}", seriesTitlePattern,
-                                                                            dailyEpisodePattern,
-                                                                            episodeTitlePattern);
+                        var dailyEpisodeFormat = string.Format("{0}{1}{2}",
+                            seriesTitlePattern,
+                            dailyEpisodePattern,
+                            episodeTitlePattern);
 
                         if (includeQuality)
                         {
