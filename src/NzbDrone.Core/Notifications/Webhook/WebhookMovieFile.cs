@@ -2,7 +2,7 @@ using NzbDrone.Core.MediaFiles;
 
 namespace NzbDrone.Core.Notifications.Webhook
 {
-    class WebhookMovieFile
+    public class WebhookMovieFile
     {
         public WebhookMovieFile() { }
 

@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Test.InstrumentationTests
     public class DatabaseTargetFixture : DbTest<DatabaseTarget, Log>
     {
         private static string _uniqueMessage;
-        Logger _logger;
+        private Logger _logger;
 
         protected override MigrationType MigrationType => MigrationType.Log;
 

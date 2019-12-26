@@ -8,7 +8,7 @@ using Radarr.Http;
 
 namespace NzbDrone.Api.Wanted
 {
-    class MovieMissingModule : MovieModuleWithSignalR
+    public class MovieMissingModule : MovieModuleWithSignalR
     {
         public MovieMissingModule(IMovieService movieService,
                                   IUpgradableSpecification qualityUpgradableSpecification,

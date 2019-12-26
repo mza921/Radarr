@@ -2,7 +2,7 @@
 
 namespace NzbDrone.Core.Download.Clients.NzbVortex
 {
-    class NzbVortexAuthenticationException : DownloadClientException
+    internal class NzbVortexAuthenticationException : DownloadClientException
     {
         public NzbVortexAuthenticationException(string message, params object[] args)
             : base(message, args)

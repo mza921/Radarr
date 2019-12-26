@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Test.MediaCoverTests
     [TestFixture]
     public class MediaCoverServiceFixture : CoreTest<MediaCoverService>
     {
-        Movie _movie;
+        private Movie _movie;
 
         [SetUp]
         public void Setup()

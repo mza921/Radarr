@@ -9,7 +9,7 @@ namespace Radarr.Host
         void Attach();
     }
 
-    class CancelHandler : ICancelHandler
+    internal class CancelHandler : ICancelHandler
     {
         private readonly ILifecycleService _lifecycleService;
         private object _syncRoot;

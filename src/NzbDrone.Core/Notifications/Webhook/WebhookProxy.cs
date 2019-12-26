@@ -10,7 +10,7 @@ namespace NzbDrone.Core.Notifications.Webhook
         void SendWebhook(WebhookPayload payload, WebhookSettings settings);
     }
 
-    class WebhookProxy : IWebhookProxy
+    public class WebhookProxy : IWebhookProxy
     {
         private readonly IHttpClient _httpClient;
 

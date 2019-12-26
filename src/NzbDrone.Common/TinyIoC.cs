@@ -2932,7 +2932,7 @@ namespace TinyIoC
             RegisterDefaultTypes();
         }
 
-        TinyIoCContainer _Parent;
+        private TinyIoCContainer _Parent;
         private TinyIoCContainer(TinyIoCContainer parent)
             : this()
         {
@@ -3700,7 +3700,7 @@ namespace TinyIoC
         #endregion
 
         #region IDisposable Members
-        bool disposed = false;
+        private bool disposed = false;
         public void Dispose()
         {
             if (!disposed)

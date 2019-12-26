@@ -13,7 +13,7 @@ namespace NzbDrone.Core.Test.NotificationTests
     [TestFixture]
     public class NotificationBaseFixture : TestBase
     {
-        class TestSetting : IProviderConfig
+        private class TestSetting : IProviderConfig
         {
             public NzbDroneValidationResult Validate()
             {
@@ -21,7 +21,7 @@ namespace NzbDrone.Core.Test.NotificationTests
             }
         }
 
-        class TestNotificationWithOnDownload : NotificationBase<TestSetting>
+        private class TestNotificationWithOnDownload : NotificationBase<TestSetting>
         {
             public override string Name => "TestNotification";
             public override string Link => "";
@@ -39,7 +39,7 @@ namespace NzbDrone.Core.Test.NotificationTests
 
         }
 
-        class TestNotificationWithAllEvents : NotificationBase<TestSetting>
+        private class TestNotificationWithAllEvents : NotificationBase<TestSetting>
         {
             public override string Name => "TestNotification";
             public override string Link => "";
@@ -72,7 +72,7 @@ namespace NzbDrone.Core.Test.NotificationTests
 
         }
 
-        class TestNotificationWithNoEvents : NotificationBase<TestSetting>
+        private class TestNotificationWithNoEvents : NotificationBase<TestSetting>
         {
             public override string Name => "TestNotification";
             public override string Link => "";

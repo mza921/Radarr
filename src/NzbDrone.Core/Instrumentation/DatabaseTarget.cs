@@ -15,7 +15,7 @@ namespace NzbDrone.Core.Instrumentation
     {
         private readonly IConnectionStringFactory _connectionStringFactory;
 
-        const string INSERT_COMMAND = "INSERT INTO [Logs]([Message],[Time],[Logger],[Exception],[ExceptionType],[Level]) " +
+        private const string INSERT_COMMAND = "INSERT INTO [Logs]([Message],[Time],[Logger],[Exception],[ExceptionType],[Level]) " +
                                       "VALUES(@Message,@Time,@Logger,@Exception,@ExceptionType,@Level)";
 
         public DatabaseTarget(IConnectionStringFactory connectionStringFactory)
