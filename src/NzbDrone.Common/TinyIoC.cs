@@ -13,7 +13,7 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 //===============================================================================
 
-#pragma warning disable SX1101, SA1124, SA1200, SA1208, SA1314, SA1403, SA1503, SA1514, SA1515, SA1519
+#pragma warning disable SX1101, SA1108, SA1124, SA1200, SA1208, SA1314, SA1403, SA1503, SA1514, SA1515, SA1519
 
 #region Preprocessor Directives
 

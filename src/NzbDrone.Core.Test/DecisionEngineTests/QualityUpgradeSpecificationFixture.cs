@@ -35,7 +35,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
                   .Returns(autoDownloadPropers);
         }
 
-        [Test, TestCaseSource("IsUpgradeTestCases")]
+        [Test]
+        [TestCaseSource("IsUpgradeTestCases")]
         public void IsUpgradeTest(Quality current, int currentVersion, Quality newQuality, int newVersion, Quality cutoff, bool expected)
         {
             GivenAutoDownloadPropers(true);

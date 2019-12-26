@@ -35,32 +35,37 @@ namespace NzbDrone.Common.Test.InstrumentationTests
             return LogEventInfo.Create(level, "SentryTest", ex, CultureInfo.InvariantCulture, message);
         }
 
-        [Test, TestCaseSource("AllLevels")]
+        [Test]
+        [TestCaseSource("AllLevels")]
         public void log_without_error_is_not_sentry_event(LogLevel level)
         {
             Subject.IsSentryMessage(GivenLogEvent(level, null, "test")).Should().BeFalse();
         }
 
-        [Test, TestCaseSource("SentryLevels")]
+        [Test]
+        [TestCaseSource("SentryLevels")]
         public void error_or_worse_with_exception_is_sentry_event(LogLevel level)
         {
             Subject.IsSentryMessage(GivenLogEvent(level, new Exception(), "test")).Should().BeTrue();
         }
 
-        [Test, TestCaseSource("OtherLevels")]
+        [Test]
+        [TestCaseSource("OtherLevels")]
         public void less_than_error_with_exception_is_not_sentry_event(LogLevel level)
         {
             Subject.IsSentryMessage(GivenLogEvent(level, new Exception(), "test")).Should().BeFalse();
         }
 
-        [Test, TestCaseSource("FilteredExceptions")]
+        [Test]
+        [TestCaseSource("FilteredExceptions")]
         public void should_filter_event_for_filtered_exception_types(Exception ex)
         {
             var log = GivenLogEvent(LogLevel.Error, ex, "test");
             Subject.IsSentryMessage(log).Should().BeFalse();
         }
 
-        [Test, TestCaseSource("FilteredExceptions")]
+        [Test]
+        [TestCaseSource("FilteredExceptions")]
         public void should_not_filter_event_for_filtered_exception_types_if_filtering_disabled(Exception ex)
         {
             Subject.FilterEvents = false;
@@ -68,7 +73,8 @@ namespace NzbDrone.Common.Test.InstrumentationTests
             Subject.IsSentryMessage(log).Should().BeTrue();
         }
 
-        [Test, TestCaseSource(typeof(SentryTarget), "FilteredExceptionMessages")]
+        [Test]
+        [TestCaseSource(typeof(SentryTarget), "FilteredExceptionMessages")]
         public void should_filter_event_for_filtered_exception_messages(string message)
         {
             var log = GivenLogEvent(LogLevel.Error, new Exception("aaaaaaa" + message + "bbbbbbb"), "test");

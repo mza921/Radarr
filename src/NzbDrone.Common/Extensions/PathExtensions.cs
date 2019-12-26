@@ -33,7 +33,8 @@ namespace NzbDrone.Common.Extensions
 
             var info = new FileInfo(path.Trim());
 
-            if (OsInfo.IsWindows && info.FullName.StartsWith(@"\\")) //UNC
+            //UNC
+            if (OsInfo.IsWindows && info.FullName.StartsWith(@"\\"))
             {
                 return info.FullName.TrimEnd('/', '\\', ' ');
             }

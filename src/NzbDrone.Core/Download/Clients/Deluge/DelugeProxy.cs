@@ -331,7 +331,7 @@ namespace NzbDrone.Core.Download.Clients.Deluge
             if (resultHosts.Result != null)
             {
                 // The returned list contains the id, ip, port and status of each available connection. We want the 127.0.0.1
-                var connection = resultHosts.Result.FirstOrDefault(v => "127.0.0.1" == (v[1] as string));
+                var connection = resultHosts.Result.FirstOrDefault(v => (v[1] as string) == "127.0.0.1");
 
                 if (connection != null)
                 {

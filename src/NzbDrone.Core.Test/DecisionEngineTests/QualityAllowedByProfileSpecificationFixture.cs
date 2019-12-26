@@ -45,7 +45,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             };
         }
 
-        [Test, TestCaseSource("AllowedTestCases")]
+        [Test]
+        [TestCaseSource("AllowedTestCases")]
         public void should_allow_if_quality_is_defined_in_profile(Quality qualityType)
         {
             remoteMovie.ParsedMovieInfo.Quality.Quality = qualityType;
@@ -54,7 +55,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             Subject.IsSatisfiedBy(remoteMovie, null).Accepted.Should().BeTrue();
         }
 
-        [Test, TestCaseSource("DeniedTestCases")]
+        [Test]
+        [TestCaseSource("DeniedTestCases")]
         public void should_not_allow_if_quality_is_not_defined_in_profile(Quality qualityType)
         {
             remoteMovie.ParsedMovieInfo.Quality.Quality = qualityType;

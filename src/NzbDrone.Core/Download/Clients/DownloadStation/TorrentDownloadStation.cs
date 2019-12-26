@@ -343,7 +343,7 @@ namespace NzbDrone.Core.Download.Clients.DownloadStation
 
                 return null;
             }
-            catch (DownloadClientAuthenticationException ex) // User could not have permission to access to downloadstation
+            catch (DownloadClientAuthenticationException ex)
             {
                 _logger.Error(ex, ex.Message);
                 return new NzbDroneValidationFailure(string.Empty, ex.Message);

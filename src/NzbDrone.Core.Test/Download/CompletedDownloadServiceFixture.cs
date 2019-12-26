@@ -148,7 +148,7 @@ namespace NzbDrone.Core.Test.Download
         [Test]
         public void should_not_process_if_output_path_is_empty()
         {
-            _trackedDownload.DownloadItem.OutputPath = new OsPath();
+            _trackedDownload.DownloadItem.OutputPath = default;
 
             Subject.Process(_trackedDownload);
 

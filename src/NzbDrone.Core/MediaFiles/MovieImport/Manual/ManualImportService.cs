@@ -310,7 +310,8 @@ namespace NzbDrone.Core.MediaFiles.MovieImport.Manual
                     }
                 }
 
-                if (groupedTrackedDownload.Select(c => c.ImportResult).Count(c => c.Result == ImportResultType.Imported) >= Math.Max(1, 1)) //TODO: trackedDownload.RemoteMovie.Movie.Count is always 1?
+                //TODO: trackedDownload.RemoteMovie.Movie.Count is always 1?
+                if (groupedTrackedDownload.Select(c => c.ImportResult).Count(c => c.Result == ImportResultType.Imported) >= Math.Max(1, 1))
                 {
                     trackedDownload.State = TrackedDownloadStage.Imported;
                     _eventAggregator.PublishEvent(new DownloadCompletedEvent(trackedDownload));

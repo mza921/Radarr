@@ -45,8 +45,7 @@ namespace NzbDrone.Core.Test.MediaFiles
             _rejectedDecisions.Add(new ImportDecision(new LocalMovie(), new Rejection("Rejected!")));
             _rejectedDecisions.Add(new ImportDecision(new LocalMovie(), new Rejection("Rejected!")));
 
-            _approvedDecisions.Add(new ImportDecision
-                                       (
+            _approvedDecisions.Add(new ImportDecision(
                                        new LocalMovie
                                        {
                                            Movie = movie,
@@ -193,8 +192,8 @@ namespace NzbDrone.Core.Test.MediaFiles
             var fileDecision = _approvedDecisions.First();
             fileDecision.LocalMovie.Size = 1.Gigabytes();
 
-            var sampleDecision = new ImportDecision
-                (new LocalMovie
+            var sampleDecision = new ImportDecision(
+                new LocalMovie
                 {
                     Movie = fileDecision.LocalMovie.Movie,
                     Path = @"C:\Test\TV\30 Rock\30 Rock - 2017 - Pilot.avi".AsOsAgnostic(),

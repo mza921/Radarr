@@ -18,7 +18,7 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
         public void should_delete_orphaned_blacklist_items()
         {
             var blacklist = Builder<Blacklist>.CreateNew()
-                                              .With(h => h.MovieId = new int())
+                                              .With(h => h.MovieId = default)
                                               .With(h => h.Quality = new QualityModel())
                                               .With(h => h.Languages = new List<Language>())
                                               .BuildNew();
@@ -36,7 +36,7 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
             Db.Insert(movie);
 
             var blacklist = Builder<Blacklist>.CreateNew()
-                                              .With(h => h.MovieId = new int())
+                                              .With(h => h.MovieId = default)
                                               .With(h => h.Quality = new QualityModel())
                                               .With(h => h.Languages = new List<Language>())
                                               .With(b => b.MovieId = movie.Id)

@@ -11,41 +11,41 @@
   <Rules AnalyzerId="StyleCop.CSharp.ReadabilityRules"
          RuleNamespace="StyleCop.CSharp.ReadabilityRules">
     <Rule Id="SA1101" Action="None" />
-    <Rule Id="SA1102" Action="Info" />
-    <Rule Id="SA1103" Action="Info" />
-    <Rule Id="SA1104" Action="Info" />
-    <Rule Id="SA1105" Action="Info" />
-    <Rule Id="SA1107" Action="Info" />
-    <Rule Id="SA1108" Action="Info" />
-    <Rule Id="SA1109" Action="Info" />
-    <Rule Id="SA1110" Action="Info" />
-    <Rule Id="SA1111" Action="Info" />
-    <Rule Id="SA1112" Action="Info" />
-    <Rule Id="SA1113" Action="Info" />
-    <Rule Id="SA1114" Action="Info" />
-    <Rule Id="SA1115" Action="Info" />
+    <Rule Id="SA1102" Action="Warning" />
+    <Rule Id="SA1103" Action="Warning" />
+    <Rule Id="SA1104" Action="Warning" />
+    <Rule Id="SA1105" Action="Warning" />
+    <Rule Id="SA1107" Action="Warning" />
+    <Rule Id="SA1108" Action="Warning" />
+    <Rule Id="SA1109" Action="Warning" />
+    <Rule Id="SA1110" Action="Warning" />
+    <Rule Id="SA1111" Action="Warning" />
+    <Rule Id="SA1112" Action="Warning" />
+    <Rule Id="SA1113" Action="Warning" />
+    <Rule Id="SA1114" Action="Warning" />
+    <Rule Id="SA1115" Action="Warning" />
     <Rule Id="SA1116" Action="None" />
     <Rule Id="SA1117" Action="Warning" />
-    <Rule Id="SA1118" Action="Info" />
-    <Rule Id="SA1120" Action="Info" />
+    <Rule Id="SA1118" Action="None" />
+    <Rule Id="SA1120" Action="Warning" />
     <Rule Id="SA1121" Action="Warning" />
     <Rule Id="SA1122" Action="None" />
-    <Rule Id="SA1123" Action="Info" />
+    <Rule Id="SA1123" Action="Warning" />
     <Rule Id="SA1124" Action="Warning" />
-    <Rule Id="SA1126" Action="Info" />
+    <Rule Id="SA1126" Action="Warning" />
     <Rule Id="SA1127" Action="Warning" />
     <Rule Id="SA1128" Action="Warning" />
-    <Rule Id="SA1129" Action="Info" />
-    <Rule Id="SA1130" Action="Info" />
-    <Rule Id="SA1131" Action="Info" />
-    <Rule Id="SA1132" Action="Info" />
-    <Rule Id="SA1133" Action="Info" />
-    <Rule Id="SA1134" Action="Info" />
-    <Rule Id="SA1135" Action="Info" />
+    <Rule Id="SA1129" Action="Warning" />
+    <Rule Id="SA1130" Action="Warning" />
+    <Rule Id="SA1131" Action="Warning" />
+    <Rule Id="SA1132" Action="Warning" />
+    <Rule Id="SA1133" Action="Warning" />
+    <Rule Id="SA1134" Action="Warning" />
+    <Rule Id="SA1135" Action="Warning" />
     <Rule Id="SA1136" Action="Warning" />
-    <Rule Id="SA1139" Action="Info" />
-    <Rule Id="SA1141" Action="Info" />
-    <Rule Id="SA1142" Action="Info" />
+    <Rule Id="SA1139" Action="Warning" />
+    <Rule Id="SA1141" Action="Warning" />
+    <Rule Id="SA1142" Action="Warning" />
   </Rules>
   <Rules AnalyzerId="StyleCop.CSharp.OrderingRules"
          RuleNamespace="StyleCop.CSharp.OrderingRules">

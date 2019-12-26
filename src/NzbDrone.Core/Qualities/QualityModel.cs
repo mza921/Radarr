@@ -38,7 +38,8 @@ namespace NzbDrone.Core.Qualities
 
         public override int GetHashCode()
         {
-            unchecked // Overflow is fine, just wrap
+            // Overflow is fine, just wrap
+            unchecked
             {
                 int hash = 17;
                 hash = (hash * 23) + Revision.GetHashCode();

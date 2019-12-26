@@ -302,7 +302,8 @@ namespace NzbDrone.Core.Test.ParserTests
 
         }*/
 
-        [Test, TestCaseSource("OtherSourceQualityParserCases")]
+        [Test]
+        [TestCaseSource("OtherSourceQualityParserCases")]
         public void should_parse_quality_from_other_source(string qualityString, Source source, Resolution resolution, Modifier modifier = Modifier.NONE)
         {
             foreach (var c in new char[] { '-', '.', ' ', '_' })

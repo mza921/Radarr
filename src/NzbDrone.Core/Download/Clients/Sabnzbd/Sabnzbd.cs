@@ -150,8 +150,9 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                 {
                     historyItem.Status = DownloadItemStatus.Completed;
                 }
-                else // Verifying/Moving etc
+                else
                 {
+                    // Verifying/Moving etc
                     historyItem.Status = DownloadItemStatus.Downloading;
                 }
 
