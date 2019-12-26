@@ -16,8 +16,8 @@ namespace NzbDrone.Core.Notifications.Join
 
     public class JoinProxy : IJoinProxy
     {
-        private readonly Logger _logger;
         private const string URL = "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?";
+        private readonly Logger _logger;
 
         public JoinProxy(Logger logger)
         {

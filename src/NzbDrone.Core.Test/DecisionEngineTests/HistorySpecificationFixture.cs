@@ -19,14 +19,15 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
     [TestFixture]
     public class HistorySpecificationFixture : CoreTest<HistorySpecification>
     {
+        private const int FIRST_EPISODE_ID = 1;
+        private const int SECOND_EPISODE_ID = 2;
+
         private HistorySpecification _upgradeHistory;
 
         private RemoteMovie _parseResultSingle;
         private QualityModel _upgradableQuality;
         private QualityModel _notupgradableQuality;
         private Movie _fakeMovie;
-        private const int FIRST_EPISODE_ID = 1;
-        private const int SECOND_EPISODE_ID = 2;
 
         [SetUp]
         public void Setup()

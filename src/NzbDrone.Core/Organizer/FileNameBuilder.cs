@@ -25,6 +25,8 @@ namespace NzbDrone.Core.Organizer
 
     public class FileNameBuilder : IBuildFileNames
     {
+        private const string MediaInfoVideoDynamicRangeToken = "{MediaInfo VideoDynamicRange}";
+
         private readonly INamingConfigService _namingConfigService;
         private readonly IQualityDefinitionService _qualityDefinitionService;
         private readonly IUpdateMediaInfo _mediaInfoUpdater;
@@ -308,7 +310,6 @@ namespace NzbDrone.Core.Organizer
             tokenHandlers["{Quality Real}"] = m => qualityReal;
         }
 
-        private const string MediaInfoVideoDynamicRangeToken = "{MediaInfo VideoDynamicRange}";
         private static readonly IReadOnlyDictionary<string, int> MinimumMediaInfoSchemaRevisions =
             new Dictionary<string, int>(FileNameBuilderTokenEqualityComparer.Instance)
         {

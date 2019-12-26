@@ -25,8 +25,8 @@ namespace Radarr.Http.Authentication
 
     public class AuthenticationService : IAuthenticationService
     {
-        private static readonly Logger _authLogger = LogManager.GetLogger("Auth");
         private const string AnonymousUser = "Anonymous";
+        private static readonly Logger _authLogger = LogManager.GetLogger("Auth");
         private readonly IUserService _userService;
 
         private static string API_KEY;

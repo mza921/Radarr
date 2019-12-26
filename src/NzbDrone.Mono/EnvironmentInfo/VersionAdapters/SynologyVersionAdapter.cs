@@ -8,9 +8,9 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
 {
     public class SynologyVersionAdapter : IOsVersionAdapter
     {
-        private readonly IDiskProvider _diskProvider;
         private const string NAME = "DSM";
         private const string FULL_NAME = "Synology DSM";
+        private readonly IDiskProvider _diskProvider;
 
         public SynologyVersionAdapter(IDiskProvider diskProvider)
         {

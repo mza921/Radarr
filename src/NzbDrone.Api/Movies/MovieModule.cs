@@ -26,10 +26,10 @@ namespace NzbDrone.Api.Movies
                                 IHandle<MovieRenamedEvent>,
                                 IHandle<MediaCoversUpdatedEvent>
     {
+        private const string TITLE_SLUG_ROUTE = "/titleslug/(?<slug>[^/]+)";
+
         protected readonly IMovieService _moviesService;
         private readonly IMapCoversToLocal _coverMapper;
-
-        private const string TITLE_SLUG_ROUTE = "/titleslug/(?<slug>[^/]+)";
 
         public MovieModule(IBroadcastSignalRMessage signalRBroadcaster,
                            IMovieService moviesService,

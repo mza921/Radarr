@@ -18,8 +18,8 @@ namespace NzbDrone.Core.Notifications.NotifyMyAndroid
 
     public class NotifyMyAndroidProxy : INotifyMyAndroidProxy
     {
-        private readonly Logger _logger;
         private const string URL = "https://www.notifymyandroid.com/publicapi";
+        private readonly Logger _logger;
 
         public NotifyMyAndroidProxy(Logger logger)
         {

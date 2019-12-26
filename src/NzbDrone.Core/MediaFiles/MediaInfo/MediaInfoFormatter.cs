@@ -12,6 +12,9 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
 {
     public static class MediaInfoFormatter
     {
+        private const string ValidHdrColourPrimaries = "BT.2020";
+        private static readonly string[] ValidHdrTransferFunctions = { "PQ", "HLG" };
+
         private static readonly Logger Logger = NzbDroneLogger.GetLogger(typeof(MediaInfoFormatter));
 
         public static decimal FormatAudioChannels(MediaInfoModel mediaInfo)
@@ -529,9 +532,6 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
             // Last token is the default.
             return tokens.Last();
         }
-
-        private static readonly string[] ValidHdrTransferFunctions = { "PQ", "HLG" };
-        private const string ValidHdrColourPrimaries = "BT.2020";
 
         public static string FormatVideoDynamicRange(MediaInfoModel mediaInfo)
         {

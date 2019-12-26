@@ -21,9 +21,9 @@ namespace NzbDrone.Core.Notifications.PushBullet
 
     public class PushBulletProxy : IPushBulletProxy
     {
-        private readonly Logger _logger;
         private const string PUSH_URL = "https://api.pushbullet.com/v2/pushes";
         private const string DEVICE_URL = "https://api.pushbullet.com/v2/devices";
+        private readonly Logger _logger;
 
         public PushBulletProxy(Logger logger)
         {

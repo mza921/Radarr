@@ -10,9 +10,8 @@ namespace NzbDrone.Api.MediaCovers
 {
     public class MediaCoverModule : NzbDroneApiModule
     {
+        private const string MEDIA_COVER_ROUTE = @"/(?<movieId>\d+)/(?<filename>(.+)\.(jpg|png|gif))";
         private static readonly Regex RegexResizedImage = new Regex(@"-\d+\.jpg$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-        private const string MEDIA_COVER_ROUTE = @"/(?<seriesId>\d+)/(?<filename>(.+)\.(jpg|png|gif))";
 
         private readonly IAppFolderInfo _appFolderInfo;
         private readonly IDiskProvider _diskProvider;

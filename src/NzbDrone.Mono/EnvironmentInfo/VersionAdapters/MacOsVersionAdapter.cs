@@ -9,10 +9,10 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
 {
     public class MacOsVersionAdapter : IOsVersionAdapter
     {
+        private const string PLIST_DIR = "/System/Library/CoreServices/";
+
         private static readonly Regex DarwinVersionRegex = new Regex("<string>(?<version>10\\.\\d{1,2}\\.?\\d{0,2}?)<\\/string>",
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-        private const string PLIST_DIR = "/System/Library/CoreServices/";
 
         private readonly IDiskProvider _diskProvider;
         private readonly Logger _logger;

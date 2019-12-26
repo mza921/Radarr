@@ -18,8 +18,8 @@ namespace NzbDrone.Core.Notifications.Telegram
 
     public class TelegramProxy : ITelegramProxy
     {
-        private readonly Logger _logger;
         private const string URL = "https://api.telegram.org";
+        private readonly Logger _logger;
 
         public TelegramProxy(Logger logger)
         {

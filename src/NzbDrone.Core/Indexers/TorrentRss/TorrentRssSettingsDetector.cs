@@ -18,11 +18,11 @@ namespace NzbDrone.Core.Indexers.TorrentRss
 
     public class TorrentRssSettingsDetector : ITorrentRssSettingsDetector
     {
+        private const long ValidSizeThreshold = 2 * 1024 * 1024;
+
         protected readonly Logger _logger;
 
         private readonly IHttpClient _httpClient;
-
-        private const long ValidSizeThreshold = 2 * 1024 * 1024;
 
         public TorrentRssSettingsDetector(IHttpClient httpClient, Logger logger)
         {

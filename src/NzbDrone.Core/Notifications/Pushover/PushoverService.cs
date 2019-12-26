@@ -15,8 +15,8 @@ namespace NzbDrone.Core.Notifications.Pushover
 
     public class PushoverProxy : IPushoverProxy
     {
-        private readonly Logger _logger;
         private const string URL = "https://api.pushover.net/1/messages.json";
+        private readonly Logger _logger;
 
         public PushoverProxy(Logger logger)
         {

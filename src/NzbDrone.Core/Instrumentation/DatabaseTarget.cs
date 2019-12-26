@@ -13,10 +13,10 @@ namespace NzbDrone.Core.Instrumentation
 {
     public class DatabaseTarget : TargetWithLayout, IHandle<ApplicationShutdownRequested>
     {
-        private readonly IConnectionStringFactory _connectionStringFactory;
-
         private const string INSERT_COMMAND = "INSERT INTO [Logs]([Message],[Time],[Logger],[Exception],[ExceptionType],[Level]) " +
                                       "VALUES(@Message,@Time,@Logger,@Exception,@ExceptionType,@Level)";
+
+        private readonly IConnectionStringFactory _connectionStringFactory;
 
         public DatabaseTarget(IConnectionStringFactory connectionStringFactory)
         {
