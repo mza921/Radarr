@@ -51,7 +51,7 @@ namespace NzbDrone.Core.Indexers.HDBits
             foreach (var result in queryResults)
             {
                 var id = result.Id;
-                var internalRelease = (result.TypeOrigin == 1 ? true : false);
+                var internalRelease = result.TypeOrigin == 1 ? true : false;
 
                 IndexerFlags flags = 0;
 

@@ -101,7 +101,7 @@ namespace NzbDrone.Core.Download.Clients.Hadouken
                     item.Status = DownloadItemStatus.Downloading;
                 }
 
-                item.CanMoveFiles = item.CanBeRemoved = (torrent.IsFinished && torrent.State == HadoukenTorrentState.Paused);
+                item.CanMoveFiles = item.CanBeRemoved = torrent.IsFinished && torrent.State == HadoukenTorrentState.Paused;
 
                 items.Add(item);
             }

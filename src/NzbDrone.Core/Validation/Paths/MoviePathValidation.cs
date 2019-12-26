@@ -24,7 +24,7 @@ namespace NzbDrone.Core.Validation.Paths
             dynamic instance = context.ParentContext.InstanceToValidate;
             var instanceId = (int)instance.Id;
 
-            return (!_moviesService.GetAllMovies().Exists(s => s.Path.PathEquals(context.PropertyValue.ToString()) && s.Id != instanceId));
+            return !_moviesService.GetAllMovies().Exists(s => s.Path.PathEquals(context.PropertyValue.ToString()) && s.Id != instanceId);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace NzbDrone.Core.Validation.Paths
                 return false;
             }
 
-            return (_diskProvider.FolderWritable(context.PropertyValue.ToString()));
+            return _diskProvider.FolderWritable(context.PropertyValue.ToString());
         }
     }
 }

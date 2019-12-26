@@ -310,7 +310,7 @@ namespace NzbDrone.Common.Disk
                 var sourceMount = _diskProvider.GetMount(sourcePath);
                 var targetMount = _diskProvider.GetMount(targetPath);
 
-                var isSameMount = (sourceMount != null && targetMount != null && sourceMount.RootDirectory == targetMount.RootDirectory);
+                var isSameMount = sourceMount != null && targetMount != null && sourceMount.RootDirectory == targetMount.RootDirectory;
 
                 var sourceDriveFormat = sourceMount?.DriveFormat ?? string.Empty;
                 var targetDriveFormat = targetMount?.DriveFormat ?? string.Empty;

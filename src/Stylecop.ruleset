@@ -27,6 +27,7 @@
     <Rule Id="SA1116" Action="None" />
     <Rule Id="SA1117" Action="Warning" />
     <Rule Id="SA1118" Action="None" />
+    <Rule Id="SA1119" Action="Warning" />
     <Rule Id="SA1120" Action="Warning" />
     <Rule Id="SA1121" Action="Warning" />
     <Rule Id="SA1122" Action="None" />
@@ -86,7 +87,6 @@
   </Rules>
   <Rules AnalyzerId="StyleCop.CSharp.MaintainabilityRules"
          RuleNamespace="StyleCop.CSharp.MaintainabilityRules">
-    <Rule Id="SA1119" Action="Info" />
     <Rule Id="SA1400" Action="Warning" />
     <Rule Id="SA1401" Action="Info" />
     <Rule Id="SA1402" Action="None" />

@@ -157,7 +157,7 @@ namespace NzbDrone.Common.Extensions
             var first = int.Parse(octalValue.Substring(0, 1));
             var second = int.Parse(octalValue.Substring(1, 1));
             var third = int.Parse(octalValue.Substring(2, 1));
-            var byteResult = (byte)((first << 6) | (second << 3) | (third));
+            var byteResult = (byte)((first << 6) | (second << 3) | third);
 
             return Encoding.ASCII.GetString(new[] { byteResult });
         }

@@ -267,7 +267,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             }
 
             //since TMDB lacks alot of information lets assume that stuff is released if its been in cinemas for longer than 3 months.
-            if (!movie.PhysicalRelease.HasValue && (movie.Status == MovieStatusType.InCinemas) && (((DateTime.Now).Subtract(movie.InCinemas.Value)).TotalSeconds > 60 * 60 * 24 * 30 * 3))
+            if (!movie.PhysicalRelease.HasValue && (movie.Status == MovieStatusType.InCinemas) && (DateTime.Now.Subtract(movie.InCinemas.Value).TotalSeconds > 60 * 60 * 24 * 30 * 3))
             {
                 movie.Status = MovieStatusType.Released;
             }
@@ -470,7 +470,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
                     int tmdbid = -1;
 
-                    if (slug.IsNullOrWhiteSpace() || slug.Any(char.IsWhiteSpace) || !(int.TryParse(slug, out tmdbid)))
+                    if (slug.IsNullOrWhiteSpace() || slug.Any(char.IsWhiteSpace) || !int.TryParse(slug, out tmdbid))
                     {
                         return new List<Movie>();
                     }
@@ -589,7 +589,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 }
 
                 //since TMDB lacks alot of information lets assume that stuff is released if its been in cinemas for longer than 3 months.
-                if (!imdbMovie.PhysicalRelease.HasValue && (imdbMovie.Status == MovieStatusType.InCinemas) && (((DateTime.Now).Subtract(imdbMovie.InCinemas.Value)).TotalSeconds > 60 * 60 * 24 * 30 * 3))
+                if (!imdbMovie.PhysicalRelease.HasValue && (imdbMovie.Status == MovieStatusType.InCinemas) && (DateTime.Now.Subtract(imdbMovie.InCinemas.Value).TotalSeconds > 60 * 60 * 24 * 30 * 3))
                 {
                     imdbMovie.Status = MovieStatusType.Released;
                 }

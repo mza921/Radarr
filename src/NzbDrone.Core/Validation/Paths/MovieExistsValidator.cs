@@ -22,7 +22,7 @@ namespace NzbDrone.Core.Validation.Paths
 
             int tmdbId = (int)context.PropertyValue;
 
-            return (_movieService.FindByTmdbId(tmdbId) == null);
+            return _movieService.FindByTmdbId(tmdbId) == null;
         }
     }
 }

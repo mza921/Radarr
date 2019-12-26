@@ -87,7 +87,7 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MaxOrDefault_should_return_zero_when_collection_is_empty()
         {
-            var result = (new List<int>()).MaxOrDefault();
+            var result = new List<int>().MaxOrDefault();
 
             //Resolve
             result.Should().Be(0);
@@ -142,7 +142,7 @@ namespace NzbDrone.Core.Test
         [Test]
         public void MinOrDefault_should_return_zero_when_collection_is_empty()
         {
-            var result = (new List<int>()).MinOrDefault();
+            var result = new List<int>().MinOrDefault();
 
             //Resolve
             result.Should().Be(0);

@@ -61,7 +61,7 @@ namespace NzbDrone.Common.OAuth
         /// <returns></returns>
         public static string GetNonce()
         {
-            const string chars = (Lower + Digit);
+            const string chars = Lower + Digit;
 
             var nonce = new char[16];
             lock (_randomLock)
@@ -99,7 +99,7 @@ namespace NzbDrone.Common.OAuth
 
         private static long ToUnixTime(DateTime dateTime)
         {
-            var timeSpan = (dateTime - new DateTime(1970, 1, 1));
+            var timeSpan = dateTime - new DateTime(1970, 1, 1);
             var timestamp = (long)timeSpan.TotalSeconds;
 
             return timestamp;

@@ -55,7 +55,7 @@ namespace NzbDrone.Core.Test.CustomFormat
 
             if ((parsed.Value as Regex) != null)
             {
-                (parsed.Value as Regex).ToString().Should().Be((value as string));
+                (parsed.Value as Regex).ToString().Should().Be(value as string);
             }
             else
             {

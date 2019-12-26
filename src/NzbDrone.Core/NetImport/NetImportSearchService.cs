@@ -110,7 +110,7 @@ namespace NzbDrone.Core.NetImport
         public void Execute(NetImportSyncCommand message)
         {
             //if there are no lists that are enabled for automatic import then dont do anything
-            if ((_netImportFactory.GetAvailableProviders()).Where(a => ((NetImportDefinition)a.Definition).EnableAuto).Empty())
+            if (_netImportFactory.GetAvailableProviders().Where(a => ((NetImportDefinition)a.Definition).EnableAuto).Empty())
             {
                 _logger.Info("No lists are enabled for auto-import.");
                 return;

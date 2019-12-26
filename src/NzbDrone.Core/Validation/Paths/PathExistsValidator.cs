@@ -20,7 +20,7 @@ namespace NzbDrone.Core.Validation.Paths
                 return false;
             }
 
-            return (_diskProvider.FolderExists(context.PropertyValue.ToString()));
+            return _diskProvider.FolderExists(context.PropertyValue.ToString());
         }
     }
 }

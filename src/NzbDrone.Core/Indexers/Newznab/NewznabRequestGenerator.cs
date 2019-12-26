@@ -65,7 +65,7 @@ namespace NzbDrone.Core.Indexers.Newznab
                 var altTitles = searchCriteria.Movie.AlternativeTitles.Take(5).Select(t => t.Title).ToList();
                 altTitles.Add(searchCriteria.Movie.Title);
 
-                var realMaxPages = (int)MaxPages / (altTitles.Count());
+                var realMaxPages = (int)MaxPages / altTitles.Count();
 
                 //pageableRequests.Add(GetPagedRequests(MaxPages - (altTitles.Count() * realMaxPages), Settings.Categories, "search", $"&q={searchTitle}%20{searchCriteria.Movie.Year}"));
 

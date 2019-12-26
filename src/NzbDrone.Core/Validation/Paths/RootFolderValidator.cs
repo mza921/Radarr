@@ -21,7 +21,7 @@ namespace NzbDrone.Core.Validation.Paths
                 return true;
             }
 
-            return (!_rootFolderService.All().Exists(r => r.Path.PathEquals(context.PropertyValue.ToString())));
+            return !_rootFolderService.All().Exists(r => r.Path.PathEquals(context.PropertyValue.ToString()));
         }
     }
 }

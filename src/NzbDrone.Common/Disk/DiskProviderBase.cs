@@ -392,7 +392,7 @@ namespace NzbDrone.Common.Disk
 
                 if (attributes.HasFlag(FileAttributes.ReadOnly))
                 {
-                    var newAttributes = attributes & ~(FileAttributes.ReadOnly);
+                    var newAttributes = attributes & ~FileAttributes.ReadOnly;
                     File.SetAttributes(path, newAttributes);
                 }
             }
@@ -406,7 +406,7 @@ namespace NzbDrone.Common.Disk
 
                 if (dirInfo.Attributes.HasFlag(FileAttributes.ReadOnly))
                 {
-                    var newAttributes = dirInfo.Attributes & ~(FileAttributes.ReadOnly);
+                    var newAttributes = dirInfo.Attributes & ~FileAttributes.ReadOnly;
                     dirInfo.Attributes = newAttributes;
                 }
             }

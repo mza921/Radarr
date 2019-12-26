@@ -127,7 +127,7 @@ namespace NzbDrone.Core.Indexers.Torznab
         protected virtual string GetImdbId(XElement item)
         {
             var imdbIdString = TryGetTorznabAttribute(item, "imdbid");
-            return (!imdbIdString.IsNullOrWhiteSpace() ? imdbIdString.Substring(2) : null);
+            return !imdbIdString.IsNullOrWhiteSpace() ? imdbIdString.Substring(2) : null;
         }
 
         protected override string GetInfoHash(XElement item)

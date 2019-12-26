@@ -17,8 +17,8 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
 
         private void SetEventsOnContainerToTrackAllRegisteredTypes()
         {
-            Context.Registering += ((sender, e) => RegisterType(e.TypeFrom));
-            Context.RegisteringInstance += ((sender, e) => RegisterType(e.RegisteredType));
+            Context.Registering += (sender, e) => RegisterType(e.TypeFrom);
+            Context.RegisteringInstance += (sender, e) => RegisterType(e.RegisteredType);
         }
 
         private void RegisterType(Type typeToRegister)
