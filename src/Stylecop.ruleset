@@ -24,12 +24,12 @@
     <Rule Id="SA1113" Action="Info" />
     <Rule Id="SA1114" Action="Info" />
     <Rule Id="SA1115" Action="Info" />
-    <Rule Id="SA1116" Action="Info" />
+    <Rule Id="SA1116" Action="None" />
     <Rule Id="SA1117" Action="Warning" />
     <Rule Id="SA1118" Action="Info" />
     <Rule Id="SA1120" Action="Info" />
     <Rule Id="SA1121" Action="Warning" />
-    <Rule Id="SA1122" Action="Info" />
+    <Rule Id="SA1122" Action="None" />
     <Rule Id="SA1123" Action="Info" />
     <Rule Id="SA1124" Action="Warning" />
     <Rule Id="SA1126" Action="Info" />
@@ -69,15 +69,15 @@
   </Rules>
   <Rules AnalyzerId="StyleCop.CSharp.NamingRules"
          RuleNamespace="StyleCop.CSharp.NamingRules">
-    <Rule Id="SA1300" Action="Info" />
+    <Rule Id="SA1300" Action="None" />
     <Rule Id="SA1301" Action="None" />
     <Rule Id="SA1303" Action="None" />
     <Rule Id="SA1304" Action="None" />
-    <Rule Id="SA1306" Action="Info" />
+    <Rule Id="SA1306" Action="None" />
     <Rule Id="SA1307" Action="Warning" />
     <Rule Id="SA1308" Action="Info" />
     <Rule Id="SA1309" Action="None" />
-    <Rule Id="SA1310" Action="Info" />
+    <Rule Id="SA1310" Action="None" />
     <Rule Id="SA1311" Action="Info" />
     <Rule Id="SA1312" Action="Warning" />
     <Rule Id="SA1313" Action="Warning" />
@@ -89,7 +89,7 @@
     <Rule Id="SA1119" Action="Info" />
     <Rule Id="SA1400" Action="Warning" />
     <Rule Id="SA1401" Action="Info" />
-    <Rule Id="SA1402" Action="Info" />
+    <Rule Id="SA1402" Action="None" />
     <Rule Id="SA1404" Action="Info" />
     <Rule Id="SA1405" Action="Info" />
     <Rule Id="SA1406" Action="Info" />
@@ -98,7 +98,7 @@
     <Rule Id="SA1409" Action="Info" />
     <Rule Id="SA1410" Action="Info" />
     <Rule Id="SA1411" Action="Info" />
-    <Rule Id="SA1412" Action="Info" />
+    <Rule Id="SA1412" Action="None" />
     <Rule Id="SA1413" Action="None" />
     <Rule Id="SA1414" Action="None" />
   </Rules>
