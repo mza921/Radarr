@@ -117,7 +117,7 @@ namespace NzbDrone.Core.MetadataSource
                 var offset = Math.Abs(movie.Year - _year.Value);
                 if (offset <= 1)
                 {
-                    return 20 - 10 * offset;
+                    return 20 - (10 * offset);
                 }
             }
 

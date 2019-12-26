@@ -19,7 +19,7 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd.JsonConverters
             switch (split.Count())
             {
                 case 4:
-                    return new TimeSpan(split[0] * 24 + split[1], split[2], split[3]);
+                    return new TimeSpan((split[0] * 24) + split[1], split[2], split[3]);
                 case 3:
                     return new TimeSpan(split[0], split[1], split[2]);
                 default:

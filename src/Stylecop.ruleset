@@ -93,7 +93,7 @@
     <Rule Id="SA1404" Action="Info" />
     <Rule Id="SA1405" Action="Info" />
     <Rule Id="SA1406" Action="Info" />
-    <Rule Id="SA1407" Action="Info" />
+    <Rule Id="SA1407" Action="Warning" />
     <Rule Id="SA1408" Action="Info" />
     <Rule Id="SA1409" Action="Info" />
     <Rule Id="SA1410" Action="Info" />

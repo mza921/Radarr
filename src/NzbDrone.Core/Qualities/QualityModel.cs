@@ -43,8 +43,8 @@ namespace NzbDrone.Core.Qualities
             unchecked // Overflow is fine, just wrap
             {
                 int hash = 17;
-                hash = hash * 23 + Revision.GetHashCode();
-                hash = hash * 23 + Quality.GetHashCode();
+                hash = (hash * 23) + Revision.GetHashCode();
+                hash = (hash * 23) + Quality.GetHashCode();
                 return hash;
             }
         }
