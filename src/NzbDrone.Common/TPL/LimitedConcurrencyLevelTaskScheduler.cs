@@ -82,7 +82,10 @@ namespace NzbDrone.Common.TPL
                         }
                     }
                     // We're done processing items on the current thread
-                    finally { _currentThreadIsProcessingItems = false; }
+                    finally
+                    {
+                        _currentThreadIsProcessingItems = false;
+                    }
                 }, null);
         }
 
