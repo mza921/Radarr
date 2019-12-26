@@ -7,10 +7,10 @@ using NLog;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Http;
 using NzbDrone.Core.Configuration;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.NetImport.Exceptions;
 using NzbDrone.Core.Parser;
 using NzbDrone.Core.ThingiProvider;
-using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.NetImport
 {

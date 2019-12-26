@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using FluentValidation;
 using Nancy;
+using Nancy.ModelBinding;
 using NLog;
+using NzbDrone.Common.Cache;
 using NzbDrone.Core.DecisionEngine;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.Exceptions;
-using NzbDrone.Core.IndexerSearch;
 using NzbDrone.Core.Indexers;
+using NzbDrone.Core.IndexerSearch;
 using NzbDrone.Core.Parser.Model;
-using Nancy.ModelBinding;
-using NzbDrone.Common.Cache;
 using HttpStatusCode = System.Net.HttpStatusCode;
 
 namespace NzbDrone.Api.Indexers

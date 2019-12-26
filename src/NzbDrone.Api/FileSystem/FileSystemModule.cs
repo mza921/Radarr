@@ -1,10 +1,10 @@
 using System.IO;
 using System.Linq;
 using Nancy;
-using Radarr.Http.Extensions;
 using NzbDrone.Common.Disk;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Core.MediaFiles;
+using Radarr.Http.Extensions;
 
 namespace NzbDrone.Api.FileSystem
 {

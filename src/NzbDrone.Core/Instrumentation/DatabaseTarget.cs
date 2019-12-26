@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using NLog;
 using NLog.Common;
 using NLog.Config;
-using NLog;
 using NLog.Targets;
 using NzbDrone.Common.Instrumentation;
 using NzbDrone.Core.Datastore;

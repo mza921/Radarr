@@ -2,9 +2,9 @@
 using FluentAssertions;
 using FluentValidation.Results;
 using NUnit.Framework;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.Notifications;
 using NzbDrone.Core.ThingiProvider;
-using NzbDrone.Core.Movies;
 using NzbDrone.Core.Validation;
 using NzbDrone.Test.Common;
 

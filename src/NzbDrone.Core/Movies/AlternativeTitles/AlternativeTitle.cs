@@ -1,7 +1,7 @@
 using Marr.Data;
 using NzbDrone.Core.Datastore;
-using NzbDrone.Core.Parser;
 using NzbDrone.Core.Languages;
+using NzbDrone.Core.Parser;
 
 namespace NzbDrone.Core.Movies.AlternativeTitles
 {

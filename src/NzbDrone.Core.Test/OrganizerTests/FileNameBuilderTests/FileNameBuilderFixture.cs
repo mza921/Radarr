@@ -2,14 +2,14 @@ using System.IO;
 using System.Linq;
 using FizzWare.NBuilder;
 using FluentAssertions;
+using Moq;
 using NUnit.Framework;
 using NzbDrone.Core.MediaFiles;
+using NzbDrone.Core.MediaFiles.MediaInfo;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.Organizer;
 using NzbDrone.Core.Qualities;
 using NzbDrone.Core.Test.Framework;
-using NzbDrone.Core.Movies;
-using NzbDrone.Core.MediaFiles.MediaInfo;
-using Moq;
 
 namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 {

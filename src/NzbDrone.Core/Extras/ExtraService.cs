@@ -11,8 +11,8 @@ using NzbDrone.Core.MediaCover;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.MediaFiles.Events;
 using NzbDrone.Core.Messaging.Events;
-using NzbDrone.Core.Parser.Model;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser.Model;
 
 namespace NzbDrone.Core.Extras
 {

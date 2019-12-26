@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Nancy;
-using Radarr.Http.Extensions;
-using NzbDrone.Core.Movies;
 using NzbDrone.Common.Extensions;
-using NzbDrone.Core.Movies.Commands;
 using NzbDrone.Core.Messaging.Commands;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Movies.Commands;
+using Radarr.Http.Extensions;
 
 namespace Radarr.Api.V3.Movies
 {

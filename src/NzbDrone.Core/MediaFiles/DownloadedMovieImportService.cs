@@ -7,11 +7,11 @@ using NzbDrone.Common.Disk;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Core.Configuration;
 using NzbDrone.Core.DecisionEngine;
-using NzbDrone.Core.MediaFiles.MovieImport;
-using NzbDrone.Core.Parser;
-using NzbDrone.Core.Movies;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.History;
+using NzbDrone.Core.MediaFiles.MovieImport;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser;
 using NzbDrone.Core.Parser.Model;
 
 namespace NzbDrone.Core.MediaFiles

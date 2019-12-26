@@ -5,8 +5,8 @@ using Marr.Data.Converters;
 using Marr.Data.Mapping;
 using Moq;
 using NUnit.Framework;
-using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.Download.Pending;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Datastore.Converters
 {

@@ -1,14 +1,14 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using NLog;
 using NzbDrone.Common.Instrumentation.Extensions;
+using NzbDrone.Core.Datastore;
+using NzbDrone.Core.DecisionEngine;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Movies;
-using NzbDrone.Core.Datastore;
 using NzbDrone.Core.Queue;
-using NzbDrone.Core.DecisionEngine;
 
 namespace NzbDrone.Core.IndexerSearch
 {

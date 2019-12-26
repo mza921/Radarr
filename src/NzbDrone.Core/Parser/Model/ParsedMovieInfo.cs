@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using NzbDrone.Core.Qualities;
 using NzbDrone.Core.Languages;
+using NzbDrone.Core.Qualities;
 
 namespace NzbDrone.Core.Parser.Model
 {

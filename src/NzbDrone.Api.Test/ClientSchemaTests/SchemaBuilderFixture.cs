@@ -1,8 +1,8 @@
 using FluentAssertions;
 using NUnit.Framework;
-using Radarr.Http.ClientSchema;
 using NzbDrone.Core.Annotations;
 using NzbDrone.Test.Common;
+using Radarr.Http.ClientSchema;
 
 namespace NzbDrone.Api.Test.ClientSchemaTests
 {

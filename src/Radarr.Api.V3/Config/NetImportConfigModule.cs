@@ -1,5 +1,5 @@
-using Radarr.Http.Validation;
 using NzbDrone.Core.Configuration;
+using Radarr.Http.Validation;
 
 namespace Radarr.Api.V3.Config
 {

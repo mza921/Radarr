@@ -1,10 +1,10 @@
 using FizzWare.NBuilder;
 using NUnit.Framework;
-using NzbDrone.Core.Profiles;
-using NzbDrone.Core.Test.Framework;
-using NzbDrone.Core.Movies;
-using NzbDrone.Core.Qualities;
 using NzbDrone.Core.MediaFiles;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Profiles;
+using NzbDrone.Core.Qualities;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Datastore
 {

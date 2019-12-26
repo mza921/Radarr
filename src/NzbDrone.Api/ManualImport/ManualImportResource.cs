@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using NzbDrone.Api.Movies;
-using Radarr.Http.REST;
 using NzbDrone.Common.Crypto;
 using NzbDrone.Core.DecisionEngine;
 using NzbDrone.Core.Qualities;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.ManualImport
 {

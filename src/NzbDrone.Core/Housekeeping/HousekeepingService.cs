@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using NLog;
-using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Datastore;
+using NzbDrone.Core.Messaging.Commands;
 
 namespace NzbDrone.Core.Housekeeping
 {

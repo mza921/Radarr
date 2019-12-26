@@ -7,8 +7,8 @@ using NzbDrone.Core.Download;
 using NzbDrone.Core.Indexers;
 using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Messaging.Events;
-using NzbDrone.Core.Parser.Model;
 using NzbDrone.Core.Movies.Events;
+using NzbDrone.Core.Parser.Model;
 
 namespace NzbDrone.Core.Blacklisting
 {

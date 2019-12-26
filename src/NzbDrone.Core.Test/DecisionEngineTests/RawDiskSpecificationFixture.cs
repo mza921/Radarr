@@ -1,10 +1,9 @@
 using FluentAssertions;
 using NUnit.Framework;
 using NzbDrone.Core.DecisionEngine.Specifications;
-using NzbDrone.Core.Parser.Model;
-
-using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.Indexers;
+using NzbDrone.Core.Parser.Model;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.DecisionEngineTests
 {

@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 using FluentValidation.Results;
 using NzbDrone.Common.Extensions;
-using NzbDrone.Core.Notifications.Slack.Payloads;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Notifications.Slack.Payloads;
 using NzbDrone.Core.Validation;
-
 
 namespace NzbDrone.Core.Notifications.Slack
 {

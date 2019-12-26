@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using FluentValidation;
+using Nancy;
 using NzbDrone.Common.Extensions;
-using Radarr.Http.Extensions;
 using NzbDrone.Core.Datastore.Events;
 using NzbDrone.Core.MediaCover;
 using NzbDrone.Core.MediaFiles;
@@ -9,11 +9,11 @@ using NzbDrone.Core.MediaFiles.Events;
 using NzbDrone.Core.Messaging.Events;
 using NzbDrone.Core.Movies;
 using NzbDrone.Core.Movies.Events;
-using NzbDrone.Core.Validation.Paths;
 using NzbDrone.Core.Validation;
+using NzbDrone.Core.Validation.Paths;
 using NzbDrone.SignalR;
-using Nancy;
 using Radarr.Http;
+using Radarr.Http.Extensions;
 
 namespace Radarr.Api.V3.Movies
 {

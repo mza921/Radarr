@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Reflection;
+using NzbDrone.Core.Configuration;
 using Radarr.Http;
 using Radarr.Http.REST;
-using NzbDrone.Core.Configuration;
 
 namespace NzbDrone.Api.Config
 {

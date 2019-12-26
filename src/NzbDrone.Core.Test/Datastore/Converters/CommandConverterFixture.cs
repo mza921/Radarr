@@ -6,8 +6,8 @@ using Moq;
 using NUnit.Framework;
 using NzbDrone.Common.Serializer;
 using NzbDrone.Core.Datastore.Converters;
-using NzbDrone.Core.Test.Framework;
 using NzbDrone.Core.Movies.Commands;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Datastore.Converters
 {

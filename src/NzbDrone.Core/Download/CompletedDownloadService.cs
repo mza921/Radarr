@@ -9,8 +9,8 @@ using NzbDrone.Core.History;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.MediaFiles.MovieImport;
 using NzbDrone.Core.Messaging.Events;
-using NzbDrone.Core.Parser;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser;
 
 namespace NzbDrone.Core.Download
 {

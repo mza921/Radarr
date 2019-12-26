@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FizzWare.NBuilder;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
@@ -7,7 +8,6 @@ using NzbDrone.Common.Disk;
 using NzbDrone.Core.RemotePathMappings;
 using NzbDrone.Core.Test.Framework;
 using NzbDrone.Test.Common;
-using FizzWare.NBuilder;
 
 namespace NzbDrone.Core.Test.RemotePathMappingsTests
 {

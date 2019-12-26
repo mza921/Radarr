@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using NzbDrone.Core.Movies;
 using NzbDrone.Core.MediaFiles;
+using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.Notifications.Webhook
 {

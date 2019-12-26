@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Nancy;
 using Nancy.Extensions;
-using Radarr.Http.Extensions;
 using NzbDrone.Api.Movies;
 using NzbDrone.Core.MetadataSource;
 using NzbDrone.Core.Movies;
+using Radarr.Http.Extensions;
 
 namespace NzbDrone.Api.NetImport
 {

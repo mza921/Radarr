@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using NzbDrone.Core.Datastore;
-using NzbDrone.Core.Qualities;
-using NzbDrone.Core.Movies;
 using NzbDrone.Core.Languages;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Qualities;
 
 namespace NzbDrone.Core.History
 {

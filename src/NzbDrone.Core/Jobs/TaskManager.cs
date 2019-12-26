@@ -13,10 +13,10 @@ using NzbDrone.Core.Lifecycle;
 using NzbDrone.Core.MediaFiles.Commands;
 using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Messaging.Events;
-using NzbDrone.Core.NetImport;
-using NzbDrone.Core.Movies.Commands;
-using NzbDrone.Core.Update.Commands;
 using NzbDrone.Core.MetadataSource.PreDB;
+using NzbDrone.Core.Movies.Commands;
+using NzbDrone.Core.NetImport;
+using NzbDrone.Core.Update.Commands;
 
 namespace NzbDrone.Core.Jobs
 {

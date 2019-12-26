@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-using NzbDrone.Core.Indexers;
-using NzbDrone.Common.Cache;
+﻿using System.Collections.Generic;
+using System.Linq;
 using NLog;
+using NzbDrone.Common.Cache;
+using NzbDrone.Core.Indexers;
 
 namespace NzbDrone.Core.Download
 {

@@ -2,8 +2,8 @@
 using Marr.Data.Converters;
 using Marr.Data.Mapping;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace NzbDrone.Core.Datastore.Converters
 {

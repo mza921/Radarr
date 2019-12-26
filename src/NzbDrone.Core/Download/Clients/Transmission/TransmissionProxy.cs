@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Net;
 using System.Collections.Generic;
-using NzbDrone.Common.Extensions;
-using NLog;
+using System.Net;
 using Newtonsoft.Json.Linq;
-using NzbDrone.Common.Http;
+using NLog;
 using NzbDrone.Common.Cache;
+using NzbDrone.Common.Extensions;
+using NzbDrone.Common.Http;
 using NzbDrone.Common.Serializer;
 
 namespace NzbDrone.Core.Download.Clients.Transmission

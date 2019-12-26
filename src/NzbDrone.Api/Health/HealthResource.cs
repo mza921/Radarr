@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Radarr.Http.REST;
 using NzbDrone.Common.Http;
 using NzbDrone.Core.HealthCheck;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Health
 {

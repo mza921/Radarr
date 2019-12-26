@@ -1,7 +1,7 @@
 using NLog;
+using NzbDrone.Core.Configuration;
 using NzbDrone.Core.IndexerSearch.Definitions;
 using NzbDrone.Core.Parser.Model;
-using NzbDrone.Core.Configuration;
 
 namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
 {

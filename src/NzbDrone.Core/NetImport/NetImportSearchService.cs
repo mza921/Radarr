@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NLog;
-using NzbDrone.Core.Messaging.Commands;
-using NzbDrone.Core.MetadataSource;
-using NzbDrone.Core.RootFolders;
-using NzbDrone.Core.Movies;
-using NzbDrone.Core.Configuration;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.IndexerSearch;
+using NzbDrone.Core.Messaging.Commands;
+using NzbDrone.Core.MetadataSource;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.NetImport.ImportExclusions;
+using NzbDrone.Core.RootFolders;
 
 namespace NzbDrone.Core.NetImport
 {

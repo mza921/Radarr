@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using NzbDrone.Common.Composition;
 
 namespace NzbDrone.Common

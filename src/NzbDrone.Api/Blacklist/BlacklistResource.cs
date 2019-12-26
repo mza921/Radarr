@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using NzbDrone.Api.Movies;
-using Radarr.Http.REST;
-using NzbDrone.Core.Qualities;
 using NzbDrone.Core.Indexers;
+using NzbDrone.Core.Qualities;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Blacklist
 {

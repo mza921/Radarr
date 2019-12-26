@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Radarr.Http.REST;
 using NzbDrone.Core.RemotePathMappings;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.RemotePathMappings
 {

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using CookComputing.XmlRpc;
 using NLog;
 using NzbDrone.Common.Extensions;
-using CookComputing.XmlRpc;
 
 namespace NzbDrone.Core.Download.Clients.RTorrent
 {

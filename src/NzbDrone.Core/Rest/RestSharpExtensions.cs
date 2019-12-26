@@ -1,5 +1,5 @@
-﻿using System.Net;
-using System.Linq;
+﻿using System.Linq;
+using System.Net;
 using NLog;
 using NzbDrone.Common.EnsureThat;
 using NzbDrone.Common.Instrumentation;

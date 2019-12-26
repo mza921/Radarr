@@ -2,9 +2,9 @@
 using System.Net;
 using FluentValidation.Results;
 using NLog;
-using RestSharp;
-using NzbDrone.Core.Rest;
 using NzbDrone.Common.EnvironmentInfo;
+using NzbDrone.Core.Rest;
+using RestSharp;
 
 namespace NzbDrone.Core.Notifications.Boxcar
 {

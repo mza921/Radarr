@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nancy;
-using Radarr.Api.V3.Movies;
 using NzbDrone.Core.Movies;
 using NzbDrone.SignalR;
+using Radarr.Api.V3.Movies;
 using Radarr.Http;
 
 namespace Radarr.Api.V3.Calendar

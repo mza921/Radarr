@@ -1,8 +1,8 @@
 using System.Linq;
-using NzbDrone.Core.MediaCover;
 using NzbDrone.Common.Cache;
-using NzbDrone.Common.Http;
 using NzbDrone.Common.Cloud;
+using NzbDrone.Common.Http;
+using NzbDrone.Core.MediaCover;
 using NzbDrone.Core.MetadataSource.SkyHook.Resource;
 
 namespace NzbDrone.Core.MetadataSource

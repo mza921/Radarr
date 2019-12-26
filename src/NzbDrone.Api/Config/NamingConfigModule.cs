@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
+using Nancy.ModelBinding;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Core.Organizer;
-using Nancy.ModelBinding;
 using Radarr.Http;
 
 namespace NzbDrone.Api.Config

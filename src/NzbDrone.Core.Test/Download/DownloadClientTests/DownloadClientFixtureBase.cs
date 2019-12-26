@@ -1,17 +1,17 @@
 ﻿using System;
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
-using FluentAssertions;
-using NzbDrone.Common.Http;
-using NzbDrone.Core.IndexerSearch.Definitions;
-using NzbDrone.Core.Test.Framework;
-using NzbDrone.Core.Parser.Model;
-using NzbDrone.Core.Parser;
-using NzbDrone.Core.Movies;
-using NzbDrone.Core.Download;
-using NzbDrone.Core.Configuration;
-using NzbDrone.Core.RemotePathMappings;
 using NzbDrone.Common.Disk;
+using NzbDrone.Common.Http;
+using NzbDrone.Core.Configuration;
+using NzbDrone.Core.Download;
+using NzbDrone.Core.IndexerSearch.Definitions;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser;
+using NzbDrone.Core.Parser.Model;
+using NzbDrone.Core.RemotePathMappings;
+using NzbDrone.Core.Test.Framework;
 
 namespace NzbDrone.Core.Test.Download.DownloadClientTests
 {

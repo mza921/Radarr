@@ -5,8 +5,8 @@ using System.Xml.Linq;
 using FluentValidation.Results;
 using NLog;
 using NzbDrone.Core.Exceptions;
-using RestSharp;
 using NzbDrone.Core.Rest;
+using RestSharp;
 
 namespace NzbDrone.Core.Notifications.NotifyMyAndroid
 {

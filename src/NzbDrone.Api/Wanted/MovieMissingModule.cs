@@ -1,8 +1,8 @@
 using System.Linq;
 using NzbDrone.Api.Movies;
+using NzbDrone.Core.Datastore;
 using NzbDrone.Core.DecisionEngine.Specifications;
 using NzbDrone.Core.Movies;
-using NzbDrone.Core.Datastore;
 using NzbDrone.SignalR;
 using Radarr.Http;
 

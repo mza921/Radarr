@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Radarr.Http.REST;
+using NzbDrone.Api.MovieFiles;
 using NzbDrone.Core.MediaCover;
 using NzbDrone.Core.Movies;
-using NzbDrone.Api.MovieFiles;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Movies
 {

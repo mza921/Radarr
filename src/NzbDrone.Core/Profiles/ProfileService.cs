@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using NLog;
 using NzbDrone.Core.CustomFormats;
+using NzbDrone.Core.Languages;
 using NzbDrone.Core.Lifecycle;
 using NzbDrone.Core.Messaging.Events;
-using NzbDrone.Core.Qualities;
 using NzbDrone.Core.Movies;
 using NzbDrone.Core.NetImport;
-using NzbDrone.Core.Languages;
+using NzbDrone.Core.Qualities;
 
 namespace NzbDrone.Core.Profiles
 {

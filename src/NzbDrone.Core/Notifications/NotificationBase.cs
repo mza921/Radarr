@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using FluentValidation.Results;
-using NzbDrone.Core.ThingiProvider;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.ThingiProvider;
 
 namespace NzbDrone.Core.Notifications
 {

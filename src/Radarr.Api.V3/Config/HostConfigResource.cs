@@ -1,9 +1,9 @@
-using Radarr.Http.REST;
+using NzbDrone.Common.Http.Proxy;
 using NzbDrone.Core.Authentication;
 using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Security;
 using NzbDrone.Core.Update;
-using NzbDrone.Common.Http.Proxy;
+using Radarr.Http.REST;
 
 namespace Radarr.Api.V3.Config
 {

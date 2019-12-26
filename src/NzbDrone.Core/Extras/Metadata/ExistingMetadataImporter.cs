@@ -5,8 +5,8 @@ using NLog;
 using NzbDrone.Core.Extras.Files;
 using NzbDrone.Core.Extras.Metadata.Files;
 using NzbDrone.Core.Extras.Subtitles;
-using NzbDrone.Core.Parser;
 using NzbDrone.Core.Movies;
+using NzbDrone.Core.Parser;
 
 namespace NzbDrone.Core.Extras.Metadata
 {

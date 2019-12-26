@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using FluentValidation.Results;
 using NLog;
 using NzbDrone.Core.Configuration;
+using NzbDrone.Core.Movies;
 using NzbDrone.Core.Parser;
 using NzbDrone.Core.ThingiProvider;
-using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.NetImport
 {

@@ -1,12 +1,12 @@
 using System;
 using Nancy;
-using Radarr.Http.Extensions;
-using Radarr.Http.REST;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.Download.Pending;
 using NzbDrone.Core.Download.TrackedDownloads;
 using NzbDrone.Core.Queue;
 using Radarr.Http;
+using Radarr.Http.Extensions;
+using Radarr.Http.REST;
 
 namespace NzbDrone.Api.Queue
 {

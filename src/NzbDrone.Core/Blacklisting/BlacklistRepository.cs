@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using Marr.Data.QGen;
 using NzbDrone.Core.Datastore;
 using NzbDrone.Core.Messaging.Events;
-using Marr.Data.QGen;
 using NzbDrone.Core.Movies;
 
 namespace NzbDrone.Core.Blacklisting

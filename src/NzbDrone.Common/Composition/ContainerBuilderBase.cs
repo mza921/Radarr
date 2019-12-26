@@ -8,8 +8,8 @@ using TinyIoC;
 
 #if NETCOREAPP
 using System.IO;
-using System.Runtime.Loader;
 using System.Runtime.InteropServices;
+using System.Runtime.Loader;
 #endif
 
 namespace NzbDrone.Common.Composition

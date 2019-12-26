@@ -1,5 +1,5 @@
-using RestSharp;
 using NzbDrone.Common.EnvironmentInfo;
+using RestSharp;
 
 namespace NzbDrone.Core.Rest
 {

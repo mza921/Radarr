@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using FluentValidation.Results;
 using NLog;
-using RestSharp;
-using NzbDrone.Core.Rest;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Serializer;
+using NzbDrone.Core.Rest;
+using RestSharp;
 using RestSharp.Authenticators;
 
 namespace NzbDrone.Core.Notifications.PushBullet

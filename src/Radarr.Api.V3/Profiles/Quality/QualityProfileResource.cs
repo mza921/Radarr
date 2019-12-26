@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using Radarr.Http.REST;
-using NzbDrone.Core.Profiles;
-using NzbDrone.Core.Languages;
 using NzbDrone.Core.CustomFormats;
+using NzbDrone.Core.Languages;
+using NzbDrone.Core.Profiles;
+using Radarr.Http.REST;
 
 namespace Radarr.Api.V3.Profiles.Quality
 {

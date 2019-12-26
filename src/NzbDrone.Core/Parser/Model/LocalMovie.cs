@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using NzbDrone.Core.Qualities;
-using NzbDrone.Core.Movies;
-using NzbDrone.Core.MediaFiles.MediaInfo;
 using NzbDrone.Core.Languages;
+using NzbDrone.Core.MediaFiles.MediaInfo;
+using NzbDrone.Core.Movies;
+using NzbDrone.Core.Qualities;
 
 namespace NzbDrone.Core.Parser.Model
 {

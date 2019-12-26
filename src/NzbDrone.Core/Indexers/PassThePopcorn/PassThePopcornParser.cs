@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using Newtonsoft.Json;
+using NLog;
+using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Http;
 using NzbDrone.Core.Indexers.Exceptions;
 using NzbDrone.Core.Parser.Model;
-using NLog;
-using NzbDrone.Common.Extensions;
 
 namespace NzbDrone.Core.Indexers.PassThePopcorn
 {
