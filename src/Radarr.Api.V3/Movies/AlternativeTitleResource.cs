@@ -15,7 +15,6 @@ namespace Radarr.Api.V3.Movies
         //Todo: Sorters should be done completely on the client
         //Todo: Is there an easy way to keep IgnoreArticlesWhenSorting in sync between, Series, History, Missing?
         //Todo: We should get the entire Profile instead of ID and Name separately
-
         public SourceType SourceType { get; set; }
         public int MovieId { get; set; }
         public string Title { get; set; }

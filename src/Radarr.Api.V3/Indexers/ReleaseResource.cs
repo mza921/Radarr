@@ -53,7 +53,6 @@ namespace Radarr.Api.V3.Indexers
         public bool Special { get; set; }
 
         // Sent when queuing an unknown release
-
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int? MovieId { get; set; }
     }
@@ -95,7 +94,6 @@ namespace Radarr.Api.V3.Indexers
                 InfoUrl = releaseInfo.InfoUrl,
                 DownloadAllowed = remoteMovie.DownloadAllowed,
                 //ReleaseWeight
-
                 MagnetUrl = torrentInfo.MagnetUrl,
                 InfoHash = torrentInfo.InfoHash,
                 Seeders = torrentInfo.Seeders,

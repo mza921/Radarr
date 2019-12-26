@@ -157,7 +157,6 @@ namespace NzbDrone.Core.MediaFiles
                 //  RenameFiles(movieFiles, movie, oldFolder);
                 //  _logger.ProgressInfo("All movie files renamed for {0}", movie.Title);
                 // }
-
                 _movieService.UpdateMovie(movie);
 
                 if (_diskProvider.GetFiles(oldFolder, SearchOption.AllDirectories).Count() == 0)

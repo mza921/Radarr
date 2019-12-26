@@ -18,7 +18,6 @@ namespace NzbDrone.Core.Test.ParserTests
         }
 
         //public static object[] SelfQualityParserCases = QualityDefinition.DefaultQualityDefinitions.ToArray();
-
         public static object[] OtherSourceQualityParserCases =
         {
             new object[] { "SD TV", Source.TV, Resolution.R480p, Modifier.NONE },
@@ -280,7 +279,6 @@ namespace NzbDrone.Core.Test.ParserTests
         //{
         //    ParseAndVerifyQuality(title, Quality.RAWHD, proper);
         //}
-
         [TestCase("Sonny.With.a.Chance.S02E15", false)]
         [TestCase("Law & Order: Special Victims Unit - 11x11 - Quickie", false)]
         [TestCase("Series.Title.S01E01.webm", false)]

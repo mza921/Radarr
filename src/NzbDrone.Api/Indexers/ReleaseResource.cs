@@ -122,7 +122,6 @@ namespace NzbDrone.Api.Indexers
                 InfoUrl = releaseInfo.InfoUrl,
                 MappingResult = mappingResult,
                 //ReleaseWeight
-
                 SuspectedMovieId = movieId,
 
                 MagnetUrl = torrentInfo.MagnetUrl,

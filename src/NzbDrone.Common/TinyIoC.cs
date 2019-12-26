@@ -23,7 +23,6 @@
 // Preprocessor directives for enabling/disabling functionality
 // depending on platform features. If the platform has an appropriate
 // #DEFINE then these should be set automatically below.
-
 #define EXPRESSIONS                         // Platform supports System.Linq.Expressions
 #define COMPILED_EXPRESSIONS                // Platform supports compiling expressions
 #define APPDOMAIN_GETASSEMBLIES             // Platform supports getting all assemblies from the AppDomain object
@@ -379,7 +378,6 @@ namespace TinyIoC
             return method;
         }
         //#endif
-
 #if NETFX_CORE
         private static MethodInfo GetMethod(Type sourceType, BindingFlags flags, string methodName, Type[] genericTypes, Type[] parameterTypes)
         {
@@ -3411,7 +3409,6 @@ namespace TinyIoC
             //#else
             var genericResolveAllMethod = this.GetType().GetGenericMethod(BindingFlags.Public | BindingFlags.Instance, "ResolveAll", type.GetGenericArguments(), new[] { typeof(bool) });
             //#endif
-
             return genericResolveAllMethod.Invoke(this, new object[] { false });
         }
 
@@ -3610,7 +3607,6 @@ namespace TinyIoC
                              where (property.GetGetMethod() != null) && (property.GetSetMethod() != null) && !property.PropertyType.IsValueType()
                              select property;
             //#endif
-
             foreach (var property in properties)
             {
                 if (property.GetValue(input, null) == null)

@@ -43,7 +43,6 @@ namespace NzbDrone.Core.Download.Clients.Pneumatic
             //{
             //    throw new NotSupportedException("Full season releases are not supported with Pneumatic.");
             //}
-
             title = FileNameBuilder.CleanFileName(title);
 
             //Save to the Pneumatic directory (The user will need to ensure its accessible by XBMC)

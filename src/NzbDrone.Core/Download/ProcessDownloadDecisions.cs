@@ -134,7 +134,6 @@ namespace NzbDrone.Core.Download
             // If a higher quality release failed to add to the download client, but a lower quality release
             // was sent to another client we still list it normally so it apparent that it'll grab next time.
             // Delayed is treated the same, but only the first is listed the subsequent items as stored as Fallback.
-
             if (IsMovieProcessed(grabbed, report) ||
                 IsMovieProcessed(pending, report))
             {

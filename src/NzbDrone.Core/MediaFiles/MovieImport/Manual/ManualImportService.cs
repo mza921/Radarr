@@ -274,7 +274,6 @@ namespace NzbDrone.Core.MediaFiles.MovieImport.Manual
                 localMovie.Quality = file.Quality;
 
                 //TODO: Cleanup non-tracked downloads
-
                 var importDecision = new ImportDecision(localMovie);
 
                 if (trackedDownload == null)

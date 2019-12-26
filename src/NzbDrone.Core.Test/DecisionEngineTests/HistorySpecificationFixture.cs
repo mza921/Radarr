@@ -91,7 +91,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
         //            GivenMostRecentForEpisode(FIRST_EPISODE_ID, "test", _notupgradableQuality, DateTime.UtcNow, HistoryEventType.Grabbed);
         //            _upgradeHistory.IsSatisfiedBy(_parseResultMulti, null).Accepted.Should().BeTrue();
         //        }
-
         [Test]
         public void should_return_true_if_latest_history_item_is_older_than_twelve_hours()
         {

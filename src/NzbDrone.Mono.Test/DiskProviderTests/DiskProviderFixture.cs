@@ -29,7 +29,6 @@ namespace NzbDrone.Mono.Test.DiskProviderTests
             }
 
             // Remove Write permissions, we're still owner so we can clean it up, but we'll have to do that explicitly.
-
             var entry = UnixFileSystemInfo.GetFileSystemEntry(path);
 
             if (writable)

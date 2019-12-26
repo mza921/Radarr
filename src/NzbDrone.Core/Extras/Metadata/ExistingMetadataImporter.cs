@@ -41,7 +41,6 @@ namespace NzbDrone.Core.Extras.Metadata
             foreach (var possibleMetadataFile in filterResult.FilesOnDisk)
             {
                 // Don't process files that have known Subtitle file extensions (saves a bit of unecessary processing)
-
                 if (SubtitleFileExtensions.Extensions.Contains(Path.GetExtension(possibleMetadataFile)))
                 {
                     continue;
@@ -81,7 +80,6 @@ namespace NzbDrone.Core.Extras.Metadata
 
             // Return files that were just imported along with files that were
             // previously imported so previously imported files aren't imported twice
-
             return metadataFiles.Concat(filterResult.PreviouslyImported);
         }
     }

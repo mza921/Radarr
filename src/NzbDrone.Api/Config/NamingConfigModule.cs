@@ -87,11 +87,9 @@ namespace NzbDrone.Api.Config
             var movieSampleResult = _filenameSampleService.GetMovieSample(nameSpec);
 
             //var standardMovieValidationResult = _filenameValidationService.ValidateMovieFilename(movieSampleResult); For now, let's hope the user is not stupid enough :/
-
             var validationFailures = new List<ValidationFailure>();
 
             //validationFailures.AddIfNotNull(standardMovieValidationResult);
-
             if (validationFailures.Any())
             {
                 throw new ValidationException(validationFailures.DistinctBy(v => v.PropertyName).ToArray());

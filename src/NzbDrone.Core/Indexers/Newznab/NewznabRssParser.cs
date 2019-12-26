@@ -92,7 +92,6 @@ namespace NzbDrone.Core.Indexers.Newznab
             //        releaseInfo.Title = Regex.Replace(releaseInfo.Title, imdbMovieTitle, imdbMovieTitle + "." + imdbYear, RegexOptions.IgnoreCase);
             //    }
             //}
-
             return releaseInfo;
         }
 

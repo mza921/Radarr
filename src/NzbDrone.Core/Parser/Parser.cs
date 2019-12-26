@@ -234,7 +234,6 @@ namespace NzbDrone.Core.Parser
                             if (result != null)
                             {
                                 //TODO: Add tests for this!
-
                                 var simpleReleaseTitle = SimpleReleaseTitleRegex.Replace(title, string.Empty);
 
                                 if (result.MovieTitle.IsNotNullOrWhiteSpace())

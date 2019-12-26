@@ -78,7 +78,6 @@ namespace NzbDrone.Core.Extras
             foreach (var matchingFilename in matchingFilenames)
             {
                 // Filter out duplicate NFO files
-
                 if (matchingFilename.EndsWith(".nfo", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (hasNfo)

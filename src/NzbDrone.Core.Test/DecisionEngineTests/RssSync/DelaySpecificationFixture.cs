@@ -58,7 +58,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests.RssSync
 
             //_remoteEpisode.Episodes = Builder<Episode>.CreateListOfSize(1).Build().ToList();
             //_remoteEpisode.Episodes.First().EpisodeFileId = 0;
-
             Mocker.GetMock<IDelayProfileService>()
                   .Setup(s => s.BestForTags(It.IsAny<HashSet<int>>()))
                   .Returns(_delayProfile);
@@ -76,7 +75,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests.RssSync
             //                                                                     {
             //                                                                         Quality = quality
             //                                                                     });
-
             _remoteEpisode.Movie.MovieFile = new LazyLoaded<MovieFile>(new MovieFile { Quality = quality });
         }
 

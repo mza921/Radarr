@@ -38,7 +38,6 @@ namespace NzbDrone.Integration.Test.ApiTests
             // TODO: Maybe we should create a full mock Newznab server endpoint.
             //var result = Releases.Post(new ReleaseResource { Guid = releases.First().Guid });
             //result.Guid.Should().Be(releases.First().Guid);
-
             var result = Releases.Post(new ReleaseResource { Guid = releases.First().Guid }, HttpStatusCode.InternalServerError);
         }
 
@@ -52,7 +51,6 @@ namespace NzbDrone.Integration.Test.ApiTests
             //TODO: uncomment these after moving to restsharp for rss
             //releaseResource.NzbInfoUrl.Should().NotBeNullOrWhiteSpace();
             //releaseResource.Size.Should().BeGreaterThan(0);
-
             return true;
         }
     }

@@ -300,7 +300,6 @@ namespace Radarr.Http.REST
             }
 
             // v3 uses filters in key=value format
-
             foreach (var key in Request.Query)
             {
                 if (EXCLUDED_KEYS.Contains(key))

@@ -338,7 +338,6 @@ namespace NzbDrone.Common.Processes
         private List<Process> GetProcessesByName(string name)
         {
             //TODO: move this to an OS specific class
-
             var monoProcesses = Process.GetProcessesByName("mono")
                                        .Union(Process.GetProcessesByName("mono-sgen"))
                                        .Union(Process.GetProcessesByName("mono-sgen32"))

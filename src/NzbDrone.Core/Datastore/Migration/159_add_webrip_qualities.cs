@@ -161,7 +161,6 @@ namespace NzbDrone.Core.Datastore.Migration
                 else
                 {
                     // If the ID isn't found for some reason (mangled migration 71?)
-
                     var groupItems = new List<ProfileItem159>();
 
                     foreach (var newQuality in newQualities)

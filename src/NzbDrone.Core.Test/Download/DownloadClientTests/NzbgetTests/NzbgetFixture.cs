@@ -320,7 +320,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.NzbgetTests
         {
             // TODO: We would love to have a way to distinguish between scripts reporting video corruption, or some internal script error.
             // That way we could return Warning instead of Failed to notify the user to take action.
-
             _completed.ScriptStatus = "FAILURE";
 
             GivenQueue(null);

@@ -79,7 +79,6 @@ namespace NzbDrone.Api.Calendar
             //{
             //    premiersOnly = bool.Parse(queryPremiersOnly.Value);
             //}
-
             if (queryTags.HasValue)
             {
                 var tagInput = (string)queryTags.Value.ToString();

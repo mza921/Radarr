@@ -188,7 +188,6 @@ namespace NzbDrone.Core.DecisionEngine
         private int CompareSize(DownloadDecision x, DownloadDecision y)
         {
             // TODO: Is smaller better? Smaller for usenet could mean no par2 files.
-
             return CompareBy(x.RemoteMovie, y.RemoteMovie, remoteEpisode => remoteEpisode.Release.Size.Round(200.Megabytes()));
         }
 

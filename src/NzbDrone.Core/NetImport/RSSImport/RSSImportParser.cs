@@ -128,7 +128,6 @@ namespace NzbDrone.Core.NetImport.RSSImport
             releaseInfo = ProcessItem(item, releaseInfo);
 
             //_logger.Trace("Parsed: {0}", releaseInfo.Title);
-
             return PostProcess(item, releaseInfo);
         }
 

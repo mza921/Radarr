@@ -64,7 +64,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests.Search
         }
 
         // These tests are not needed anymore, since indexer settings are saved on the release itself!
-
         [Test]
         public void should_return_true_if_indexer_not_specified()
         {

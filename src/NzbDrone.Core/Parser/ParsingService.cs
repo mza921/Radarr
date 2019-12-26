@@ -82,7 +82,6 @@ namespace NzbDrone.Core.Parser
 
             // minimalInfo.Quality.Quality = QualityFinder.FindBySourceAndResolution(minimalInfo.Quality.Quality.Source, minimalInfo.Quality.Quality.Resolution,
             // minimalInfo.Quality.Quality.Modifier);
-
             if (minimalInfo != null)
             {
                 minimalInfo.Quality.CustomFormats = ParseCustomFormat(minimalInfo);
@@ -335,7 +334,6 @@ namespace NzbDrone.Core.Parser
                     string romanNumeral = numeralMapping.RomanNumeralLowerCase;
 
                     //_logger.Debug(cleanTitle);
-
                     if (title.Replace(arabicNumeral, romanNumeral) == parsedMovieInfo.MovieTitle.CleanSeriesTitle())
                     {
                         possibleMovie = searchCriteria.Movie;

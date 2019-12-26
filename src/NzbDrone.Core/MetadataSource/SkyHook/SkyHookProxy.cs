@@ -111,7 +111,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             // The dude abides, so should us, Lets be nice to TMDb
             // var allowed = int.Parse(response.Headers.GetValues("X-RateLimit-Limit").First()); // get allowed
             // var reset = long.Parse(response.Headers.GetValues("X-RateLimit-Reset").First()); // get time when it resets
-
             if (response.Headers.ContainsKey("X-RateLimit-Remaining"))
             {
                 var remaining = int.Parse(response.Headers.GetValues("X-RateLimit-Remaining").First());
@@ -194,7 +193,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             //{
             //    movie.AlternativeTitles.Add(title.title);
             //}
-
             foreach (ReleaseDates releaseDates in resource.release_dates.results)
             {
                 foreach (ReleaseDate releaseDate in releaseDates.release_dates)
@@ -318,7 +316,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
 
             request.AllowAutoRedirect = true;
             // request.SuppressHttpError = true;
-
             var response = _httpClient.Get<FindRoot>(request);
 
             if (response.HasHttpError)

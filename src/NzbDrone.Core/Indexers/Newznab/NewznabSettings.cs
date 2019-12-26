@@ -99,7 +99,6 @@ namespace NzbDrone.Core.Indexers.Newznab
         public bool SearchByTitle { get; set; }
         // Field 8 is used by TorznabSettings MinimumSeeders
         // If you need to add another field here, update TorznabSettings as well and this comment
-
         public virtual NzbDroneValidationResult Validate()
         {
             return new NzbDroneValidationResult(Validator.Validate(this));

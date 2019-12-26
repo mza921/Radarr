@@ -78,7 +78,6 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
             reader.Read();
 
             // Builds before 25406 don't return the remaining items.
-
             if (reader.TokenType != JsonToken.EndArray)
             {
                 result.DownloadUrl = (string)reader.Value;

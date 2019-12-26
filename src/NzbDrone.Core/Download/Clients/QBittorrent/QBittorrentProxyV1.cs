@@ -10,7 +10,6 @@ using NzbDrone.Common.Serializer;
 namespace NzbDrone.Core.Download.Clients.QBittorrent
 {
     // API https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-Documentation
-
     public class QBittorrentProxyV1 : IQBittorrentProxy
     {
         private readonly IHttpClient _httpClient;

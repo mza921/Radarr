@@ -29,7 +29,6 @@ namespace NzbDrone.Core.Test.MediaFiles
         {
             ParseMovieTitle();
             //UseRealParsingService();
-
             Mocker.GetMock<IDiskScanService>().Setup(c => c.GetVideoFiles(It.IsAny<string>(), It.IsAny<bool>()))
                   .Returns(_videoFiles);
 

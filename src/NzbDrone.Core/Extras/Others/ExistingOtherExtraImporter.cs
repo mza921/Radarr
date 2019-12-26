@@ -68,7 +68,6 @@ namespace NzbDrone.Core.Extras.Others
 
             // Return files that were just imported along with files that were
             // previously imported so previously imported files aren't imported twice
-
             return extraFiles.Concat(filterResult.PreviouslyImported);
         }
     }

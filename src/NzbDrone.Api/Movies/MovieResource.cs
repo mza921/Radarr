@@ -112,7 +112,6 @@ namespace NzbDrone.Api.Movies
             }*/
 
             //model.AlternativeTitles.LazyLoad();
-
             return new MovieResource
             {
                 Id = model.Id,
@@ -150,7 +149,6 @@ namespace NzbDrone.Api.Movies
                 FolderName = model.FolderName(),
 
                 //SizeOnDisk = size,
-
                 Runtime = model.Runtime,
                 LastInfoSync = model.LastInfoSync,
                 CleanTitle = model.CleanTitle,

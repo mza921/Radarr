@@ -105,7 +105,6 @@ namespace TinyTwitter
                 // It looks like a bug in HttpWebRequest. It throws random TimeoutExceptions
                 // after some requests. Abort the request seems to work. More info:
                 // http://stackoverflow.com/questions/2252762/getrequeststream-throws-timeout-exception-randomly
-
                 var response = request.GetResponse();
 
                 string content;
@@ -219,7 +218,6 @@ namespace TinyTwitter
         public static string EncodeRFC3986(this string value)
         {
             // From Twitterizer http://www.twitterizer.net/
-
             if (string.IsNullOrEmpty(value))
             {
                 return string.Empty;
