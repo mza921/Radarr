@@ -135,6 +135,7 @@ namespace Radarr.Api.V3.MovieFiles
             _logger.Info("Deleting movie file: {0}", fullPath);
             _recycleBinProvider.DeleteFile(fullPath);
             _mediaFileService.Delete(movieFile, DeleteMediaFileReason.Manual);
+
             // TODO: Pull MediaFileDeletionService from Sonarr
             //_mediaFileDeletionService.Delete(series, episodeFile);
         }
@@ -151,6 +152,7 @@ namespace Radarr.Api.V3.MovieFiles
                 _logger.Info("Deleting movie file: {0}", fullPath);
                 _recycleBinProvider.DeleteFile(fullPath);
                 _mediaFileService.Delete(movieFile, DeleteMediaFileReason.Manual);
+
                 // TODO: Pull MediaFileDeletionService from Sonarr
                 //_mediaFileDeletionService.DeleteEpisodeFile(movie, movieFile);
             }

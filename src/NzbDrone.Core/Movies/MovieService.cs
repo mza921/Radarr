@@ -270,6 +270,7 @@ namespace NzbDrone.Core.Movies
         public Movie FindByTitleInexact(string title)
         {
             var query = FindByTitleInexactAll(title);
+
             // get the leftmost movie that is the longest
             // movie are usually the first thing in release title, so we select the leftmost and longest match
             var match = query.First();
@@ -371,6 +372,7 @@ namespace NzbDrone.Core.Movies
             var movie = message.MovieFile.Movie.Value;
             movie.MovieFileId = message.MovieFile.Id;
             _movieRepository.Update(movie);
+
             //_movieRepository.SetFileId(message.MovieFile.Id, message.MovieFile.Movie.Value.Id);
             _logger.Info("Linking [{0}] > [{1}]", message.MovieFile.RelativePath, message.MovieFile.Movie.Value);
         }

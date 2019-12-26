@@ -33,6 +33,7 @@ namespace NzbDrone.Core.Movies
             }
 
             _logger.Info("[{0}] was recently added, performing post-add actions", movie.Title);
+
             //_episodeMonitoredService.SetEpisodeMonitoredStatus(movie, movie.AddOptions);
             if (movie.AddOptions.SearchForMovie)
             {

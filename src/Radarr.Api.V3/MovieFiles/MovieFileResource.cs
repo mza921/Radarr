@@ -38,6 +38,7 @@ namespace Radarr.Api.V3.MovieFiles
 
                 MovieId = model.MovieId,
                 RelativePath = model.RelativePath,
+
                 //Path
                 Size = model.Size,
                 DateAdded = model.DateAdded,
@@ -45,6 +46,7 @@ namespace Radarr.Api.V3.MovieFiles
                 Quality = model.Quality,
                 Languages = model.Languages,
                 MediaInfo = model.MediaInfo.ToResource(model.SceneName),
+
                 //QualityCutoffNotMet
             };
         }
@@ -69,6 +71,7 @@ namespace Radarr.Api.V3.MovieFiles
                 Quality = model.Quality,
                 Languages = model.Languages,
                 MediaInfo = model.MediaInfo.ToResource(model.SceneName),
+
                 // QualityCutoffNotMet = upgradableSpecification.CutoffNotMet(movie.Profile.Value, model.Quality)
             };
         }

@@ -40,6 +40,7 @@ namespace NzbDrone.Api.ManualImport
                 Size = model.Size,
                 Movie = model.Movie.ToResource(),
                 Quality = model.Quality,
+
                 //QualityWeight
                 DownloadId = model.DownloadId,
                 Rejections = model.Rejections

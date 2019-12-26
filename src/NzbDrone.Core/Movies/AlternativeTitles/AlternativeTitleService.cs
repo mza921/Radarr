@@ -72,10 +72,13 @@ namespace NzbDrone.Core.Movies.AlternativeTitles
         public List<AlternativeTitle> UpdateTitles(List<AlternativeTitle> titles, Movie movie)
         {
             int movieId = movie.Id;
+
             // First update the movie ids so we can correlate them later.
             titles.ForEach(t => t.MovieId = movieId);
+
             // Then make sure none of them are the same as the main title.
             titles = titles.Where(t => t.CleanTitle != movie.CleanTitle).ToList();
+
             // Then make sure they are all distinct titles
             titles = titles.DistinctBy(t => t.CleanTitle).ToList();
 

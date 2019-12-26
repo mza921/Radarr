@@ -21,6 +21,7 @@ using NzbDrone.Test.Common;
 namespace NzbDrone.Core.Test.MediaFiles
 {
     [TestFixture]
+
     //TODO: Update all of this for movies.
     public class ImportApprovedMoviesFixture : CoreTest<ImportApprovedMovie>
     {

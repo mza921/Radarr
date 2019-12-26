@@ -100,6 +100,7 @@ namespace NzbDrone.Core.Download.TrackedDownloads
                 var historyItems = _historyService.FindByDownloadId(downloadItem.DownloadId);
                 var grabbedHistoryItem = historyItems.OrderByDescending(h => h.Date).FirstOrDefault(h => h.EventType == HistoryEventType.Grabbed);
                 var firstHistoryItem = historyItems.OrderByDescending(h => h.Date).FirstOrDefault();
+
                 //TODO: Create release info from history and use that here, so we don't loose indexer flags!
                 var parsedMovieInfo = _parsingService.ParseMovieInfo(trackedDownload.DownloadItem.Title, new List<object> { grabbedHistoryItem });
 

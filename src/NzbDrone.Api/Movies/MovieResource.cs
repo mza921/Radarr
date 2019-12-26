@@ -64,6 +64,7 @@ namespace NzbDrone.Api.Movies
         public DateTime Added { get; set; }
         public AddMovieOptions AddOptions { get; set; }
         public Ratings Ratings { get; set; }
+
         //public List<string> AlternativeTitles { get; set; }
         public MovieFileResource MovieFile { get; set; }
 
@@ -117,6 +118,7 @@ namespace NzbDrone.Api.Movies
                 Id = model.Id,
                 TmdbId = model.TmdbId,
                 Title = model.Title,
+
                 //AlternateTitles
                 SortTitle = model.SortTitle,
                 InCinemas = model.InCinemas,
@@ -124,12 +126,14 @@ namespace NzbDrone.Api.Movies
                 PhysicalReleaseNote = model.PhysicalReleaseNote,
                 HasFile = model.HasFile,
                 Downloaded = downloaded,
+
                 //TotalEpisodeCount
                 //EpisodeCount
                 //EpisodeFileCount
                 SizeOnDisk = size,
                 Status = model.Status,
                 Overview = model.Overview,
+
                 //NextAiring
                 //PreviousAiring
                 Images = model.Images,
@@ -182,16 +186,19 @@ namespace NzbDrone.Api.Movies
                 TmdbId = resource.TmdbId,
 
                 Title = resource.Title,
+
                 //AlternateTitles
                 SortTitle = resource.SortTitle,
                 InCinemas = resource.InCinemas,
                 PhysicalRelease = resource.PhysicalRelease,
                 PhysicalReleaseNote = resource.PhysicalReleaseNote,
+
                 //TotalEpisodeCount
                 //EpisodeCount
                 //EpisodeFileCount
                 //SizeOnDisk
                 Overview = resource.Overview,
+
                 //NextAiring
                 //PreviousAiring
                 Images = resource.Images,
@@ -219,6 +226,7 @@ namespace NzbDrone.Api.Movies
                 Tags = resource.Tags,
                 Added = resource.Added,
                 AddOptions = resource.AddOptions,
+
                 //AlternativeTitles = resource.AlternativeTitles,
                 Ratings = resource.Ratings,
                 YouTubeTrailerId = resource.YouTubeTrailerId,

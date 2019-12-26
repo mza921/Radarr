@@ -54,6 +54,7 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
             _parsedMovieInfo.Quality = new QualityModel(Quality.HDTV720p);
 
             _remoteMovie = new RemoteMovie();
+
             //_remoteEpisode.Episodes = new List<Episode>{ _episode };
             _remoteMovie.Movie = _movie;
             _remoteMovie.ParsedMovieInfo = _parsedMovieInfo;

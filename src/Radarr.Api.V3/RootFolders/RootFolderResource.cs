@@ -47,6 +47,7 @@ namespace Radarr.Api.V3.RootFolders
                 Id = resource.Id,
 
                 Path = resource.Path
+
                 //Accessible
                 //FreeSpace
                 //UnmappedFolders

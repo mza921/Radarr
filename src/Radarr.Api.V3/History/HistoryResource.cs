@@ -42,6 +42,7 @@ namespace Radarr.Api.V3.History
                 SourceTitle = model.SourceTitle,
                 Languages = model.Languages,
                 Quality = model.Quality,
+
                 //QualityCutoffNotMet
                 Date = model.Date,
                 DownloadId = model.DownloadId,

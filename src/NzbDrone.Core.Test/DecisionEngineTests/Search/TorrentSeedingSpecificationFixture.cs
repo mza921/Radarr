@@ -32,6 +32,7 @@ namespace NzbDrone.Core.Test.DecisionEngineTests.Search
                     IndexerId = 1,
                     Title = "Series.Title.S01.720p.BluRay.X264-RlsGrp",
                     Seeders = 0,
+
                     //IndexerSettings = new TorrentRssIndexerSettings {MinimumSeeders = 5}
                 }
             };

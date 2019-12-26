@@ -100,6 +100,7 @@ namespace NzbDrone.Core.Datastore
                 .Ignore(m => m.Actors)
                 .Relationship()
                 .HasOne(s => s.Profile, s => s.ProfileId);
+
             //.HasOne(m => m.MovieFile, m => m.MovieFileId);
             Mapper.Entity<AlternativeTitle>().RegisterModel("AlternativeTitles")
                 .For(t => t.Id)

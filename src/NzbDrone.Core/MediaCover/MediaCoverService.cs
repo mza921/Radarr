@@ -24,6 +24,7 @@ namespace NzbDrone.Core.MediaCover
 
     public class MediaCoverService :
         IHandleAsync<MovieUpdatedEvent>,
+
         //IHandleAsync<MovieAddedEvent>,
         IHandleAsync<MovieDeletedEvent>,
         IExecute<EnsureMediaCoversCommand>,
@@ -223,6 +224,7 @@ namespace NzbDrone.Core.MediaCover
             //EnsureCovers(message.Movie);
             _logger.Info("Testing: {0}, {1}", _commandQueue, message.Movie.Id);
             _commandQueue.Push(new EnsureMediaCoversCommand(message.Movie.Id));
+
             //_eventAggregator.PublishEvent(new MediaCoversUpdatedEvent(message.Movie));
         }
 

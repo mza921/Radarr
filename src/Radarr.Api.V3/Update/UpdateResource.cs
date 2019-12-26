@@ -40,6 +40,7 @@ namespace Radarr.Api.V3.Update
                 ReleaseDate = model.ReleaseDate,
                 FileName = model.FileName,
                 Url = model.Url,
+
                 //Installed
                 //Installable
                 //Latest

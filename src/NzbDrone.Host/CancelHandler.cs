@@ -52,6 +52,7 @@ namespace Radarr.Host
         private void GracefulShutdown()
         {
             Console.WriteLine("Shutdown requested, press Ctrl+C again to terminate directly.");
+
             // TODO: Sent ApplicationShutdownRequested event or something like it.
             _lifecycleService.Shutdown();
         }
@@ -59,6 +60,7 @@ namespace Radarr.Host
         private void UngracefulShutdown()
         {
             Console.WriteLine("Termination requested.");
+
             // TODO: Kill it. Shutdown NLog and invoke Environment.Exit.
             LogManager.Configuration = null;
             Environment.Exit(0);

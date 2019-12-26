@@ -54,6 +54,7 @@ namespace NzbDrone.Api.Config
                 LaunchBrowser = model.LaunchBrowser,
                 AuthenticationMethod = model.AuthenticationMethod,
                 AnalyticsEnabled = model.AnalyticsEnabled,
+
                 //Username
                 //Password
                 LogLevel = model.LogLevel,

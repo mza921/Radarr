@@ -83,6 +83,7 @@ namespace NzbDrone.Core.MediaFiles
                         MovieId = movie.Id,
                         MovieFileId = file.Id,
                         ExistingPath = movieFilePath,
+
                         //NewPath = movie.Path.GetRelativePath(newPath)
                         NewPath = newPath
                     };
@@ -205,6 +206,7 @@ namespace NzbDrone.Core.MediaFiles
                 foreach (var movie in moviesToRename)
                 {
                     var movieFiles = _mediaFileService.GetFilesByMovie(movie.Id);
+
                     //_logger.ProgressInfo("Renaming movie folder for {0}", movie.Title);
                     RenameMoviePath(movie);
                 }

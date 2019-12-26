@@ -56,6 +56,7 @@ namespace Radarr.Api.V3.Config
                 LaunchBrowser = model.LaunchBrowser,
                 AuthenticationMethod = model.AuthenticationMethod,
                 AnalyticsEnabled = model.AnalyticsEnabled,
+
                 //Username
                 //Password
                 LogLevel = model.LogLevel,

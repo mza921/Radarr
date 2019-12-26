@@ -21,6 +21,7 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
         public override void Setup()
         {
             base.Setup();
+
             //Add multi indexer
             GivenIndexerSettings(new RarbgSettings
             {

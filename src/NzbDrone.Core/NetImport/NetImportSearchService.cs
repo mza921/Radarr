@@ -203,6 +203,7 @@ namespace NzbDrone.Core.NetImport
                             case "removeAndDelete":
                                 _logger.Info("{0} was in your library, but not found in your lists --> Removing from library and deleting files", movie);
                                 _movieService.DeleteMovie(movie.Id, true);
+
                                 //TODO: for some reason the files are not deleted in this case... any idea why?
                                 break;
                             default:

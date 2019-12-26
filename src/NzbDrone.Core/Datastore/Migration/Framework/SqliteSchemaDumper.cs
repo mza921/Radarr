@@ -188,6 +188,7 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
             foreach (var table in tables)
             {
                 table.Indexes = ReadIndexes(table.SchemaName, table.Name);
+
                 //table.ForeignKeys = ReadForeignKeys(table.SchemaName, table.Name);
             }
 

@@ -116,7 +116,7 @@
     <Rule Id="SA1512" Action="Warning" />
     <Rule Id="SA1513" Action="Warning" />
     <Rule Id="SA1514" Action="Info" />
-    <Rule Id="SA1515" Action="Info" />
+    <Rule Id="SA1515" Action="Warning" />
     <Rule Id="SA1516" Action="None" />
   </Rules>
   <Rules AnalyzerId="StyleCop.CSharp.DocumentationRules"

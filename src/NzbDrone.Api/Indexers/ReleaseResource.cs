@@ -121,6 +121,7 @@ namespace NzbDrone.Api.Indexers
                 DownloadUrl = releaseInfo.DownloadUrl,
                 InfoUrl = releaseInfo.InfoUrl,
                 MappingResult = mappingResult,
+
                 //ReleaseWeight
                 SuspectedMovieId = movieId,
 

@@ -36,6 +36,7 @@ namespace NzbDrone.Api.Calendar
             var start = DateTime.Today.AddDays(-pastDays);
             var end = DateTime.Today.AddDays(futureDays);
             var unmonitored = false;
+
             //var premiersOnly = false;
             var tags = new List<int>();
 
@@ -45,6 +46,7 @@ namespace NzbDrone.Api.Calendar
             var queryPastDays = Request.Query.PastDays;
             var queryFutureDays = Request.Query.FutureDays;
             var queryUnmonitored = Request.Query.Unmonitored;
+
             // var queryPremiersOnly = Request.Query.PremiersOnly;
             var queryTags = Request.Query.Tags;
 

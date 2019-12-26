@@ -33,6 +33,7 @@ namespace NzbDrone.Api.Config
                 MultiEpisodeStyle = model.MultiEpisodeStyle,
                 StandardMovieFormat = model.StandardMovieFormat,
                 MovieFolderFormat = model.MovieFolderFormat
+
                 //IncludeSeriesTitle
                 //IncludeEpisodeTitle
                 //IncludeQuality

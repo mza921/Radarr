@@ -86,6 +86,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                .SetSegment("secondaryRoute", "")
                .AddQueryParam("append_to_response", "alternative_titles,release_dates,videos")
                .AddQueryParam("language", langCode.ToUpper())
+
                // .AddQueryParam("country", "US")
                .Build();
 
@@ -228,6 +229,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
             }
 
             var now = DateTime.Now;
+
             //handle the case when we have both theatrical and physical release dates
             if (movie.InCinemas.HasValue && movie.PhysicalRelease.HasValue)
             {
@@ -320,6 +322,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 .Build();
 
             request.AllowAutoRedirect = true;
+
             // request.SuppressHttpError = true;
             var response = _httpClient.Get<FindRoot>(request);
 
@@ -548,6 +551,7 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                 }
 
                 var now = DateTime.Now;
+
                 //handle the case when we have both theatrical and physical release dates
                 if (imdbMovie.InCinemas.HasValue && imdbMovie.PhysicalRelease.HasValue)
                 {

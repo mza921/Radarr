@@ -40,8 +40,10 @@ namespace NzbDrone.Common.Instrumentation.Sentry
         {
             // UnauthorizedAccessExceptions will just be user configuration issues
             "UnauthorizedAccessException",
+
             // Filter out people stuck in boot loops
             "CorruptDatabaseException",
+
             // This also filters some people in boot loops
             "TinyIoCResolutionException"
         };
@@ -50,6 +52,7 @@ namespace NzbDrone.Common.Instrumentation.Sentry
         {
             // Swallow the many, many exceptions flowing through from Jackett
             "Jackett.Common.IndexerException",
+
             // Fix openflixr being stupid with permissions
             "openflixr"
         };

@@ -72,6 +72,7 @@ namespace NzbDrone.Core.NetImport.TMDb
                 requestBuilder.Resource(tmdbParams);
 
                 var request = requestBuilder
+
                     // .AddQueryParam("api_key", "1a7373301961d03f97f853a876dd1212")
                     .Accept(HttpAccept.Json)
                     .Build();

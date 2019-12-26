@@ -144,6 +144,7 @@ namespace NzbDrone.Core.Messaging.Commands
                                          .OrderByDescending(c => c.Priority)
                                          .ThenBy(c => c.QueuedAt)
                                          .FirstOrDefault();
+
                     // Nothing queued that meets the requirements
                     if (localItem == null)
                     {

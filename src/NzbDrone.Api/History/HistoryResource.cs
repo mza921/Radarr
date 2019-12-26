@@ -37,6 +37,7 @@ namespace NzbDrone.Api.History
                 MovieId = model.MovieId,
                 SourceTitle = model.SourceTitle,
                 Quality = model.Quality,
+
                 //QualityCutoffNotMet
                 Date = model.Date,
                 DownloadId = model.DownloadId,
