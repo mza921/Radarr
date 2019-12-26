@@ -28,7 +28,7 @@
     <Rule Id="SA1117" Action="Warning" />
     <Rule Id="SA1118" Action="Info" />
     <Rule Id="SA1120" Action="Info" />
-    <Rule Id="SA1121" Action="Info" />
+    <Rule Id="SA1121" Action="Warning" />
     <Rule Id="SA1122" Action="Info" />
     <Rule Id="SA1123" Action="Info" />
     <Rule Id="SA1124" Action="Info" />

@@ -129,7 +129,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             }
         }
 
-        public void AddTorrentFromFile(string fileName, Byte[] fileContent, QBittorrentSettings settings)
+        public void AddTorrentFromFile(string fileName, byte[] fileContent, QBittorrentSettings settings)
         {
             var request = BuildRequest(settings).Resource("/api/v2/torrents/add")
                                                 .Post()
@@ -154,7 +154,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             }
         }
 
-        public void RemoveTorrent(string hash, Boolean removeData, QBittorrentSettings settings)
+        public void RemoveTorrent(string hash, bool removeData, QBittorrentSettings settings)
         {
             var request = BuildRequest(settings).Resource("/api/v2/torrents/delete")
                                                 .Post()

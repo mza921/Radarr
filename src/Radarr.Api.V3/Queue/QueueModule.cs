@@ -111,7 +111,7 @@ namespace Radarr.Api.V3.Queue
             return pagingSpec;
         }
 
-        private Func<NzbDrone.Core.Queue.Queue, Object> GetOrderByFunc(PagingSpec<NzbDrone.Core.Queue.Queue> pagingSpec)
+        private Func<NzbDrone.Core.Queue.Queue, object> GetOrderByFunc(PagingSpec<NzbDrone.Core.Queue.Queue> pagingSpec)
         {
             switch (pagingSpec.SortKey)
             {

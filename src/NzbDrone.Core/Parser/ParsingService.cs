@@ -205,7 +205,7 @@ namespace NzbDrone.Core.Parser
         {
             // TODO: Answer me this: Wouldn't it be smarter to start out looking for a movie if we have an ImDb Id?
             MappingResult result = null;
-            if (!String.IsNullOrWhiteSpace(imdbId) && imdbId != "0")
+            if (!string.IsNullOrWhiteSpace(imdbId) && imdbId != "0")
             {
                 if (TryGetMovieByImDbId(parsedMovieInfo, imdbId, out result))
                 {

@@ -31,7 +31,7 @@ namespace Radarr.Api.V3.Movies
         private object SearchByTmdbId()
         {
             int tmdbId = -1;
-            if (Int32.TryParse(Request.Query.tmdbId, out tmdbId))
+            if (int.TryParse(Request.Query.tmdbId, out tmdbId))
             {
                 var result = _movieInfo.GetMovieInfo(tmdbId, null, true);
                 return result.ToResource();

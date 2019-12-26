@@ -224,7 +224,7 @@ namespace NzbDrone.Common.OAuth
 #if WINRT
             return CultureInfo.InvariantCulture.CompareInfo.Compare(left, right, CompareOptions.IgnoreCase) == 0;
 #else
-            return String.Compare(left, right, StringComparison.InvariantCultureIgnoreCase) == 0;
+            return string.Compare(left, right, StringComparison.InvariantCultureIgnoreCase) == 0;
 #endif
         }
 
@@ -352,7 +352,7 @@ namespace NzbDrone.Common.OAuth
         {
             if (IsNullOrBlank(tokenSecret))
             {
-                tokenSecret = String.Empty;
+                tokenSecret = string.Empty;
             }
 
             consumerSecret = UrlEncodeRelaxed(consumerSecret);
@@ -402,7 +402,7 @@ namespace NzbDrone.Common.OAuth
 
         private static bool IsNullOrBlank(string value)
         {
-            return String.IsNullOrEmpty(value) || (!String.IsNullOrEmpty(value) && value.Trim() == String.Empty);
+            return string.IsNullOrEmpty(value) || (!string.IsNullOrEmpty(value) && value.Trim() == string.Empty);
         }
     }
 }

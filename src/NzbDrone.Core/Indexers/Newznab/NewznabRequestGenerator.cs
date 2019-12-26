@@ -70,7 +70,7 @@ namespace NzbDrone.Core.Indexers.Newznab
                 //pageableRequests.Add(GetPagedRequests(MaxPages - (altTitles.Count() * realMaxPages), Settings.Categories, "search", $"&q={searchTitle}%20{searchCriteria.Movie.Year}"));
 
                 //Also use alt titles for searching.
-                foreach (String altTitle in altTitles)
+                foreach (string altTitle in altTitles)
                 {
                     var searchAltTitle = System.Web.HttpUtility.UrlPathEncode(Parser.Parser.ReplaceGermanUmlauts(Parser.Parser.NormalizeTitle(altTitle)));
                     var queryString = $"&q={searchAltTitle}";

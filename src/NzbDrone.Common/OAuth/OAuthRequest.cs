@@ -500,7 +500,7 @@ namespace NzbDrone.Common.OAuth
 
         private static bool IsNullOrBlank(string value)
         {
-            return String.IsNullOrEmpty(value) || (!String.IsNullOrEmpty(value) && value.Trim() == String.Empty);
+            return string.IsNullOrEmpty(value) || (!string.IsNullOrEmpty(value) && value.Trim() == string.Empty);
         }
     }
 }

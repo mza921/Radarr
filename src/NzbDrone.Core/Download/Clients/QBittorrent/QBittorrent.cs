@@ -89,7 +89,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             return hash;
         }
 
-        protected override string AddFromTorrentFile(RemoteMovie remoteMovie, string hash, string filename, Byte[] fileContent)
+        protected override string AddFromTorrentFile(RemoteMovie remoteMovie, string hash, string filename, byte[] fileContent)
         {
             Proxy.AddTorrentFromFile(filename, fileContent, Settings);
 
@@ -278,7 +278,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 var config = Proxy.GetConfig(Settings);
                 if ((config.MaxRatioEnabled || config.MaxSeedingTimeEnabled) && config.RemoveOnMaxRatio)
                 {
-                    return new NzbDroneValidationFailure(String.Empty, "qBittorrent is configured to remove torrents when they reach their Share Ratio Limit")
+                    return new NzbDroneValidationFailure(string.Empty, "qBittorrent is configured to remove torrents when they reach their Share Ratio Limit")
                     {
                         DetailedDescription = "Radarr will be unable to perform Completed Download Handling as configured. You can fix this in qBittorrent ('Tools -> Options...' in the menu) by changing 'Options -> BitTorrent -> Share Ratio Limiting' from 'Remove them' to 'Pause them'."
                     };
@@ -302,12 +302,12 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                         DetailedDescription = "Please verify the hostname and port."
                     };
                 }
-                return new NzbDroneValidationFailure(String.Empty, "Unknown exception: " + ex.Message);
+                return new NzbDroneValidationFailure(string.Empty, "Unknown exception: " + ex.Message);
             }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Unable to test qBittorrent");
-                return new NzbDroneValidationFailure(String.Empty, "Unknown exception: " + ex.Message);
+                return new NzbDroneValidationFailure(string.Empty, "Unknown exception: " + ex.Message);
             }
 
             return null;
@@ -389,7 +389,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to test qBittorrent");
-                return new NzbDroneValidationFailure(String.Empty, "Unknown exception: " + ex.Message);
+                return new NzbDroneValidationFailure(string.Empty, "Unknown exception: " + ex.Message);
             }
 
             return null;
@@ -404,7 +404,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to get torrents");
-                return new NzbDroneValidationFailure(String.Empty, "Failed to get the list of torrents: " + ex.Message);
+                return new NzbDroneValidationFailure(string.Empty, "Failed to get the list of torrents: " + ex.Message);
             }
 
             return null;

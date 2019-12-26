@@ -138,7 +138,7 @@ namespace NzbDrone.Core.Parser
         private static readonly Regex ReportEditionRegex = new Regex(@"\b(?<edition>(((Extended.|Ultimate.)?(Director.?s|Collector.?s|Theatrical|Ultimate|Final(?=(.(Cut|Edition|Version)))|Extended|Rogue|Special|Despecialized|\d{2,3}(th)?.Anniversary)(.(Cut|Edition|Version))?(.(Extended|Uncensored|Remastered|Unrated|Uncut|IMAX|Fan.?Edit))?|((Uncensored|Remastered|Unrated|Uncut|IMAX|Fan.?Edit|Edition|Restored|((2|3|4)in1))))))\)?\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private static readonly string[] Numbers = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-        private static Dictionary<String, String> _umlautMappings = new Dictionary<string, string>
+        private static Dictionary<string, string> _umlautMappings = new Dictionary<string, string>
         {
             { "ö", "oe" },
             { "ä", "ae" },

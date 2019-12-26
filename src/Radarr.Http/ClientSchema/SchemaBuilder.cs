@@ -168,7 +168,7 @@ namespace Radarr.Http.ClientSchema
             {
                 return fieldValue => fieldValue?.ToString().ParseInt32();
             }
-            else if (propertyType == typeof(Int64?))
+            else if (propertyType == typeof(long?))
             {
                 return fieldValue => fieldValue?.ToString().ParseInt64();
             }
@@ -212,7 +212,7 @@ namespace Radarr.Http.ClientSchema
 
         private static string GetCamelCaseName(string name)
         {
-            return Char.ToLowerInvariant(name[0]) + name.Substring(1);
+            return char.ToLowerInvariant(name[0]) + name.Substring(1);
         }
     }
 }

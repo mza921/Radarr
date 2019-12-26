@@ -304,7 +304,7 @@ namespace NzbDrone.Core.Organizer
             var qualityProper = GetQualityProper(movie, movieFile.Quality);
             var qualityReal = GetQualityReal(movie, movieFile.Quality);
 
-            tokenHandlers["{Quality Full}"] = m => String.Format("{0} {1} {2}", qualityTitle, qualityProper, qualityReal);
+            tokenHandlers["{Quality Full}"] = m => string.Format("{0} {1} {2}", qualityTitle, qualityProper, qualityReal);
             tokenHandlers["{Quality Title}"] = m => qualityTitle;
             tokenHandlers["{Quality Proper}"] = m => qualityProper;
             tokenHandlers["{Quality Real}"] = m => qualityReal;
@@ -494,7 +494,7 @@ namespace NzbDrone.Core.Organizer
                 return "Proper";
             }
 
-            return String.Empty;
+            return string.Empty;
         }
 
         private string GetQualityReal(Movie movie, QualityModel quality)

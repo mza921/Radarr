@@ -30,12 +30,12 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
             };
 
             Mocker.GetMock<ITorrentFileInfoReader>()
-                  .Setup(s => s.GetHashFromTorrentFile(It.IsAny<Byte[]>()))
+                  .Setup(s => s.GetHashFromTorrentFile(It.IsAny<byte[]>()))
                   .Returns("CBC2F069FE8BB2F544EAE707D75BCD3DE9DCF951");
 
             Mocker.GetMock<IHttpClient>()
                   .Setup(s => s.Get(It.IsAny<HttpRequest>()))
-                  .Returns<HttpRequest>(r => new HttpResponse(r, new HttpHeader(), new Byte[0]));
+                  .Returns<HttpRequest>(r => new HttpResponse(r, new HttpHeader(), new byte[0]));
 
             Mocker.GetMock<IQBittorrentProxy>()
                   .Setup(s => s.GetConfig(It.IsAny<QBittorrentSettings>()))
@@ -53,7 +53,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
 
             Mocker.GetMock<IHttpClient>()
                   .Setup(s => s.Get(It.IsAny<HttpRequest>()))
-                  .Returns<HttpRequest>(r => new HttpResponse(r, httpHeader, new Byte[0], System.Net.HttpStatusCode.SeeOther));
+                  .Returns<HttpRequest>(r => new HttpResponse(r, httpHeader, new byte[0], System.Net.HttpStatusCode.SeeOther));
         }
 
         protected void GivenRedirectToTorrent()
@@ -63,7 +63,7 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
 
             Mocker.GetMock<IHttpClient>()
                   .Setup(s => s.Get(It.Is<HttpRequest>(h => h.Url.FullUri == _downloadUrl)))
-                  .Returns<HttpRequest>(r => new HttpResponse(r, httpHeader, new Byte[0], System.Net.HttpStatusCode.Found));
+                  .Returns<HttpRequest>(r => new HttpResponse(r, httpHeader, new byte[0], System.Net.HttpStatusCode.Found));
         }
 
         protected void GivenFailedDownload()

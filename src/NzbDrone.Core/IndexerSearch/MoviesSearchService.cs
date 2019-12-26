@@ -112,7 +112,7 @@ namespace NzbDrone.Core.IndexerSearch
                 }
                 catch (Exception ex)
                 {
-                    var message = String.Format("Unable to search for missing movie {0}", movieId.Key);
+                    var message = string.Format("Unable to search for missing movie {0}", movieId.Key);
                     _logger.Error(ex, message);
                     continue;
                 }
