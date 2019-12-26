@@ -71,7 +71,11 @@ namespace Radarr.Http.REST
 
         protected Action<int> DeleteResource
         {
-            private get { return _deleteResource; }
+            private get
+            {
+                return _deleteResource;
+            }
+
             set
             {
                 _deleteResource = value;
@@ -87,7 +91,11 @@ namespace Radarr.Http.REST
 
         protected Func<int, TResource> GetResourceById
         {
-            get { return _getResourceById; }
+            get
+            {
+                return _getResourceById;
+            }
+
             set
             {
                 _getResourceById = value;
@@ -115,11 +123,14 @@ namespace Radarr.Http.REST
 
         protected Func<List<TResource>> GetResourceAll
         {
-            private get { return _getResourceAll; }
+            private get
+            {
+                return _getResourceAll;
+            }
+
             set
             {
                 _getResourceAll = value;
-
                 Get(ROOT_ROUTE, options =>
                 {
                     var resource = GetResourceAll();
@@ -130,11 +141,14 @@ namespace Radarr.Http.REST
 
         protected Func<PagingResource<TResource>, PagingResource<TResource>> GetResourcePaged
         {
-            private get { return _getResourcePaged; }
+            private get
+            {
+                return _getResourcePaged;
+            }
+
             set
             {
                 _getResourcePaged = value;
-
                 Get(ROOT_ROUTE, options =>
                 {
                     var resource = GetResourcePaged(ReadPagingResourceFromRequest());
@@ -145,11 +159,14 @@ namespace Radarr.Http.REST
 
         protected Func<TResource> GetResourceSingle
         {
-            private get { return _getResourceSingle; }
+            private get
+            {
+                return _getResourceSingle;
+            }
+
             set
             {
                 _getResourceSingle = value;
-
                 Get(ROOT_ROUTE, options =>
                 {
                     var resource = GetResourceSingle();
@@ -160,7 +177,11 @@ namespace Radarr.Http.REST
 
         protected Func<TResource, int> CreateResource
         {
-            private get { return _createResource; }
+            private get
+            {
+                return _createResource;
+            }
+
             set
             {
                 _createResource = value;
@@ -174,7 +195,11 @@ namespace Radarr.Http.REST
 
         protected Action<TResource> UpdateResource
         {
-            private get { return _updateResource; }
+            private get
+            {
+                return _updateResource;
+            }
+
             set
             {
                 _updateResource = value;
@@ -184,7 +209,6 @@ namespace Radarr.Http.REST
                         UpdateResource(resource);
                         return ResponseWithCode(GetResourceById(resource.Id), HttpStatusCode.Accepted);
                     });
-
                 Put(ID_ROUTE, options =>
                     {
                         var resource = ReadResourceFromRequest();

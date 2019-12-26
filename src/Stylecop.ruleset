@@ -105,17 +105,17 @@
   <Rules AnalyzerId="StyleCop.CSharp.LayoutRules"
          RuleNamespace="StyleCop.CSharp.LayoutRules">
     <Rule Id="SA1501" Action="Warning" />
-    <Rule Id="SA1502" Action="Info" />
+    <Rule Id="SA1502" Action="Warning" />
     <Rule Id="SA1503" Action="Warning" />
-    <Rule Id="SA1504" Action="Info" />
+    <Rule Id="SA1504" Action="Warning" />
     <Rule Id="SA1505" Action="Warning" />
-    <Rule Id="SA1506" Action="Info" />
+    <Rule Id="SA1506" Action="Warning" />
     <Rule Id="SA1507" Action="Warning" />
     <Rule Id="SA1508" Action="Warning" />
-    <Rule Id="SA1511" Action="Info" />
+    <Rule Id="SA1511" Action="Warning" />
     <Rule Id="SA1512" Action="Warning" />
     <Rule Id="SA1513" Action="Warning" />
-    <Rule Id="SA1514" Action="Info" />
+    <Rule Id="SA1514" Action="Warning" />
     <Rule Id="SA1515" Action="Warning" />
     <Rule Id="SA1516" Action="None" />
   </Rules>

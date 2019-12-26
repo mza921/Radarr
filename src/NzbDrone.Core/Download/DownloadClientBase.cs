@@ -34,7 +34,10 @@ namespace NzbDrone.Core.Download
 
         public ProviderDefinition Definition { get; set; }
 
-        public virtual object RequestAction(string action, IDictionary<string, string> query) { return null; }
+        public virtual object RequestAction(string action, IDictionary<string, string> query)
+        {
+            return null;
+        }
 
         protected TSettings Settings => (TSettings)Definition.Settings;
 

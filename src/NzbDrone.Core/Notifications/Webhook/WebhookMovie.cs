@@ -12,7 +12,9 @@ namespace NzbDrone.Core.Notifications.Webhook
         public string ReleaseDate { get; set; }
         public string FolderPath { get; set; }
 
-        public WebhookMovie() { }
+        public WebhookMovie()
+        {
+        }
 
         public WebhookMovie(Movie movie)
         {

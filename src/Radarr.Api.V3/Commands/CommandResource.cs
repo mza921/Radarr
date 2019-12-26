@@ -38,7 +38,9 @@ namespace Radarr.Api.V3.Commands
                 return Ended;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public bool SendUpdatesToClient
@@ -53,7 +55,9 @@ namespace Radarr.Api.V3.Commands
                 return false;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public bool UpdateScheduledTask
@@ -68,7 +72,9 @@ namespace Radarr.Api.V3.Commands
                 return false;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public DateTime? LastExecutionTime { get; set; }

@@ -4,7 +4,9 @@ namespace NzbDrone.Core.Notifications.Webhook
 {
     public class WebhookMovieFile
     {
-        public WebhookMovieFile() { }
+        public WebhookMovieFile()
+        {
+        }
 
         public WebhookMovieFile(MovieFile movieFile)
         {

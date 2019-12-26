@@ -27,7 +27,10 @@ namespace NzbDrone.Integration.Test.Client
         [JsonIgnore]
         public Command Body { get; set; }
         [JsonProperty("body")]
-        public Command BodyReadOnly { get { return Body; } }
+        public Command BodyReadOnly
+        {
+            get { return Body; }
+        }
     }
 
     public class CommandClient : ClientBase<SimpleCommandResource>

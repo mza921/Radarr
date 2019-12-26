@@ -25,7 +25,11 @@ namespace NzbDrone.Common.Expansive
 
         public TreeNode<T> Parent
         {
-            get { return _Parent; }
+            get
+            {
+                return _Parent;
+            }
+
             set
             {
                 if (value == _Parent)
@@ -78,7 +82,7 @@ namespace NzbDrone.Common.Expansive
 
                 return _CallTree;
             }
-            private set { _CallTree = value; }
+            private set => _CallTree = value;
         }
 
         public T Value { get; set; }

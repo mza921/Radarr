@@ -15,7 +15,8 @@ namespace NzbDrone.Core.NetImport.RSSImport
 
         public RSSImport(IHttpClient httpClient, IConfigService configService, IParsingService parsingService, Logger logger)
             : base(httpClient, configService, parsingService, logger)
-        { }
+        {
+        }
 
         public override IEnumerable<ProviderDefinition> DefaultDefinitions
         {

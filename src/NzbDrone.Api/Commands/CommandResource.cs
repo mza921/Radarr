@@ -27,30 +27,21 @@ namespace NzbDrone.Api.Commands
         //Legacy
         public CommandStatus State
         {
-            get
-            {
-                return Status;
-            }
+            get { return Status; }
 
             set { }
         }
 
         public bool Manual
         {
-            get
-            {
-                return Trigger == CommandTrigger.Manual;
-            }
+            get { return Trigger == CommandTrigger.Manual; }
 
             set { }
         }
 
         public DateTime StartedOn
         {
-            get
-            {
-                return Queued;
-            }
+            get { return Queued; }
 
             set { }
         }
@@ -67,7 +58,9 @@ namespace NzbDrone.Api.Commands
                 return Ended;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public bool SendUpdatesToClient
@@ -82,7 +75,9 @@ namespace NzbDrone.Api.Commands
                 return false;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public bool UpdateScheduledTask
@@ -97,7 +92,9 @@ namespace NzbDrone.Api.Commands
                 return false;
             }
 
-            set { }
+            set
+            {
+            }
         }
 
         public DateTime? LastExecutionTime { get; set; }
