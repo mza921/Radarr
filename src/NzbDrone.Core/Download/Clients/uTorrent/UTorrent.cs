@@ -66,8 +66,8 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)UTorrentPriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)UTorrentPriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)UTorrentPriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)UTorrentPriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(hash, Settings);
             }
@@ -89,8 +89,8 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
 
             var isRecentEpisode = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentEpisode && Settings.RecentMoviePriority == (int)UTorrentPriority.First ||
-                !isRecentEpisode && Settings.OlderMoviePriority == (int)UTorrentPriority.First)
+            if ((isRecentEpisode && Settings.RecentMoviePriority == (int)UTorrentPriority.First) ||
+                (!isRecentEpisode && Settings.OlderMoviePriority == (int)UTorrentPriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(hash, Settings);
             }

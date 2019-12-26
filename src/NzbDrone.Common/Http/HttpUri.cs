@@ -79,7 +79,7 @@ namespace NzbDrone.Common.Http
             var query = match.Groups["query"];
             var fragment = match.Groups["fragment"];
 
-            if (!match.Success || scheme.Success && !host.Success && path.Success)
+            if (!match.Success || (scheme.Success && !host.Success && path.Success))
             {
                 throw new ArgumentException("Uri didn't match expected pattern: " + _uri);
             }

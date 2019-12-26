@@ -73,8 +73,8 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)QBittorrentPriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)QBittorrentPriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)QBittorrentPriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)QBittorrentPriority.First))
             {
                 Proxy.MoveTorrentToTopInQueue(hash.ToLower(), Settings);
             }
@@ -97,8 +97,8 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             {
                 var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-                if (isRecentMovie && Settings.RecentMoviePriority == (int)QBittorrentPriority.First ||
-                    !isRecentMovie && Settings.OlderMoviePriority == (int)QBittorrentPriority.First)
+                if ((isRecentMovie && Settings.RecentMoviePriority == (int)QBittorrentPriority.First) ||
+                    (!isRecentMovie && Settings.OlderMoviePriority == (int)QBittorrentPriority.First))
                 {
                     Proxy.MoveTorrentToTopInQueue(hash.ToLower(), Settings);
                 }

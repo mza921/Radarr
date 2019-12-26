@@ -367,7 +367,7 @@ namespace NzbDrone.Core.Parser
                     cleanTitle.Contains(searchCriteria.Movie.CleanTitle))
                 {
                     possibleMovie = searchCriteria.Movie;
-                    if (parsedMovieInfo.Year > 1800 && parsedMovieInfo.Year == possibleMovie.Year || possibleMovie.SecondaryYear == parsedMovieInfo.Year)
+                    if ((parsedMovieInfo.Year > 1800 && parsedMovieInfo.Year == possibleMovie.Year) || possibleMovie.SecondaryYear == parsedMovieInfo.Year)
                     {
                         result = new MappingResult { Movie = possibleMovie, MappingResultType = MappingResultType.SuccessLenientMapping };
                         return true;

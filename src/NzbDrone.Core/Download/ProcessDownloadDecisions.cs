@@ -63,8 +63,8 @@ namespace NzbDrone.Core.Download
                     continue;
                 }
 
-                if (downloadProtocol == DownloadProtocol.Usenet && usenetFailed ||
-                    downloadProtocol == DownloadProtocol.Torrent && torrentFailed)
+                if ((downloadProtocol == DownloadProtocol.Usenet && usenetFailed) ||
+                    (downloadProtocol == DownloadProtocol.Torrent && torrentFailed))
                 {
                     PreparePending(pendingAddQueue, grabbed, pending, report, PendingReleaseReason.DownloadClientUnavailable);
                     continue;

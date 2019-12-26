@@ -70,8 +70,8 @@ namespace NzbDrone.Core.Download.Clients.Deluge
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)DelugePriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)DelugePriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)DelugePriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)DelugePriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(actualHash, Settings);
             }
@@ -97,8 +97,8 @@ namespace NzbDrone.Core.Download.Clients.Deluge
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)DelugePriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)DelugePriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)DelugePriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)DelugePriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(actualHash, Settings);
             }

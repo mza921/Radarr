@@ -40,7 +40,7 @@ namespace NzbDrone.Common.Instrumentation
 
             if (PlatformInfo.IsMono)
             {
-                if (exception is TypeInitializationException && exception.InnerException is DllNotFoundException ||
+                if ((exception is TypeInitializationException && exception.InnerException is DllNotFoundException) ||
                     exception is DllNotFoundException)
                 {
                     Logger.Debug(exception, "Minor Fail: " + exception.Message);

@@ -188,8 +188,8 @@ namespace NzbDrone.Core.Download.Clients.Transmission
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)TransmissionPriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)TransmissionPriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)TransmissionPriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)TransmissionPriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(hash, Settings);
             }
@@ -204,8 +204,8 @@ namespace NzbDrone.Core.Download.Clients.Transmission
 
             var isRecentMovie = remoteMovie.Movie.IsRecentMovie;
 
-            if (isRecentMovie && Settings.RecentMoviePriority == (int)TransmissionPriority.First ||
-                !isRecentMovie && Settings.OlderMoviePriority == (int)TransmissionPriority.First)
+            if ((isRecentMovie && Settings.RecentMoviePriority == (int)TransmissionPriority.First) ||
+                (!isRecentMovie && Settings.OlderMoviePriority == (int)TransmissionPriority.First))
             {
                 _proxy.MoveTorrentToTopInQueue(hash, Settings);
             }
