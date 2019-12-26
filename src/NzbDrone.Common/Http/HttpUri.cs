@@ -208,7 +208,6 @@ namespace NzbDrone.Common.Http
             return SetQuery(builder.ToString());
         }
 
-
         public override int GetHashCode()
         {
             return _uri.GetHashCode();

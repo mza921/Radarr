@@ -29,14 +29,12 @@ namespace NzbDrone.Core.Test.MovieTests.MovieRepositoryTests
                 Name = "TestProfile"
             };
 
-
             Mocker.Resolve<ProfileRepository>().Insert(profile);
 
             var movie = Builder<Movie>.CreateNew().BuildNew();
             movie.ProfileId = profile.Id;
 
             Subject.Insert(movie);
-
 
             StoredModel.Profile.Should().NotBeNull();
         }

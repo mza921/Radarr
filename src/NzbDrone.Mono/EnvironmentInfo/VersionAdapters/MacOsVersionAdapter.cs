@@ -15,7 +15,6 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
 
         private const string PLIST_DIR = "/System/Library/CoreServices/";
 
-
         private readonly IDiskProvider _diskProvider;
         private readonly Logger _logger;
 
@@ -49,8 +48,6 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
 
             var text = _diskProvider.ReadAllText(versionFile);
             var match = DarwinVersionRegex.Match(text);
-
-
 
             if (match.Success)
             {

@@ -26,7 +26,6 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport
                                      .With(s => s.Runtime = 30)
                                      .Build();
 
-
             _localMovie = new LocalMovie
             {
                 Path = @"C:\Test\30 Rock\30.rock.s01e01.avi",

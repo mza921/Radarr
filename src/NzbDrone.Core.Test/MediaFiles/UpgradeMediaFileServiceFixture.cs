@@ -29,7 +29,6 @@ namespace NzbDrone.Core.Test.MediaFiles
                 .CreateNew()
                 .Build();
 
-
             Mocker.GetMock<IDiskProvider>()
                 .Setup(c => c.FileExists(It.IsAny<string>()))
                 .Returns(true);
@@ -55,8 +54,6 @@ namespace NzbDrone.Core.Test.MediaFiles
 
             Mocker.GetMock<IRecycleBinProvider>().Verify(v => v.DeleteFile(It.IsAny<string>(), It.IsAny<string>()), Times.Once());
         }
-
-
 
         [Test]
         public void should_delete_episode_file_from_database()

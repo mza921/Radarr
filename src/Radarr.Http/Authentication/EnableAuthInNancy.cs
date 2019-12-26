@@ -56,7 +56,6 @@ namespace Radarr.Http.Authentication
             return null;
         }
 
-
         private Response RequiresAuthentication(NancyContext context)
         {
             Response response = null;

@@ -25,7 +25,6 @@ namespace NzbDrone.Core.DecisionEngine.Specifications
         {
             var torrentInfo = subject.Release;
 
-
             IIndexerSettings indexerSettings = null;
             try
             {

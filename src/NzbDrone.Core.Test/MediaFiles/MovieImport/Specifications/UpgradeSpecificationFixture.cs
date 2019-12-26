@@ -52,10 +52,8 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Specifications
                         Quality = new QualityModel(Quality.SDTV, new Revision(version: 1))
                     });
 
-
             Subject.IsSatisfiedBy(_localMovie, null).Accepted.Should().BeTrue();
         }
-
 
         [Test]
         public void should_return_false_if_not_an_upgrade_for_existing_episodeFile()

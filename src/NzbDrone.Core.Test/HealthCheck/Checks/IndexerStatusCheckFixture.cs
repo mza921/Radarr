@@ -51,7 +51,6 @@ namespace NzbDrone.Core.Test.HealthCheck.Checks
             return mockIndexer;
         }
 
-
         [Test]
         public void should_not_return_error_when_no_indexers()
         {

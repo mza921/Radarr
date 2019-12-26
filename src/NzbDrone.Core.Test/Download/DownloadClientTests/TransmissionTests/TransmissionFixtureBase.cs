@@ -217,7 +217,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.TransmissionTests
                 }
             }
 
-
             GivenTorrents(new List<TransmissionTorrent>
             {
                 _completed

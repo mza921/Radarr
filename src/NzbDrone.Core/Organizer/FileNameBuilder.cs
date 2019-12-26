@@ -154,7 +154,6 @@ namespace NzbDrone.Core.Organizer
                 AddMovieFileTokens(tokenHandlers, new MovieFile { SceneName = $"{movie.Title} {movie.Year}", RelativePath = $"{movie.Title} {movie.Year}" });
             }
 
-
             var directoryName = ReplaceTokens(pattern, tokenHandlers, namingConfig).Trim();
             directoryName = FileNameCleanupRegex.Replace(directoryName, match => match.Captures[0].Value[0].ToString());
             directoryName = TrimSeparatorsRegex.Replace(directoryName, string.Empty);
@@ -326,7 +325,6 @@ namespace NzbDrone.Core.Organizer
             }
 
             var sceneName = movieFile.GetSceneOrFileName();
-
 
             var videoCodec = MediaInfoFormatter.FormatVideoCodec(movieFile.MediaInfo, sceneName);
             var audioCodec = MediaInfoFormatter.FormatAudioCodec(movieFile.MediaInfo, sceneName);

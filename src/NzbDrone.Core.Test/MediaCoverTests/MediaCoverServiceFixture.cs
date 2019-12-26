@@ -59,7 +59,6 @@ namespace NzbDrone.Core.Test.MediaCoverTests
 
             Subject.ConvertToLocalUrls(12, covers);
 
-
             covers.Single().Url.Should().Be("/MediaCover/12/banner.jpg");
         }
 
@@ -71,9 +70,7 @@ namespace NzbDrone.Core.Test.MediaCoverTests
                     new MediaCover.MediaCover { CoverType = MediaCoverTypes.Banner }
                 };
 
-
             Subject.ConvertToLocalUrls(12, covers);
-
 
             covers.Single().Url.Should().Be("/MediaCover/12/banner.jpg");
         }

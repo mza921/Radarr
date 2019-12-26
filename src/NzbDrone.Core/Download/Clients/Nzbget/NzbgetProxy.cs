@@ -158,7 +158,6 @@ namespace NzbDrone.Core.Download.Clients.Nzbget
             return ProcessRequest<List<NzbgetConfigItem>>(settings, "config").ToDictionary(v => v.Name, v => v.Value);
         }
 
-
         public void RemoveItem(string id, NzbgetSettings settings)
         {
             var queue = GetQueue(settings);

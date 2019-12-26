@@ -97,7 +97,6 @@ namespace Radarr.Api.V3.Indexers
                 DownloadAllowed = remoteMovie.DownloadAllowed,
                 //ReleaseWeight
 
-
                 MagnetUrl = torrentInfo.MagnetUrl,
                 InfoHash = torrentInfo.InfoHash,
                 Seeders = torrentInfo.Seeders,

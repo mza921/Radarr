@@ -10,7 +10,6 @@ using NzbDrone.Common.Exceptions;
 using NzbDrone.Common.Instrumentation;
 using NzbDrone.Core.Datastore.Migration.Framework;
 
-
 namespace NzbDrone.Core.Datastore
 {
     public interface IDbFactory

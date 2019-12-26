@@ -11,7 +11,6 @@ namespace NzbDrone.Core.Test.ParserTests.RomanNumeralTests
     {
         private const string TEST_VALUES = @"Files/ArabicRomanNumeralDictionary.JSON";
 
-
         private Dictionary<int, string> _arabicToRomanNumeralsMapping;
 
         [OneTimeSetUp]
@@ -21,7 +20,6 @@ namespace NzbDrone.Core.Test.ParserTests.RomanNumeralTests
             _arabicToRomanNumeralsMapping =
                 JsonConvert.DeserializeObject<Dictionary<int, string>>(File.ReadAllText(pathToTestValues));
         }
-
 
         [Test(Description = "Converts the supported range [1-3999] of Arabic to Roman numerals.")]
         [Order(0)]
@@ -44,8 +42,6 @@ namespace NzbDrone.Core.Test.ParserTests.RomanNumeralTests
 
             Assert.AreEqual(romanNumeral.ToInt(), expectecdValue);
         }
-
-
 
     }
 }

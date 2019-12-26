@@ -21,7 +21,6 @@ namespace NzbDrone.Core.Datastore.Migration
 
             Alter.Table("Movies").AddColumn("MovieFileId").AsInt32().WithDefaultValue(0);
 
-
         }
     }
 }

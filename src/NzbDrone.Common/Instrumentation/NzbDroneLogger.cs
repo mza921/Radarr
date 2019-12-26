@@ -19,7 +19,6 @@ namespace NzbDrone.Common.Instrumentation
             LogManager.Configuration = new LoggingConfiguration();
         }
 
-
         public static void Register(IStartupContext startupContext, bool updateApp, bool inConsole)
         {
             if (_isConfigured)

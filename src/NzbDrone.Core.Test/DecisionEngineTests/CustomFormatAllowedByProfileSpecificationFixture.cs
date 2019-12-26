@@ -31,7 +31,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _format2 = new CustomFormats.CustomFormat("Cool Format");
             _format2.Id = 2;
 
-
             var fakeSeries = Builder<Movie>.CreateNew()
                          .With(c => c.Profile = (LazyLoaded<Profile>)new Profile { Cutoff = Quality.Bluray1080p.Id })
                          .Build();

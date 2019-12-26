@@ -18,7 +18,6 @@ namespace NzbDrone.App.Test
             WindowsOnly();
         }
 
-
         [Test]
         public void Route_should_call_install_service_when_application_mode_is_install()
         {
@@ -35,7 +34,6 @@ namespace NzbDrone.App.Test
 
             serviceProviderMock.Verify(c => c.Install(ServiceProvider.SERVICE_NAME), Times.Once());
         }
-
 
         [Test]
         public void Route_should_call_uninstall_service_when_application_mode_is_uninstall()
@@ -76,7 +74,6 @@ namespace NzbDrone.App.Test
 
             serviceProvider.Verify(c => c.Run(It.IsAny<ServiceBase>()), Times.Once());
         }
-
 
         [Test]
         public void show_error_on_install_if_service_already_exist()

@@ -12,7 +12,6 @@ namespace NzbDrone.Core.Rest
                 UserAgent = $"{BuildInfo.AppName}/{BuildInfo.Version} ({OsInfo.Os})"
             };
 
-
             return restClient;
         }
     }

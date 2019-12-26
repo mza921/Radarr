@@ -98,7 +98,6 @@ namespace NzbDrone.Core.Languages
         public static Language Czech { get { return new Language(25, "Czech"); } }
         public static Language Any { get { return new Language(-1, "Any"); } }
 
-
         public static List<Language> All
         {
             get

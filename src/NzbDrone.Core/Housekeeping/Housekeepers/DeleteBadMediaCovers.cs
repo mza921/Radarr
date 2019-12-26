@@ -62,7 +62,6 @@ namespace NzbDrone.Core.Housekeeping.Housekeepers
                 }
             }
 
-
             _configService.CleanupMetadataImages = false;
         }
 

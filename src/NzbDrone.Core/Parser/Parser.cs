@@ -464,7 +464,6 @@ namespace NzbDrone.Core.Parser
                 return null;
             }
 
-
             var movieName = matchCollection[0].Groups["title"].Value./*Replace('.', ' ').*/Replace('_', ' ');
             movieName = RequestInfoRegex.Replace(movieName, "").Trim(' ');
 

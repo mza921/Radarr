@@ -25,7 +25,6 @@ namespace NzbDrone.Core.Movies.AlternativeTitles
         private readonly IEventAggregator _eventAggregator;
         private readonly Logger _logger;
 
-
         public AlternativeTitleService(IAlternativeTitleRepository titleRepo,
                              IEventAggregator eventAggregator,
                              IConfigService configService,

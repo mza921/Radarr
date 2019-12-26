@@ -131,9 +131,6 @@ namespace NzbDrone.Core.MetadataSource.PreDB
             return matches;
         }
 
-
-
-
         private List<Movie> Sync()
         {
             _logger.ProgressInfo("Starting PreDB Sync");

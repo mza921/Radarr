@@ -73,7 +73,6 @@ namespace NzbDrone.Core.Movies
             _logger = logger;
         }
 
-
         public System.Linq.Expressions.Expression<Func<Movie, bool>> ConstructFilterExpression(string filterKey, string filterValue, string filterType = null)
         {
             //if (FilterKey == "all" && FilterValue == "all")

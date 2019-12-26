@@ -207,7 +207,6 @@ namespace NzbDrone.Core.Qualities
 #endif
         }
 
-
         public static readonly List<Quality> All;
 
         public static readonly Quality[] AllLookup;

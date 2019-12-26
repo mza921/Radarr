@@ -65,7 +65,6 @@ namespace NzbDrone.Common.EnsureThat
             return param;
         }
 
-
         [DebuggerStepThrough]
         public static Param<IDictionary<TKey, TValue>> HasItems<TKey, TValue>(this Param<IDictionary<TKey, TValue>> param)
         {

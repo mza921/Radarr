@@ -99,8 +99,6 @@ namespace NzbDrone.Api.Movies
             bool downloaded = model.MovieFile != null;
             MovieFileResource movieFile = model.MovieFile?.ToResource();
 
-
-
             /*if(model.MovieFile != null)
             {
                 model.MovieFile.LazyLoad();

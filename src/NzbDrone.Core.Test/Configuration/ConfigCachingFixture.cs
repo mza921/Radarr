@@ -5,7 +5,6 @@ using NUnit.Framework;
 using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Test.Framework;
 
-
 namespace NzbDrone.Core.Test.Configuration
 {
     [TestFixture]

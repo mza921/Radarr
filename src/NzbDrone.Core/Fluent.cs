@@ -43,7 +43,6 @@ namespace NzbDrone.Core
             return Convert.ToInt64(gigabytes * 1024L * 1024L * 1024L);
         }
 
-
         public static long Round(this long number, long level)
         {
             return Convert.ToInt64(Math.Floor((decimal)number / level) * level);

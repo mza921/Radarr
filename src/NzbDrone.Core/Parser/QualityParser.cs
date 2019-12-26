@@ -351,7 +351,6 @@ namespace NzbDrone.Core.Parser
                 }
             }
 
-
             // Anime Bluray matching
             if (AnimeBlurayRegex.Match(normalizedName).Success)
             {

@@ -2,7 +2,6 @@ using System.Linq;
 using NzbDrone.Core.Datastore;
 using NzbDrone.Core.Messaging.Events;
 
-
 namespace NzbDrone.Core.Configuration
 {
     public interface IConfigRepository : IBasicRepository<Config>
@@ -17,7 +16,6 @@ namespace NzbDrone.Core.Configuration
             : base(database, eventAggregator)
         {
         }
-
 
         public Config Get(string key)
         {

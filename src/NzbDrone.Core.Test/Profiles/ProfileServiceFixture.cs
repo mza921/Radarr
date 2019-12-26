@@ -44,7 +44,6 @@ namespace NzbDrone.Core.Test.Profiles
                 .Verify(v => v.Insert(It.IsAny<Profile>()), Times.Never());
         }
 
-
         [Test]
         public void should_not_be_able_to_delete_profile_if_assigned_to_movie()
         {
@@ -88,7 +87,6 @@ namespace NzbDrone.Core.Test.Profiles
             Mocker.GetMock<IProfileRepository>().Verify(c => c.Delete(It.IsAny<int>()), Times.Never());
 
         }
-
 
         [Test]
         public void should_delete_profile_if_not_assigned_to_movie_or_list()

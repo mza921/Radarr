@@ -23,7 +23,6 @@ namespace NzbDrone.Common.Expansive
             return Add(new TreeNode<T>(value));
         }
 
-
         public override string ToString()
         {
             return "Count=" + Count.ToString();

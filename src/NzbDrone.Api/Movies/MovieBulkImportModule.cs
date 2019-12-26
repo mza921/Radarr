@@ -57,7 +57,6 @@ namespace NzbDrone.Api.Movies
             Get("/", x => Search());
         }
 
-
         private object Search()
         {
             if (Request.Query.Id == 0)
@@ -169,7 +168,6 @@ namespace NzbDrone.Api.Movies
                 Records = MapToResource(mapped.Where(m => m != null)).ToList()
             };
         }
-
 
         private static IEnumerable<MovieResource> MapToResource(IEnumerable<Core.Movies.Movie> movies)
         {

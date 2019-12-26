@@ -116,7 +116,6 @@ namespace NzbDrone.Core.Test.RootFolderTests
                                                 .Build();
             }
 
-
             var subFolders = new[]
                         {
                             "Series1",

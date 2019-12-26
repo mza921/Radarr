@@ -11,7 +11,6 @@ namespace NzbDrone.Common.Expansive
     {
         private static PatternStyle _patternStyle;
 
-
         public static bool RequireAllExpansions { get; set; }
 
         public static Func<string, string> DefaultExpansionFactory { get; set; }
@@ -25,7 +24,6 @@ namespace NzbDrone.Common.Expansive
         {
             return source.Expand(DefaultExpansionFactory);
         }
-
 
         public static string Expand(this string source, params string[] args)
         {
@@ -83,9 +81,6 @@ namespace NzbDrone.Common.Expansive
         {
             return source.ExpandInternal(expansionFactory);
         }
-
-
-
 
         public static string Expand(this string source, object model)
         {

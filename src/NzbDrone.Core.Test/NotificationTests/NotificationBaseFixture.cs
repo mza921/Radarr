@@ -26,7 +26,6 @@ namespace NzbDrone.Core.Test.NotificationTests
             public override string Name => "TestNotification";
             public override string Link => "";
 
-
             public override ValidationResult Test()
             {
                 throw new NotImplementedException();
@@ -43,7 +42,6 @@ namespace NzbDrone.Core.Test.NotificationTests
         {
             public override string Name => "TestNotification";
             public override string Link => "";
-
 
             public override ValidationResult Test()
             {
@@ -77,12 +75,10 @@ namespace NzbDrone.Core.Test.NotificationTests
             public override string Name => "TestNotification";
             public override string Link => "";
 
-
             public override ValidationResult Test()
             {
                 throw new NotImplementedException();
             }
-
 
         }
 
@@ -109,7 +105,6 @@ namespace NzbDrone.Core.Test.NotificationTests
             notification.SupportsOnRename.Should().BeTrue();
             notification.SupportsOnHealthIssue.Should().BeTrue();
         }
-
 
         [Test]
         public void should_support_none_if_none_are_implemented()

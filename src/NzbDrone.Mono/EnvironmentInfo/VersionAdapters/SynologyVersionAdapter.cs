@@ -12,7 +12,6 @@ namespace NzbDrone.Mono.EnvironmentInfo.VersionAdapters
         private const string NAME = "DSM";
         private const string FULL_NAME = "Synology DSM";
 
-
         public SynologyVersionAdapter(IDiskProvider diskProvider)
         {
             _diskProvider = diskProvider;

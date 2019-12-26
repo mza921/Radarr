@@ -114,7 +114,6 @@ namespace NzbDrone.Core.Test.UpdateTests
 
             Subject.Execute(new ApplicationUpdateCommand());
 
-
             Mocker.GetMock<IDiskProvider>().Verify(c => c.DeleteFolder(_sandboxFolder, true), Times.Never());
         }
 
@@ -164,7 +163,6 @@ namespace NzbDrone.Core.Test.UpdateTests
             Mocker.GetMock<ICheckUpdateService>().Setup(c => c.AvailableUpdate()).Returns<UpdatePackage>(null);
 
             Subject.Execute(new ApplicationUpdateCommand());
-
 
             ExceptionVerification.AssertNoUnexpectedLogs();
         }

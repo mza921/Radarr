@@ -4,7 +4,6 @@ using NzbDrone.Core.Configuration;
 using NzbDrone.Core.MetadataSource;
 using NzbDrone.Core.Parser;
 
-
 namespace NzbDrone.Core.NetImport.TMDb
 {
     public class TMDbImport : HttpNetImportBase<TMDbSettings>

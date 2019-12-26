@@ -82,7 +82,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
                 //No error!
             }
 
-
             if (response.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 throw new HttpException(request, response);
@@ -102,7 +101,6 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
 
             return Execute<List<MovieResult>>(request);
         }
-
 
         public List<AlternativeTitle> AlternativeTitlesForMovie(int tmdbId)
         {

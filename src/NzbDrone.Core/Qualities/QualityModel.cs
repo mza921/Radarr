@@ -12,7 +12,6 @@ namespace NzbDrone.Core.Qualities
 
         public List<CustomFormat> CustomFormats { get; set; }
 
-
         public Revision Revision { get; set; }
 
         public string HardcodedSubs { get; set; }

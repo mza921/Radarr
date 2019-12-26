@@ -75,7 +75,6 @@ namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
                 }
             }
 
-
             return Decision.Accept();
         }
     }

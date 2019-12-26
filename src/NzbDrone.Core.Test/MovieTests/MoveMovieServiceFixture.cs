@@ -121,7 +121,6 @@ namespace NzbDrone.Core.Test.MovieTests
                   .Setup(s => s.FolderExists(It.IsAny<string>()))
                   .Returns(false);
 
-
             Subject.Execute(_command);
 
             Mocker.GetMock<IDiskTransferService>()

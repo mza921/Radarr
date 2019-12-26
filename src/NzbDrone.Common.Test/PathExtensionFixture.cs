@@ -201,7 +201,6 @@ namespace NzbDrone.Common.Test
             "C:\\WINDOWS\\invalidfile.exe".GetActualCasing().Should().Be("C:\\Windows\\invalidfile.exe");
         }
 
-
         [Test]
         public void get_actual_casing_for_none_existing_folder_return_partially_fixed_result()
         {
@@ -217,7 +216,6 @@ namespace NzbDrone.Common.Test
             path.ToUpper().GetActualCasing().Should().Be(path);
             path.ToLower().GetActualCasing().Should().Be(path);
         }
-
 
         [Test]
         public void get_actual_casing_should_return_actual_casing_for_local_dir_in_windows()

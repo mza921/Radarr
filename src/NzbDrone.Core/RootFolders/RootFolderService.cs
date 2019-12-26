@@ -43,7 +43,6 @@ namespace NzbDrone.Core.RootFolders
                                                                      ".grab"
                                                                  };
 
-
         public RootFolderService(IRootFolderRepository rootFolderRepository,
                                  IDiskProvider diskProvider,
                                  IMovieRepository movieRepository,

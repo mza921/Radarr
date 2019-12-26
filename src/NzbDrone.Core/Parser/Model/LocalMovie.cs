@@ -26,7 +26,6 @@ namespace NzbDrone.Core.Parser.Model
         public string ReleaseGroup { get; set; }
         public string Edition { get; set; }
 
-
         public override string ToString()
         {
             return Path;

@@ -41,7 +41,6 @@ namespace NzbDrone.Core.Test.Download
                     .With(c => c.RemoteMovie = remoteEpisode)
                     .Build();
 
-
             Mocker.GetMock<IDownloadClient>()
               .SetupGet(c => c.Definition)
               .Returns(new DownloadClientDefinition { Id = 1, Name = "testClient" });
@@ -68,7 +67,6 @@ namespace NzbDrone.Core.Test.Download
             };
         }
 
-
         private void GivenNoGrabbedHistory()
         {
             Mocker.GetMock<IHistoryService>()
@@ -85,7 +83,6 @@ namespace NzbDrone.Core.Test.Download
                         new ImportResult(new ImportDecision(new LocalMovie() { Path = @"C:\TestPath\Droned.1998.mkv" }))
                     });
         }
-
 
         private void GivenABadlyNamedDownload()
         {
@@ -237,7 +234,6 @@ namespace NzbDrone.Core.Test.Download
                                new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }), "Test Failure"),
                                new ImportResult(new ImportDecision(new LocalMovie { Path = @"C:\TestPath\Droned.1998.mkv" }), "Test Failure")
                            });
-
 
             Subject.Process(_trackedDownload);
 

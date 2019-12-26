@@ -108,14 +108,12 @@ namespace NzbDrone.Core.Datastore.Migration
                     }
                 }
 
-
                 var findIndex = profile.Items.FindIndex(v =>
                 {
                     return v.Quality == find || (v.Items != null && v.Items.Any(b => b.Quality == find));
                 });
 
                 var isGrouped = !profile.Items.Any(p => p.Quality == find);
-
 
                 if (findIndex > -1 && !isGrouped)
                 {

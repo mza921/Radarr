@@ -20,7 +20,6 @@ namespace NzbDrone.Core.Test.Messaging.Events
 
         private Mock<IHandleAsync<EventA>> AsyncHandlerA1;
 
-
         [SetUp]
         public void Setup()
         {
@@ -57,7 +56,6 @@ namespace NzbDrone.Core.Test.Messaging.Events
         {
             var eventA = new EventA();
 
-
             Subject.PublishEvent(eventA);
 
             HandlerA1.Verify(c => c.Handle(eventA), Times.Once());
@@ -67,12 +65,10 @@ namespace NzbDrone.Core.Test.Messaging.Events
             HandlerB2.Verify(c => c.Handle(It.IsAny<EventB>()), Times.Never());
         }
 
-
         [Test]
         public void broken_handler_should_not_effect_others_handler()
         {
             var eventA = new EventA();
-
 
             HandlerA1.Setup(c => c.Handle(It.IsAny<EventA>()))
                        .Throws(new NotImplementedException());
@@ -84,7 +80,6 @@ namespace NzbDrone.Core.Test.Messaging.Events
 
             ExceptionVerification.ExpectedErrors(1);
         }
-
 
         /* [Test]
          public void should_queue_multiple_async_events()
@@ -130,7 +125,6 @@ namespace NzbDrone.Core.Test.Messaging.Events
              counter.MaxThreads.Should().Be(3);
          }*/
     }
-
 
     public class EventA : IEvent
     {

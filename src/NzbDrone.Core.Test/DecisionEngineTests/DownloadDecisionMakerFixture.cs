@@ -60,7 +60,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _mappingResult = new MappingResult { Movie = new Movie(), MappingResultType = MappingResultType.Success };
             _mappingResult.RemoteMovie = _remoteEpisode;
 
-
             Mocker.GetMock<IParsingService>()
                   .Setup(c => c.Map(It.IsAny<ParsedMovieInfo>(), It.IsAny<string>(), It.IsAny<SearchCriteriaBase>())).Returns(_mappingResult);
         }

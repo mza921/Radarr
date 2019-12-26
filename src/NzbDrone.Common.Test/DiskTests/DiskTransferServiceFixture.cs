@@ -1007,7 +1007,6 @@ namespace NzbDrone.Common.Test.DiskTests
                     WithExistingFile(v, false);
                 });
 
-
             Mocker.GetMock<IDiskProvider>()
                 .Setup(v => v.FolderExists(It.IsAny<string>()))
                 .Returns(false);

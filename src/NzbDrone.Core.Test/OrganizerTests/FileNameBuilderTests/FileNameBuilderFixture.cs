@@ -29,10 +29,8 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
                     .With(s => s.Title = "South Park")
                     .Build();
 
-
             _namingConfig = NamingConfig.Default;
             _namingConfig.RenameEpisodes = true;
-
 
             Mocker.GetMock<INamingConfigService>()
                   .Setup(c => c.GetConfig()).Returns(_namingConfig);
@@ -127,9 +125,6 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
                    .Should().Be("South.Park.1997");
         }
 
-
-
-
         [Test]
         public void should_replace_quality_title()
         {
@@ -199,9 +194,6 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("30.Rock.S01E01.xvid-LOL");
         }
-
-
-
 
         [Test]
         public void should_should_replace_release_group()
@@ -341,8 +333,6 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be("30.Rock.S01E01.xvid-LOL");
         }
-
-
 
         [Test]
         public void should_not_include_quality_proper_when_release_is_not_a_proper()
@@ -495,9 +485,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 
             GivenMediaInfoModel(audioLanguages: audioLanguages);
 
-
             _namingConfig.StandardMovieFormat = "{MediaInfo AudioLanguages}";
-
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(expected);
@@ -511,9 +499,7 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
 
             GivenMediaInfoModel(audioLanguages: audioLanguages);
 
-
             _namingConfig.StandardMovieFormat = "{MediaInfo AudioLanguagesAll}";
-
 
             Subject.BuildFileName(_movie, _movieFile)
                    .Should().Be(expected);

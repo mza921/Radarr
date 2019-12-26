@@ -36,7 +36,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook.Resource
         public string physical_release_note { get; set; }
     }
 
-
     public class MovieResourceRoot
     {
         public bool adult { get; set; }

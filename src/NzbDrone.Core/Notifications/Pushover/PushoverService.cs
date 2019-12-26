@@ -44,7 +44,6 @@ namespace NzbDrone.Core.Notifications.Pushover
                 request.AddParameter("sound", settings.Sound);
             }
 
-
             client.ExecuteAndValidate(request);
         }
 

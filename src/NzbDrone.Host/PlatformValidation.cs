@@ -39,7 +39,6 @@ namespace Radarr.Host
             return true;
         }
 
-
         private static bool IsAssemblyAvailable(string assemblyString)
         {
             try

@@ -114,7 +114,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             return _simpleArabicNumeralMappings;
         }
 
-
         private static Dictionary<SimpleArabicNumeral, SimpleRomanNumeral> GenerateAdditionalSimpleNumerals(int offset,
             int length)
         {
@@ -130,12 +129,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
             }
             return moreNumerals;
         }
-
-
-
-
-
-
 
     }
 }

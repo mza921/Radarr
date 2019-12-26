@@ -37,7 +37,6 @@ namespace NzbDrone.Mono.Test.EnvironmentInfo.VersionAdapters
             Subject.Read().Should().BeNull();
         }
 
-
         [Test]
         public void should_return_null_if_release_file_doestn_exist()
         {

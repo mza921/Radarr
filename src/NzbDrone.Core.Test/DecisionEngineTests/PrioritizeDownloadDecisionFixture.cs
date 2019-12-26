@@ -123,7 +123,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             var remoteEpisode1 = GivenRemoteMovie(new QualityModel(Quality.HDTV720p), age: 10);
             var remoteEpisode2 = GivenRemoteMovie(new QualityModel(Quality.HDTV720p), age: 5);
 
-
             var decisions = new List<DownloadDecision>();
             decisions.Add(new DownloadDecision(remoteEpisode1));
             decisions.Add(new DownloadDecision(remoteEpisode2));
@@ -205,7 +204,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             torrentInfo1.Seeders = 10;
             torrentInfo1.Peers = 10;
 
-
             var torrentInfo2 = torrentInfo1.JsonClone();
             torrentInfo2.Peers = 100;
 
@@ -234,7 +232,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             torrentInfo1.DownloadProtocol = DownloadProtocol.Torrent;
             torrentInfo1.Seeders = 0;
             torrentInfo1.Peers = 10;
-
 
             var torrentInfo2 = torrentInfo1.JsonClone();
             torrentInfo2.Seeders = 0;

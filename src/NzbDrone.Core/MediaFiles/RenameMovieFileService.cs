@@ -169,7 +169,6 @@ namespace NzbDrone.Core.MediaFiles
                     _recycleBinProvider.DeleteFolder(oldFolder);
                 }
 
-
             }
 
             if (movie.PathState == MoviePathState.StaticOnce)

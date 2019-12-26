@@ -48,7 +48,6 @@ namespace NzbDrone.Common.EnvironmentInfo
                 throw new RadarrStartupException("Cannot create AppFolder, Access to the path {0} is denied", _appFolderInfo.AppDataFolder);
             }
 
-
             if (OsInfo.IsWindows)
             {
                 SetPermissions();
@@ -121,7 +120,6 @@ namespace NzbDrone.Common.EnvironmentInfo
                 throw new RadarrStartupException("Unable to migrate DB from nzbdrone.db to {1}. Migrate manually", _appFolderInfo.GetDatabase());
             }
         }
-
 
         private void InitializeMonoApplicationData()
         {

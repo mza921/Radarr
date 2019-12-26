@@ -61,7 +61,6 @@ namespace NzbDrone.Core.Test.Datastore
             Db.Single<Movie>().MovieFile.Should().BeNull();
         }
 
-
         [Test]
         public void embedded_document_as_json()
         {
@@ -92,8 +91,6 @@ namespace NzbDrone.Core.Test.Datastore
 
             history[0].Quality = new QualityModel { Quality = Quality.HDTV1080p, Revision = new Revision(version: 2) };
             history[1].Quality = new QualityModel { Quality = Quality.Bluray720p, Revision = new Revision(version: 2) };
-
-
 
             Db.InsertMany(history);
 

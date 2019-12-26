@@ -120,7 +120,6 @@ namespace Radarr.Host
                 return ApplicationModes.RegisterUrl;
             }
 
-
             if (OsInfo.IsWindows && startupContext.InstallService)
             {
                 return ApplicationModes.InstallService;

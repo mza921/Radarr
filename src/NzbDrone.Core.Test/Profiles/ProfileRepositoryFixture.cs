@@ -33,7 +33,6 @@ namespace NzbDrone.Core.Test.Profiles
 
             StoredModel.Items.Should().Equal(profile.Items, (a, b) => a.Quality == b.Quality && a.Allowed == b.Allowed);
 
-
         }
     }
 }

@@ -181,7 +181,6 @@ namespace NzbDrone.Api
             return "{}";
         }
 
-
         private object RequestAction(string action, TProviderResource providerResource)
         {
             var providerDefinition = GetDefinition(providerResource, true, false);

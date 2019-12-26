@@ -36,7 +36,6 @@ namespace NzbDrone.Core.Datastore.Migration
 
                         var movieFolderFormat = string.Format("{0} {1}", movieTitlePattern, movieYearPattern);
 
-
                         using (IDbCommand updateCmd = conn.CreateCommand())
                         {
                             var text = string.Format("UPDATE NamingConfig " +

@@ -57,7 +57,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
                     .Should().BeFalse();
         }
 
-
         [Test]
         public void should_return_false_if_release_and_existing_file_are_the_same()
         {

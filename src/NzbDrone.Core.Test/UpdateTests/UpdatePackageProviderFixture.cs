@@ -40,7 +40,6 @@ namespace NzbDrone.Core.Test.UpdateTests
             Subject.GetLatestUpdate("invalid_branch", new Version(0, 2)).Should().NotBeNull();
         }
 
-
         [Test]
         public void should_get_recent_updates()
         {

@@ -15,7 +15,6 @@ namespace NzbDrone.Api.DiskSpace
             GetResourceAll = GetFreeSpace;
         }
 
-
         public List<DiskSpaceResource> GetFreeSpace()
         {
             return _diskSpaceService.GetFreeSpace().ConvertAll(DiskSpaceResourceMapper.MapToResource);

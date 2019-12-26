@@ -44,7 +44,6 @@ namespace NzbDrone.Api.MovieFiles
             return movie.ToResource();
         }
 
-
         private void SetQuality(MovieFileResource movieFileResource)
         {
             var movieFile = _mediaFileService.GetMovie(movieFileResource.Id);

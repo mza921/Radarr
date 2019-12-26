@@ -64,7 +64,6 @@ namespace NzbDrone.Core.Test.InstrumentationTests
             VerifyLog(StoredModel, LogLevel.Info);
         }
 
-
         [Test]
         [Explicit]
         [ManualTest]
@@ -125,7 +124,6 @@ namespace NzbDrone.Core.Test.InstrumentationTests
 
             epFile.RelativePath.Should().BeNull();
         }
-
 
         [TearDown]
         public void Teardown()

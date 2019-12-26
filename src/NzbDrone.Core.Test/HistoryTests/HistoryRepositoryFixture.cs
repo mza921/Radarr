@@ -33,7 +33,6 @@ namespace NzbDrone.Core.Test.HistoryTests
             StoredModel.Data.Should().HaveCount(2);
         }
 
-
         [Test]
         public void should_get_download_history()
         {

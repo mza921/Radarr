@@ -54,7 +54,6 @@ namespace NzbDrone.Core.Test.MediaFiles
                                            ReleaseGroup = "DRONE"
                                        }));
 
-
             Mocker.GetMock<IUpgradeMediaFiles>()
                   .Setup(s => s.UpgradeMovieFile(It.IsAny<MovieFile>(), It.IsAny<LocalMovie>(), It.IsAny<bool>()))
                   .Returns(new MovieFileMoveResult());
@@ -201,7 +200,6 @@ namespace NzbDrone.Core.Test.MediaFiles
                     Quality = new QualityModel(),
                     Size = 80.Megabytes()
                 });
-
 
             var all = new List<ImportDecision>();
             all.Add(fileDecision);

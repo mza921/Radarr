@@ -40,7 +40,6 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             history.Should().Contain(c => c.DownloadId == "abc");
         }
 
-
         [Test]
         public void should_leave_items_with_no_grabid()
         {

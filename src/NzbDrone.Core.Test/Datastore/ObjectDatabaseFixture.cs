@@ -72,7 +72,6 @@ namespace NzbDrone.Core.Test.Datastore
             _sampleType.Id.Should().Be(1);
         }
 
-
         [Test]
         public void should_read_and_write_in_utc()
         {
@@ -121,7 +120,6 @@ namespace NzbDrone.Core.Test.Datastore
             item.Id.Should().NotBe(0);
             item.Id.Should().Be(_sampleType.Id);
         }
-
 
         [Test]
         public void set_fields_should_only_update_selected_filed()

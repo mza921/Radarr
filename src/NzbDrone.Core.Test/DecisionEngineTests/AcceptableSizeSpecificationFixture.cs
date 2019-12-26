@@ -43,11 +43,8 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
                 .Setup(v => v.Get(It.IsAny<Quality>()))
                 .Returns<Quality>(v => Quality.DefaultQualityDefinitions.First(c => c.Quality == v));
 
-
-
             Mocker.GetMock<IQualityDefinitionService>().Setup(s => s.Get(Quality.SDTV)).Returns(qualityType);
         }
-
 
         [TestCase(30, 50, false)]
         [TestCase(30, 250, true)]

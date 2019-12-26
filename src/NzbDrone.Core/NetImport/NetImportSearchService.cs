@@ -31,7 +31,6 @@ namespace NzbDrone.Core.NetImport
         private readonly IProcessDownloadDecisions _processDownloadDecisions;
         private readonly IImportExclusionsService _exclusionService;
 
-
         public NetImportSearchService(INetImportFactory netImportFactory,
                                       IMovieService movieService,
                                       ISearchForNewMovie movieSearch,
@@ -52,7 +51,6 @@ namespace NzbDrone.Core.NetImport
             _logger = logger;
             _configService = configService;
         }
-
 
         public NetImportFetchResult Fetch(int listId, bool onlyEnableAuto = false)
         {
@@ -108,8 +106,6 @@ namespace NzbDrone.Core.NetImport
                 AnyFailure = anyFailure
             };
         }
-
-
 
         public void Execute(NetImportSyncCommand message)
         {

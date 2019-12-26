@@ -131,7 +131,6 @@ namespace NzbDrone.Common.EnvironmentInfo
         public static bool IsProduction { get; }
         public static bool IsDevelopment { get; }
 
-
         private static bool InternalIsTesting()
         {
             try

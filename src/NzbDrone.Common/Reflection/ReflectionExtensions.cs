@@ -29,7 +29,6 @@ namespace NzbDrone.Common.Reflection
                 type = type.GetGenericArguments()[0];
             }
 
-
             return type.IsPrimitive
                    || type.IsEnum
                    || type == typeof(string)

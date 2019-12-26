@@ -16,7 +16,6 @@ namespace NzbDrone.Api.Test.ClientSchemaTests
             schema.Should().HaveCount(2);
         }
 
-
         [Test]
         public void schema_should_have_proper_fields()
         {
@@ -33,7 +32,6 @@ namespace NzbDrone.Api.Test.ClientSchemaTests
         }
 
     }
-
 
     public class TestModel
     {

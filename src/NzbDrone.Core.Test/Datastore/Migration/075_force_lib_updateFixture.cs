@@ -18,7 +18,6 @@ namespace NzbDrone.Core.Test.Datastore.Migration
             db.Query("SELECT * FROM Series").Should().BeEmpty();
         }
 
-
         [Test]
         public void should_reset_job_last_execution_time()
         {

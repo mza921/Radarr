@@ -148,7 +148,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             Subject.IsSatisfiedBy(_remoteMovie, null).Accepted.Should().BeFalse();
         }
 
-
         [Test]
         public void should_return_false_when_quality_is_better_and_upgrade_allowed_is_false_for_quality_profile()
         {

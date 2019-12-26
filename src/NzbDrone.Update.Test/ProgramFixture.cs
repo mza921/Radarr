@@ -17,7 +17,6 @@ namespace NzbDrone.Update.Test
             Assert.Throws<ArgumentOutOfRangeException>(() => Subject.Start(null));
         }
 
-
         [TestCase("d", "")]
         [TestCase("", "")]
         [TestCase("0", "")]
@@ -37,13 +36,10 @@ namespace NzbDrone.Update.Test
             Mocker.GetMock<IProcessProvider>().Setup(c => c.GetProcessById(12))
                 .Returns(new ProcessInfo() { StartPath = processPath });
 
-
             Subject.Start(new[] { "12", "", processPath });
-
 
             Mocker.GetMock<IInstallUpdateService>().Verify(c => c.Start(@"C:\Radarr".AsOsAgnostic(), 12), Times.Once());
         }
-
 
     }
 }

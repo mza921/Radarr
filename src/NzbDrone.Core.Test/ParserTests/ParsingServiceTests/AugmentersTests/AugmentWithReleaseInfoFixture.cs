@@ -30,7 +30,6 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
                 IndexerId = 1
             };
 
-
         }
 
         [Test]

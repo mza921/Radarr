@@ -48,7 +48,6 @@ namespace Radarr.Api.V3.MovieFiles
             };
         }
 
-
         private static string FormatRuntime(TimeSpan runTime)
         {
             var formattedRuntime = "";

@@ -56,7 +56,6 @@ namespace NzbDrone.Core.Download.Clients.Pneumatic
 
             var strmFile = WriteStrmFile(title, nzbFile);
 
-
             return GetDownloadClientId(strmFile);
         }
 

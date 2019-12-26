@@ -27,7 +27,6 @@ namespace NzbDrone.Mono.Disk
 
         private static Dictionary<string, bool> _fileSystems;
 
-
         public ProcMountProvider(Logger logger)
         {
             _logger = logger;

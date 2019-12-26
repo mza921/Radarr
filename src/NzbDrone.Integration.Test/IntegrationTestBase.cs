@@ -182,7 +182,6 @@ namespace NzbDrone.Integration.Test
             _signalRReceived = new List<SignalRMessage>();
             _signalrConnection = new HubConnectionBuilder().WithUrl("http://localhost:7878/signalr/messages").Build();
 
-
             var cts = new CancellationTokenSource();
 
             _signalrConnection.Closed += e =>

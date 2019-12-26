@@ -81,7 +81,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.NzbgetTests
                     DownloadRate = 7000000
                 });
 
-
             Mocker.GetMock<INzbgetProxy>()
                 .Setup(v => v.GetVersion(It.IsAny<NzbgetSettings>()))
                 .Returns("14.0");

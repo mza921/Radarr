@@ -29,7 +29,6 @@ namespace NzbDrone.Core.Test.MediaFiles
                 .With(s => s.MovieId = 12)
                 .BuildListOfNew();
 
-
             Db.InsertMany(files);
 
             var movieFiles = Subject.GetFilesByMovie(12);

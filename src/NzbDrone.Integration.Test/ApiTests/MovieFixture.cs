@@ -74,7 +74,6 @@ namespace NzbDrone.Integration.Test.ApiTests
             result.Path.Should().Be(Path.Combine(MovieRootFolder, movie.Title));
         }
 
-
         [Test, Order(2)]
         public void get_all_movies()
         {

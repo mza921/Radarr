@@ -132,7 +132,6 @@ namespace NzbDrone.Core.Movies
                 return DateTime.Now >= minimumAvailabilityDate;
             }
 
-
             return DateTime.Now >= minimumAvailabilityDate.AddDays((double)delay);
         }
 

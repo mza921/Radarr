@@ -130,7 +130,6 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Roksbox
                 xmlResult += Environment.NewLine;
             }
 
-
             return new MetadataFileResult(GetMovieFileMetadataFilename(movieFile.RelativePath), xmlResult.Trim(Environment.NewLine.ToCharArray()));
         }
 

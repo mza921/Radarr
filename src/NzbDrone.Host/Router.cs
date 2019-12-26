@@ -5,7 +5,6 @@ using NzbDrone.Common.Processes;
 using Radarr.Host.AccessControl;
 using IServiceProvider = NzbDrone.Common.IServiceProvider;
 
-
 namespace Radarr.Host
 {
     public class Router

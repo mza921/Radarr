@@ -43,7 +43,6 @@ namespace NzbDrone.Core.Test.Datastore
 
         }
 
-
         [Test]
         public void test_mappable_types()
         {

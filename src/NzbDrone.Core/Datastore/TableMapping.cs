@@ -108,7 +108,6 @@ namespace NzbDrone.Core.Datastore
                 .Relationship()
                 .HasOne(t => t.Movie, t => t.MovieId);
 
-
             Mapper.Entity<ImportExclusion>().RegisterModel("ImportExclusions");
 
             Mapper.Entity<QualityDefinition>().RegisterModel("QualityDefinitions")

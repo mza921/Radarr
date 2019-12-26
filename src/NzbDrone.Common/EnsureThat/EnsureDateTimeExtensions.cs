@@ -80,7 +80,6 @@ namespace NzbDrone.Common.EnsureThat
             return param;
         }
 
-
         [DebuggerStepThrough]
         public static Param<DateTime> IsValid(this Param<DateTime> param)
         {

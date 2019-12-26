@@ -98,7 +98,6 @@ namespace NzbDrone.Core.Test
         {
             var list = new List<int> { 6, 4, 5, 3, 8, 10 };
 
-
             var result = list.MaxOrDefault();
 
             //Resolve
@@ -109,7 +108,6 @@ namespace NzbDrone.Core.Test
         public void MaxOrDefault_should_return_zero_when_collection_is_null()
         {
             List<int> list = null;
-
 
             var result = list.MaxOrDefault();
 
@@ -122,7 +120,6 @@ namespace NzbDrone.Core.Test
         {
             var str = ReadAllText("Files/LongOverview.txt");
 
-
             var resultString = str.Truncate(1000);
 
             //Resolve
@@ -134,7 +131,6 @@ namespace NzbDrone.Core.Test
         public void Truncate_should_not_truncate_string_shorter_than_max_bytes()
         {
             var str = "Hello World";
-
 
             var resultString = str.Truncate(1000);
 
@@ -157,7 +153,6 @@ namespace NzbDrone.Core.Test
         {
             var list = new List<int> { 6, 4, 5, 3, 8, 10 };
 
-
             var result = list.MinOrDefault();
 
             //Resolve
@@ -169,13 +164,11 @@ namespace NzbDrone.Core.Test
         {
             List<int> list = null;
 
-
             var result = list.MinOrDefault();
 
             //Resolve
             result.Should().Be(0);
         }
-
 
         [TestCase(100, 100, 100)]
         [TestCase(110, 100, 100)]

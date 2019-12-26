@@ -45,7 +45,6 @@ namespace NzbDrone.Core.MediaCover
         // So limit the number of concurrent resizing tasks
         private static SemaphoreSlim _semaphore = new SemaphoreSlim((int)Math.Ceiling(Environment.ProcessorCount / 2.0));
 
-
         public MediaCoverService(IImageResizer resizer,
                                  IHttpClient httpClient,
                                  IDiskProvider diskProvider,

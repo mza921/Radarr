@@ -17,7 +17,6 @@ namespace Radarr.Api.V3.Queue
         private readonly IPendingReleaseService _pendingReleaseService;
         private readonly Debouncer _broadcastDebounce;
 
-
         public QueueStatusModule(IBroadcastSignalRMessage broadcastSignalRMessage, IQueueService queueService, IPendingReleaseService pendingReleaseService)
             : base(broadcastSignalRMessage, "queue/status")
         {
@@ -25,7 +24,6 @@ namespace Radarr.Api.V3.Queue
             _pendingReleaseService = pendingReleaseService;
 
             _broadcastDebounce = new Debouncer(BroadcastChange, TimeSpan.FromSeconds(5));
-
 
             Get("/", x => GetQueueStatusResponse());
         }

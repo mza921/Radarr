@@ -95,7 +95,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.Blackhole
             VerifyPostprocessing(result);
         }
 
-
         [Test]
         public void should_return_category()
         {

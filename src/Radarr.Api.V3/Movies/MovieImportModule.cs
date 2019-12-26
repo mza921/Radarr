@@ -17,7 +17,6 @@ namespace Radarr.Api.V3.Movies
             Post("/", x => Import());
         }
 
-
         private object Import()
         {
             var resource = Request.Body.FromJson<List<MovieResource>>();

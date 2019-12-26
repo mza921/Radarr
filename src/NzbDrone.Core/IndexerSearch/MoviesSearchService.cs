@@ -125,7 +125,5 @@ namespace NzbDrone.Core.IndexerSearch
             _logger.ProgressInfo("Completed missing search for {0} movies. {1} reports downloaded.", movies.Count, downloadedCount);
         }
 
-
-
     }
 }

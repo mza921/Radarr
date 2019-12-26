@@ -6,7 +6,6 @@ using NzbDrone.Common.Cache;
 
 using NzbDrone.Common.Http;
 
-
 namespace NzbDrone.Core.Download.Clients.QBittorrent
 {
     public interface IQBittorrentProxy

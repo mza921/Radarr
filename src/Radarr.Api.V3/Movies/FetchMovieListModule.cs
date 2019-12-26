@@ -22,7 +22,6 @@ namespace Radarr.Api.V3.Movies
             Get("/", x => Search());
         }
 
-
         private object Search()
         {
             var results = _fetchNetImport.FetchAndFilter((int)Request.Query.listId, false);
@@ -41,7 +40,6 @@ namespace Radarr.Api.V3.Movies
 
             return MapToResource(realResults);
         }
-
 
         private static IEnumerable<MovieResource> MapToResource(IEnumerable<Movie> movies)
         {

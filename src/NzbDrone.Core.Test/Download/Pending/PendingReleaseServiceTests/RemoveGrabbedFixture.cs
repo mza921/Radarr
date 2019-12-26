@@ -77,7 +77,6 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
                   .Setup(s => s.GetMovies(It.IsAny<IEnumerable<int>>()))
                   .Returns(new List<Movie> { _movie });
 
-
             Mocker.GetMock<IPrioritizeDownloadDecision>()
                   .Setup(s => s.PrioritizeDecisionsForMovies(It.IsAny<List<DownloadDecision>>()))
                   .Returns((List<DownloadDecision> d) => d);

@@ -10,7 +10,6 @@ namespace Radarr.Http
     {
         protected string Resource { get; private set; }
 
-
         private static string BaseUrl()
         {
             var isV3 = typeof(TResource).Namespace.Contains(".V3.");

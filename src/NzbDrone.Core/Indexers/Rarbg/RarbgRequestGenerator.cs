@@ -96,7 +96,6 @@ namespace NzbDrone.Core.Indexers.Rarbg
                 requestBuilder.AddQueryParam("search_string", $"{searchCriteria.Movie.Title} {searchCriteria.Movie.Year}");
             }
 
-
             if (!Settings.RankedOnly)
             {
                 requestBuilder.AddQueryParam("ranked", "0");

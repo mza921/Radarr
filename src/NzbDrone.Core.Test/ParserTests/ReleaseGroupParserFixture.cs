@@ -43,8 +43,6 @@ namespace NzbDrone.Core.Test.ParserTests
             Parser.Parser.ParseReleaseGroup(title).Should().Be(expected);
         }
 
-
-
         [TestCase("Marvels.Daredevil.S02E04.720p.WEBRip.x264-SKGTV English", "SKGTV")]
         [TestCase("Marvels.Daredevil.S02E04.720p.WEBRip.x264-SKGTV_English", "SKGTV")]
         [TestCase("Marvels.Daredevil.S02E04.720p.WEBRip.x264-SKGTV.English", "SKGTV")]

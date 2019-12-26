@@ -21,7 +21,6 @@ namespace NzbDrone.Api.Movies
             Get("/", x => Search());
         }
 
-
         private object Search()
         {
             var results = _fetchNetImport.FetchAndFilter((int)Request.Query.listId, false);
@@ -40,7 +39,6 @@ namespace NzbDrone.Api.Movies
 
             return MapToResource(results);
         }
-
 
         private static IEnumerable<MovieResource> MapToResource(IEnumerable<Core.Movies.Movie> movies)
         {

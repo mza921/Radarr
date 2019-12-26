@@ -58,7 +58,6 @@ namespace NzbDrone.Mono.Disk
             }
         }
 
-
         private static void GetPathComponents(string path, out string[] components, out int lastIndex)
         {
             var dirs = path.Split(UnixPath.DirectorySeparatorChar);

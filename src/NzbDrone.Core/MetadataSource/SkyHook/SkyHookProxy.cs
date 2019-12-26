@@ -545,8 +545,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                     _logger.Debug("Not a valid date time.");
                 }
 
-
-
                 var now = DateTime.Now;
                 //handle the case when we have both theatrical and physical release dates
                 if (imdbMovie.InCinemas.HasValue && imdbMovie.PhysicalRelease.HasValue)

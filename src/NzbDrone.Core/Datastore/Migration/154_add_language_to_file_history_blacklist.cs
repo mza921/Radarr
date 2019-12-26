@@ -14,7 +14,6 @@ namespace NzbDrone.Core.Datastore.Migration
     using NzbDrone.Common.Extensions;
 #pragma warning restore SA1200
 
-
     [Migration(154)]
     public class add_language_to_files_history_blacklist : NzbDroneMigrationBase
     {

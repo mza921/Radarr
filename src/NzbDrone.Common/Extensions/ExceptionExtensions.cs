@@ -27,7 +27,6 @@ namespace NzbDrone.Common.Extensions
             return ex;
         }
 
-
         public static T WithData<T>(this T ex, Http.HttpResponse response, int maxSampleLength = 512)
             where T : Exception
         {
@@ -59,7 +58,6 @@ namespace NzbDrone.Common.Extensions
 
             return ex;
         }
-
 
         private static void AddData(this Exception ex, string key, string value)
         {

@@ -22,7 +22,6 @@ namespace NzbDrone.Core.NetImport.ImportExclusions
         private readonly IEventAggregator _eventAggregator;
         private readonly Logger _logger;
 
-
         public ImportExclusionsService(IImportExclusionsRepository exclusionRepository,
                              IEventAggregator eventAggregator,
                              IConfigService configService,

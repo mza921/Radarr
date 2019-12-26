@@ -504,7 +504,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
             item.CanMoveFiles.Should().BeFalse();
         }
 
-
         [Test]
         public void should_not_be_removable_and_should_not_allow_move_files_if_max_seedingtime_reached_and_not_paused()
         {

@@ -61,7 +61,6 @@ namespace NzbDrone.Core.Notifications
 
         public virtual object RequestAction(string action, IDictionary<string, string> query) { return null; }
 
-
         private bool HasConcreteImplementation(string methodName)
         {
             var method = GetType().GetMethod(methodName);

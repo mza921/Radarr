@@ -23,7 +23,6 @@ namespace NzbDrone.Core.CustomFormats
         void Delete(int id);
     }
 
-
     public class CustomFormatService : ICustomFormatService, IHandle<ApplicationStartedEvent>
     {
         private readonly ICustomFormatRepository _formatRepository;

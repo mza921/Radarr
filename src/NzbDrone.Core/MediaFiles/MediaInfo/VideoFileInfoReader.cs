@@ -26,7 +26,6 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
             _logger = logger;
         }
 
-
         public MediaInfoModel GetMediaInfo(string filename)
         {
             if (!_diskProvider.FileExists(filename))
@@ -118,7 +117,6 @@ namespace NzbDrone.Core.MediaFiles.MediaInfo
 
                     int.TryParse(aBitRate, out audioBitRate);
                     int.TryParse(mediaInfo.Get(StreamKind.Audio, 0, "StreamCount"), out streamCount);
-
 
                     string audioChannelsStr = mediaInfo.Get(StreamKind.Audio, 0, "Channel(s)").Split(new string[] { " /" }, StringSplitOptions.None)[0].Trim();
 

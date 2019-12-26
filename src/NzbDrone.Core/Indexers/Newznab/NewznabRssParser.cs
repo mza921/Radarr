@@ -77,7 +77,6 @@ namespace NzbDrone.Core.Indexers.Newznab
             releaseInfo = base.ProcessItem(item, releaseInfo);
             releaseInfo.ImdbId = GetImdbId(item);
 
-
             //// This shouldn't be needed with changes to the DownloadDecisionMaker
             //var imdbMovieTitle = GetImdbTitle(item);
             //var imdbYear = GetImdbYear(item);

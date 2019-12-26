@@ -55,7 +55,6 @@ namespace NzbDrone.Core.Security
                 return true;
             }
 
-
             _logger.Error("Certificate validation for {0} failed. {1}", request.Address, sslPolicyErrors);
 
             return false;

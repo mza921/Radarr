@@ -56,8 +56,6 @@ namespace NzbDrone.Core.MediaFiles.MovieImport
                .SelectMany(c => c)
                .ToList();
 
-
-
             var importResults = new List<ImportResult>();
 
             foreach (var importDecision in qualifiedImports.OrderByDescending(e => e.LocalMovie.Size))

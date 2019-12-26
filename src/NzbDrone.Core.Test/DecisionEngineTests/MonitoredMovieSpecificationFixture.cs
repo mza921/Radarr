@@ -34,7 +34,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _firstEpisode = new Movie() { Monitored = true };
             _secondEpisode = new Movie() { Monitored = true };
 
-
             var singleEpisodeList = new List<Movie> { _firstEpisode };
             var doubleEpisodeList = new List<Movie> { _firstEpisode, _secondEpisode };
 

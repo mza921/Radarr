@@ -125,7 +125,6 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Wdtv
                 xmlResult += Environment.NewLine;
             }
 
-
             var filename = GetMovieFileMetadataFilename(movieFile.RelativePath);
 
             return new MetadataFileResult(filename, xmlResult.Trim(Environment.NewLine.ToCharArray()));

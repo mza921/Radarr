@@ -107,7 +107,6 @@ namespace NzbDrone.Windows.Disk
             return 0;
         }
 
-
         public override bool TryCreateHardLink(string source, string destination)
         {
             try

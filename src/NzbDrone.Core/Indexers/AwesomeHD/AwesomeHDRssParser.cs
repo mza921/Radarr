@@ -125,7 +125,6 @@ namespace NzbDrone.Core.Indexers.AwesomeHD
                    "An error occurred while processing feed, feed invalid");
             }
 
-
             return torrentInfos.OrderByDescending(o => ((dynamic)o).Seeders).ToArray();
         }
 

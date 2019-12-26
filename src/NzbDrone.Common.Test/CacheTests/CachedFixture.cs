@@ -38,7 +38,6 @@ namespace NzbDrone.Common.Test.CacheTests
             first.Should().Be(second);
         }
 
-
         [Test]
         public void should_be_able_to_update_key()
         {
@@ -47,7 +46,6 @@ namespace NzbDrone.Common.Test.CacheTests
 
             _cachedString.Find("Key").Should().Be("New");
         }
-
 
         [Test]
         public void should_be_able_to_remove_key()
@@ -69,7 +67,6 @@ namespace NzbDrone.Common.Test.CacheTests
         public void should_store_null()
         {
             int hitCount = 0;
-
 
             for (int i = 0; i < 10; i++)
             {

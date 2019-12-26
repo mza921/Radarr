@@ -34,7 +34,6 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
             _movie = Builder<Movie>.CreateNew()
                                      .Build();
 
-
             _profile = new Profile
             {
                 Name = "Test",
@@ -88,7 +87,6 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
             var release = _release.JsonClone();
             release.Indexer = indexer;
             release.PublishDate = publishDate;
-
 
             var heldReleases = Builder<PendingRelease>.CreateListOfSize(1)
                                                    .All()

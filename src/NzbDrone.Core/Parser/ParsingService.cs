@@ -390,7 +390,6 @@ namespace NzbDrone.Core.Parser
 
     }
 
-
     public class MappingResult
     {
         public string Message

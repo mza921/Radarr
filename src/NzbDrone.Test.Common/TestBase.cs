@@ -64,7 +64,6 @@ namespace NzbDrone.Test.Common
             }
         }
 
-
         protected int RandomNumber
         {
             get
@@ -122,7 +121,6 @@ namespace NzbDrone.Test.Common
             DeleteTempFolder(_tempFolder);
         }
 
-
         public static string GetUID()
         {
             return Process.GetCurrentProcess().Id + "_" + DateTime.Now.Ticks + "_" + Interlocked.Increment(ref _nextUid);
@@ -134,7 +132,6 @@ namespace NzbDrone.Test.Common
             {
                 return;
             }
-
 
             try
             {

@@ -112,7 +112,6 @@ namespace NzbDrone.Core.Test.ParserTests
             ParseAndVerifyQuality(title, Source.TV, proper, Resolution.R720p);
         }
 
-
         [TestCase("DEXTER.S07E01.ARE.YOU.1080P.HDTV.X264-QCF", false)]
         [TestCase("DEXTER.S07E01.ARE.YOU.1080P.HDTV.x264-QCF", false)]
         [TestCase("DEXTER.S07E01.ARE.YOU.1080P.HDTV.proper.X264-QCF", true)]

@@ -84,7 +84,6 @@ namespace NzbDrone.Core.Test.Download.Pending.PendingReleaseServiceTests
             release.Indexer = indexer;
             release.PublishDate = publishDate;
 
-
             var heldReleases = Builder<PendingRelease>.CreateListOfSize(1)
                                                    .All()
                                                    .With(h => h.MovieId = _movie.Id)

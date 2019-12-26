@@ -144,7 +144,6 @@ namespace NzbDrone.Core.HealthCheck
                 }
             }
 
-
             // TODO: Add debounce
 
             PerformHealthCheck(filteredChecks.ToArray());

@@ -279,7 +279,6 @@ namespace NzbDrone.Core.Test.MediaFiles
             var imported = new List<ImportDecision>();
             imported.Add(new ImportDecision(localMovie));
 
-
             Subject.ProcessPath(fileName);
 
             Mocker.GetMock<IMakeImportDecision>()

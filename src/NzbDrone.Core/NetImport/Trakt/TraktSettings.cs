@@ -120,13 +120,10 @@ namespace NzbDrone.Core.NetImport.Trakt
         [FieldDefinition(99, Label = "Authenticate with Trakt", Type = FieldType.OAuth)]
         public string SignIn { get; set; }
 
-
         public NzbDroneValidationResult Validate()
         {
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
     }
-
-
 
 }

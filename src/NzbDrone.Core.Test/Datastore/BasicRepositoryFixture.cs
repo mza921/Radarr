@@ -15,7 +15,6 @@ namespace NzbDrone.Core.Test.Datastore
     {
         private ScheduledTask _basicType;
 
-
         [SetUp]
         public void Setup()
         {
@@ -45,7 +44,6 @@ namespace NzbDrone.Core.Test.Datastore
             AllStoredModels.Should().BeEmpty();
 
         }
-
 
         [Test]
         public void should_be_able_to_delete_model()
@@ -85,13 +83,11 @@ namespace NzbDrone.Core.Test.Datastore
             Assert.Throws<ModelNotFoundException>(() => Subject.Get(12));
         }
 
-
         [Test]
         public void get_all_with_empty_db_should_return_empty_list()
         {
             Subject.All().Should().BeEmpty();
         }
-
 
         [Test]
         public void should_be_able_to_call_ToList_on_empty_quariable()

@@ -34,7 +34,6 @@ namespace NzbDrone.Core.Update
         private readonly IBackupService _backupService;
         private readonly IOsInfo _osInfo;
 
-
         public InstallUpdateService(ICheckUpdateService checkUpdateService,
                                     IAppFolderInfo appFolderInfo,
                                     IDiskProvider diskProvider,

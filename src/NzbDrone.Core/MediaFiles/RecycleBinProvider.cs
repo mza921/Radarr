@@ -27,7 +27,6 @@ namespace NzbDrone.Core.MediaFiles
         private readonly IConfigService _configService;
         private readonly Logger _logger;
 
-
         public RecycleBinProvider(IDiskTransferService diskTransferService,
                                   IDiskProvider diskProvider,
                                   IConfigService configService,

@@ -172,7 +172,6 @@ namespace NzbDrone.Core.Download.Clients.Sabnzbd
                     }
                 }
 
-
                 historyItems.Add(historyItem);
             }
 

@@ -261,7 +261,6 @@ namespace NzbDrone.Common.Instrumentation.Sentry
             return false;
         }
 
-
         protected override void Write(LogEventInfo logEvent)
         {
             if (_unauthorized || !SentryEnabled)

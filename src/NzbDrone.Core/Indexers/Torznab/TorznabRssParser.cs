@@ -64,7 +64,6 @@ namespace NzbDrone.Core.Indexers.Torznab
             return torrentInfo;
         }
 
-
         protected override bool PostProcess(IndexerResponse indexerResponse, List<XElement> items, List<ReleaseInfo> releases)
         {
             var enclosureTypes = items.SelectMany(GetEnclosures).Select(v => v.Type).Distinct().ToArray();

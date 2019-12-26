@@ -56,7 +56,6 @@ namespace Radarr.Http.REST
             SharedValidator = new ResourceValidator<TResource>();
         }
 
-
         private void ValidateModule()
         {
             if (GetResourceById != null)

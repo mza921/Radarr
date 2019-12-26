@@ -49,7 +49,6 @@ namespace TinyTwitter
          * and added this banner so it's not blindly updated.
          *
          **/
-
         public void DirectMessage(string message, string screenName)
         {
             new RequestBuilder(oauth, "POST", "https://api.twitter.com/1.1/direct_messages/new.json")

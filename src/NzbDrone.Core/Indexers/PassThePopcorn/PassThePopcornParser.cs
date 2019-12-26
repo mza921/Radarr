@@ -55,7 +55,6 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                 return torrentInfos;
             }
 
-
             foreach (var result in jsonResponse.Movies)
             {
                 foreach (var torrent in result.Torrents)
@@ -116,7 +115,6 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                                          "}. Please immediately report this info on https://github.com/Radarr/Radarr/issues/1584.");
                         throw;
                     }
-
 
                 }
             }
