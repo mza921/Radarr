@@ -11,8 +11,8 @@ namespace NzbDrone.Core.NetImport.TMDb
     public class TMDbParser : IParseNetImportResponse
     {
         private readonly TMDbSettings _settings;
-        private NetImportResponse _importResponse;
         private readonly ISearchForNewMovie _skyhookProxy;
+        private NetImportResponse _importResponse;
 
         public TMDbParser(TMDbSettings settings, ISearchForNewMovie skyhookProxy)
         {

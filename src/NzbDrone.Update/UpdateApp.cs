@@ -15,9 +15,9 @@ namespace NzbDrone.Update
     {
         private readonly IInstallUpdateService _installUpdateService;
         private readonly IProcessProvider _processProvider;
-        private static IContainer _container;
-
         private static readonly Logger Logger = NzbDroneLogger.GetLogger(typeof(UpdateApp));
+
+        private static IContainer _container;
 
         public UpdateApp(IInstallUpdateService installUpdateService, IProcessProvider processProvider)
         {

@@ -84,9 +84,9 @@ namespace NzbDrone.Common.Instrumentation.Sentry
 
         private readonly DateTime _startTime = DateTime.UtcNow;
         private readonly IDisposable _sdk;
-        private bool _disposed;
-
         private readonly SentryDebounce _debounce;
+
+        private bool _disposed;
         private bool _unauthorized;
 
         public bool FilterEvents { get; set; }

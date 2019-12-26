@@ -11,8 +11,8 @@ namespace NzbDrone.Core.NetImport.Radarr
     public class RadarrParser : IParseNetImportResponse
     {
         private readonly RadarrSettings _settings;
-        private NetImportResponse _importResponse;
         private readonly ISearchForNewMovie _skyhookProxy;
+        private NetImportResponse _importResponse;
 
         public RadarrParser(RadarrSettings settings, ISearchForNewMovie skyhookProxy)
         {

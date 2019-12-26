@@ -62,7 +62,7 @@
     <Rule Id="SA1211" Action="Info" />
     <!-- <Rule Id="SA1212" Action="Info" /> -->
     <!-- <Rule Id="SA1213" Action="Info" /> -->
-    <Rule Id="SA1214" Action="Info" />
+    <Rule Id="SA1214" Action="Warning" />
     <Rule Id="SA1215" Action="Info" />
     <Rule Id="SA1216" Action="Info" />
     <Rule Id="SA1217" Action="Info" />

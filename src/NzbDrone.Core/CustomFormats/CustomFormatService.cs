@@ -27,8 +27,8 @@ namespace NzbDrone.Core.CustomFormats
     public class CustomFormatService : ICustomFormatService, IHandle<ApplicationStartedEvent>
     {
         private readonly ICustomFormatRepository _formatRepository;
-        private IProfileService _profileService;
         private readonly IHistoryService _historyService;
+        private IProfileService _profileService;
 
         public IProfileService ProfileService
         {

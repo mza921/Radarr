@@ -14,8 +14,8 @@ namespace Radarr.Host
 {
     public static class Bootstrap
     {
-        private static IContainer _container;
         private static readonly Logger Logger = NzbDroneLogger.GetLogger(typeof(Bootstrap));
+        private static IContainer _container;
 
         public static void Start(StartupContext startupContext, IUserAlert userAlert, Action<IContainer> startCallback = null)
         {

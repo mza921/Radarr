@@ -11,9 +11,9 @@ namespace Radarr.Host
 
     class CancelHandler : ICancelHandler
     {
+        private readonly ILifecycleService _lifecycleService;
         private object _syncRoot;
         private volatile bool _cancelInitiated;
-        private readonly ILifecycleService _lifecycleService;
 
         public CancelHandler(ILifecycleService lifecycleService)
         {
