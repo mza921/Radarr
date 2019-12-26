@@ -182,7 +182,6 @@ namespace NzbDrone.Core.NetImport
                             foundMatch = true;
                             break;
                         }
-
                     }
                     if (!foundMatch)
                     {

@@ -34,5 +34,4 @@ namespace NzbDrone.Core.NetImport.Radarr
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
     }
-
 }

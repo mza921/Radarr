@@ -238,7 +238,6 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
 
                 throw;
             }
-
         }
 
         public void PauseTorrent(string hash, QBittorrentSettings settings)

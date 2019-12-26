@@ -77,6 +77,5 @@ namespace NzbDrone.Core.Test.Download.TrackedDownloads
             trackedDownload.RemoteMovie.Movie.Should().NotBeNull();
             trackedDownload.RemoteMovie.Movie.Id.Should().Be(3);
         }
-
     }
 }

@@ -511,7 +511,6 @@ namespace TinyIoC
                 }
             }
         }
-
     }
 
     // @mbrit - 2012-05-22 - shim for ForEach call on List<T>...
@@ -1125,7 +1124,6 @@ namespace TinyIoC
         public RegisterOptions Register(Type registerType, string name)
         {
             return RegisterInternal(registerType, name, GetDefaultObjectFactory(registerType, registerType));
-
         }
 
         /// <summary>
@@ -3712,7 +3710,6 @@ namespace TinyIoC
 
         #endregion
     }
-
 }
 
 // reverse shim for WinRT SR changes...

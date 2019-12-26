@@ -95,7 +95,6 @@ namespace NzbDrone.Core.MediaFiles
 
                 count++;
             }
-
         }
     }
 }

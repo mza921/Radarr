@@ -79,7 +79,6 @@ namespace NzbDrone.Core.DecisionEngine.Specifications.RssSync
                         return Decision.Accept();
                     }
                 }
-
             }
 
             // If quality meets or exceeds the best allowed quality in the profile accept it immediately

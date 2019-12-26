@@ -112,7 +112,6 @@ namespace NzbDrone.Core.NetImport.TMDb
                 Logger.Info($"Importing TMDb movies from: {baseUrl}");
                 yield return new NetImportRequest($"{baseUrl}", HttpAccept.Json);
             }
-
         }
     }
 }

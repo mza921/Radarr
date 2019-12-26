@@ -13,6 +13,5 @@ namespace NzbDrone.Core.Organizer
             : base(database, eventAggregator)
         {
         }
-
     }
 }

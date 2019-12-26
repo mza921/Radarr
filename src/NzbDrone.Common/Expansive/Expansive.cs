@@ -70,7 +70,6 @@ namespace NzbDrone.Common.Expansive
                         callingToken = token;
                         newArg = Regex.Replace(newArg, _patternStyle.OutputFilter(match.Value), args[tokens.IndexOf(token)]);
                     }
-
                 }
                 newArgs.Add(newArg);
             }

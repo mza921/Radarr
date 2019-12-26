@@ -24,6 +24,5 @@ namespace NzbDrone.Core.Test.Framework
         {
             return BuildList<T>(builder.All().With(c => c.Id = 0));
         }
-
     }
 }

@@ -53,7 +53,6 @@ namespace NzbDrone.Core.Indexers.Newznab
                 yield return GetDefinition("PFmonkey", GetSettings("https://www.pfmonkey.com"));
                 yield return GetDefinition("SimplyNZBs", GetSettings("https://simplynzbs.com"));
                 yield return GetDefinition("Usenet Crawler", GetSettings("https://www.usenet-crawler.com"));
-
             }
         }
 

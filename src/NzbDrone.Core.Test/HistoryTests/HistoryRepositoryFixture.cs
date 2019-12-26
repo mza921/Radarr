@@ -57,6 +57,5 @@ namespace NzbDrone.Core.Test.HistoryTests
 
             downloadHistory.Should().HaveCount(1);
         }
-
     }
 }

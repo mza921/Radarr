@@ -56,7 +56,6 @@ namespace NzbDrone.Core.Test.Download
             Mocker.GetMock<IParsingService>()
                   .Setup(s => s.GetMovie("Drone.1998"))
                   .Returns(remoteEpisode.Movie);
-
         }
 
         private RemoteMovie BuildRemoteMovie()

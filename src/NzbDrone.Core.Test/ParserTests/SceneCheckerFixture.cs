@@ -29,6 +29,5 @@ namespace NzbDrone.Core.Test.ParserTests
         {
             SceneChecker.IsSceneTitle(title).Should().BeFalse();
         }
-
     }
 }

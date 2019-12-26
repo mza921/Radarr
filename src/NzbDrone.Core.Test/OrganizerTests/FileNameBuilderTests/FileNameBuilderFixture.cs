@@ -611,8 +611,6 @@ namespace NzbDrone.Core.Test.OrganizerTests.FileNameBuilderTests
                 VideoTransferCharacteristics = videoTransferCharacteristics,
                 SchemaRevision = schemaRevision
             };
-
         }
-
     }
 }

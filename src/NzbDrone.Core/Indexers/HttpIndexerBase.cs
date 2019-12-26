@@ -384,5 +384,4 @@ namespace NzbDrone.Core.Indexers
             return null;
         }
     }
-
 }

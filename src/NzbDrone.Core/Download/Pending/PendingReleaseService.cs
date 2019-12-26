@@ -195,9 +195,7 @@ namespace NzbDrone.Core.Download.Pending
                     };
 
                     queued.Add(queue);
-
                 }
-
             }
 
             //Return best quality release for each movie

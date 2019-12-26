@@ -105,6 +105,5 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
                   .Verify(v => v.UpdateMany(
                           It.Is<List<IndexerStatus>>(i => i.Count == 0)));
         }
-
     }
 }

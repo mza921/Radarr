@@ -244,7 +244,6 @@ namespace NzbDrone.Core.CustomFormats
                     break;
             }
         }
-
     }
 
     public enum TagType

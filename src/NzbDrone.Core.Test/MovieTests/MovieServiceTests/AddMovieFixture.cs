@@ -31,8 +31,6 @@ namespace NzbDrone.Core.Test.MovieTests.MovieServiceTests
             var series = Subject.AddMovie(fakeMovie);
 
             series.Path.Should().NotBeNull();
-
         }
-
     }
 }

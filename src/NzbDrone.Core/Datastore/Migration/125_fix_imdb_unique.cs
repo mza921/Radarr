@@ -22,6 +22,5 @@ namespace NzbDrone.Core.Datastore.Migration
                 getSeriesCmd.ExecuteNonQuery();
             }
         }
-
     }
 }

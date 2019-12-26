@@ -35,7 +35,6 @@ namespace NzbDrone.Core.Test.NotificationTests
             {
                 TestLogger.Info("OnDownload was called");
             }
-
         }
 
         private class TestNotificationWithAllEvents : NotificationBase<TestSetting>
@@ -67,7 +66,6 @@ namespace NzbDrone.Core.Test.NotificationTests
             {
                 TestLogger.Info("OnHealthIssue was called");
             }
-
         }
 
         private class TestNotificationWithNoEvents : NotificationBase<TestSetting>
@@ -79,7 +77,6 @@ namespace NzbDrone.Core.Test.NotificationTests
             {
                 throw new NotImplementedException();
             }
-
         }
 
         [Test]
@@ -118,5 +115,4 @@ namespace NzbDrone.Core.Test.NotificationTests
             notification.SupportsOnHealthIssue.Should().BeFalse();
         }
     }
-
 }

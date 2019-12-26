@@ -345,7 +345,6 @@ namespace NzbDrone.Core.Parser
                     {
                         possibleMovie = searchCriteria.Movie;
                     }
-
                 }
             }
 
@@ -387,7 +386,6 @@ namespace NzbDrone.Core.Parser
 
             return false;
         }
-
     }
 
     public class MappingResult

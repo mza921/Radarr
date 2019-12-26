@@ -51,7 +51,6 @@ namespace NzbDrone.Core.Parser.Augmenters
                             }
                         }
                     }
-
                 }
 
                 //Next, let's add other useful info to the extra info dict
@@ -60,7 +59,6 @@ namespace NzbDrone.Core.Parser.Augmenters
                     movieInfo.ExtraInfo["Size"] = releaseInfo.Size;
                 }
                 movieInfo.ExtraInfo["IndexerFlags"] = releaseInfo.IndexerFlags;
-
             }
 
             return movieInfo;

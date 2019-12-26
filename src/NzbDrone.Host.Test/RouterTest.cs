@@ -86,7 +86,6 @@ namespace NzbDrone.App.Test
             serviceMock.Setup(c => c.ServiceExist(ServiceProvider.SERVICE_NAME)).Returns(true);
 
             Subject.Route(ApplicationModes.InstallService);
-
         }
 
         [Test]
@@ -100,7 +99,6 @@ namespace NzbDrone.App.Test
             serviceMock.Setup(c => c.ServiceExist(ServiceProvider.SERVICE_NAME)).Returns(false);
 
             Subject.Route(ApplicationModes.UninstallService);
-
         }
     }
 }

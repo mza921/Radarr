@@ -121,7 +121,6 @@ namespace NzbDrone.Core.Datastore.Migration
                                                                                         Name = "1x05",
                                                                                         Pattern = "{season}x{episode:00}",
                                                                                         EpisodeSeparator = "x"
-
                                                                                     },
                                                                                 new
                                                                                     {

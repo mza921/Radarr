@@ -20,7 +20,6 @@ namespace NzbDrone.Core.Test.MediaCoverTests
             _httpResponse = new HttpResponse(null, new HttpHeader(), "", HttpStatusCode.OK);
             Mocker.GetMock<IDiskProvider>().Setup(c => c.GetFileSize(It.IsAny<string>())).Returns(100);
             Mocker.GetMock<IHttpClient>().Setup(c => c.Head(It.IsAny<HttpRequest>())).Returns(_httpResponse);
-
         }
 
         private void GivenFileExistsOnDisk()
@@ -32,7 +31,6 @@ namespace NzbDrone.Core.Test.MediaCoverTests
         {
             GivenFileExistsOnDisk();
             Mocker.GetMock<IDiskProvider>().Setup(c => c.GetFileSize(It.IsAny<string>())).Returns(bytes);
-
         }
 
         [Test]

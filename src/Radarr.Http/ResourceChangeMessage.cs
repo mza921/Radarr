@@ -26,5 +26,4 @@ namespace Radarr.Http
             Action = action;
         }
     }
-
 }

@@ -19,7 +19,6 @@ namespace NzbDrone.Core.Test.IndexerTests.NewznabTests
 
             setting.Validate().IsValid.Should().BeFalse();
             setting.Validate().Errors.Should().Contain(c => c.PropertyName == "ApiKey");
-
         }
 
         [TestCase("")]
@@ -36,7 +35,6 @@ namespace NzbDrone.Core.Test.IndexerTests.NewznabTests
             setting.Validate().IsValid.Should().BeFalse();
             setting.Validate().Errors.Should().NotContain(c => c.PropertyName == "ApiKey");
             setting.Validate().Errors.Should().Contain(c => c.PropertyName == "BaseUrl");
-
         }
 
         [TestCase("http://nzbs2.org")]

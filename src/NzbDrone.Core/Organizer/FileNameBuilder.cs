@@ -164,7 +164,6 @@ namespace NzbDrone.Core.Organizer
         public BasicNamingConfig GetBasicNamingConfig(NamingConfig nameSpec)
         {
             return new BasicNamingConfig(); //For now let's be lazy
-
         }
 
         public string GetMovieFolder(Movie movie, NamingConfig namingConfig = null)

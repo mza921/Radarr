@@ -109,7 +109,6 @@ namespace NzbDrone.Test.Common
         {
             var args = "-nobrowser -data=\"" + AppData + "\"";
             _nzbDroneProcess = _processProvider.Start(outputRadarrConsoleExe, args, null, OnOutputDataReceived, OnOutputDataReceived);
-
         }
 
         private void OnOutputDataReceived(string data)

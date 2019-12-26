@@ -635,7 +635,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.QBittorrentTests
             var json = "{ \"eta\": 18446744073709335000 }";
             var torrent = Newtonsoft.Json.JsonConvert.DeserializeObject<QBittorrentTorrent>(json);
             torrent.Eta.ToString().Should().Be("18446744073709335000");
-
         }
 
         [Test]

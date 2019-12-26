@@ -56,7 +56,6 @@ namespace Radarr.Api.V3.Indexers
 
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int? MovieId { get; set; }
-
     }
 
     public static class ReleaseResourceMapper
@@ -103,7 +102,6 @@ namespace Radarr.Api.V3.Indexers
                 Leechers = (torrentInfo.Peers.HasValue && torrentInfo.Seeders.HasValue) ? (torrentInfo.Peers.Value - torrentInfo.Seeders.Value) : (int?)null,
                 Protocol = releaseInfo.DownloadProtocol
             };
-
         }
 
         public static ReleaseInfo ToModel(this ReleaseResource resource)

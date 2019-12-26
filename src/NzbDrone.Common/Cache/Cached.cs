@@ -108,6 +108,5 @@ namespace NzbDrone.Common.Cache
                 return _store.Values.Select(c => c.Object).ToList();
             }
         }
-
     }
 }

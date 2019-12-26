@@ -27,7 +27,6 @@ namespace NzbDrone.Core.Test.MediaFiles
             Mocker.GetMock<IDiskProvider>()
                   .Setup(e => e.FileExists(It.Is<string>(c => !c.Contains(DELETED_PATH))))
                   .Returns(true);
-
         }
 
         private void GivenMovieFiles(IEnumerable<MovieFile> movieFiles)

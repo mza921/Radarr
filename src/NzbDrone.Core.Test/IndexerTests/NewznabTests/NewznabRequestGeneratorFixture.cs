@@ -115,6 +115,5 @@ namespace NzbDrone.Core.Test.IndexerTests.NewznabTests
 
             page.Url.Query.Should().Contain("imdbid=0076759");
         }
-
     }
 }

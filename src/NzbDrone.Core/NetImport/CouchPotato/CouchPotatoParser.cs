@@ -92,6 +92,5 @@ namespace NzbDrone.Core.NetImport.CouchPotato
 
             return true;
         }
-
     }
 }

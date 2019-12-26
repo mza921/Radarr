@@ -432,7 +432,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                         {
                             return new List<Movie>();
                         }
-
                     }
                 }
 
@@ -607,7 +606,6 @@ namespace NzbDrone.Core.MetadataSource.SkyHook
                     {
                         imdbMovie.YouTubeTrailerId = result.trailer_key;
                     }
-
                 }
 
                 return imdbMovie;

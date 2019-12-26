@@ -36,7 +36,6 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
                 Movie = movie,
                 Release = new ReleaseInfo(),
                 ParsedMovieInfo = new ParsedMovieInfo { Quality = new QualityModel(Quality.SDTV, new Revision(version: 2)) },
-
             };
 
             Mocker.GetMock<IQualityDefinitionService>()

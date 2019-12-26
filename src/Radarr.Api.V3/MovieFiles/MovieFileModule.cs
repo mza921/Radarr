@@ -115,7 +115,6 @@ namespace Radarr.Api.V3.MovieFiles
                 {
                     movieFile.Languages = resource.Languages;
                 }
-
             }
 
             _mediaFileService.Update(movieFiles);

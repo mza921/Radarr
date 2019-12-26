@@ -30,7 +30,6 @@ namespace NzbDrone.Integration.Test.ApiTests
             var result = NamingConfig.Put(config);
             result.RenameMovies.Should().BeFalse();
             result.StandardMovieFormat.Should().Be(config.StandardMovieFormat);
-
         }
 
         [Test]

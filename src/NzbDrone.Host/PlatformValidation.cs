@@ -51,7 +51,6 @@ namespace Radarr.Host
                 Logger.Warn("Couldn't load {0}", e.Message);
                 return false;
             }
-
         }
     }
 }

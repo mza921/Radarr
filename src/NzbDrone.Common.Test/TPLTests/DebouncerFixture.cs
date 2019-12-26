@@ -36,7 +36,6 @@ namespace NzbDrone.Common.Test.TPLTests
             Thread.Sleep(100);
 
             counter.Count.Should().Be(1);
-
         }
 
         [Test]
@@ -61,7 +60,6 @@ namespace NzbDrone.Common.Test.TPLTests
             Thread.Sleep(200);
 
             counter.Count.Should().Be(2);
-
         }
 
         [Test]

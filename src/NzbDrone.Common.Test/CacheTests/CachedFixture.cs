@@ -26,7 +26,6 @@ namespace NzbDrone.Common.Test.CacheTests
             _cachedString.Get("Test", _worker.GetString);
 
             _worker.HitCount.Should().Be(1);
-
         }
 
         [Test]

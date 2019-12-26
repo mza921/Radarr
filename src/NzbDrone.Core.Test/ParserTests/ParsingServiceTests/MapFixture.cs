@@ -41,7 +41,6 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests
             {
                 MovieTitle = _movie.Title,
                 Year = _movie.Year,
-
             };
 
             _wrongYearInfo = new ParsedMovieInfo
@@ -157,6 +156,5 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests
             Subject.Map(_umlautInfo, "", _movieSearchCriteria).Movie.Should().Be(_movieSearchCriteria.Movie);
             Subject.Map(_umlautAltInfo, "", _movieSearchCriteria).Movie.Should().Be(_movieSearchCriteria.Movie);
         }
-
     }
 }

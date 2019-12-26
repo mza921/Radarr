@@ -29,7 +29,6 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
             {
                 IndexerId = 1
             };
-
         }
 
         [Test]
@@ -79,6 +78,5 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
             var movieInfo = Subject.AugmentMovieInfo(MovieInfo, releaseInfo);
             movieInfo.ExtraInfo["IndexerFlags"].Should().BeEquivalentTo(IndexerFlags.PTP_Approved | IndexerFlags.PTP_Golden);
         }
-
     }
 }

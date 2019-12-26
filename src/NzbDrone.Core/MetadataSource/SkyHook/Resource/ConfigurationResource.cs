@@ -16,5 +16,4 @@
         public string[] profile_sizes { get; set; }
         public string[] still_sizes { get; set; }
     }
-
 }

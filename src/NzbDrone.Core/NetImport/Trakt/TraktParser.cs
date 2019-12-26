@@ -65,7 +65,6 @@ namespace NzbDrone.Core.NetImport.Trakt
             }
 
             return movies;
-
         }
 
         protected virtual bool PreProcess(NetImportResponse indexerResponse)
@@ -83,6 +82,5 @@ namespace NzbDrone.Core.NetImport.Trakt
 
             return true;
         }
-
     }
 }

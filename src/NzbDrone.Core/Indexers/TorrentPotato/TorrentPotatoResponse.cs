@@ -21,5 +21,4 @@ namespace NzbDrone.Core.Indexers.TorrentPotato
         public int seeders { get; set; }
         public DateTime publish_date { get; set; }
     }
-
 }

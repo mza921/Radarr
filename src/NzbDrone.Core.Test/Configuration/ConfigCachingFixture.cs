@@ -15,7 +15,6 @@ namespace NzbDrone.Core.Test.Configuration
         {
             Mocker.GetMock<IConfigRepository>().Setup(c => c.All())
                     .Returns(new List<Config> { new Config { Key = "key1", Value = "Value1" } });
-
         }
 
         [Test]
@@ -27,6 +26,5 @@ namespace NzbDrone.Core.Test.Configuration
 
             Mocker.GetMock<IConfigRepository>().Verify(c => c.All(), Times.Once());
         }
-
     }
 }

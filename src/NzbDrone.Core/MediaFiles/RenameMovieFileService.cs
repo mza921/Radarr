@@ -65,7 +65,6 @@ namespace NzbDrone.Core.MediaFiles
             var file = _mediaFileService.GetFilesByMovie(movieId);
 
             return GetPreviews(movie, file).OrderByDescending(m => m.MovieId).ToList(); //TODO: Would really like to not have these be lists
-
         }
 
         private IEnumerable<RenameMovieFilePreview> GetPreviews(Movie movie, List<MovieFile> files)
@@ -88,9 +87,7 @@ namespace NzbDrone.Core.MediaFiles
                         NewPath = newPath
                     };
                 }
-
             }
-
         }
 
         private void RenameFiles(List<MovieFile> movieFiles, Movie movie, string oldMoviePath = null)
@@ -119,7 +116,6 @@ namespace NzbDrone.Core.MediaFiles
                     _logger.Debug("Renamed movie file: {0}", movieFile);
 
                     _eventAggregator.PublishEvent(new MovieFileRenamedEvent(movie, movieFile, oldMovieFilePath));
-
                 }
                 catch (SameFilenameException ex)
                 {
@@ -168,7 +164,6 @@ namespace NzbDrone.Core.MediaFiles
                 {
                     _recycleBinProvider.DeleteFolder(oldFolder);
                 }
-
             }
 
             if (movie.PathState == MoviePathState.StaticOnce)
@@ -200,7 +195,6 @@ namespace NzbDrone.Core.MediaFiles
                 RenameFiles(movieFiles, movie);
                 _logger.ProgressInfo("All movie files renamed for {0}", movie.Title);
             }
-
         }
 
         public void Execute(RenameMovieFolderCommand message)
@@ -220,7 +214,6 @@ namespace NzbDrone.Core.MediaFiles
             {
                 _logger.Warn(ex, "wtf: {0}, {1}", ex.ResultCode, ex.Data);
             }
-
         }
     }
 }

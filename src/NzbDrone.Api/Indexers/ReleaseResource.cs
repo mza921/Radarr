@@ -135,7 +135,6 @@ namespace NzbDrone.Api.Indexers
 
                 //Special = parsedMovieInfo.Special,
             };
-
         }
 
         public static ReleaseInfo ToModel(this ReleaseResource resource)

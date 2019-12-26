@@ -22,7 +22,6 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
             _httpClient = httpClient;
             _logger = logger;
             _authCookieCache = cacheManager.GetCache<Dictionary<string, string>>(GetType(), "authCookies");
-
         }
 
         public bool IsApiSupported(QBittorrentSettings settings)
@@ -227,7 +226,6 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
 
                 throw;
             }
-
         }
 
         public void PauseTorrent(string hash, QBittorrentSettings settings)

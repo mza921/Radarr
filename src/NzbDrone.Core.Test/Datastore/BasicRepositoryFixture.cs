@@ -42,7 +42,6 @@ namespace NzbDrone.Core.Test.Datastore
             Subject.Purge();
 
             AllStoredModels.Should().BeEmpty();
-
         }
 
         [Test]
@@ -93,7 +92,6 @@ namespace NzbDrone.Core.Test.Datastore
         public void should_be_able_to_call_ToList_on_empty_quariable()
         {
             Subject.All().ToList().Should().BeEmpty();
-
         }
     }
 }

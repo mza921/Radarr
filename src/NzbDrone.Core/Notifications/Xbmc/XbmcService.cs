@@ -68,7 +68,6 @@ namespace NzbDrone.Core.Notifications.Xbmc
             var matchingMovies = allMovies.FirstOrDefault(s =>
             {
                 return s.ImdbNumber == movie.ImdbId || s.Label == movie.Title;
-
             });
 
             if (matchingMovies != null)

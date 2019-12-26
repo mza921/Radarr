@@ -115,12 +115,10 @@ namespace NzbDrone.Core.Indexers.PassThePopcorn
                                          "}. Please immediately report this info on https://github.com/Radarr/Radarr/issues/1584.");
                         throw;
                     }
-
                 }
             }
             return
                 torrentInfos;
-
         }
 
         public Action<IDictionary<string, string>, DateTime?> CookiesUpdater { get; set; }

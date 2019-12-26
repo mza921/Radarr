@@ -171,5 +171,4 @@ namespace NzbDrone.Core.NetImport
             return null;
         }
     }
-
 }

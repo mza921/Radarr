@@ -57,7 +57,6 @@ namespace NzbDrone.Core.NetImport.Trakt
             {
                 _logger.Warn($"Error refreshing trakt access token");
             }
-
         }
 
         public override INetImportRequestGenerator GetRequestGenerator()

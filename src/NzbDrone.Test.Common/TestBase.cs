@@ -23,7 +23,6 @@ namespace NzbDrone.Test.Common
         public void CoreTestSetup()
         {
             _subject = null;
-
         }
 
         protected TSubject Subject
@@ -37,9 +36,7 @@ namespace NzbDrone.Test.Common
 
                 return _subject;
             }
-
         }
-
     }
 
     public abstract class TestBase : LoggingTest

@@ -92,6 +92,5 @@ namespace NzbDrone.Core.Indexers.Rarbg
                 return string.Format("rarbg-{0}", torrent.download);
             }
         }
-
     }
 }

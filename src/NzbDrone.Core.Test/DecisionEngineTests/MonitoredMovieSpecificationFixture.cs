@@ -80,6 +80,5 @@ namespace NzbDrone.Core.Test.DecisionEngineTests
             _fakeSeries.Monitored = false;
             _monitoredEpisodeSpecification.IsSatisfiedBy(_parseResultSingle, new MovieSearchCriteria { UserInvokedSearch = true }).Accepted.Should().BeTrue();
         }
-
     }
 }

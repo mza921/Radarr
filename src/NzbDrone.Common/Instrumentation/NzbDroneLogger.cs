@@ -65,7 +65,6 @@ namespace NzbDrone.Common.Instrumentation
             if (updateClient)
             {
                 dsn = "https://379d628d45ba475a98d2e55675d14a02@sentry.radarr.video/5";
-
             }
             else
             {
@@ -192,6 +191,5 @@ namespace NzbDrone.Common.Instrumentation
         {
             return GetLogger(obj.GetType());
         }
-
     }
 }

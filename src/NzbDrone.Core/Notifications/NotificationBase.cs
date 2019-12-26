@@ -72,6 +72,5 @@ namespace NzbDrone.Core.Notifications
 
             return !method.DeclaringType.IsAbstract;
         }
-
     }
 }

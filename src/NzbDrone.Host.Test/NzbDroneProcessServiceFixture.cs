@@ -68,7 +68,6 @@ namespace NzbDrone.App.Test
                            {
                                new ProcessInfo { Id = CURRENT_PROCESS_ID },
                                new ProcessInfo { Id = 10 }
-
                            });
 
             Assert.Throws<TerminateApplicationException>(() => Subject.PreventStartIfAlreadyRunning());

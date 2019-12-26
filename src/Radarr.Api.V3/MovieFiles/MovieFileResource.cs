@@ -47,7 +47,6 @@ namespace Radarr.Api.V3.MovieFiles
                 MediaInfo = model.MediaInfo.ToResource(model.SceneName),
                 //QualityCutoffNotMet
             };
-
         }
 
         public static MovieFileResource ToResource(this MovieFile model, NzbDrone.Core.Movies.Movie movie)

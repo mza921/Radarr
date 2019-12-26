@@ -74,7 +74,6 @@ namespace NzbDrone.Core.Test.Framework
 
                 return _subject;
             }
-
         }
     }
 }

@@ -191,7 +191,6 @@ namespace NzbDrone.Core.MetadataSource.PreDB
                 _logger.Warn(ex, "Error while looking on predb.me.");
                 return false;
             }
-
         }
     }
 }

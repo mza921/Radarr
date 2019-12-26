@@ -29,7 +29,6 @@ namespace NzbDrone.Core.Test.Datastore.Migration
                     { "indexer", "test" },
                     { "downloadClientId", "abc" }
                 });
-
             });
 
             var history = db.Query<History72>("SELECT DownloadId, Data FROM History");
@@ -55,7 +54,6 @@ namespace NzbDrone.Core.Test.Datastore.Migration
                 {
                     { "indexer", "test" }
                 });
-
             });
 
             var history = db.Query<History72>("SELECT DownloadId, Data FROM History");

@@ -42,6 +42,5 @@ namespace NzbDrone.Core.Test.ParserTests.RomanNumeralTests
 
             Assert.AreEqual(romanNumeral.ToInt(), expectecdValue);
         }
-
     }
 }

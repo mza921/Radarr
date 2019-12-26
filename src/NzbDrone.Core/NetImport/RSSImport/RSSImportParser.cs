@@ -158,7 +158,6 @@ namespace NzbDrone.Core.NetImport.RSSImport
                 {
                     releaseInfo.ImdbId = GetImdbId(item);
                 }
-
             }
             catch (Exception)
             {

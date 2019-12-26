@@ -34,7 +34,6 @@ namespace NzbDrone.Test.Common.AutoMoq
         {
             DefaultBehavior = defaultBehavior;
             SetupAutoMoqer(new UnityContainer());
-
         }
 
         public AutoMoqer(IUnityContainer container)

@@ -97,7 +97,6 @@ namespace NzbDrone.Core.Movies.AlternativeTitles
         {
             var title = GetAllTitlesForMovie(message.Movie.Id);
             _titleRepo.DeleteMany(title);
-
         }
     }
 }

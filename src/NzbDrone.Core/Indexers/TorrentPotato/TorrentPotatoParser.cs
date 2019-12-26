@@ -63,6 +63,5 @@ namespace NzbDrone.Core.Indexers.TorrentPotato
                 return string.Format("potato-{0}", torrent.download_url);
             }
         }
-
     }
 }

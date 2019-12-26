@@ -62,6 +62,5 @@ namespace NzbDrone.Core.NetImport.StevenLu
 
             return true;
         }
-
     }
 }

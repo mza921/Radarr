@@ -87,6 +87,5 @@ namespace NzbDrone.Api.ExtraFiles
         {
             return movies.Select(ToResource).ToList();
         }
-
     }
 }

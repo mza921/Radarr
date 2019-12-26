@@ -87,6 +87,5 @@ namespace NzbDrone.Core.NetImport
         {
             return Definition.Name;
         }
-
     }
 }

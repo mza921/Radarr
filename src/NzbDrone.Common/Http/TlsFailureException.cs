@@ -8,6 +8,5 @@ namespace NzbDrone.Common.Http
             : base("Failed to establish secure https connection to '" + request.RequestUri + "'.", innerException, WebExceptionStatus.SecureChannelFailure, innerException.Response)
         {
         }
-
     }
 }

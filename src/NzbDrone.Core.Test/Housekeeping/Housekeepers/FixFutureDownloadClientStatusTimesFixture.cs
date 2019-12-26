@@ -105,6 +105,5 @@ namespace NzbDrone.Core.Test.Housekeeping.Housekeepers
                   .Verify(v => v.UpdateMany(
                           It.Is<List<DownloadClientStatus>>(i => i.Count == 0)));
         }
-
     }
 }

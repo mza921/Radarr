@@ -37,7 +37,6 @@ namespace NzbDrone.Core.Test.Messaging.Events
             Mocker.GetMock<IServiceFactory>()
                   .Setup(c => c.BuildAll<IHandle<EventB>>())
                   .Returns(new List<IHandle<EventB>> { HandlerB1.Object, HandlerB2.Object });
-
         }
 
         [Test]

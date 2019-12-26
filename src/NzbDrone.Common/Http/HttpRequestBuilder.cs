@@ -392,5 +392,4 @@ namespace NzbDrone.Common.Http
             return this;
         }
     }
-
 }

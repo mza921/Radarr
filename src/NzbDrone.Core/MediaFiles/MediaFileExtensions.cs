@@ -82,6 +82,5 @@ namespace NzbDrone.Core.MediaFiles
 
             return Quality.Unknown;
         }
-
     }
 }

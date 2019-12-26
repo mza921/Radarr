@@ -50,7 +50,6 @@ namespace Radarr.Http.ClientSchema
             }
 
             return target;
-
         }
 
         public static T ReadFromSchema<T>(List<Field> fields)

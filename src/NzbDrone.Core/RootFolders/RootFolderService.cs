@@ -151,7 +151,6 @@ namespace NzbDrone.Core.RootFolders
                 {
                     results.Add(new UnmappedFolder { Name = di.Name, Path = di.FullName });
                 }
-
             }
 
             var setToRemove = SpecialFolders;

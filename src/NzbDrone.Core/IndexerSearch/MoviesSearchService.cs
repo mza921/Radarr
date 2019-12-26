@@ -51,7 +51,6 @@ namespace NzbDrone.Core.IndexerSearch
 
                 var decisions = _nzbSearchService.MovieSearch(movieId, false, false); //_nzbSearchService.SeasonSearch(message.MovieId, season.SeasonNumber, false, message.Trigger == CommandTrigger.Manual);
                 downloadedCount += _processDownloadDecisions.ProcessDecisions(decisions).Grabbed.Count;
-
             }
             _logger.ProgressInfo("Movie search completed. {0} reports downloaded.", downloadedCount);
         }
@@ -73,7 +72,6 @@ namespace NzbDrone.Core.IndexerSearch
             var missing = movies.Where(e => !queue.Contains(e.Id)).ToList();
 
             SearchForMissingMovies(missing, message.Trigger == CommandTrigger.Manual);
-
         }
 
         public void Execute(CutoffUnmetMoviesSearchCommand message)
@@ -94,7 +92,6 @@ namespace NzbDrone.Core.IndexerSearch
             var missing = movies.Where(e => !queue.Contains(e.Id)).ToList();
 
             SearchForMissingMovies(missing, message.Trigger == CommandTrigger.Manual);
-
         }
 
         private void SearchForMissingMovies(List<Movie> movies, bool userInvokedSearch)
@@ -124,6 +121,5 @@ namespace NzbDrone.Core.IndexerSearch
 
             _logger.ProgressInfo("Completed missing search for {0} movies. {1} reports downloaded.", movies.Count, downloadedCount);
         }
-
     }
 }

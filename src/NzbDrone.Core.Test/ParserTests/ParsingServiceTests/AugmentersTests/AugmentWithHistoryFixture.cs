@@ -30,7 +30,6 @@ namespace NzbDrone.Core.Test.ParserTests.ParsingServiceTests.AugmentersTests
                     (int)Language.French,
                 }
             });
-
         }
 
         protected new AugmentWithHistory Subject

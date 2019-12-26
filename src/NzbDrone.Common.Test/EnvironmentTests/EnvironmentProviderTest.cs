@@ -15,6 +15,5 @@ namespace NzbDrone.Common.Test.EnvironmentTests
         {
             BuildInfo.Version.Should().NotBe(new Version(version));
         }
-
     }
 }

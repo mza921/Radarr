@@ -163,7 +163,6 @@ namespace NzbDrone.Update.UpdateEngine
                     }
                 }
             }
-
         }
     }
 }

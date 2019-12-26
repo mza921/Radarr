@@ -216,5 +216,4 @@ namespace NzbDrone.Core.Test.Messaging.Commands
 
         public override string CompletionMessage => null;
     }
-
 }

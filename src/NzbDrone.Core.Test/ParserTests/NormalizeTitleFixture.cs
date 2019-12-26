@@ -130,7 +130,6 @@ namespace NzbDrone.Core.Test.ParserTests
                 var dirty = string.Format(s, word);
                 dirty.CleanSeriesTitle().Should().Be(("word" + word.ToLower() + "word"));
             }
-
         }
 
         [TestCase("The Office", "theoffice")]

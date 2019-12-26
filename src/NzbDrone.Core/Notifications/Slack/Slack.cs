@@ -104,7 +104,6 @@ namespace NzbDrone.Core.Notifications.Slack
                 var payload = CreatePayload(message);
 
                 _proxy.SendPayload(payload, Settings);
-
             }
             catch (SlackExeption ex)
             {

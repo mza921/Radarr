@@ -26,7 +26,6 @@ namespace NzbDrone.Core.History
         public List<Language> Languages { get; set; }
 
         public string DownloadId { get; set; }
-
     }
 
     public enum HistoryEventType

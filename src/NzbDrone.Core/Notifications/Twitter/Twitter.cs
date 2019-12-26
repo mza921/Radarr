@@ -83,5 +83,4 @@ namespace NzbDrone.Core.Notifications.Twitter
             return new ValidationResult(failures);
         }
     }
-
 }

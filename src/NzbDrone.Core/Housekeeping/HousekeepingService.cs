@@ -30,7 +30,6 @@ namespace NzbDrone.Core.Housekeeping
                     _logger.Debug("Starting {0}", housekeeper.GetType().Name);
                     housekeeper.Clean();
                     _logger.Debug("Completed {0}", housekeeper.GetType().Name);
-
                 }
                 catch (Exception ex)
                 {

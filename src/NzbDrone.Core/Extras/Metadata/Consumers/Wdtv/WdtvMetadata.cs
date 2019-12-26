@@ -48,7 +48,6 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Wdtv
 
             _logger.Debug("Unknown movie file metadata: {0}", metadataFile.RelativePath);
             return Path.Combine(movie.Path, metadataFile.RelativePath);
-
         }
 
         public override MetadataFile FindMetadataFile(Movie movie, string path)
@@ -86,7 +85,6 @@ namespace NzbDrone.Core.Extras.Metadata.Consumers.Wdtv
                         metadata.Type = MetadataType.MovieImage;
                         return metadata;
                 }
-
             }
 
             return null;

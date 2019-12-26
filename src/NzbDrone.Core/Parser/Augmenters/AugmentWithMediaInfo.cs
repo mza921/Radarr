@@ -51,7 +51,6 @@ namespace NzbDrone.Core.Parser.Augmenters
                         movieInfo.Quality = quality;
                     }
                 }
-
             }
 
             return movieInfo;

@@ -57,7 +57,6 @@ namespace NzbDrone.Core.Test.MediaFiles.MovieImport.Aggregation.Aggregators
             _localMovie.FileMovieInfo = GetParsedMovieInfo(Language.English);
 
             Subject.Aggregate(_localMovie, false).Languages.Should().Contain(_localMovie.DownloadClientMovieInfo.Languages);
-
         }
 
         [Test]

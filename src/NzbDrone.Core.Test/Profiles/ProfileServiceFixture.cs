@@ -63,7 +63,6 @@ namespace NzbDrone.Core.Test.Profiles
             Assert.Throws<ProfileInUseException>(() => Subject.Delete(2));
 
             Mocker.GetMock<IProfileRepository>().Verify(c => c.Delete(It.IsAny<int>()), Times.Never());
-
         }
 
         [Test]
@@ -85,7 +84,6 @@ namespace NzbDrone.Core.Test.Profiles
             Assert.Throws<ProfileInUseException>(() => Subject.Delete(2));
 
             Mocker.GetMock<IProfileRepository>().Verify(c => c.Delete(It.IsAny<int>()), Times.Never());
-
         }
 
         [Test]

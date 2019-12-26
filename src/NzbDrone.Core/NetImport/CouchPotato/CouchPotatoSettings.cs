@@ -47,5 +47,4 @@ namespace NzbDrone.Core.NetImport.CouchPotato
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
     }
-
 }

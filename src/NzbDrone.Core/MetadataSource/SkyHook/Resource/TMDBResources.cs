@@ -171,5 +171,4 @@ namespace NzbDrone.Core.MetadataSource.SkyHook.Resource
         public string name { get; set; }
         public string original_name { get; set; }
     }
-
 }

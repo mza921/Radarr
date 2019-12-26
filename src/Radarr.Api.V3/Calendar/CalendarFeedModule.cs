@@ -96,7 +96,6 @@ namespace Radarr.Api.V3.Calendar
 
                 CreateEvent(calendar, movie, true);
                 CreateEvent(calendar, movie, false);
-
             }
 
             var serializer = (IStringSerializer)new SerializerFactory().Build(calendar.GetType(), new SerializationContext());

@@ -32,6 +32,5 @@ namespace Radarr.Api.V3.Movies
 
             return _renameMovieFileService.GetRenamePreviews(movieId).ToResource();
         }
-
     }
 }

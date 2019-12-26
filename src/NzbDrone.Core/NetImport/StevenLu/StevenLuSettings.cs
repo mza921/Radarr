@@ -29,7 +29,5 @@ namespace NzbDrone.Core.NetImport.StevenLu
         {
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
-
     }
-
 }

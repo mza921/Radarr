@@ -101,7 +101,6 @@ namespace NzbDrone.Core.Instrumentation
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-
             }
             catch (SQLiteException ex)
             {

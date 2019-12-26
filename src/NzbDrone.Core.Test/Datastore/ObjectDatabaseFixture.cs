@@ -22,7 +22,6 @@ namespace NzbDrone.Core.Test.Datastore
                     .CreateNew()
                     .With(s => s.Id = 0)
                     .Build();
-
         }
 
         [Test]
@@ -141,5 +140,4 @@ namespace NzbDrone.Core.Test.Datastore
             Db.All<ScheduledTask>().Single().Interval.Should().Be(12);
         }
     }
-
 }

@@ -110,7 +110,6 @@ namespace NzbDrone.Core.Test.Download.DownloadClientTests.TransmissionTests
             Mocker.GetMock<ITransmissionProxy>()
                   .Setup(v => v.GetConfig(It.IsAny<TransmissionSettings>()))
                   .Returns(() => Json.Deserialize<TransmissionConfig>(_transmissionConfigItems.ToJson()));
-
         }
 
         protected void GivenMovieCategory()

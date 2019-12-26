@@ -46,6 +46,5 @@ namespace NzbDrone.Core.Test.Datastore
 
             Db.InsertMany(episodes);
         }
-
     }
 }

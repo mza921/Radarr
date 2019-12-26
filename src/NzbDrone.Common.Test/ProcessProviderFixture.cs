@@ -42,7 +42,6 @@ namespace NzbDrone.Common.Test
                 {
                     TestLogger.Warn(ex, "{0} when killing process", ex.Message);
                 }
-
             });
         }
 

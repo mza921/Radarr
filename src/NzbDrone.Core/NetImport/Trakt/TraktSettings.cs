@@ -125,5 +125,4 @@ namespace NzbDrone.Core.NetImport.Trakt
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
     }
-
 }

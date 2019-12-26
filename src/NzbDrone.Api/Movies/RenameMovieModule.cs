@@ -28,6 +28,5 @@ namespace NzbDrone.Api.Movies
 
             return _renameMovieFileService.GetRenamePreviews(movieId).ToResource();
         }
-
     }
 }

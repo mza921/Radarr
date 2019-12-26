@@ -235,7 +235,6 @@ namespace NzbDrone.Core.Indexers.TorrentRss
             {
                 var releases = parser.ParseResponse(response).Cast<TorrentInfo>().ToArray();
                 return releases;
-
             }
             catch (Exception ex)
             {

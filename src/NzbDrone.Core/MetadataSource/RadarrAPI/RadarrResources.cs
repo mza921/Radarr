@@ -198,5 +198,4 @@ namespace NzbDrone.Core.MetadataSource.RadarrAPI
         [JsonProperty("locked")]
         public bool Locked { get; set; }
     }
-
 }

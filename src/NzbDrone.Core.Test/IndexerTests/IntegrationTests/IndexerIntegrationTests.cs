@@ -60,6 +60,5 @@ namespace NzbDrone.Core.Test.IndexerTests.IntegrationTests
                 reports.Should().OnlyContain(c => c.Size > 0);
             }
         }
-
     }
 }

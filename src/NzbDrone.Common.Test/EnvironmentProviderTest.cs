@@ -15,7 +15,6 @@ namespace NzbDrone.Common.Test
         {
             Subject.StartUpFolder.Should().NotBeNullOrWhiteSpace();
             Path.IsPathRooted(Subject.StartUpFolder).Should().BeTrue("Path is not rooted");
-
         }
 
         [Test]

@@ -40,6 +40,5 @@ namespace NzbDrone.Update.Test
 
             Mocker.GetMock<IInstallUpdateService>().Verify(c => c.Start(@"C:\Radarr".AsOsAgnostic(), 12), Times.Once());
         }
-
     }
 }

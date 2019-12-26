@@ -75,7 +75,6 @@ namespace NzbDrone.Mono.Test.EnvironmentInfo.VersionAdapters
             version.Name.Should().Be("ubuntu");
             version.Version.Should().Be("14.04");
             version.FullName.Should().Be("Ubuntu 14.04.5 LTS");
-
         }
     }
 }

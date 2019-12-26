@@ -98,7 +98,6 @@ namespace NzbDrone.Core.DecisionEngine
                 var num = preferredWords.AsEnumerable().Count(w => title.ToLower().Contains(w.ToLower()));
 
                 return num;
-
             });
         }
 

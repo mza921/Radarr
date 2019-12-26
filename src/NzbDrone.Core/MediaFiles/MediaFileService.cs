@@ -108,7 +108,6 @@ namespace NzbDrone.Core.MediaFiles
         {
             var files = GetFilesByMovie(message.Movie.Id);
             _mediaFileRepository.DeleteMany(files);
-
         }
     }
 }

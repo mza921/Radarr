@@ -35,7 +35,6 @@ namespace NzbDrone.Core.Test.MediaFiles
 
             movieFiles.Should().HaveCount(4);
             movieFiles.Should().OnlyContain(c => c.MovieId == 12);
-
         }
     }
 }

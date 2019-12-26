@@ -98,7 +98,6 @@ namespace NzbDrone.Core.DecisionEngine
                             result.Movie = null; //To ensure we have a remote movie, else null exception on next line!
                             result.RemoteMovie.ParsedMovieInfo = parsedMovieInfo;
                         }
-
                     }
                     else
                     {
@@ -115,7 +114,6 @@ namespace NzbDrone.Core.DecisionEngine
                     {
                         var rejection = result.ToRejection();
                         decision = new DownloadDecision(remoteMovie, rejection);
-
                     }
                     else
                     {
@@ -146,7 +144,6 @@ namespace NzbDrone.Core.DecisionEngine
                             remoteMovie.DownloadAllowed = remoteMovie.Movie != null;
                             decision = GetDecisionForReport(remoteMovie, searchCriteria);
                         }
-
                     }
                 }
                 catch (Exception e)

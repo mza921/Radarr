@@ -48,7 +48,6 @@ namespace NzbDrone.Core.NetImport.TMDb
                 .Matches(@"^\d+([,|]\d+)*$", RegexOptions.IgnoreCase)
                 .When(c => c.ExcludeGenreIds.IsNotNullOrWhiteSpace())
                 .WithMessage("Genre Ids must be comma (,) or pipe (|) separated number ids");
-
         }
     }
 
@@ -97,5 +96,4 @@ namespace NzbDrone.Core.NetImport.TMDb
             return new NzbDroneValidationResult(Validator.Validate(this));
         }
     }
-
 }

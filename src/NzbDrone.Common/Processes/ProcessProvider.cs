@@ -323,7 +323,6 @@ namespace NzbDrone.Common.Processes
             }
 
             return processInfo;
-
         }
 
         private static string GetExeFileName(Process process)

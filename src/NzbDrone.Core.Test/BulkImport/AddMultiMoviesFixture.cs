@@ -69,6 +69,5 @@ namespace NzbDrone.Core.Test.BulkImport
 
             Mocker.GetMock<IMovieRepository>().Verify(v => v.InsertMany(It.Is<List<Movie>>(l => l.Count == 2)));
         }
-
     }
 }
