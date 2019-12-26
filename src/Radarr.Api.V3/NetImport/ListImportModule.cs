@@ -26,9 +26,9 @@ namespace Radarr.Api.V3.NetImport
         {
             var resources = Request.Body.FromJson<List<MovieResource>>();
 
-            var Movies = resources.Select(MovieResource => _movieSearch.MapMovieToTmdbMovie(MovieResource.ToModel())).Where(m => m != null).DistinctBy(m => m.TmdbId).ToList();
+            var movies = resources.Select(MovieResource => _movieSearch.MapMovieToTmdbMovie(MovieResource.ToModel())).Where(m => m != null).DistinctBy(m => m.TmdbId).ToList();
 
-            return ResponseWithCode(_movieService.AddMovies(Movies).ToResource(), HttpStatusCode.Accepted);
+            return ResponseWithCode(_movieService.AddMovies(movies).ToResource(), HttpStatusCode.Accepted);
         }
     }
 }

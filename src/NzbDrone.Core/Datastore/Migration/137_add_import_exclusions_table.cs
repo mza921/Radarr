@@ -34,10 +34,10 @@ namespace NzbDrone.Core.Datastore.Migration
                 {
                     while (seriesReader.Read())
                     {
-                        var Key = seriesReader.GetString(0);
-                        var Value = seriesReader.GetString(1);
+                        var key = seriesReader.GetString(0);
+                        var value = seriesReader.GetString(1);
 
-                        var importExclusions = Value.Split(',').Select(x =>
+                        var importExclusions = value.Split(',').Select(x =>
                         {
                             return string.Format("(\"{0}\", \"{1}\")",
                                 Regex.Replace(x, @"^.*\-(.*)$", "$1"),

@@ -23,9 +23,9 @@ namespace NzbDrone.Api.Movies
         {
             var resources = Request.Body.FromJson<List<MovieResource>>();
 
-            var Movie = resources.Select(MovieResource => MovieResource.ToModel(_movieService.GetMovie(MovieResource.Id))).ToList();
+            var movie = resources.Select(MovieResource => MovieResource.ToModel(_movieService.GetMovie(MovieResource.Id))).ToList();
 
-            return ResponseWithCode(_movieService.UpdateMovie(Movie)
+            return ResponseWithCode(_movieService.UpdateMovie(movie)
                                     .ToResource(),
                                     HttpStatusCode.Accepted);
         }

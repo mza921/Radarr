@@ -96,24 +96,24 @@ namespace NzbDrone.Core.Movies
             //return (Status >= MinimumAvailability || (MinimumAvailability == MovieStatusType.PreDB && Status >= MovieStatusType.Released));
 
             //This more complex sequence handles the delay
-            DateTime MinimumAvailabilityDate;
+            DateTime minimumAvailabilityDate;
             switch (MinimumAvailability)
             {
                 case MovieStatusType.TBA:
                 case MovieStatusType.Announced:
-                    MinimumAvailabilityDate = DateTime.MinValue;
+                    minimumAvailabilityDate = DateTime.MinValue;
                     break;
                 case MovieStatusType.InCinemas:
                     if (InCinemas.HasValue)
-                        MinimumAvailabilityDate = InCinemas.Value;
+                        minimumAvailabilityDate = InCinemas.Value;
                     else
-                        MinimumAvailabilityDate = DateTime.MaxValue;
+                        minimumAvailabilityDate = DateTime.MaxValue;
                     break;
 
                 case MovieStatusType.Released:
                 case MovieStatusType.PreDB:
                 default:
-                    MinimumAvailabilityDate = PhysicalRelease.HasValue ? PhysicalRelease.Value : (InCinemas.HasValue ? InCinemas.Value.AddDays(90) : DateTime.MaxValue);
+                    minimumAvailabilityDate = PhysicalRelease.HasValue ? PhysicalRelease.Value : (InCinemas.HasValue ? InCinemas.Value.AddDays(90) : DateTime.MaxValue);
                     break;
             }
 
@@ -122,13 +122,13 @@ namespace NzbDrone.Core.Movies
                 return true;
             }
 
-            if (MinimumAvailabilityDate == DateTime.MinValue || MinimumAvailabilityDate == DateTime.MaxValue)
+            if (minimumAvailabilityDate == DateTime.MinValue || minimumAvailabilityDate == DateTime.MaxValue)
             {
-                return DateTime.Now >= MinimumAvailabilityDate;
+                return DateTime.Now >= minimumAvailabilityDate;
             }
 
 
-            return DateTime.Now >= MinimumAvailabilityDate.AddDays((double)delay);
+            return DateTime.Now >= minimumAvailabilityDate.AddDays((double)delay);
         }
 
         public DateTime PhysicalReleaseDate()

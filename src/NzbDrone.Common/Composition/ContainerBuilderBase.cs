@@ -33,11 +33,11 @@ namespace NzbDrone.Common.Composition
                 _loadedTypes.AddRange(Assembly.Load(assembly).GetTypes());
             }
 #else
-            var _startupPath = AppDomain.CurrentDomain.BaseDirectory;
+            var startupPath = AppDomain.CurrentDomain.BaseDirectory;
 
             foreach (var assemblyName in assemblies)
             {
-                _loadedTypes.AddRange(AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Combine(_startupPath, $"{assemblyName}.dll")).GetTypes());
+                _loadedTypes.AddRange(AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Combine(startupPath, $"{assemblyName}.dll")).GetTypes());
             }
 
             var toRegisterResolver = new List<string> { "System.Data.SQLite" };
@@ -54,8 +54,8 @@ namespace NzbDrone.Common.Composition
 #if  NETCOREAPP
         private static Assembly ContainerResolveEventHandler(object sender, ResolveEventArgs args)
         {
-            var _resolver = new AssemblyDependencyResolver(args.RequestingAssembly.Location);
-            var assemblyPath = _resolver.ResolveAssemblyToPath(new AssemblyName(args.Name));
+            var resolver = new AssemblyDependencyResolver(args.RequestingAssembly.Location);
+            var assemblyPath = resolver.ResolveAssemblyToPath(new AssemblyName(args.Name));
 
             if (assemblyPath == null)
             {

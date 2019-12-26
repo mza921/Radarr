@@ -34,7 +34,7 @@ namespace NzbDrone.Core.Datastore.Migration
 
         private void UpdateLanguage(IDbConnection conn, IDbTransaction tran)
         {
-            var LanguageConverter = new EmbeddedDocumentConverter(new LanguageIntConverter());
+            var languageConverter = new EmbeddedDocumentConverter(new LanguageIntConverter());
 
             var profileLanguages = new Dictionary<int, int>();
             using (IDbCommand getProfileCmd = conn.CreateCommand())
@@ -80,7 +80,7 @@ namespace NzbDrone.Core.Datastore.Migration
 
             foreach (var group in movieLanguages.GroupBy(v => v.Value, v => v.Key))
             {
-                var languageJson = LanguageConverter.ToDB(new List<Language> { Language.FindById(group.Key) });
+                var languageJson = languageConverter.ToDB(new List<Language> { Language.FindById(group.Key) });
 
                 var movieIds = group.Select(v => v.ToString()).Join(",");
 
