@@ -36,8 +36,6 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
             }
         }
 
-        #region private methods
-
         private bool AMockObjectShouldBeCreatedForThisType(Type type)
         {
             var mocker = _container.Resolve<AutoMoqer>();
@@ -78,7 +76,5 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
         {
             return new[] { typeof(object[]) };
         }
-
-        #endregion
     }
 }

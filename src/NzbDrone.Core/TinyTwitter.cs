@@ -57,8 +57,6 @@ namespace TinyTwitter
                 .Execute();
         }
 
-        #region RequestBuilder
-
         public class RequestBuilder
         {
             private const string VERSION = "1.0";
@@ -199,8 +197,6 @@ namespace TinyTwitter
                 return new Random().Next(0x0000000, 0x7fffffff).ToString("X8");
             }
         }
-
-        #endregion
     }
 
     public static class TinyTwitterHelperExtensions

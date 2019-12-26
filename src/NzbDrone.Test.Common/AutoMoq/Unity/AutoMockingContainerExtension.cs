@@ -15,8 +15,6 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
             SetBuildingStrategyForBuildingUnregisteredTypes();
         }
 
-        #region private methods
-
         private void SetEventsOnContainerToTrackAllRegisteredTypes()
         {
             Context.Registering += ((sender, e) => RegisterType(e.TypeFrom));
@@ -33,7 +31,5 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
             var strategy = new AutoMockingBuilderStrategy(registeredTypes, Container);
             Context.Strategies.Add(strategy, UnityBuildStage.PreCreation);
         }
-
-        #endregion
     }
 }

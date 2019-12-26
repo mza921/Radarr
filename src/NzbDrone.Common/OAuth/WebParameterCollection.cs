@@ -130,8 +130,6 @@ namespace NzbDrone.Common.OAuth
             _parameters.Add(pair);
         }
 
-        #region IList<WebParameter> Members
-
         public virtual IEnumerator<WebParameter> GetEnumerator()
         {
             return _parameters.GetEnumerator();
@@ -197,7 +195,5 @@ namespace NzbDrone.Common.OAuth
             get { return _parameters[index]; }
             set { _parameters[index] = value; }
         }
-
-        #endregion
     }
 }

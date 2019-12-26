@@ -180,8 +180,6 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
             return reader.Value;
         }
 
-        #region ISchemaDumper Members
-
         public virtual IList<TableDefinition> ReadDbSchema()
         {
             IList<TableDefinition> tables = ReadTables();
@@ -194,8 +192,6 @@ namespace NzbDrone.Core.Datastore.Migration.Framework
 
             return tables;
         }
-
-        #endregion
 
         protected virtual DataSet Read(string template, params object[] args)
         {

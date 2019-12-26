@@ -9,8 +9,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
     /// </summary>
     public class RomanNumeral : IComparable, IComparable<RomanNumeral>, IEquatable<RomanNumeral>, IRomanNumeral
     {
-        #region Fields
-
         /// <summary>
         /// The numeric value of the roman numeral.
         /// </summary>
@@ -30,10 +28,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         private static readonly string[] Hundreds = { "CM", "DCCC", "DCC", "DC", "D", "CD", "CCC", "CC", "C" };
         private static readonly string[] Tens = { "XC", "LXXX", "LXX", "LX", "L", "XL", "XXX", "XX", "X" };
         private static readonly string[] Units = { "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I" };
-
-        #endregion
-
-        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RomanNumeral"/> class.
@@ -65,10 +59,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 _value = value;
             }
         }
-
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// Converts this instance to an integer.
@@ -219,7 +209,7 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         /// Returns the Roman numeral that was passed in as either an Arabic numeral
         /// or a Roman numeral.
         /// </summary>
-        /// <returns>A <see cref="System.String" /> representing a Roman Numeral</returns>
+        /// <returns>A <see cref="System.string" /> representing a Roman Numeral</returns>
         public string ToRomanNumeral()
         {
             return ToString();
@@ -246,10 +236,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
                 throw new ArgumentOutOfRangeException(nameof(number), number, $"Roman numerals can not be smaller than {MinValue}.");
             }
         }
-
-        #endregion
-
-        #region Operators
 
         /// <summary>
         /// Implements the operator *.
@@ -302,10 +288,6 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         {
             return new RomanNumeral(firstNumeral._value - secondNumeral._value);
         }
-
-        #endregion
-
-        #region Interface Implementations
 
         /// <summary>
         /// </summary>
@@ -367,13 +349,11 @@ namespace NzbDrone.Core.Parser.RomanNumerals
         /// during creation.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents a Roman Numeral.
+        /// A <see cref="System.string" /> that represents a Roman Numeral.
         /// </returns>
         public override string ToString()
         {
             return ToRomanNumeral(_value);
         }
-
-        #endregion
     }
 }
