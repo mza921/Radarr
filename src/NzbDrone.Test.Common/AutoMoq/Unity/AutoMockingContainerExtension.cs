@@ -7,7 +7,7 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
 {
     public class AutoMockingContainerExtension : UnityContainerExtension
     {
-        private readonly IList<Type> registeredTypes = new List<Type>();
+        private readonly IList<Type> _registeredTypes = new List<Type>();
 
         protected override void Initialize()
         {
@@ -23,12 +23,12 @@ namespace NzbDrone.Test.Common.AutoMoq.Unity
 
         private void RegisterType(Type typeToRegister)
         {
-            registeredTypes.Add(typeToRegister);
+            _registeredTypes.Add(typeToRegister);
         }
 
         private void SetBuildingStrategyForBuildingUnregisteredTypes()
         {
-            var strategy = new AutoMockingBuilderStrategy(registeredTypes, Container);
+            var strategy = new AutoMockingBuilderStrategy(_registeredTypes, Container);
             Context.Strategies.Add(strategy, UnityBuildStage.PreCreation);
         }
     }

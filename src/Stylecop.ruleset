@@ -54,19 +54,19 @@
     <Rule Id="SA1202" Action="Info" />
     <Rule Id="SA1203" Action="Warning" />
     <Rule Id="SA1204" Action="Info" />
-    <Rule Id="SA1205" Action="Info" />
+    <Rule Id="SA1205" Action="Warning" />
     <Rule Id="SA1206" Action="Warning" />
-    <Rule Id="SA1207" Action="Info" />
+    <Rule Id="SA1207" Action="Warning" />
     <!-- <Rule Id="SA1208" Action="Info" /> -->
     <!-- <Rule Id="SA1209" Action="Info" /> -->
     <Rule Id="SA1210" Action="Warning" />
-    <Rule Id="SA1211" Action="Info" />
+    <Rule Id="SA1211" Action="Warning" />
     <!-- <Rule Id="SA1212" Action="Info" /> -->
     <!-- <Rule Id="SA1213" Action="Info" /> -->
     <Rule Id="SA1214" Action="Warning" />
-    <Rule Id="SA1215" Action="Info" />
-    <Rule Id="SA1216" Action="Info" />
-    <Rule Id="SA1217" Action="Info" />
+    <Rule Id="SA1215" Action="Warning" />
+    <Rule Id="SA1216" Action="Warning" />
+    <Rule Id="SA1217" Action="Warning" />
   </Rules>
   <Rules AnalyzerId="StyleCop.CSharp.NamingRules"
          RuleNamespace="StyleCop.CSharp.NamingRules">
@@ -88,7 +88,7 @@
   <Rules AnalyzerId="StyleCop.CSharp.MaintainabilityRules"
          RuleNamespace="StyleCop.CSharp.MaintainabilityRules">
     <Rule Id="SA1400" Action="Warning" />
-    <Rule Id="SA1401" Action="Info" />
+    <Rule Id="SA1401" Action="None" />
     <Rule Id="SA1402" Action="None" />
     <Rule Id="SA1404" Action="Info" />
     <Rule Id="SA1405" Action="Info" />
@@ -179,5 +179,6 @@
          RuleNamespace="StyleCop.CSharp.AlternativeRules">
     <!-- Do not prefix local members with this -->
     <Rule Id="SX1101" Action="Warning" />
+    <Rule Id="SX1309" Action="Warning" />
   </Rules>
 </RuleSet>

@@ -20,7 +20,7 @@ namespace Radarr.Api.V3.Queue
         private readonly IQueueService _queueService;
         private readonly IPendingReleaseService _pendingReleaseService;
 
-        private readonly QualityModelComparer QUALITY_COMPARER;
+        private readonly QualityModelComparer _qualityComparer;
 
         public QueueModule(IBroadcastSignalRMessage broadcastSignalRMessage,
                            IQueueService queueService,
@@ -32,7 +32,7 @@ namespace Radarr.Api.V3.Queue
             _pendingReleaseService = pendingReleaseService;
             GetResourcePaged = GetQueue;
 
-            QUALITY_COMPARER = new QualityModelComparer(qualityProfileService.GetDefaultProfile(string.Empty));
+            _qualityComparer = new QualityModelComparer(qualityProfileService.GetDefaultProfile(string.Empty));
         }
 
         private PagingResource<QueueResource> GetQueue(PagingResource<QueueResource> pagingResource)
@@ -89,8 +89,8 @@ namespace Radarr.Api.V3.Queue
             else if (pagingSpec.SortKey == "quality")
             {
                 ordered = ascending
-                    ? fullQueue.OrderBy(q => q.Quality, QUALITY_COMPARER)
-                    : fullQueue.OrderByDescending(q => q.Quality, QUALITY_COMPARER);
+                    ? fullQueue.OrderBy(q => q.Quality, _qualityComparer)
+                    : fullQueue.OrderByDescending(q => q.Quality, _qualityComparer);
             }
             else
             {

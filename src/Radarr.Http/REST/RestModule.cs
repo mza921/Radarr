@@ -16,7 +16,7 @@ namespace Radarr.Http.REST
         private const string ROOT_ROUTE = "/";
         private const string ID_ROUTE = @"/(?<id>[\d]{1,10})";
 
-        private HashSet<string> EXCLUDED_KEYS = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase)
+        private readonly HashSet<string> _excludedKeys = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase)
                                                 {
                                                     "page",
                                                     "pageSize",
@@ -326,7 +326,7 @@ namespace Radarr.Http.REST
             // v3 uses filters in key=value format
             foreach (var key in Request.Query)
             {
-                if (EXCLUDED_KEYS.Contains(key))
+                if (_excludedKeys.Contains(key))
                 {
                     continue;
                 }

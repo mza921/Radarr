@@ -9,11 +9,11 @@ namespace NzbDrone.Core.Datastore.Converters
 {
     public class EmbeddedDocumentConverter : IConverter
     {
-        private readonly JsonSerializerSettings SerializerSetting;
+        private readonly JsonSerializerSettings _serializerSetting;
 
         public EmbeddedDocumentConverter(params JsonConverter[] converters)
         {
-            SerializerSetting = new JsonSerializerSettings
+            _serializerSetting = new JsonSerializerSettings
             {
                 DateTimeZoneHandling = DateTimeZoneHandling.Utc,
                 NullValueHandling = NullValueHandling.Ignore,
@@ -22,12 +22,12 @@ namespace NzbDrone.Core.Datastore.Converters
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             };
 
-            SerializerSetting.Converters.Add(new StringEnumConverter { NamingStrategy = new CamelCaseNamingStrategy() });
-            SerializerSetting.Converters.Add(new VersionConverter());
+            _serializerSetting.Converters.Add(new StringEnumConverter { NamingStrategy = new CamelCaseNamingStrategy() });
+            _serializerSetting.Converters.Add(new VersionConverter());
 
             foreach (var converter in converters)
             {
-                SerializerSetting.Converters.Add(converter);
+                _serializerSetting.Converters.Add(converter);
             }
         }
 
@@ -45,7 +45,7 @@ namespace NzbDrone.Core.Datastore.Converters
                 return null;
             }
 
-            return JsonConvert.DeserializeObject(stringValue, context.ColumnMap.FieldType, SerializerSetting);
+            return JsonConvert.DeserializeObject(stringValue, context.ColumnMap.FieldType, _serializerSetting);
         }
 
         public object FromDB(ColumnMap map, object dbValue)
@@ -65,7 +65,7 @@ namespace NzbDrone.Core.Datastore.Converters
                 return DBNull.Value;
             }
 
-            return JsonConvert.SerializeObject(clrValue, SerializerSetting);
+            return JsonConvert.SerializeObject(clrValue, _serializerSetting);
         }
 
         public Type DbType => typeof(string);
